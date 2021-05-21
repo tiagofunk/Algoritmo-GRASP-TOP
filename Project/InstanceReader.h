@@ -1,0 +1,21 @@
+#ifndef INSTANCE_READER_H
+#define INSTANCE_READER_H
+
+#include <string>
+
+#include "Instance.h"
+#include "Point.h"
+
+class InstanceReader{
+private:
+    std::string file_name;
+
+public:
+    InstanceReader(std::string file_name);
+    ~InstanceReader();
+
+    Instance read();
+};
+
+
+#endif
