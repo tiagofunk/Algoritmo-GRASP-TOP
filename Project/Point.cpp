@@ -25,6 +25,6 @@ std::string Point::to_string(){
     std::string s;
     s = "x: " + std::to_string( this->x );
     s += ", y: " + std::to_string( this->y );
-    s += ", score: " + std::to_string( this->score ) + "\n";
+    s += ", score: " + std::to_string( this->score );
     return s;
 }
