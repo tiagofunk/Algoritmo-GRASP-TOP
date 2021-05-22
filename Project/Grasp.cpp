@@ -2,15 +2,6 @@
 
 #include "Utils.h"
 
-struct score_point{
-    Point *p;
-    double score_z_score;
-    double distance;
-    double score_z_distance;
-    double value;
-    double probability;
-};
-
 
 GRASP::GRASP( Instance * instance ){
     this->instance = instance;
@@ -24,16 +15,13 @@ Solution GRASP::execute(){
     return *s;
 }
 
-Solution * GRASP::random_greedy( int seed ){
-    // adicinar em todas as rotas o ponto inicial.
-    Solution * sol = new Solution();
-    
+vector< GRASP::score_point > GRASP::calcule_probability(){
     int vertices = this->instance->get_points().size();
     vector< double > scores = this->instance->get_scores();
     double mean = calculate_mean( scores, vertices );
     double stand = calculate_standard_deviation( scores, vertices, mean );
     
-    vector< struct score_point > sp( vertices );
+    vector< GRASP::score_point > sp( vertices );
     for( int i = 0; i < vertices; i++ ){
         Point * p = this->instance->get_point( i );
         sp[ i ].p = p;
@@ -62,6 +50,15 @@ Solution * GRASP::random_greedy( int seed ){
             sp[ i ].probability
         );
     }
+
+    return sp;
+}
+
+Solution * GRASP::random_greedy( int seed ){
+    // adicinar em todas as rotas o ponto inicial.
+    Solution * sol = new Solution();
+
+    vector< struct score_point > sp = calcule_probability();
 
     return sol;
 }

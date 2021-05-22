@@ -6,12 +6,22 @@
 
 class GRASP{
     private:
+        typedef struct score_point{
+            Point * p;
+            double score_z_score;
+            double distance;
+            double score_z_distance;
+            double value;
+            double probability;
+        } score_point;
+
         Instance * instance;
 
         Solution * random_greedy( int seed );
         Solution local_search( Solution s );
-
         Solution path_relinking( Solution start, Solution end );
+
+        vector< score_point > calcule_probability();
 
     public:
         GRASP( Instance * instance );
