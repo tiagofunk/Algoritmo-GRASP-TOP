@@ -29,42 +29,42 @@ double Instance::get_time_per_path(){
     return this->time_per_path;
 }
 
-void Instance::add_point( Point p ){
-    if( p.get_score() == 0 ){
+void Instance::add_point( Point * p ){
+    if( p->get_score() == 0 ){
         this->number_of_null_vertices++;
 
         if( this->initial == NULL ){
-            this->initial = &p;
+            this->initial = p;
         } else if( this->initial != NULL ){
-            this->final = &p;
+            this->final = p;
         }
     }else{
         this->list_of_points.push_back( p );
     }
 }
 
-Point Instance::get_point( int position ){
+Point * Instance::get_point( int position ){
     return this->list_of_points[ position ];
 }
 
-std::vector< Point > Instance::get_points(){
+std::vector< Point * > Instance::get_points(){
     return this->list_of_points;
 }
 
 vector< double > Instance::get_scores(){
     vector< double > scores;
     for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
-        scores.push_back( this->list_of_points[ i ].get_score() );
+        scores.push_back( this->list_of_points[ i ]->get_score() );
     }
     return scores;
 }
 
-Point Instance::get_initial_point(){
-    return *initial;
+Point * Instance::get_initial_point(){
+    return initial;
 }
 
-Point Instance::get_final_point(){
-    return *final;
+Point * Instance::get_final_point(){
+    return final;
 }
 
 std::string Instance::to_string(){
@@ -74,7 +74,7 @@ std::string Instance::to_string(){
     s += "Time: " + std::to_string( this->time_per_path ) + "\n";
     s += "Points\n";
     for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
-        s += this->list_of_points[ i ].to_string();
+        s += this->list_of_points[ i ]->to_string();
     }
     return s;
 }

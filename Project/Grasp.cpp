@@ -35,9 +35,9 @@ Solution * GRASP::random_greedy( int seed ){
     
     vector< struct score_point > sp( vertices );
     for( int i = 0; i < vertices; i++ ){
-        Point p = this->instance->get_point( i );
-        sp[ i ].p = &p;
-        sp[ i ].score_z_score = calculate_score_z( this->instance->get_point( i ).get_score(), mean, stand );
+        Point * p = this->instance->get_point( i );
+        sp[ i ].p = p;
+        sp[ i ].score_z_score = calculate_score_z( this->instance->get_point( i )->get_score(), mean, stand );
         sp[ i ].distance = distance( this->instance->get_initial_point(), p );
         scores[ i ] = sp[ i ].distance;
     }

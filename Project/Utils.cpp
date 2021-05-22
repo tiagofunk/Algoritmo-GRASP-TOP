@@ -30,8 +30,8 @@ double calculate_score_z( double value, double mean, double stand ){
     return ( value - mean ) / stand;
 }
 
-double distance( Point p1, Point p2 ){
-    double x = p2.get_x() - p1.get_x();
-    double y = p2.get_y() - p1.get_y();
+double distance( Point * p1, Point * p2 ){
+    double x = p2->get_x() - p1->get_x();
+    double y = p2->get_y() - p1->get_y();
     return sqrt( pow( x, 2 ) + pow( y, 2 ) );
 }

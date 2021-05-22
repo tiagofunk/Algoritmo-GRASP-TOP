@@ -18,6 +18,7 @@ Instance InstanceReader::read(){
     int vertices, paths, score;
     double time, x, y;
     string aux;
+    Point * p = 0;
 
     ifstream file( this->file_name.c_str(), ios::in );
     if( !file ){
@@ -39,7 +40,7 @@ Instance InstanceReader::read(){
         file >> x;
         file >> y;
         file >> score;
-        Point p( x, y, score );
+        p = new Point( x, y, score );
         inst.add_point( p );
     }
 
