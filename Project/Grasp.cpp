@@ -44,11 +44,23 @@ Solution * GRASP::random_greedy( int seed ){
 
     mean = calculate_mean( scores, vertices );
     stand = calculate_standard_deviation( scores, vertices, mean );
+    double sum_values = 0.0;
 
     for( int i = 0; i < vertices; i++ ){
         sp[ i ].score_z_distance = calculate_score_z( sp[ i ].distance, mean, stand );
-        sp[ i ].value = ( sp[ i ].score_z_score + 0 ) - ( sp[ i ].score_z_distance + 0 );
-        printf("i: %d s: %.2f d: %.2f v: %.2f\n", i, sp[ i ].score_z_score, sp[ i ].score_z_distance, sp[ i ].value );
+        sp[ i ].value = 3 + sp[ i ].score_z_score - sp[ i ].score_z_distance;
+        sum_values += sp[ i ].value;
+    }
+
+    for( int i = 0; i < vertices; i++ ){
+        sp[ i ].probability = sp[ i ].value / sum_values;
+        printf(
+            "i: %d s: %.2f d: %.2f v: %.2f p: %.2f\n", i,
+            sp[ i ].score_z_score,
+            sp[ i ].score_z_distance,
+            sp[ i ].value,
+            sp[ i ].probability
+        );
     }
 
     return sol;
