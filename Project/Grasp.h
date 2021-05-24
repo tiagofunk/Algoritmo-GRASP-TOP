@@ -22,6 +22,7 @@ class GRASP{
         Solution path_relinking( Solution start, Solution end );
 
         vector< score_point > calcule_probability();
+        score_point select_point( vector< score_point > sp );
 
     public:
         GRASP( Instance * instance );

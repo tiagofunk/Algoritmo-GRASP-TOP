@@ -2,6 +2,7 @@
 
 #include "Utils.h"
 
+#include <iostream>
 
 GRASP::GRASP( Instance * instance ){
     this->instance = instance;
@@ -16,7 +17,7 @@ Solution GRASP::execute(){
 }
 
 vector< GRASP::score_point > GRASP::calcule_probability(){
-    int vertices = this->instance->get_points().size();
+    int vertices = this->instance->get_number_of_points();
     vector< double > scores = this->instance->get_scores();
     double mean = calculate_mean( scores, vertices );
     double stand = calculate_standard_deviation( scores, vertices, mean );
@@ -54,11 +55,33 @@ vector< GRASP::score_point > GRASP::calcule_probability(){
     return sp;
 }
 
-Solution * GRASP::random_greedy( int seed ){
-    // adicinar em todas as rotas o ponto inicial.
-    Solution * sol = new Solution();
+GRASP::score_point GRASP::select_point( vector< GRASP::score_point > sp ){
+    return sp[ 0 ];
+}
 
-    vector< struct score_point > sp = calcule_probability();
+Solution * GRASP::random_greedy( int seed ){
+    bool is_added = false;
+    int i, n_paths = this->instance->get_number_of_paths();
+    Solution * sol = new Solution( n_paths );
+    
+    for( i = 0; i < n_paths; i++ ){
+        sol->add_point( i, this->instance->get_initial_point(), true );
+        sol->add_point( i, this->instance->get_final_point() , true );
+    }
+
+    GRASP::score_point selected = select_point( calcule_probability() );
+    sol->add_point( 0, selected.p, false );
+
+    cout << sol->to_string() << endl;
+
+    // do{
+    //     for( i = 0; i < n_paths; i++ ){
+    //         GRASP::score_point selected = select_point( calcule_probability() );
+    //         if( sol->add_point( i, selected.p ) == 0 ){
+    //             is_added = true;
+    //         }
+    //     }
+    // }while( is_added );
 
     return sol;
 }

@@ -21,6 +21,10 @@ int Instance::get_number_of_null_vertices(){
     return this->number_of_null_vertices;
 }
 
+int Instance::get_number_of_points(){
+    return this->number_of_vertices - this->number_of_null_vertices; 
+}
+
 int Instance::get_number_of_paths(){
     return this->number_of_paths;
 }
@@ -47,10 +51,6 @@ Point * Instance::get_point( int position ){
     return this->list_of_points[ position ];
 }
 
-std::vector< Point * > Instance::get_points(){
-    return this->list_of_points;
-}
-
 vector< double > Instance::get_scores(){
     vector< double > scores;
     for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
@@ -69,12 +69,12 @@ Point * Instance::get_final_point(){
 
 std::string Instance::to_string(){
     std::string s;
-    s = "Vertices:" + std::to_string( this->number_of_vertices ) + "\n";
-    s += "Paths:" + std::to_string( this->number_of_paths ) + "\n";
+    s = "Vertices: " + std::to_string( this->number_of_vertices ) + "\n";
+    s += "Paths: " + std::to_string( this->number_of_paths ) + "\n";
     s += "Time: " + std::to_string( this->time_per_path ) + "\n";
-    s += "Points\n";
+    s += "Points:\n";
     for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
-        s += this->list_of_points[ i ]->to_string();
+        s += this->list_of_points[ i ]->to_string() + "\n";
     }
     return s;
 }

@@ -24,12 +24,12 @@ public:
 
     int get_number_of_vertices();
     int get_number_of_null_vertices();
+    int get_number_of_points();
     int get_number_of_paths();
     double get_time_per_path();
 
     void add_point( Point * p );
     Point * get_point( int position );
-    std::vector< Point * > get_points();
     vector< double > get_scores();
 
     Point * get_initial_point();
