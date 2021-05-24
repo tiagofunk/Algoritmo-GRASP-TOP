@@ -51,12 +51,8 @@ Point * Instance::get_point( int position ){
     return this->list_of_points[ position ];
 }
 
-vector< double > Instance::get_scores(){
-    vector< double > scores;
-    for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
-        scores.push_back( this->list_of_points[ i ]->get_score() );
-    }
-    return scores;
+vector< Point * > Instance::get_points(){
+    return this->list_of_points;
 }
 
 Point * Instance::get_initial_point(){

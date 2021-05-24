@@ -21,12 +21,14 @@ class GRASP{
         Solution local_search( Solution s );
         Solution path_relinking( Solution start, Solution end );
 
-        vector< score_point > calcule_probability();
-        score_point select_point( vector< score_point > sp );
+        vector< double > get_scores( vector< Point * > points );
+
+        vector< score_point > calcule_probability( vector< Point * > points );
+        int select_point( vector< score_point > sp );
 
     public:
         GRASP( Instance * instance );
-        Solution execute();
+        Solution * execute();
         
 };
 

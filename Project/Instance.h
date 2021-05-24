@@ -30,7 +30,7 @@ public:
 
     void add_point( Point * p );
     Point * get_point( int position );
-    vector< double > get_scores();
+    vector< Point * > get_points();
 
     Point * get_initial_point();
     Point * get_final_point();

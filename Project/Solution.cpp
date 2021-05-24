@@ -34,6 +34,7 @@ string Solution::to_string(){
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
     s += "paths:\n";
     for (int i = 0; i < this->paths.size(); i++){
+        s += "size: " + std::to_string( this->paths[ i ].size() ) + "\n" ;
         for (int j = 0; j < this->paths[ i ].size(); j++){
             s += this->paths[ i ][ j ]->to_string() + "\n";
         }
