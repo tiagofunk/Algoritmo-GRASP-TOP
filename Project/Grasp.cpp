@@ -11,7 +11,12 @@ GRASP::GRASP( Instance * instance ){
 Solution * GRASP::execute(){
     Solution * s = 0;
 
-    s = this->random_greedy( get_seed() );
+    for (int i = 0; i < 3000; i++){
+        Solution * actual = this->random_greedy( get_seed() );
+        if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
+            s = actual;
+        }
+    }
 
     return s;
 }
@@ -105,9 +110,6 @@ Solution * GRASP::random_greedy( int seed ){
             }
         }
     }while( is_added );
-
-    sol->get_total_rewards();
-    cout << sol->to_string() << endl;
 
     return sol;
 }

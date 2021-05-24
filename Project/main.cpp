@@ -13,6 +13,7 @@ int main( int argc, char * argv[] ){
     //cout << i.to_string() << endl;
 
     GRASP g( &i );
-    g.execute();
+    Solution * s = g.execute();
+    cout << s->get_total_rewards() << endl;
     return 0;
 }
