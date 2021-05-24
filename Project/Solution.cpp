@@ -33,7 +33,7 @@ void Solution::calculate_time_per_paths(){
         }
         
     }
-    this->is_calculate_rewards = true;
+    this->is_calculate_time_per_path = true;
 }
 
 bool Solution::add_initial_vertice( int path, Vertice * v ){

@@ -3,7 +3,9 @@
 #include <math.h>
 
 int get_seed(){
-    srand( time( 0 ) );
+    //int seed = time( 0 );
+    int seed = 1234;
+    srand( seed );
     return rand();
 }
 
