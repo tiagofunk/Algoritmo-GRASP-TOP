@@ -21,9 +21,9 @@ class GRASP{
         Solution local_search( Solution s );
         Solution path_relinking( Solution start, Solution end );
 
-        vector< double > get_scores( vector< Vertice * > points );
+        vector< double > get_scores( vector< Vertice * > vertices );
 
-        vector< score_point > calcule_probability( vector< Vertice * > points );
+        vector< score_point > calcule_probability( Vertice * actual, vector< Vertice * > vertices );
         int select_point( vector< score_point > sp );
 
     public:

@@ -3,6 +3,7 @@
 Instance::Instance(int number_of_vertices, int number_of_paths, double time_per_path){
     this->number_of_vertices = number_of_vertices;
     this->number_of_null_vertices = 0;
+    this->number_of_path_vertices = 0;;
     this->number_of_paths = number_of_paths;
     this->time_per_path = time_per_path;
     this->initial = 0;
@@ -21,8 +22,8 @@ int Instance::get_number_of_null_vertices(){
     return this->number_of_null_vertices;
 }
 
-int Instance::get_number_of_points(){
-    return this->number_of_vertices - this->number_of_null_vertices; 
+int Instance::get_number_of_path_vertices(){
+    return this->number_of_path_vertices; 
 }
 
 int Instance::get_number_of_paths(){
@@ -43,23 +44,24 @@ void Instance::add_point( Vertice * p ){
             this->final = p;
         }
     }else{
-        this->list_of_points.push_back( p );
+        this->number_of_path_vertices++;
+        this->list_of_path_vertices.push_back( p );
     }
 }
 
-Vertice * Instance::get_point( int position ){
-    return this->list_of_points[ position ];
+Vertice * Instance::get_path_vertice( int position ){
+    return this->list_of_path_vertices[ position ];
 }
 
-vector< Vertice * > Instance::get_points(){
-    return this->list_of_points;
+vector< Vertice * > Instance::get_path_vertices(){
+    return this->list_of_path_vertices;
 }
 
-Vertice * Instance::get_initial_point(){
+Vertice * Instance::get_initial_vertice(){
     return initial;
 }
 
-Vertice * Instance::get_final_point(){
+Vertice * Instance::get_final_vertice(){
     return final;
 }
 
@@ -69,8 +71,8 @@ std::string Instance::to_string(){
     s += "Paths: " + std::to_string( this->number_of_paths ) + "\n";
     s += "Time: " + std::to_string( this->time_per_path ) + "\n";
     s += "Points:\n";
-    for( unsigned int i = 0; i < this->list_of_points.size(); i++ ){
-        s += this->list_of_points[ i ]->to_string() + "\n";
+    for( unsigned int i = 0; i < this->list_of_path_vertices.size(); i++ ){
+        s += this->list_of_path_vertices[ i ]->to_string() + "\n";
     }
     return s;
 }

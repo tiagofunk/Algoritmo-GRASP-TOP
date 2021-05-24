@@ -16,42 +16,43 @@ Solution * GRASP::execute(){
     return s;
 }
 
-vector< double > GRASP::get_scores( vector< Vertice * > points ){
+vector< double > GRASP::get_scores( vector< Vertice * > vertices ){
     vector< double > scores;
-    for( unsigned int i = 0; i < points.size(); i++ ){
-        scores.push_back( points[ i ]->get_score() );
+    for( unsigned int i = 0; i < vertices.size(); i++ ){
+        scores.push_back( vertices[ i ]->get_score() );
     }
     return scores;
 }
 
-vector< GRASP::score_point > GRASP::calcule_probability( vector< Vertice * > points ){
-    int vertices = points.size();
-    vector< GRASP::score_point > sp( vertices );
-    if( points.empty() ) return sp;
+vector< GRASP::score_point > GRASP::calcule_probability( Vertice * actual, vector< Vertice * > vertices ){
+    unsigned int i = 0;
+    unsigned int n_vertices = vertices.size();
+    vector< GRASP::score_point > sp( n_vertices );
+    if( vertices.empty() ) return sp;
 
-    vector< double > scores = this->get_scores( points );
-    double mean = calculate_mean( scores, vertices );
-    double stand = calculate_standard_deviation( scores, vertices, mean );
+    vector< double > scores = this->get_scores( vertices );
+    double mean = calculate_mean( scores, n_vertices );
+    double stand = calculate_standard_deviation( scores, n_vertices, mean );
     
-    for( int i = 0; i < vertices; i++ ){
-        Vertice * p = this->instance->get_point( i );
-        sp[ i ].p = p;
-        sp[ i ].score_z_score = calculate_score_z( this->instance->get_point( i )->get_score(), mean, stand );
-        sp[ i ].distance = calculate_distance( this->instance->get_initial_point(), p );
+    for( i = 0; i < n_vertices; i++ ){
+        Vertice * v = vertices[ i ];
+        sp[ i ].p = v;
+        sp[ i ].score_z_score = calculate_score_z( scores[ i ], mean, stand );
+        sp[ i ].distance = calculate_distance( actual, v );
         scores[ i ] = sp[ i ].distance;
     }
 
-    mean = calculate_mean( scores, vertices );
-    stand = calculate_standard_deviation( scores, vertices, mean );
+    mean = calculate_mean( scores, n_vertices );
+    stand = calculate_standard_deviation( scores, n_vertices, mean );
     double sum_values = 0.0;
 
-    for( int i = 0; i < vertices; i++ ){
+    for( i = 0; i < n_vertices; i++ ){
         sp[ i ].score_z_distance = calculate_score_z( sp[ i ].distance, mean, stand );
         sp[ i ].value = 3 + sp[ i ].score_z_score - sp[ i ].score_z_distance;
         sum_values += sp[ i ].value;
     }
 
-    for( int i = 0; i < vertices; i++ ){
+    for( i = 0; i < n_vertices; i++ ){
         sp[ i ].probability = sp[ i ].value / sum_values;
         // printf(
         //     "i: %d s: %.2f d: %.2f v: %.2f p: %.2f\n", i,
@@ -74,17 +75,17 @@ Solution * GRASP::random_greedy( int seed ){
     bool is_added = false;
     int i, n_paths = this->instance->get_number_of_paths();
     Solution * sol = new Solution( n_paths );
-    vector< Vertice * > vertices = this->instance->get_points();
+    vector< Vertice * > vertices = this->instance->get_path_vertices();
     
     for( i = 0; i < n_paths; i++ ){
-        sol->add_initial_vertice( i, this->instance->get_initial_point() );
-        sol->add_final_vertice( i, this->instance->get_final_point() );
+        sol->add_initial_vertice( i, this->instance->get_initial_vertice() );
+        sol->add_final_vertice( i, this->instance->get_final_vertice() );
     }
 
     do{
         is_added = false;
         for( i = 0; i < n_paths; i++ ){
-            int selected = select_point( calcule_probability( vertices ) );
+            int selected = select_point( calcule_probability( sol->get_last_path_vertice_in_path( i ), vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = vertices[ selected ]; 
             if( sol->add_vertice( i, selected_vertice ) == true ){

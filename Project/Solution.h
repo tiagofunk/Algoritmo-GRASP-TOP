@@ -22,6 +22,8 @@ class Solution{
         bool add_initial_vertice( int path, Vertice * v );
         bool add_final_vertice( int path, Vertice * v );
         bool add_vertice( int path, Vertice * v );
+
+        Vertice * get_last_path_vertice_in_path( int path );
         double get_total_rewards();
 
         string to_string();

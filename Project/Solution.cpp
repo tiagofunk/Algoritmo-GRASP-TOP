@@ -36,6 +36,14 @@ bool Solution::add_vertice( int path, Vertice * v ){
     return 1;
 }
 
+Vertice * Solution::get_last_path_vertice_in_path( int path ){
+    if( path < 0 || path >= this->paths.size() ){
+        return 0;
+    }
+    int last_position = this->paths[ path ].size() - 1;
+    return this->paths[ path ][ last_position ];
+}
+
 double Solution::get_total_rewards(){
     return this->total_rewards;
 }
