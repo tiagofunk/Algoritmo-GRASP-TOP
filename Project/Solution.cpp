@@ -7,7 +7,15 @@ Solution::Solution( int number_paths ){
 }
 
 void Solution::calculate_total_rewards(){
-
+    this->total_rewards = 0.0;
+    for (size_t i = 0; i < this->paths.size(); i++){
+        this->path_rewards[ i ] = 0.0;
+        for (size_t j = 0; j < this->paths[ i ].size(); j++){
+            this->path_rewards[ i ] += this->paths[ i ][ j ]->get_score();
+        }
+        this->total_rewards += this->path_rewards[ i ];
+    }
+    
 }
 
 bool Solution::add_initial_vertice( int path, Vertice * v ){
@@ -45,6 +53,7 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
 }
 
 double Solution::get_total_rewards(){
+    calculate_total_rewards();
     return this->total_rewards;
 }
 
@@ -60,8 +69,9 @@ string Solution::to_string(){
         }
         s += "reward: " + std::to_string( this->path_rewards[ i ])+"\n";
         s += "time: " + std::to_string( this->path_times[ i ])+"\n";
-        s += ";D;D;D;D;D;D;D;D;D;D;D;D;D;D;D;D;D;D\n";
+        s += ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
     }
+    s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
     
     return s;
 }

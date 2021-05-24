@@ -106,6 +106,7 @@ Solution * GRASP::random_greedy( int seed ){
         }
     }while( is_added );
 
+    sol->get_total_rewards();
     cout << sol->to_string() << endl;
 
     return sol;
