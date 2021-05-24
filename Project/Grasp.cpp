@@ -37,7 +37,7 @@ vector< GRASP::score_point > GRASP::calcule_probability( vector< Vertice * > poi
         Vertice * p = this->instance->get_point( i );
         sp[ i ].p = p;
         sp[ i ].score_z_score = calculate_score_z( this->instance->get_point( i )->get_score(), mean, stand );
-        sp[ i ].distance = distance( this->instance->get_initial_point(), p );
+        sp[ i ].distance = calculate_distance( this->instance->get_initial_point(), p );
         scores[ i ] = sp[ i ].distance;
     }
 
@@ -77,8 +77,8 @@ Solution * GRASP::random_greedy( int seed ){
     vector< Vertice * > vertices = this->instance->get_points();
     
     for( i = 0; i < n_paths; i++ ){
-        sol->add_point( i, this->instance->get_initial_point(), true );
-        sol->add_point( i, this->instance->get_final_point() , true );
+        sol->add_initial_vertice( i, this->instance->get_initial_point() );
+        sol->add_final_vertice( i, this->instance->get_final_point() );
     }
 
     do{
@@ -87,7 +87,7 @@ Solution * GRASP::random_greedy( int seed ){
             int selected = select_point( calcule_probability( vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = vertices[ selected ]; 
-            if( sol->add_point( i, selected_vertice, false ) == 1 ){
+            if( sol->add_vertice( i, selected_vertice ) == true ){
                 is_added = true;
                 vertices.erase( vertices.begin() + selected );
             }

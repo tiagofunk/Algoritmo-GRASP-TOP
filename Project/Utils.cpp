@@ -30,8 +30,8 @@ double calculate_score_z( double value, double mean, double stand ){
     return ( value - mean ) / stand;
 }
 
-double distance( Vertice * p1, Vertice * p2 ){
-    double x = p2->get_x() - p1->get_x();
-    double y = p2->get_y() - p1->get_y();
+double calculate_distance( Vertice * v1, Vertice * v2 ){
+    double x = v2->get_x() - v1->get_x();
+    double y = v2->get_y() - v1->get_y();
     return sqrt( pow( x, 2 ) + pow( y, 2 ) );
 }

@@ -19,7 +19,9 @@ class Solution{
 
     public:
         Solution( int number_paths );
-        int add_point( int path, Vertice * point, bool end );
+        bool add_initial_vertice( int path, Vertice * v );
+        bool add_final_vertice( int path, Vertice * v );
+        bool add_vertice( int path, Vertice * v );
         double get_total_rewards();
 
         string to_string();

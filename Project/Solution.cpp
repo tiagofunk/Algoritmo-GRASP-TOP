@@ -10,16 +10,28 @@ void Solution::calculate_total_rewards(){
 
 }
 
-int Solution::add_point( int path, Vertice * point, bool end ){
+bool Solution::add_initial_vertice( int path, Vertice * v ){
+    if( path < 0 || path >= this->paths.size() ){
+        return false;
+    }
+    this->paths[ path ].push_back( v );
+    return true;
+}
+
+bool Solution::add_final_vertice( int path, Vertice * v ){
+    if( path < 0 || path >= this->paths.size() ){
+        return false;
+    }
+    this->paths[ path ].push_back( v );
+    return true;
+}
+
+bool Solution::add_vertice( int path, Vertice * v ){
     if( path < 0 || path >= this->paths.size() ){
         return 0;
     }
-    if( end ){
-        this->paths[ path ].push_back( point );
-    }else{
-        int position = this->paths[ path ].size() - 1;
-        this->paths[ path ].insert( this->paths[ path ].begin() + position, point );
-    }
+    int position = this->paths[ path ].size() - 1;
+    this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
     
     return 1;
 }
