@@ -3,6 +3,7 @@
         "cmath": "cpp",
         "*.tcc": "cpp",
         "cstdlib": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "iostream": "cpp"
     }
 }

@@ -68,7 +68,18 @@ vector< GRASP::score_point > GRASP::calcule_probability( Vertice * actual, vecto
 
 int GRASP::select_point( vector< GRASP::score_point > sp ){
     if( sp.empty() ) return -1;
-    return 0;
+
+    int selected_position = 0;
+    double r = (double) rand() / RAND_MAX;
+    double sum = 0.0;
+    for( unsigned int i = 0; i < sp.size(); i++ ){
+        sum += sp[ i ].probability;
+        if( r < sum ){
+            selected_position = i;
+            break;
+        }
+    }
+    return selected_position;
 }
 
 Solution * GRASP::random_greedy( int seed ){
