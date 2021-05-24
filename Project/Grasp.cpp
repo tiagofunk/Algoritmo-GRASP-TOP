@@ -90,7 +90,7 @@ int GRASP::select_point( vector< GRASP::score_point > sp ){
 Solution * GRASP::random_greedy( int seed ){
     bool is_added = false;
     int i, n_paths = this->instance->get_number_of_paths();
-    Solution * sol = new Solution( n_paths );
+    Solution * sol = new Solution( n_paths, this->instance->get_time_per_path() );
     vector< Vertice * > vertices = this->instance->get_path_vertices();
     
     for( i = 0; i < n_paths; i++ ){
