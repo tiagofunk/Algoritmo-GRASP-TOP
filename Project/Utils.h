@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "Point.h"
+#include "Vertice.h"
 
 using namespace std;
 
@@ -13,6 +13,6 @@ double calculate_mean( vector< double > values, int size );
 double calculate_standard_deviation( vector< double > values, int size, double mean );
 double calculate_score_z( double value, double mean, double stand );
 
-double distance( Point * p1, Point * p2 );
+double distance( Vertice * p1, Vertice * p2 );
 
 #endif

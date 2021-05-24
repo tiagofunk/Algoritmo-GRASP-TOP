@@ -3,15 +3,15 @@
 
 #include <string>
 
-class Point{
+class Vertice{
 private:
     double x;
     double y;
     double score;
 
 public:
-    Point(double x, double y, int score );
-    ~Point();
+    Vertice(double x, double y, int score );
+    ~Vertice();
 
     double get_x();
     double get_y();

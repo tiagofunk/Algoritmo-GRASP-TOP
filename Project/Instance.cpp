@@ -33,7 +33,7 @@ double Instance::get_time_per_path(){
     return this->time_per_path;
 }
 
-void Instance::add_point( Point * p ){
+void Instance::add_point( Vertice * p ){
     if( p->get_score() == 0 ){
         this->number_of_null_vertices++;
 
@@ -47,19 +47,19 @@ void Instance::add_point( Point * p ){
     }
 }
 
-Point * Instance::get_point( int position ){
+Vertice * Instance::get_point( int position ){
     return this->list_of_points[ position ];
 }
 
-vector< Point * > Instance::get_points(){
+vector< Vertice * > Instance::get_points(){
     return this->list_of_points;
 }
 
-Point * Instance::get_initial_point(){
+Vertice * Instance::get_initial_point(){
     return initial;
 }
 
-Point * Instance::get_final_point(){
+Vertice * Instance::get_final_point(){
     return final;
 }
 

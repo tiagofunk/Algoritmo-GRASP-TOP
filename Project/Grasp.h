@@ -7,7 +7,7 @@
 class GRASP{
     private:
         typedef struct score_point{
-            Point * p;
+            Vertice * p;
             double score_z_score;
             double distance;
             double score_z_distance;
@@ -21,9 +21,9 @@ class GRASP{
         Solution local_search( Solution s );
         Solution path_relinking( Solution start, Solution end );
 
-        vector< double > get_scores( vector< Point * > points );
+        vector< double > get_scores( vector< Vertice * > points );
 
-        vector< score_point > calcule_probability( vector< Point * > points );
+        vector< score_point > calcule_probability( vector< Vertice * > points );
         int select_point( vector< score_point > sp );
 
     public:

@@ -10,7 +10,7 @@ void Solution::calculate_total_rewards(){
 
 }
 
-int Solution::add_point( int path, Point * point, bool end ){
+int Solution::add_point( int path, Vertice * point, bool end ){
     if( path < 0 || path >= this->paths.size() ){
         return 0;
     }

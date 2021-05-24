@@ -1,27 +1,27 @@
-#include "Point.h"
+#include "Vertice.h"
 
-Point::Point(double x, double y, int score){
+Vertice::Vertice(double x, double y, int score){
     this->x = x;
     this->y = y;
     this->score = score;
 }
 
-Point::~Point(){
+Vertice::~Vertice(){
 }
 
-double Point::get_x(){
+double Vertice::get_x(){
     return this->x;
 }
 
-double Point::get_y(){
+double Vertice::get_y(){
     return this->y;
 }
 
-double Point::get_score(){
+double Vertice::get_score(){
     return this->score;
 }
 
-std::string Point::to_string(){
+std::string Vertice::to_string(){
     std::string s;
     s = "x: " + std::to_string( this->x );
     s += ", y: " + std::to_string( this->y );

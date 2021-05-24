@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "Point.h"
+#include "Vertice.h"
 
 using namespace std;
 
@@ -14,9 +14,9 @@ private:
     int number_of_null_vertices;
     int number_of_paths;
     double time_per_path;
-    std::vector< Point * > list_of_points;
-    Point * initial;
-    Point * final;
+    std::vector< Vertice * > list_of_points;
+    Vertice * initial;
+    Vertice * final;
 
 public:
     Instance(int number_of_vertices, int number_of_paths, double time_per_path);
@@ -28,12 +28,12 @@ public:
     int get_number_of_paths();
     double get_time_per_path();
 
-    void add_point( Point * p );
-    Point * get_point( int position );
-    vector< Point * > get_points();
+    void add_point( Vertice * p );
+    Vertice * get_point( int position );
+    vector< Vertice * > get_points();
 
-    Point * get_initial_point();
-    Point * get_final_point();
+    Vertice * get_initial_point();
+    Vertice * get_final_point();
 
     std::string to_string();
 };

@@ -16,7 +16,7 @@ Solution * GRASP::execute(){
     return s;
 }
 
-vector< double > GRASP::get_scores( vector< Point * > points ){
+vector< double > GRASP::get_scores( vector< Vertice * > points ){
     vector< double > scores;
     for( unsigned int i = 0; i < points.size(); i++ ){
         scores.push_back( points[ i ]->get_score() );
@@ -24,7 +24,7 @@ vector< double > GRASP::get_scores( vector< Point * > points ){
     return scores;
 }
 
-vector< GRASP::score_point > GRASP::calcule_probability( vector< Point * > points ){
+vector< GRASP::score_point > GRASP::calcule_probability( vector< Vertice * > points ){
     int vertices = points.size();
     vector< GRASP::score_point > sp( vertices );
     if( points.empty() ) return sp;
@@ -34,7 +34,7 @@ vector< GRASP::score_point > GRASP::calcule_probability( vector< Point * > point
     double stand = calculate_standard_deviation( scores, vertices, mean );
     
     for( int i = 0; i < vertices; i++ ){
-        Point * p = this->instance->get_point( i );
+        Vertice * p = this->instance->get_point( i );
         sp[ i ].p = p;
         sp[ i ].score_z_score = calculate_score_z( this->instance->get_point( i )->get_score(), mean, stand );
         sp[ i ].distance = distance( this->instance->get_initial_point(), p );
@@ -74,7 +74,7 @@ Solution * GRASP::random_greedy( int seed ){
     bool is_added = false;
     int i, n_paths = this->instance->get_number_of_paths();
     Solution * sol = new Solution( n_paths );
-    vector< Point * > vertices = this->instance->get_points();
+    vector< Vertice * > vertices = this->instance->get_points();
     
     for( i = 0; i < n_paths; i++ ){
         sol->add_point( i, this->instance->get_initial_point(), true );
@@ -86,7 +86,7 @@ Solution * GRASP::random_greedy( int seed ){
         for( i = 0; i < n_paths; i++ ){
             int selected = select_point( calcule_probability( vertices ) );
             if( selected == -1 ) break;
-            Point * selected_vertice = vertices[ selected ]; 
+            Vertice * selected_vertice = vertices[ selected ]; 
             if( sol->add_point( i, selected_vertice, false ) == 1 ){
                 is_added = true;
                 vertices.erase( vertices.begin() + selected );

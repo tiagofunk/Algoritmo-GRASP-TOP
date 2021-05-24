@@ -4,7 +4,7 @@
 #include <string>
 
 #include "Instance.h"
-#include "Point.h"
+#include "Vertice.h"
 
 class InstanceReader{
 private:
