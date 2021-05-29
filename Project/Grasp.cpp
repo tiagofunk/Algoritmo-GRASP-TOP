@@ -4,7 +4,8 @@
 
 #include <iostream>
 
-GRASP::GRASP( Instance * instance ){
+GRASP::GRASP( double alfa, Instance * instance ){
+    this->alfa = alfa;
     this->instance = instance;
 }
 
@@ -75,13 +76,19 @@ int GRASP::select_point( vector< GRASP::score_point > sp ){
     if( sp.empty() ) return -1;
 
     int selected_position = 0;
-    double r = (double) rand() / RAND_MAX;
-    double sum = 0.0;
+    double r1 = (double) rand() / RAND_MAX;
+    double r2 = (double) rand() / RAND_MAX;
+    double sum = 0.0, max = 0.0;
+    bool is_greedy = r2 >= this->alfa;
     for( unsigned int i = 0; i < sp.size(); i++ ){
         sum += sp[ i ].probability;
-        if( r < sum ){
+        if( !is_greedy && r1 < sum ){
             selected_position = i;
             break;
+        }
+        if( is_greedy && max < sp[ i ].probability ){
+            max = sp[ i ].probability;
+            selected_position = i;
         }
     }
     return selected_position;

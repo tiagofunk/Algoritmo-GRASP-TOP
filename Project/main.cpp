@@ -12,7 +12,7 @@ int main( int argc, char * argv[] ){
     Instance i = ir.read();
     //cout << i.to_string() << endl;
 
-    GRASP g( &i );
+    GRASP g( 0.0, &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     cout << s->to_string() << endl;

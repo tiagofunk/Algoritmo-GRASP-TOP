@@ -15,6 +15,7 @@ class GRASP{
             double probability;
         } score_point;
 
+        double alfa;
         Instance * instance;
 
         Solution * random_greedy( int seed );
@@ -27,7 +28,7 @@ class GRASP{
         int select_point( vector< score_point > sp );
 
     public:
-        GRASP( Instance * instance );
+        GRASP( double alfa, Instance * instance );
         Solution * execute();
         
 };
