@@ -11,7 +11,7 @@ Solution::Solution( int number_paths, double time_per_path ){
 }
 
 double Solution::update_reward_in_add( int path, int position, Vertice * v ){
-    return this->path_rewards[ path ] + v->get_score();
+    return this->path_rewards[ path ] + v->get_reward();
 }
 
 double Solution::update_time_in_add( int path, int position, Vertice * v ){

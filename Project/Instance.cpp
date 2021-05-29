@@ -35,7 +35,7 @@ double Instance::get_time_per_path(){
 }
 
 void Instance::add_point( Vertice * p ){
-    if( p->get_score() == 0 ){
+    if( p->get_reward() == 0 ){
         this->number_of_null_vertices++;
 
         if( this->initial == NULL ){

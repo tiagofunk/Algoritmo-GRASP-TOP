@@ -7,15 +7,15 @@ class Vertice{
 private:
     double x;
     double y;
-    double score;
+    double reward;
 
 public:
-    Vertice(double x, double y, int score );
+    Vertice(double x, double y, int reward );
     ~Vertice();
 
     double get_x();
     double get_y();
-    double get_score();
+    double get_reward();
 
     std::string to_string();
     

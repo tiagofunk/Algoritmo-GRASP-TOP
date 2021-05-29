@@ -29,7 +29,7 @@ Solution * GRASP::execute(){
 vector< double > GRASP::get_scores( vector< Vertice * > vertices ){
     vector< double > scores;
     for( unsigned int i = 0; i < vertices.size(); i++ ){
-        scores.push_back( vertices[ i ]->get_score() );
+        scores.push_back( vertices[ i ]->get_reward() );
     }
     return scores;
 }
