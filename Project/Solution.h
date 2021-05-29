@@ -21,9 +21,6 @@ class Solution{
 
         double update_time_in_add( int path, int position, Vertice * v );
 
-        // void calculate_total_rewards();
-        // void calculate_time_per_paths();
-
     public:
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );

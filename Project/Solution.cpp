@@ -21,27 +21,6 @@ double Solution::update_time_in_add( int path, int position, Vertice * v ){
     return this->path_times[ path ] - d1 + d2 + d3;
 }
 
-// void Solution::calculate_total_rewards(){
-//     this->total_rewards = 0.0;
-//     for (size_t i = 0; i < this->paths.size(); i++){
-//         this->path_rewards[ i ] = 0.0;
-//         for (size_t j = 0; j < this->paths[ i ].size(); j++){
-//             this->path_rewards[ i ] += this->paths[ i ][ j ]->get_score();
-//         }
-//         this->total_rewards += this->path_rewards[ i ];
-//     }
-// }
-
-// void Solution::calculate_time_per_paths(){
-//     for (size_t i = 0; i < this->paths.size(); i++){
-//         this->path_times[ i ] = 0.0;
-//         for (size_t j = 1; j < this->paths[ i ].size(); j++){
-//             this->path_times[ i ] += calculate_distance( this->paths[ i ][ j-1 ], this->paths[ i ][ j ] );
-//         }
-        
-//     }
-// }
-
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
     if( path < 0 || path >= this->paths.size() ){
         return false;
