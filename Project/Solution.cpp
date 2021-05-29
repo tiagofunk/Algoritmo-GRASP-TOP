@@ -42,8 +42,8 @@ bool Solution::add_vertice( int path, Vertice * v ){
 
     if( this->time_per_path > n_time ){
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->path_rewards[ path ] = n_reward;
         this->total_rewards += n_reward - this->path_rewards[ path ];
+        this->path_rewards[ path ] = n_reward;
         this->path_times[ path ] = n_time;
         return true;
     }
