@@ -4,7 +4,8 @@
 
 #include <iostream>
 
-GRASP::GRASP( double alfa, LocalSearch * local_search, Instance * instance ){
+GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, Instance * instance ){
+    this->seed = seed;
     this->alfa = alfa;
     this->instance = instance;
     this->local_search = local_search;
@@ -14,7 +15,7 @@ Solution * GRASP::execute(){
     Solution * s = 0;
 
     for (int i = 0; i < 3000; i++){
-        Solution * actual = this->random_greedy( get_seed() );
+        Solution * actual = this->random_greedy( this->seed );
         actual = this->local_search->execute( actual );
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
             s = actual;

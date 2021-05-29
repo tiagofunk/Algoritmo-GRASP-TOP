@@ -9,11 +9,16 @@
 using namespace std;
 
 int main( int argc, char * argv[] ){
-    InstanceReader ir( argv[ 1 ] );
-    Instance i = ir.read();
-    //cout << i.to_string() << endl;
+    if( argc != 3 ){
+        cerr << "Exemplo de utilização do programa: ./TOP_GRASP_TS_PR <seed> <file>" << endl;
+        return 1;
+    }
 
-    GRASP g( 0.0, new TabuSearch(), &i );
+    int seed = stoi( argv[ 1 ] );
+    InstanceReader ir( argv[ 2 ] );
+    Instance i = ir.read();
+
+    GRASP g( seed, 0.0, new TabuSearch(), &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     cout << s->to_string() << endl;

@@ -16,6 +16,7 @@ class GRASP{
             double probability;
         } score_point;
 
+        int seed;
         double alfa;
         Instance * instance;
         LocalSearch * local_search;
@@ -29,7 +30,7 @@ class GRASP{
         int select_point( vector< score_point > sp );
 
     public:
-        GRASP( double alfa, LocalSearch * local_search, Instance * instance );
+        GRASP( int seed, double alfa, LocalSearch * local_search, Instance * instance );
         Solution * execute();
         
 };

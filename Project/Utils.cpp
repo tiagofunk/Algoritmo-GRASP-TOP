@@ -2,13 +2,6 @@
 
 #include <math.h>
 
-int get_seed(){
-    //int seed = time( 0 );
-    int seed = 1234;
-    srand( seed );
-    return rand();
-}
-
 double calculate_mean( vector< double > values, int size ){
     double sum = 0.0;
     for( int i = 0; i < size; i++ ){
