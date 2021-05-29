@@ -6,53 +6,54 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
     this->path_times.resize( number_paths );
-    this->is_calculate_rewards = false;
-    this->is_calculate_time_per_path = false;
     this->time_per_path = time_per_path;
 }
 
-void Solution::calculate_total_rewards(){
-    if( this->is_calculate_rewards ) return;
-    this->total_rewards = 0.0;
-    for (size_t i = 0; i < this->paths.size(); i++){
-        this->path_rewards[ i ] = 0.0;
-        for (size_t j = 0; j < this->paths[ i ].size(); j++){
-            this->path_rewards[ i ] += this->paths[ i ][ j ]->get_score();
-        }
-        this->total_rewards += this->path_rewards[ i ];
-    }
-    this->is_calculate_rewards = true;
+double Solution::update_reward_in_add( int path, int position, Vertice * v ){
+    double reward = v->get_score();
+    double result = this->path_rewards[ path ];
+    result += reward;
+    return result;
 }
 
-void Solution::calculate_time_per_paths(){
-    if( this->is_calculate_time_per_path ) return;
-    for (size_t i = 0; i < this->paths.size(); i++){
-        this->path_times[ i ] = 0.0;
-        for (size_t j = 1; j < this->paths[ i ].size(); j++){
-            this->path_times[ i ] += calculate_distance( this->paths[ i ][ j-1 ], this->paths[ i ][ j ] );
-        }
+double Solution::update_time_in_add( int path, int position, Vertice * v ){
+    double d1 = calculate_distance( this->paths[ path ][ position-1 ], this->paths[ path ][ position ] );
+    double d2 = calculate_distance( this->paths[ path ][ position-1 ], v );
+    double d3 = calculate_distance( this->paths[ path ][ position ], v );
+    double result = this->path_times[ path ];
+    result += d2 + d3;
+    result -= d1;
+    return result;
+}
+
+// void Solution::calculate_total_rewards(){
+//     this->total_rewards = 0.0;
+//     for (size_t i = 0; i < this->paths.size(); i++){
+//         this->path_rewards[ i ] = 0.0;
+//         for (size_t j = 0; j < this->paths[ i ].size(); j++){
+//             this->path_rewards[ i ] += this->paths[ i ][ j ]->get_score();
+//         }
+//         this->total_rewards += this->path_rewards[ i ];
+//     }
+// }
+
+// void Solution::calculate_time_per_paths(){
+//     for (size_t i = 0; i < this->paths.size(); i++){
+//         this->path_times[ i ] = 0.0;
+//         for (size_t j = 1; j < this->paths[ i ].size(); j++){
+//             this->path_times[ i ] += calculate_distance( this->paths[ i ][ j-1 ], this->paths[ i ][ j ] );
+//         }
         
-    }
-    this->is_calculate_time_per_path = true;
-}
+//     }
+// }
 
-bool Solution::add_initial_vertice( int path, Vertice * v ){
+bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
     if( path < 0 || path >= this->paths.size() ){
         return false;
     }
-    this->is_calculate_rewards = false;
-    this->is_calculate_time_per_path = false;
-    this->paths[ path ].push_back( v );
-    return true;
-}
-
-bool Solution::add_final_vertice( int path, Vertice * v ){
-    if( path < 0 || path >= this->paths.size() ){
-        return false;
-    }
-    this->is_calculate_rewards = false;
-    this->is_calculate_time_per_path = false;
-    this->paths[ path ].push_back( v );
+    this->paths[ path ].push_back( initial );
+    this->paths[ path ].push_back( final );
+    this->path_times[ path ] = calculate_distance( initial, final );
     return true;
 }
 
@@ -60,19 +61,19 @@ bool Solution::add_vertice( int path, Vertice * v ){
     if( path < 0 || path >= this->paths.size() ){
         return false;
     }
-    this->is_calculate_rewards = false;
-    this->is_calculate_time_per_path = false;
+
     int position = this->paths[ path ].size() - 1;
-    this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-    calculate_time_per_paths();
-    if( this->path_times[ path ] > this->time_per_path ){
-        this->paths[ path ].erase( this->paths[ path ].begin() + position );
-        return false;
+    double n_reward = update_reward_in_add( path, position, v );
+    double n_time = update_time_in_add( path, position, v );
+
+    if( this->time_per_path > n_time ){
+        this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
+        this->path_rewards[ path ] = n_reward;
+        this->path_times[ path ] = n_time;
+        return true;
     }
-    this->is_calculate_rewards = false;
-    this->is_calculate_time_per_path = false;
     
-    return true;
+    return false;
 }
 
 Vertice * Solution::get_last_path_vertice_in_path( int path ){
@@ -84,13 +85,10 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
 }
 
 double Solution::get_total_rewards(){
-    calculate_total_rewards();
     return this->total_rewards;
 }
 
 string Solution::to_string(){
-    calculate_total_rewards();
-    calculate_time_per_paths();
     string s;
     s = "number paths: " + std::to_string(this->paths.size()) + "\n";
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";

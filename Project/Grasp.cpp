@@ -103,8 +103,11 @@ Solution * GRASP::random_greedy( int seed ){
     vector< Vertice * > vertices = this->instance->get_path_vertices();
     
     for( i = 0; i < n_paths; i++ ){
-        sol->add_initial_vertice( i, this->instance->get_initial_vertice() );
-        sol->add_final_vertice( i, this->instance->get_final_vertice() );
+        sol->add_initial_and_final_vertice(
+            i,
+            this->instance->get_initial_vertice(),
+            this->instance->get_final_vertice()
+        );
     }
 
     do{
