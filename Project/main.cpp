@@ -18,7 +18,7 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( argv[ 2 ] );
     Instance i = ir.read();
 
-    GRASP g( seed, 0.0, new TabuSearch(), &i );
+    GRASP g( seed, 1.0, new TabuSearch(), &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     cout << s->to_string() << endl;

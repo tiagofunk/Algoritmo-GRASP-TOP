@@ -18,8 +18,9 @@ Solution * GRASP::execute(){
         Solution * actual = this->random_greedy( this->seed );
         actual = this->local_search->execute( actual );
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
-            s = actual;
+            s = new Solution( *actual );
         }
+        delete actual;
     }
 
     return s;
@@ -88,8 +89,7 @@ int GRASP::select_point( vector< GRASP::score_point > sp ){
         if( !is_greedy && r1 < sum ){
             selected_position = i;
             break;
-        }
-        if( is_greedy && max < sp[ i ].probability ){
+        }else if( is_greedy && max < sp[ i ].probability ){
             max = sp[ i ].probability;
             selected_position = i;
         }
