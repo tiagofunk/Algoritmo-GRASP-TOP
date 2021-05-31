@@ -5,13 +5,15 @@
 
 class LocalSearchWithOperators: public LocalSearch {
     private:
-        Solution * generate_neighborhood_and_select( Solution * s, vector< Vertice * > vertices );
+        vector< Vertice * > unused_vertices;
+        Solution * swap_between_path_and_unused_vertices( Solution * s );
 
     public:
         LocalSearchWithOperators();
         ~LocalSearchWithOperators();
 
         Solution * execute( Solution * sol, vector< Vertice * > vertices );
+        vector< Vertice * > get_unused_vertices();
 };
 
 #endif

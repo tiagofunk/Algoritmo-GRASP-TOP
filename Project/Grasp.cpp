@@ -19,6 +19,7 @@ Solution * GRASP::execute(){
         this->unused_vertices.clear();
         Solution * actual = this->random_greedy();
         actual = this->local_search->execute( actual, this->unused_vertices );
+        this->unused_vertices = this->local_search->get_unused_vertices();
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
             s = new Solution( *actual );
         }
