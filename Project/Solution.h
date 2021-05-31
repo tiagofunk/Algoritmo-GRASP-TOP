@@ -31,6 +31,7 @@ class Solution{
         bool rewrite_vertice( int path, int position, Vertice * v );
 
         Vertice * get_last_path_vertice_in_path( int path );
+        Vertice * get_vertice_in_path( int path, int position );
         double get_total_rewards();
 
         int get_number_paths();

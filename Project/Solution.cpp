@@ -96,6 +96,16 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
     return this->paths[ path ][ last_position ];
 }
 
+Vertice * Solution::get_vertice_in_path( int path, int position ){
+    if( path < 0 || (unsigned int) path >= this->paths.size() ){
+        return 0;
+    }
+    if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
+        return 0;
+    }
+    return this->paths[ path ][ position ];
+}
+
 double Solution::get_total_rewards(){
     return this->total_rewards;
 }
