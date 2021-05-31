@@ -13,9 +13,10 @@ GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, Instance * inst
 
 Solution * GRASP::execute(){
     Solution * s = 0;
+    srand( this->seed );
 
     for (int i = 0; i < 3000; i++){
-        Solution * actual = this->random_greedy( this->seed );
+        Solution * actual = this->random_greedy();
         actual = this->local_search->execute( actual );
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
             s = new Solution( *actual );
@@ -97,7 +98,7 @@ int GRASP::select_point( vector< GRASP::score_point > sp ){
     return selected_position;
 }
 
-Solution * GRASP::random_greedy( int seed ){
+Solution * GRASP::random_greedy(){
     bool is_added = false;
     int i, n_paths = this->instance->get_number_of_paths();
     Solution * sol = new Solution( n_paths, this->instance->get_time_per_path() );

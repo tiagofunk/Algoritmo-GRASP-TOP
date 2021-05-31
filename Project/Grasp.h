@@ -21,7 +21,7 @@ class GRASP{
         Instance * instance;
         LocalSearch * local_search;
 
-        Solution * random_greedy( int seed );
+        Solution * random_greedy();
         Solution path_relinking( Solution start, Solution end );
 
         vector< double > get_scores( vector< Vertice * > vertices );

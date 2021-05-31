@@ -10,7 +10,7 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->total_rewards = 0.0;
 }
 
-void Solution::update_reward_in_add( int path, int position, Vertice * v ){
+void Solution::update_reward_in_add( int path, Vertice * v ){
     this->path_rewards[ path ] += v->get_reward();
     this->total_rewards += v->get_reward();
 }
@@ -23,7 +23,7 @@ double Solution::calculate_time_in_add( int path, int position, Vertice * v ){
 }
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
-    if( path < 0 || path >= this->paths.size() ){
+    if( path < 0 || (unsigned int) path >= this->paths.size() ){
         return false;
     }
     this->paths[ path ].push_back( initial );
@@ -33,7 +33,7 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
 }
 
 bool Solution::add_vertice( int path, Vertice * v ){
-    if( path < 0 || path >= this->paths.size() ){
+    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
 
@@ -42,7 +42,7 @@ bool Solution::add_vertice( int path, Vertice * v ){
 
     if( this->time_per_path > n_time ){
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        update_reward_in_add( path, position, v );
+        update_reward_in_add( path, v );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -51,7 +51,7 @@ bool Solution::add_vertice( int path, Vertice * v ){
 }
 
 Vertice * Solution::get_last_path_vertice_in_path( int path ){
-    if( path < 0 || path >= this->paths.size() ){
+    if( path < 0 || (unsigned int) path >= this->paths.size() ){
         return 0;
     }
     int last_position = this->paths[ path ].size() - 1;
@@ -67,9 +67,9 @@ string Solution::to_string(){
     s = "number paths: " + std::to_string(this->paths.size()) + "\n";
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
     s += "paths:\n";
-    for (int i = 0; i < this->paths.size(); i++){
+    for (unsigned int i = 0; i < this->paths.size(); i++){
         s += "size: " + std::to_string( this->paths[ i ].size() ) + "\n" ;
-        for (int j = 0; j < this->paths[ i ].size(); j++){
+        for (unsigned int j = 0; j < this->paths[ i ].size(); j++){
             s += this->paths[ i ][ j ]->to_string() + "\n";
         }
         s += "reward: " + std::to_string( this->path_rewards[ i ])+"\n";
