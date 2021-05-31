@@ -17,9 +17,9 @@ class Solution{
 
         double time_per_path;
 
-        double update_reward_in_add( int path, int position, Vertice * v );
+        void update_reward_in_add( int path, int position, Vertice * v );
 
-        double update_time_in_add( int path, int position, Vertice * v );
+        double calculate_time_in_add( int path, int position, Vertice * v );
 
     public:
         Solution( int number_paths, double time_per_path );
