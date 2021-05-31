@@ -2,7 +2,7 @@
 #include "InstanceReader.h"
 #include "Instance.h"
 #include "Grasp.h"
-#include "TabuSearch.h"
+#include "LocalSearchWithOperators.h"
 
 #include <iostream>
 
@@ -19,7 +19,7 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( argv[ 3 ] );
     Instance i = ir.read();
 
-    GRASP g( seed, alfa, new TabuSearch(), &i );
+    GRASP g( seed, alfa, new LocalSearchWithOperators(), &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     cout << s->to_string() << endl;

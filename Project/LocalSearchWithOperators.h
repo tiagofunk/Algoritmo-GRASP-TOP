@@ -1,18 +1,15 @@
-#ifndef TABU_SEARCH_H
-#define TABU_SEARCH_H
+#ifndef LOCAL_SEARCH_WITH_OPERATORS_H
+#define LOCAL_SEARCH_WITH_OPERATORS_H
 
 #include "LocalSearch.h"
-#include "TabuMoviment.h"
 
-class TabuSearch: public LocalSearch {
+class LocalSearchWithOperators: public LocalSearch {
     private:
-        vector< TabuMoviment > tabu_list;
-
         Solution * generate_neighborhood_and_select( Solution * s, vector< Vertice * > vertices );
 
     public:
-        TabuSearch();
-        ~TabuSearch();
+        LocalSearchWithOperators();
+        ~LocalSearchWithOperators();
 
         Solution * execute( Solution * sol, vector< Vertice * > vertices );
 };
