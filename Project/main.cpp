@@ -3,6 +3,7 @@
 #include "Instance.h"
 #include "Grasp.h"
 #include "LocalSearchWithOperators.h"
+#include "PathRelinkingOperator.h"
 
 #include <iostream>
 
@@ -19,7 +20,7 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( argv[ 3 ] );
     Instance i = ir.read();
 
-    GRASP g( seed, alfa, new LocalSearchWithOperators(), &i );
+    GRASP g( seed, alfa, new LocalSearchWithOperators(), new PathRelinkingOperator(), &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     cout << s->to_string() << endl;

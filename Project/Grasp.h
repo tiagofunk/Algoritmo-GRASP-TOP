@@ -4,6 +4,7 @@
 #include "Solution.h"
 #include "Instance.h"
 #include "LocalSearch.h"
+#include "PathRelinking.h"
 
 class GRASP{
     private:
@@ -20,11 +21,11 @@ class GRASP{
         double alfa;
         Instance * instance;
         LocalSearch * local_search;
+        PathRelinking * path_relinking;
 
         vector< Vertice * > unused_vertices;
 
         Solution * random_greedy();
-        Solution path_relinking( Solution start, Solution end );
 
         vector< double > get_scores( vector< Vertice * > vertices );
 
@@ -32,7 +33,7 @@ class GRASP{
         int select_point( vector< score_point > sp );
 
     public:
-        GRASP( int seed, double alfa, LocalSearch * local_search, Instance * instance );
+        GRASP( int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance );
         Solution * execute();
         
 };

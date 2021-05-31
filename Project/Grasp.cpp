@@ -4,11 +4,12 @@
 
 #include <iostream>
 
-GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, Instance * instance ){
+GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
     this->seed = seed;
     this->alfa = alfa;
     this->instance = instance;
     this->local_search = local_search;
+    this->path_relinking = path_relinking;
 }
 
 Solution * GRASP::execute(){
@@ -18,8 +19,12 @@ Solution * GRASP::execute(){
     for (int i = 0; i < 3000; i++){
         this->unused_vertices.clear();
         Solution * actual = this->random_greedy();
+
         actual = this->local_search->execute( actual, this->unused_vertices );
         this->unused_vertices = this->local_search->get_unused_vertices();
+
+        actual = this->path_relinking->execute( s, actual );
+
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
             s = new Solution( *actual );
         }
@@ -128,8 +133,4 @@ Solution * GRASP::random_greedy(){
     }while( is_added );
 
     return sol;
-}
-
-Solution GRASP::path_relinking( Solution start, Solution end ){
-    return start;
 }
