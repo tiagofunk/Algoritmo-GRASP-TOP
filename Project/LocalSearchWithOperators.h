@@ -6,6 +6,8 @@
 class LocalSearchWithOperators: public LocalSearch {
     private:
         vector< Vertice * > unused_vertices;
+
+        Solution * add_vertice_in_path( Solution * s );
         Solution * swap_between_path_and_unused_vertices( Solution * s );
 
     public:

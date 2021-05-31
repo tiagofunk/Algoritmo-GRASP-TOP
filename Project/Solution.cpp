@@ -71,6 +71,26 @@ bool Solution::add_vertice( int path, Vertice * v ){
     return false;
 }
 
+bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
+    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
+        return false;
+    }
+    if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
+        return 0;
+    }
+    
+    double n_time = calculate_time_in_add( path, position, v );
+
+    if( this->time_per_path > n_time ){
+        update_reward_in_add( path, v );
+        this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
+        this->path_times[ path ] = n_time;
+        return true;
+    }
+    
+    return false;
+}
+
 bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
