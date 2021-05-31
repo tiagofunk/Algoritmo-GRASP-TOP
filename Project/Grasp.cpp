@@ -16,8 +16,9 @@ Solution * GRASP::execute(){
     srand( this->seed );
 
     for (int i = 0; i < 3000; i++){
+        this->unused_vertices.clear();
         Solution * actual = this->random_greedy();
-        actual = this->local_search->execute( actual );
+        actual = this->local_search->execute( actual, this->unused_vertices );
         if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
             s = new Solution( *actual );
         }
@@ -102,7 +103,7 @@ Solution * GRASP::random_greedy(){
     bool is_added = false;
     int i, n_paths = this->instance->get_number_of_paths();
     Solution * sol = new Solution( n_paths, this->instance->get_time_per_path() );
-    vector< Vertice * > vertices = this->instance->get_path_vertices();
+    this->unused_vertices = this->instance->get_path_vertices();
     
     for( i = 0; i < n_paths; i++ ){
         sol->add_initial_and_final_vertice(
@@ -115,12 +116,12 @@ Solution * GRASP::random_greedy(){
     do{
         is_added = false;
         for( i = 0; i < n_paths; i++ ){
-            int selected = select_point( calcule_probability( sol->get_last_path_vertice_in_path( i ), vertices ) );
+            int selected = select_point( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
             if( selected == -1 ) break;
-            Vertice * selected_vertice = vertices[ selected ]; 
+            Vertice * selected_vertice = this->unused_vertices[ selected ]; 
             if( sol->add_vertice( i, selected_vertice ) == true ){
                 is_added = true;
-                vertices.erase( vertices.begin() + selected );
+                this->unused_vertices.erase( this->unused_vertices.begin() + selected );
             }
         }
     }while( is_added );

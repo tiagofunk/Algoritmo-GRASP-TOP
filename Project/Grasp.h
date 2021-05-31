@@ -21,6 +21,8 @@ class GRASP{
         Instance * instance;
         LocalSearch * local_search;
 
+        vector< Vertice * > unused_vertices;
+
         Solution * random_greedy();
         Solution path_relinking( Solution start, Solution end );
 

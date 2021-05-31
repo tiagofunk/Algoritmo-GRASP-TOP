@@ -15,11 +15,32 @@ void Solution::update_reward_in_add( int path, Vertice * v ){
     this->total_rewards += v->get_reward();
 }
 
+void Solution::update_reward_in_rewrite( int path, int position, Vertice * v ){
+    Vertice * to_remove = this->paths[ path ][ position ];
+    this->path_rewards[ path ] -= to_remove->get_reward();
+    this->total_rewards -= to_remove->get_reward();
+    this->path_rewards[ path ] += v->get_reward();
+    this->total_rewards += v->get_reward();
+}
+
 double Solution::calculate_time_in_add( int path, int position, Vertice * v ){
     double d1 = calculate_distance( this->paths[ path ][ position-1 ], this->paths[ path ][ position ] );
     double d2 = calculate_distance( this->paths[ path ][ position-1 ], v );
     double d3 = calculate_distance( this->paths[ path ][ position ], v );
     return this->path_times[ path ] - d1 + d2 + d3;
+}
+
+double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v ){
+    Vertice * previous = this->paths[ path ][ position-1 ];
+    Vertice * middle = this->paths[ path ][ position ];
+    Vertice * next = this->paths[ path ][ position+1 ];
+    double old_distance_to_previous = calculate_distance( previous, middle );
+    double old_distance_to_next = calculate_distance( middle, next );
+    double new_distance_to_previous = calculate_distance( previous, v );
+    double new_distance_to_next = calculate_distance( v, next );
+    return this->path_times[ path ] 
+        - old_distance_to_previous - old_distance_to_next
+        + new_distance_to_previous + new_distance_to_next;
 }
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
@@ -41,8 +62,25 @@ bool Solution::add_vertice( int path, Vertice * v ){
     double n_time = calculate_time_in_add( path, position, v );
 
     if( this->time_per_path > n_time ){
-        this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
         update_reward_in_add( path, v );
+        this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
+        this->path_times[ path ] = n_time;
+        return true;
+    }
+    
+    return false;
+}
+
+bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
+    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
+        return false;
+    }
+
+    double n_time = calculate_time_in_rewrite( path, position, v );
+
+    if( this->time_per_path > n_time ){
+        update_reward_in_rewrite( path, position, v );
+        this->paths[ path ][ position ] = v;
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -60,6 +98,17 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
 
 double Solution::get_total_rewards(){
     return this->total_rewards;
+}
+
+int Solution::get_number_paths(){
+    return this->paths.size();
+}
+
+int Solution::get_length_of_path( int path ){
+    if( path < 0 || (unsigned int) path >= this->paths.size() ){
+        return -1;
+    }
+    return this->paths[ path ].size();
 }
 
 string Solution::to_string(){
