@@ -5,8 +5,9 @@
 
 class PathRelinkingOperator: public PathRelinking{
     private:
-        
+
     public:
+        PathRelinkingOperator();
         Solution * execute( Solution * start, Solution * end );
 };
 

@@ -13,7 +13,7 @@ GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, PathRelinking *
 }
 
 Solution * GRASP::execute(){
-    Solution * s = 0;
+    Solution * best = 0;
     srand( this->seed );
 
     for (int i = 0; i < 3000; i++){
@@ -23,15 +23,15 @@ Solution * GRASP::execute(){
         actual = this->local_search->execute( actual, this->unused_vertices );
         this->unused_vertices = this->local_search->get_unused_vertices();
 
-        actual = this->path_relinking->execute( s, actual );
+        actual = this->path_relinking->execute( actual, best );
 
-        if( s == NULL || actual->get_total_rewards() > s->get_total_rewards() ){
-            s = new Solution( *actual );
+        if( best == NULL || actual->get_total_rewards() > best->get_total_rewards() ){
+            best = new Solution( *actual );
         }
         delete actual;
     }
 
-    return s;
+    return best;
 }
 
 vector< double > GRASP::get_scores( vector< Vertice * > vertices ){
