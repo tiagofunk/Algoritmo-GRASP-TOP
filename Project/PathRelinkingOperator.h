@@ -5,9 +5,10 @@
 
 class PathRelinkingOperator: public PathRelinking{
     private:
+        bool start_to_end;
 
     public:
-        PathRelinkingOperator();
+        PathRelinkingOperator( bool start_to_end );
         Solution * execute( Solution * start, Solution * end );
 };
 
