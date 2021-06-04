@@ -43,6 +43,17 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
         + new_distance_to_previous + new_distance_to_next;
 }
 
+bool Solution::check_if_vertice_not_used( Vertice * v ){
+    for (unsigned int i = 0; i < this->paths.size(); i++){
+        for( unsigned int j = 1; j < this->paths[ i ].size()-1; j++ ){
+            if( this->paths[ i ][ j ]->equals( *v ) ){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
     if( path < 0 || (unsigned int) path >= this->paths.size() ){
         return false;
@@ -55,6 +66,9 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
 
 bool Solution::add_vertice( int path, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
+        return false;
+    }
+    if( this->check_if_vertice_not_used( v ) ){
         return false;
     }
 
@@ -78,6 +92,9 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
     if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
         return 0;
     }
+    if( this->check_if_vertice_not_used( v ) ){
+        return false;
+    }
     
     double n_time = calculate_time_in_add( path, position, v );
 
@@ -93,6 +110,9 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
 
 bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
+        return false;
+    }
+    if( this->check_if_vertice_not_used( v ) ){
         return false;
     }
 

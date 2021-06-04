@@ -17,6 +17,8 @@ public:
     double get_y();
     double get_reward();
 
+    bool equals( Vertice &v );
+
     std::string to_string();
     
 };

@@ -21,10 +21,14 @@ double Vertice::get_reward(){
     return this->reward;
 }
 
+bool Vertice::equals( Vertice &v ){
+    return this->x == v.x && this->y == v.y;
+}
+
 std::string Vertice::to_string(){
     std::string s;
     s = "x: " + std::to_string( this->x );
     s += ", y: " + std::to_string( this->y );
-    s += ", score: " + std::to_string( this->reward );
+    s += ", reward: " + std::to_string( this->reward );
     return s;
 }

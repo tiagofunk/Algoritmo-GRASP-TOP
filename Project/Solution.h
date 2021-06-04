@@ -23,6 +23,8 @@ class Solution{
         double calculate_time_in_add( int path, int position, Vertice * v );
         double calculate_time_in_rewrite( int path, int position, Vertice * v );
 
+        bool check_if_vertice_not_used( Vertice * v );
+
     public:
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
