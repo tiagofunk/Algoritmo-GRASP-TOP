@@ -17,6 +17,7 @@ class GRASP{
             double probability;
         } score_point;
 
+        int iterations;
         int seed;
         double alfa;
         Instance * instance;
@@ -33,7 +34,7 @@ class GRASP{
         int select_point( vector< score_point > sp );
 
     public:
-        GRASP( int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance );
+        GRASP( int iterations, int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance );
         Solution * execute();
         
 };

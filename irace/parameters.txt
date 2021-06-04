@@ -1,4 +1,4 @@
 # name					switch		     			type		values							[conditions (using R syntax)]
 alpha					"--alpha"					i			(0.0,1.0)
 iterations				"--iterations"				i			(100,5000)
-path_relinking			"path_relinking"			c			(y,n)
+path					"--path"					c			(y,n)

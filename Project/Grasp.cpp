@@ -4,7 +4,8 @@
 
 #include <iostream>
 
-GRASP::GRASP( int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
+GRASP::GRASP( int iterations, int seed, double alfa, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
+    this->iterations = iterations;
     this->seed = seed;
     this->alfa = alfa;
     this->instance = instance;
@@ -16,7 +17,7 @@ Solution * GRASP::execute(){
     Solution * best = 0;
     srand( this->seed );
 
-    for (int i = 0; i < 3000; i++){
+    for (int i = 0; i < this->iterations; i++){
         this->unused_vertices.clear();
         Solution * actual = this->random_greedy();
 
