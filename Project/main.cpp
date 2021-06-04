@@ -12,7 +12,7 @@ using namespace std;
 
 int main( int argc, char * argv[] ){
 
-    int seed = stoi( argv[ 1 ] );
+    int seed = stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stoi( arg.getValue("--alpha") );
