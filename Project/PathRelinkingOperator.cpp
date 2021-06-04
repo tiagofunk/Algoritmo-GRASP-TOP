@@ -19,7 +19,7 @@ Solution * PathRelinkingOperator::execute( Solution * start, Solution * end ){
     }else{
         actual = new Solution( *end );
         best = new Solution( *end );
-        destiny = new Solution( *destiny );
+        destiny = new Solution( *start );
     }
 
     for( int i = 0; i < destiny->get_number_paths(); i++){
