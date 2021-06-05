@@ -1,0 +1,2 @@
+export IRACE_HOME=/home/tiago/R/x86_64-pc-linux-gnu-library/3.4/irace
+export PATH=${IRACE_HOME}/bin/:$PATH

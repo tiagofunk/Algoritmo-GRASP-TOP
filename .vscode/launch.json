@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/Project/TOP_GRASP_TS_PR",
-            "args": ["1234", "1", "1", "${workspaceRoot}/Project/a.txt", "--alpha", "1.0", "--iterations", "3000"],
+            "args": ["1234", "1", "1", "${workspaceRoot}/Project/a.txt", "--alpha", "0.99", "--iterations", "3000"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
