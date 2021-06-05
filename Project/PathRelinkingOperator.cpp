@@ -26,16 +26,16 @@ Solution * PathRelinkingOperator::execute( Solution * start, Solution * end ){
         for( int j = 1; j < destiny->get_length_of_path( i )-1; j++){
             if( j < actual->get_length_of_path( i )-1 ){
                 if( actual->rewrite_vertice( i, j, destiny->get_vertice_in_path( i, j ) ) ){
-                    if( destiny->get_total_rewards() < actual->get_total_rewards() ){
-                        delete destiny;
-                        destiny = new Solution( *actual );
+                    if( best->get_total_rewards() < actual->get_total_rewards() ){
+                        delete best;
+                        best = new Solution( *actual );
                     }
                 }
             }else{
                 if( actual->add_vertice_in_position( i, j, destiny->get_vertice_in_path( i, j ) ) ){
-                    if( destiny->get_total_rewards() < actual->get_total_rewards() ){
-                        delete destiny;
-                        destiny = new Solution( *actual );
+                    if( best->get_total_rewards() < actual->get_total_rewards() ){
+                        delete best;
+                        best = new Solution( *actual );
                     }
                 }
             }
