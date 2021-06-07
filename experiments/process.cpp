@@ -37,17 +37,18 @@ vector< instance_value > add_value_on_instance( vector< instance_value > instanc
 
 vector< instance_value > read_file( string file ){
     string instance_name;
-    int value;
+    int result, time;
     vector< instance_value > instances;
-    
+
     ifstream reader( file.c_str(), ios::in );
     if( !reader ){
         throw runtime_error( "Erro on open file: " + file );
     }
 
-    while( reader >> instance_name >> value ){
-        //cout << "instance_name: " << instance_name << " value: " << value <<endl;
-        instances = add_value_on_instance( instances, instance_name, value );
+    while( !reader.eof() ){
+        reader >> instance_name >> result >> time;
+        cout << instance_name << " " << result << " " << time << endl;
+        instances = add_value_on_instance( instances, instance_name, result );
     }
 
     reader.close();
