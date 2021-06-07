@@ -2,6 +2,7 @@
 #include "InstanceReader.h"
 #include "Instance.h"
 #include "Grasp.h"
+#include "RandomGreedyGenerationWithScoreZ.h"
 #include "LocalSearchWithOperators.h"
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
@@ -22,7 +23,14 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( file );
     Instance i = ir.read();
 
-    GRASP g( iterations, seed, alpha, new LocalSearchWithOperators(), new PathRelinkingOperator( path ), &i );
+    GRASP g(
+        iterations,
+        seed,
+        alpha,
+        new RandomGreedyGenerationWithScoreZ( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
+        new LocalSearchWithOperators(),
+        new PathRelinkingOperator( path ), 
+        &i );
     Solution * s = g.execute();
     cout << s->get_total_rewards() << endl;
     //cout << s->to_string() << endl;
