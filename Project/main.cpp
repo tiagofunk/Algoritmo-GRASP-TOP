@@ -8,10 +8,14 @@
 #include "ArgumentReader.h"
 
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
 int main( int argc, char * argv[] ){
+
+    clock_t initialTime = 0, finalTime = 0;
+	initialTime = clock();
 
     int seed = time( 0 );//stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
@@ -32,7 +36,10 @@ int main( int argc, char * argv[] ){
         new PathRelinkingOperator( path ), 
         &i );
     Solution * s = g.execute();
-    cout << s->get_total_rewards() << endl;
+
+    finalTime = clock();
+	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
+    cout << s->get_total_rewards() << endl << time << endl;
     //cout << s->to_string() << endl;
     return 0;
 }
