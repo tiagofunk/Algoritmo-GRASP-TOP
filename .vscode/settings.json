@@ -5,6 +5,7 @@
         "cstdlib": "cpp",
         "algorithm": "cpp",
         "iostream": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stdexcept": "cpp"
     }
 }

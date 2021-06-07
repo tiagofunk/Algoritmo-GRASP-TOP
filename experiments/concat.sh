@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo -n "" > log.txt
 cat log1.txt >> log.txt
 cat log2.txt >> log.txt
 cat log3.txt >> log.txt

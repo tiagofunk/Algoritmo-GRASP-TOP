@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "" > log1.txt
-echo "" > log2.txt
-echo "" > log3.txt
-echo "" > log4.txt
-echo "" > log5.txt
-echo "" > log6.txt
-echo "" > log7.txt
-echo "" > log8.txt
+echo -n "" > log1.txt
+echo -n "" > log2.txt
+echo -n "" > log3.txt
+echo -n "" > log4.txt
+echo -n "" > log5.txt
+echo -n "" > log6.txt
+echo -n "" > log7.txt
+echo -n "" > log8.txt
 
 sh experiment.sh 4 log1.txt &
 sh experiment.sh 4 log2.txt &
