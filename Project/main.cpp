@@ -12,7 +12,7 @@ using namespace std;
 
 int main( int argc, char * argv[] ){
 
-    int seed = stoi( argv[ 3 ] );
+    int seed = time( 0 );//stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stod( arg.getValue("--alpha") );
@@ -24,7 +24,7 @@ int main( int argc, char * argv[] ){
 
     GRASP g( iterations, seed, alpha, new LocalSearchWithOperators(), new PathRelinkingOperator( path ), &i );
     Solution * s = g.execute();
-    cout << -1*s->get_total_rewards() << endl;
+    cout << s->get_total_rewards() << endl;
     //cout << s->to_string() << endl;
     return 0;
 }
