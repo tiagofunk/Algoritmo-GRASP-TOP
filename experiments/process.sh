@@ -10,3 +10,7 @@ cat log6.txt >> log.txt
 cat log7.txt >> log.txt
 cat log8.txt >> log.txt
 
+g++ process.cpp -o process
+
+./process
+

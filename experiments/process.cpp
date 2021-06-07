@@ -47,7 +47,7 @@ vector< instance_value > read_file( string file ){
 
     while( !reader.eof() ){
         reader >> instance_name >> result >> time;
-        cout << instance_name << " " << result << " " << time << endl;
+        //cout << instance_name << " " << result << " " << time << endl;
         instances = add_value_on_instance( instances, instance_name, result );
     }
 
