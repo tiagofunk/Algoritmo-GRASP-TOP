@@ -1,4 +1,3 @@
-
 ../instances/set_1_2/p1.2.a.txt
 0
 ../instances/set_1_2/p1.2.a.txt
@@ -4965,8 +4964,6 @@
 1050
 ../instances/set_4_4/p4.4.t.txt
 1083
-../instances/set_4_4/p4.4.t.txt
-
 ../instances/set_1_2/p1.2.a.txt
 0
 ../instances/set_1_2/p1.2.a.txt
@@ -8277,8 +8274,6 @@
 1043
 ../instances/set_4_4/p4.4.t.txt
 1023
-../instances/set_4_4/p4.4.t.txt
-
 ../instances/set_1_2/p1.2.a.txt
 0
 ../instances/set_1_2/p1.2.a.txt
@@ -11589,8 +11584,6 @@
 1015
 ../instances/set_4_4/p4.4.t.txt
 1025
-../instances/set_4_4/p4.4.t.txt
-
 ../instances/set_1_2/p1.2.a.txt
 0
 ../instances/set_1_2/p1.2.a.txt

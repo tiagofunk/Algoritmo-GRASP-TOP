@@ -4,6 +4,7 @@
         "*.tcc": "cpp",
         "cstdlib": "cpp",
         "algorithm": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "typeinfo": "cpp"
     }
 }
