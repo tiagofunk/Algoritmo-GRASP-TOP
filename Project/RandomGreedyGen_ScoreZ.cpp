@@ -23,7 +23,7 @@ Solution * RandomGreedyGen_ScoreZ::random_greedy_generation( Vertice * initial, 
             int selected = select_point( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
-            if( sol->add_vertice( i, selected_vertice ) == true ){
+            if( sol->add_vertice( i, selected_vertice, false ) == true ){
                 is_added = true;
                 this->unused_vertices.erase( this->unused_vertices.begin() + selected );
             }

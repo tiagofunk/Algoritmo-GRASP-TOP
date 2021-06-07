@@ -64,11 +64,11 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
     return true;
 }
 
-bool Solution::add_vertice( int path, Vertice * v ){
+bool Solution::add_vertice( int path, Vertice * v, bool check_if_vertice_not_used ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
-    if( this->check_if_vertice_not_used( v ) ){
+    if( check_if_vertice_not_used && this->check_if_vertice_not_used( v ) ){
         return false;
     }
 
@@ -85,14 +85,14 @@ bool Solution::add_vertice( int path, Vertice * v ){
     return false;
 }
 
-bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
+bool Solution::add_vertice_in_position( int path, int position, Vertice * v, bool check_if_vertice_not_used ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
     if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
         return 0;
     }
-    if( this->check_if_vertice_not_used( v ) ){
+    if( check_if_vertice_not_used && this->check_if_vertice_not_used( v ) ){
         return false;
     }
     
@@ -108,11 +108,11 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
     return false;
 }
 
-bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
+bool Solution::rewrite_vertice( int path, int position, Vertice * v, bool check_if_vertice_not_used ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
-    if( this->check_if_vertice_not_used( v ) ){
+    if( check_if_vertice_not_used && this->check_if_vertice_not_used( v ) ){
         return false;
     }
 

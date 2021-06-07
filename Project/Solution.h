@@ -29,9 +29,9 @@ class Solution{
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
         
-        bool add_vertice( int path, Vertice * v );
-        bool add_vertice_in_position( int path, int position, Vertice * v );
-        bool rewrite_vertice( int path, int position, Vertice * v );
+        bool add_vertice( int path, Vertice * v, bool check_if_vertice_not_used );
+        bool add_vertice_in_position( int path, int position, Vertice * v, bool check_if_vertice_not_used );
+        bool rewrite_vertice( int path, int position, Vertice * v, bool check_if_vertice_not_used );
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
