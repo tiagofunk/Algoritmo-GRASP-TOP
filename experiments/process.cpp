@@ -93,11 +93,21 @@ void print( vector< instance_value > instances ){
     }
 }
 
+void print_to_csv( vector< instance_value > instances ){
+    cout << "Instância;média;desvio padrão;" << endl;
+    for( unsigned int i = 0; i < instances.size(); i++ ){
+        cout << instances[ i ].file << ";";
+        cout << instances[ i ].mean << ";";
+        cout << instances[ i ].stand_desv << ";";
+        cout << endl;
+    }
+}
+
 int main( int argc, char* argv[] ){
     string file = "log.txt";
     vector< instance_value > instances = read_file( file );
     instances = calcule_mean( instances );
     instances = calcule_stand_desv( instances );
-    print( instances );
+    print_to_csv( instances );
     return 0;
 }

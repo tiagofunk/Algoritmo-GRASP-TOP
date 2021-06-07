@@ -13240,3 +13240,9 @@
 1031
 ../instances/set_4_4/p4.4.t.txt
 1024
+../instances/set_4_4/p4.4.t.txt
+1049
+../instances/set_4_4/p4.4.t.txt
+1054
+../instances/set_4_4/p4.4.t.txt
+1035
