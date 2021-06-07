@@ -32,7 +32,6 @@ vector< Vertice * > LocalSearchWithOperators::get_unused_vertices(){
 }
 
 Solution * LocalSearchWithOperators::add_vertice_in_path( Solution * s ){
-    int position_used = -1;
     Solution * best = new Solution( *s );
     Solution * actual = new Solution( *s );
     for( int i = 0; i < s->get_number_paths(); i++){
@@ -42,7 +41,9 @@ Solution * LocalSearchWithOperators::add_vertice_in_path( Solution * s ){
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );
-                        position_used = k;
+                        this->unused_vertices.erase( this->unused_vertices.begin() + k );
+                        delete actual;
+                        return best;
                     }
                     delete actual;
                     actual = new Solution( *s );
@@ -50,15 +51,10 @@ Solution * LocalSearchWithOperators::add_vertice_in_path( Solution * s ){
             }
         }
     }
-    if( position_used != -1 ){
-        this->unused_vertices.erase( this->unused_vertices.begin() + position_used );
-    }
     return best;
 }
 
 Solution * LocalSearchWithOperators::swap_between_path_and_unused_vertices( Solution * s ){
-    int position_used = -1;
-    Vertice * vertice_used = 0;
     Solution * best = new Solution( *s );
     Solution * actual = new Solution( *s );
     for( int i = 0; i < s->get_number_paths(); i++){
@@ -69,17 +65,15 @@ Solution * LocalSearchWithOperators::swap_between_path_and_unused_vertices( Solu
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );
-                        position_used = k;
-                        vertice_used = v;
+                        this->unused_vertices[ k ] = v;
+                        delete actual;
+                        return best;
                     }
                     delete actual;
                     actual = new Solution( *s );
                 }
             }
         }
-    }
-    if( position_used != -1 ){
-        this->unused_vertices[ position_used ] = vertice_used;
     }
     return best;
 }
