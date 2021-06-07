@@ -15,7 +15,7 @@ InstanceReader::~InstanceReader(){
 }
 
 Instance InstanceReader::read(){
-    int vertices, paths, score;
+    int vertices, paths, reward;
     double time, x, y;
     string aux;
     Vertice * p = 0;
@@ -39,8 +39,8 @@ Instance InstanceReader::read(){
     for( int i = 0; i < vertices; i++ ){
         file >> x;
         file >> y;
-        file >> score;
-        p = new Vertice( x, y, score );
+        file >> reward;
+        p = new Vertice( x, y, reward );
         inst.add_point( p );
     }
 

@@ -1,9 +1,9 @@
-#ifndef RANDOM_GREEDY_GENERATION_WITH_SCORE_Z
-#define RANDOM_GREEDY_GENERATION_WITH_SCORE_Z
+#ifndef RANDOM_GREEDY_GEN_SCORE_Z
+#define RANDOM_GREEDY_GEN_SCORE_Z
 
 #include "SolutionGeneration.h"
 
-class RandomGreedyGenerationWithScoreZ: public SolutionGeneration{
+class RandomGreedyGen_ScoreZ: public SolutionGeneration{
     private:
         typedef struct score_point{
             Vertice * p;
@@ -26,7 +26,7 @@ class RandomGreedyGenerationWithScoreZ: public SolutionGeneration{
         int select_point( vector< score_point > sp );
 
     public:
-        RandomGreedyGenerationWithScoreZ( double alpha, int number_of_paths, double time_per_path );
+        RandomGreedyGen_ScoreZ( double alpha, int number_of_paths, double time_per_path );
         virtual Solution * random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices );
         virtual vector< Vertice * > get_unused_vertices();
 };

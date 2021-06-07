@@ -9,7 +9,7 @@ class PathRelinkingOperator: public PathRelinking{
 
     public:
         PathRelinkingOperator( bool start_to_end );
-        Solution * execute( Solution * start, Solution * end );
+        virtual Solution * execute( Solution * start, Solution * end );
 };
 
 #endif

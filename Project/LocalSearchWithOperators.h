@@ -14,8 +14,8 @@ class LocalSearchWithOperators: public LocalSearch {
         LocalSearchWithOperators();
         ~LocalSearchWithOperators();
 
-        Solution * execute( Solution * sol, vector< Vertice * > vertices );
-        vector< Vertice * > get_unused_vertices();
+        virtual Solution * execute( Solution * sol, vector< Vertice * > vertices );
+        virtual vector< Vertice * > get_unused_vertices();
 };
 
 #endif

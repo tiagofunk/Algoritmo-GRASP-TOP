@@ -2,7 +2,7 @@
 #include "InstanceReader.h"
 #include "Instance.h"
 #include "Grasp.h"
-#include "RandomGreedyGenerationWithScoreZ.h"
+#include "RandomGreedyGen_ScoreZ.h"
 #include "LocalSearchWithOperators.h"
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
@@ -27,7 +27,7 @@ int main( int argc, char * argv[] ){
         iterations,
         seed,
         alpha,
-        new RandomGreedyGenerationWithScoreZ( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
+        new RandomGreedyGen_ScoreZ( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
         new LocalSearchWithOperators(),
         new PathRelinkingOperator( path ), 
         &i );

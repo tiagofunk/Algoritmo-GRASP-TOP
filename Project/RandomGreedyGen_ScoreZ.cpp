@@ -1,14 +1,14 @@
-#include "RandomGreedyGenerationWithScoreZ.h"
+#include "RandomGreedyGen_ScoreZ.h"
 
 #include "Utils.h"
 
-RandomGreedyGenerationWithScoreZ::RandomGreedyGenerationWithScoreZ( double alpha, int number_of_paths, double time_per_path ):SolutionGeneration(){
+RandomGreedyGen_ScoreZ::RandomGreedyGen_ScoreZ( double alpha, int number_of_paths, double time_per_path ):SolutionGeneration(){
     this->number_of_paths = number_of_paths;
     this->alpha = alpha;
     this->time_per_path = time_per_path;
 }
 
-Solution * RandomGreedyGenerationWithScoreZ::random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices ){
+Solution * RandomGreedyGen_ScoreZ::random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices ){
     bool is_added = false;
     Solution * sol = new Solution( this->number_of_paths, this->time_per_path );
     this->unused_vertices = vertices;
@@ -33,11 +33,11 @@ Solution * RandomGreedyGenerationWithScoreZ::random_greedy_generation( Vertice *
     return sol;
 }
 
-vector< Vertice * > RandomGreedyGenerationWithScoreZ::get_unused_vertices(){
+vector< Vertice * > RandomGreedyGen_ScoreZ::get_unused_vertices(){
     return this->unused_vertices;
 }
 
-vector< double > RandomGreedyGenerationWithScoreZ::get_scores( vector< Vertice * > vertices ){
+vector< double > RandomGreedyGen_ScoreZ::get_scores( vector< Vertice * > vertices ){
     vector< double > scores;
     for( unsigned int i = 0; i < vertices.size(); i++ ){
         scores.push_back( vertices[ i ]->get_reward() );
@@ -45,9 +45,9 @@ vector< double > RandomGreedyGenerationWithScoreZ::get_scores( vector< Vertice *
     return scores;
 }
 
-vector< RandomGreedyGenerationWithScoreZ::score_point > RandomGreedyGenerationWithScoreZ::calcule_probability( Vertice * actual, vector< Vertice * > vertices ){
+vector< RandomGreedyGen_ScoreZ::score_point > RandomGreedyGen_ScoreZ::calcule_probability( Vertice * actual, vector< Vertice * > vertices ){
     unsigned int n_vertices = vertices.size();
-    vector< RandomGreedyGenerationWithScoreZ::score_point > sp( n_vertices );
+    vector< RandomGreedyGen_ScoreZ::score_point > sp( n_vertices );
     if( vertices.empty() ) return sp;
 
     vector< double > scores = this->get_scores( vertices );
@@ -86,7 +86,7 @@ vector< RandomGreedyGenerationWithScoreZ::score_point > RandomGreedyGenerationWi
     return sp;
 }
 
-int RandomGreedyGenerationWithScoreZ::select_point( vector< RandomGreedyGenerationWithScoreZ::score_point > sp ){
+int RandomGreedyGen_ScoreZ::select_point( vector< RandomGreedyGen_ScoreZ::score_point > sp ){
     if( sp.empty() ) return -1;
 
     int selected_position = 0;
