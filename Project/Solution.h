@@ -4,6 +4,7 @@
 #include "Vertice.h"
 
 #include <vector>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -16,6 +17,8 @@ class Solution{
         double total_rewards;
 
         double time_per_path;
+
+        map< int, Vertice > used_vertices;
 
         void update_reward_in_add( int path, Vertice * v );
         void update_reward_in_rewrite( int path, int position, Vertice * v );

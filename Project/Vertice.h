@@ -2,6 +2,7 @@
 #define POINT_H
 
 #include <string>
+#include <iostream>
 
 class Vertice{
 private:
@@ -17,7 +18,9 @@ public:
     double get_y();
     double get_reward();
 
-    bool equals( Vertice &v );
+    int get_hash();
+
+    friend std::ostream& operator<<(std::ostream & os, const Vertice & v );
 
     std::string to_string();
     

@@ -1,5 +1,10 @@
 #include "Vertice.h"
 
+#include <string>
+#include <functional>
+
+#define HASH_SIZE 255
+
 Vertice::Vertice(double x, double y, int reward){
     this->x = x;
     this->y = y;
@@ -21,8 +26,15 @@ double Vertice::get_reward(){
     return this->reward;
 }
 
-bool Vertice::equals( Vertice &v ){
-    return this->x == v.x && this->y == v.y;
+int Vertice::get_hash(){
+    std::string s = std::to_string( this->x ) + std::to_string( this->y );
+    std::hash< std::string > gen_hash;
+    return gen_hash( s ) % HASH_SIZE;
+}
+
+std::ostream& operator<<(std::ostream & os, const Vertice & v ){
+    os << "x: " << v.x << ", y: " << v.y << ", reward: " << v.reward; 
+    return os;
 }
 
 std::string Vertice::to_string(){

@@ -44,14 +44,11 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
 }
 
 bool Solution::check_if_vertice_not_used( Vertice * v ){
-    for (unsigned int i = 0; i < this->paths.size(); i++){
-        for( unsigned int j = 1; j < this->paths[ i ].size()-1; j++ ){
-            if( this->paths[ i ][ j ]->equals( *v ) ){
-                return true;
-            }
-        }
+    map< int, Vertice >::iterator it = this->used_vertices.find( v->get_hash() );
+    if( it == this->used_vertices.end() ){
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
@@ -59,7 +56,11 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
         return false;
     }
     this->paths[ path ].push_back( initial );
+    this->used_vertices.insert( pair< int, Vertice >( initial->get_hash(), *initial ) );
+
     this->paths[ path ].push_back( final );
+    this->used_vertices.insert( pair< int, Vertice >( final->get_hash(), *final ) );
+
     this->path_times[ path ] = calculate_distance( initial, final );
     return true;
 }
@@ -78,6 +79,7 @@ bool Solution::add_vertice( int path, Vertice * v, bool check_if_vertice_repeate
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
+        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -101,6 +103,7 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v, boo
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
+        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -120,7 +123,12 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v, bool check_
 
     if( this->time_per_path > n_time ){
         update_reward_in_rewrite( path, position, v );
+        Vertice * old_v = this->paths[ path ][ position ];
+        this->used_vertices.erase( old_v->get_hash() );
+
         this->paths[ path ][ position ] = v;
+        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
+        
         this->path_times[ path ] = n_time;
         return true;
     }

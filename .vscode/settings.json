@@ -6,6 +6,8 @@
         "algorithm": "cpp",
         "iostream": "cpp",
         "typeinfo": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "istream": "cpp",
+        "functional": "cpp"
     }
 }
