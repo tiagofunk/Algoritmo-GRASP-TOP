@@ -44,6 +44,8 @@ class Solution{
         int get_length_of_path( int path );
 
         string to_string();
+
+        int get_hash();
 };
 
 #endif

@@ -3,7 +3,7 @@
 #include <string>
 #include <functional>
 
-#define HASH_SIZE 255
+#define HASH_SIZE 256
 
 Vertice::Vertice(double x, double y, int reward){
     this->x = x;

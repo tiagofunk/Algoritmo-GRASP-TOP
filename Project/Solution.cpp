@@ -2,6 +2,8 @@
 
 #include "Utils.h"
 
+#define HASH_SIZE 8192
+
 Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
@@ -186,4 +188,17 @@ string Solution::to_string(){
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
     
     return s;
+}
+
+int Solution::get_hash(){
+    string s = "";
+    Vertice * v = 0;
+    for( unsigned int i = 0; i < this->paths.size(); i++ ){
+        for( unsigned int j = 0; j < this->paths[ i ].size(); j++ ){
+            v = this->paths[ i ][ j ];
+            s += std::to_string( v->get_x() ) + std::to_string( v->get_y() );
+        }
+    }
+    std::hash< std::string > gen_hash;
+    return gen_hash( s ) % HASH_SIZE;
 }
