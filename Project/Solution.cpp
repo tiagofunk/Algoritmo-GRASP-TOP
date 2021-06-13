@@ -2,6 +2,9 @@
 
 #include "Utils.h"
 
+#include <sstream>
+#include <iomanip>
+
 Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
@@ -186,14 +189,14 @@ string Solution::to_string(){
 }
 
 int Solution::get_hash(){
-    string s = "";
+    ostringstream oss;
     Vertice * v = 0;
     for( unsigned int i = 0; i < this->paths.size(); i++ ){
         for( unsigned int j = 0; j < this->paths[ i ].size(); j++ ){
             v = this->paths[ i ][ j ];
-            s += std::to_string( v->get_x() ) + std::to_string( v->get_y() );
+            oss << setprecision(2) << v->get_x() << v->get_y();
         }
     }
     std::hash< std::string > gen_hash;
-    return gen_hash( s ) % SOLUTION_HASH_SIZE;
+    return gen_hash( oss.str() ) % SOLUTION_HASH_SIZE;
 }
