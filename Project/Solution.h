@@ -2,10 +2,12 @@
 #define SOLUTION_H
 
 #include "Vertice.h"
+#include "Mapper.h"
 
 #include <vector>
-#include <map>
 #include <string>
+
+#define SOLUTION_HASH_SIZE 8192
 
 using namespace std;
 
@@ -18,7 +20,7 @@ class Solution{
 
         double time_per_path;
 
-        map< int, Vertice > used_vertices;
+        Mapper * used_vertices;
 
         void update_reward_in_add( int path, Vertice * v );
         void update_reward_in_rewrite( int path, int position, Vertice * v );
@@ -26,15 +28,15 @@ class Solution{
         double calculate_time_in_add( int path, int position, Vertice * v );
         double calculate_time_in_rewrite( int path, int position, Vertice * v );
 
-        bool check_if_vertice_not_used( Vertice * v );
+        bool check_if_vertice_is_used( Vertice * v );
 
     public:
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
         
-        bool add_vertice( int path, Vertice * v, bool check_if_vertice_repeated );
-        bool add_vertice_in_position( int path, int position, Vertice * v, bool check_if_vertice_repeated );
-        bool rewrite_vertice( int path, int position, Vertice * v, bool check_if_vertice_repeated );
+        bool add_vertice( int path, Vertice * v );
+        bool add_vertice_in_position( int path, int position, Vertice * v );
+        bool rewrite_vertice( int path, int position, Vertice * v );
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );

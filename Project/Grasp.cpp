@@ -8,6 +8,7 @@ GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * soluti
     this->solution_generation = solution_generation;
     this->local_search = local_search;
     this->path_relinking = path_relinking;
+    this->previous_generate_solutions = new Mapper( SOLUTION_HASH_SIZE );
 }
 
 Solution * GRASP::execute(){
@@ -21,10 +22,10 @@ Solution * GRASP::execute(){
         actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
         
         h = actual->get_hash();
-        if( this->previous_generate_solutions.find( h ) != this->previous_generate_solutions.end() ){
+        if( this->previous_generate_solutions->find( h ) ){
             continue;
         }
-        this->previous_generate_solutions.insert( pair< int, Solution >( h, *actual ) );
+        this->previous_generate_solutions->insert( h );
 
         this->unused_vertices = this->solution_generation->get_unused_vertices();
 

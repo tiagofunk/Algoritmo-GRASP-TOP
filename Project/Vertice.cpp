@@ -3,8 +3,6 @@
 #include <string>
 #include <functional>
 
-#define HASH_SIZE 256
-
 Vertice::Vertice(double x, double y, int reward){
     this->x = x;
     this->y = y;
@@ -29,7 +27,7 @@ double Vertice::get_reward(){
 int Vertice::get_hash(){
     std::string s = std::to_string( this->x ) + std::to_string( this->y );
     std::hash< std::string > gen_hash;
-    return gen_hash( s ) % HASH_SIZE;
+    return gen_hash( s ) % VERTICE_HASH_SIZE;
 }
 
 std::ostream& operator<<(std::ostream & os, const Vertice & v ){

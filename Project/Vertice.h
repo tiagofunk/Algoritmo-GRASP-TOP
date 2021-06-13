@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+#define VERTICE_HASH_SIZE 256
+
 class Vertice{
 private:
     double x;

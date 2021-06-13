@@ -6,6 +6,7 @@
 #include "SolutionGeneration.h"
 #include "LocalSearch.h"
 #include "PathRelinking.h"
+#include "Mapper.h"
 
 class GRASP{
     private:
@@ -19,7 +20,7 @@ class GRASP{
 
         vector< Vertice * > unused_vertices;
 
-        map< int, Solution > previous_generate_solutions;
+        Mapper * previous_generate_solutions;
 
     public:
         GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance );

@@ -2,14 +2,13 @@
 
 #include "Utils.h"
 
-#define HASH_SIZE 8192
-
 Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
     this->path_times.resize( number_paths );
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
+    this->used_vertices = new Mapper( VERTICE_HASH_SIZE );
 }
 
 void Solution::update_reward_in_add( int path, Vertice * v ){
@@ -45,12 +44,8 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
         + new_distance_to_previous + new_distance_to_next;
 }
 
-bool Solution::check_if_vertice_not_used( Vertice * v ){
-    map< int, Vertice >::iterator it = this->used_vertices.find( v->get_hash() );
-    if( it == this->used_vertices.end() ){
-        return false;
-    }
-    return true;
+bool Solution::check_if_vertice_is_used( Vertice * v ){
+    return this->used_vertices->find( v->get_hash() );
 }
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
@@ -58,20 +53,20 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
         return false;
     }
     this->paths[ path ].push_back( initial );
-    this->used_vertices.insert( pair< int, Vertice >( initial->get_hash(), *initial ) );
+    this->used_vertices->insert( initial->get_hash() );
 
     this->paths[ path ].push_back( final );
-    this->used_vertices.insert( pair< int, Vertice >( final->get_hash(), *final ) );
+    this->used_vertices->insert( final->get_hash() );
 
     this->path_times[ path ] = calculate_distance( initial, final );
     return true;
 }
 
-bool Solution::add_vertice( int path, Vertice * v, bool check_if_vertice_repeated ){
+bool Solution::add_vertice( int path, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
-    if( check_if_vertice_repeated && this->check_if_vertice_not_used( v ) ){
+    if( this->check_if_vertice_is_used( v ) ){
         return false;
     }
 
@@ -81,7 +76,7 @@ bool Solution::add_vertice( int path, Vertice * v, bool check_if_vertice_repeate
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
+        this->used_vertices->insert( v->get_hash() );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -89,14 +84,14 @@ bool Solution::add_vertice( int path, Vertice * v, bool check_if_vertice_repeate
     return false;
 }
 
-bool Solution::add_vertice_in_position( int path, int position, Vertice * v, bool check_if_vertice_repeated ){
+bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
     if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
-        return 0;
+        return false;
     }
-    if( check_if_vertice_repeated && this->check_if_vertice_not_used( v ) ){
+    if( this->check_if_vertice_is_used( v ) ){
         return false;
     }
     
@@ -105,7 +100,7 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v, boo
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
+        this->used_vertices->insert( v->get_hash() );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -113,11 +108,11 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v, boo
     return false;
 }
 
-bool Solution::rewrite_vertice( int path, int position, Vertice * v, bool check_if_vertice_repeated ){
+bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
     if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
         return false;
     }
-    if( check_if_vertice_repeated && this->check_if_vertice_not_used( v ) ){
+    if( this->check_if_vertice_is_used( v ) ){
         return false;
     }
 
@@ -126,10 +121,10 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v, bool check_
     if( this->time_per_path > n_time ){
         update_reward_in_rewrite( path, position, v );
         Vertice * old_v = this->paths[ path ][ position ];
-        this->used_vertices.erase( old_v->get_hash() );
+        this->used_vertices->erase( old_v->get_hash() );
 
         this->paths[ path ][ position ] = v;
-        this->used_vertices.insert( pair<int, Vertice>( v->get_hash(), *v ) );
+        this->used_vertices->insert( v->get_hash() );
         
         this->path_times[ path ] = n_time;
         return true;
@@ -200,5 +195,5 @@ int Solution::get_hash(){
         }
     }
     std::hash< std::string > gen_hash;
-    return gen_hash( s ) % HASH_SIZE;
+    return gen_hash( s ) % SOLUTION_HASH_SIZE;
 }
