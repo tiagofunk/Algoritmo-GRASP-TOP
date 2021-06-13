@@ -58,7 +58,7 @@ vector< RandomGreedyGen_ScoreZ::score_point > RandomGreedyGen_ScoreZ::calcule_pr
     for( unsigned int i = 0; i < n_vertices; i++ ){
         Vertice * v = vertices[ i ];
         sp[ i ].p = v;
-        sp[ i ].score_z_score = calculate_score_z( scores[ i ], mean, stand );
+        sp[ i ].score_z_reward = calculate_score_z( scores[ i ], mean, stand );
         sp[ i ].distance = calculate_distance( actual, v );
         scores[ i ] = sp[ i ].distance;
     }
@@ -69,7 +69,7 @@ vector< RandomGreedyGen_ScoreZ::score_point > RandomGreedyGen_ScoreZ::calcule_pr
 
     for( unsigned int i = 0; i < n_vertices; i++ ){
         sp[ i ].score_z_distance = calculate_score_z( sp[ i ].distance, mean, stand );
-        sp[ i ].value = 3 + sp[ i ].score_z_score - sp[ i ].score_z_distance;
+        sp[ i ].value = 3 + sp[ i ].score_z_reward - sp[ i ].score_z_distance;
         sum_values += sp[ i ].value;
     }
 

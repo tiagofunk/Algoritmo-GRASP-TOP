@@ -7,7 +7,7 @@ class RandomGreedyGen_ScoreZ: public SolutionGeneration{
     private:
         typedef struct score_point{
             Vertice * p;
-            double score_z_score;
+            double score_z_reward;
             double distance;
             double score_z_distance;
             double value;
