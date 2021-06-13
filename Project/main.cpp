@@ -3,6 +3,7 @@
 #include "Instance.h"
 #include "Grasp.h"
 #include "RandomGreedyGen_ScoreZ.h"
+#include "RandomGreedyGen_MinMax.h"
 #include "LocalSearchWithOperators.h"
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
@@ -32,7 +33,7 @@ int main( int argc, char * argv[] ){
         iterations,
         seed,
         alpha,
-        new RandomGreedyGen_ScoreZ( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
+        new RandomGreedyGen_MinMax( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
         new LocalSearchWithOperators(),
         new PathRelinkingOperator( path ), 
         &i );
