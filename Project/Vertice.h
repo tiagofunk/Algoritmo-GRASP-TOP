@@ -11,6 +11,9 @@ private:
     double x;
     double y;
     double reward;
+    int hash;
+
+    bool is_hashed;
 
 public:
     Vertice(double x, double y, int reward );

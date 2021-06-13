@@ -9,6 +9,7 @@ Vertice::Vertice(double x, double y, int reward){
     this->x = x;
     this->y = y;
     this->reward = reward;
+    this->is_hashed = false;
 }
 
 Vertice::~Vertice(){
@@ -27,10 +28,14 @@ double Vertice::get_reward(){
 }
 
 int Vertice::get_hash(){
-    std::ostringstream oss;
-    oss << std::setprecision( 2 ) << this->x << this->y;
-    std::hash< std::string > gen_hash;
-    return gen_hash( oss.str() ) % VERTICE_HASH_SIZE;
+    if( !this->is_hashed ){
+        std::ostringstream oss;
+        oss << std::setprecision( 2 ) << this->x << this->y;
+        std::hash< std::string > gen_hash;
+        this->hash = gen_hash( oss.str() ) % VERTICE_HASH_SIZE;
+        this->is_hashed = true;
+    }
+    return this->hash;
 }
 
 std::ostream& operator<<(std::ostream & os, const Vertice & v ){
