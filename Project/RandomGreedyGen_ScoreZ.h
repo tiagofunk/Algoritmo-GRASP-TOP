@@ -23,7 +23,7 @@ class RandomGreedyGen_ScoreZ: public SolutionGeneration{
         vector< double > get_scores( vector< Vertice * > vertices );
 
         vector< score_point > calcule_probability( Vertice * actual, vector< Vertice * > vertices );
-        int select_point( vector< score_point > sp );
+        int select_vertice( vector< score_point > sp );
 
     public:
         RandomGreedyGen_ScoreZ( double alpha, int number_of_paths, double time_per_path );

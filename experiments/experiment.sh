@@ -19,7 +19,7 @@ execute_all(){
 }
 
 execute_p4_4_t(){
-    file="../instances/set_4_4/p4.4.t.txt"
+    file="../instances/set_5_4/p5.4.t.txt"
     echo "$file" >> $2
     ./../Project/TOP_GRASP_TS_PR 1 1 1 $file --alpha 0.86 --iterations 3540 --path y >> $2
 }

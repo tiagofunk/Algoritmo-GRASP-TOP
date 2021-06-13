@@ -1,7 +1,5 @@
 #include "Grasp.h"
 
-#include <iostream>
-
 GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
     this->iterations = iterations;
     this->seed = seed;
@@ -13,12 +11,16 @@ GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * soluti
 }
 
 Solution * GRASP::execute(){
+    int h = -1;
+    Solution * actual = 0;
     Solution * best = 0;
     srand( this->seed );
+
     for (int i = 0; i < this->iterations; i++){
         this->unused_vertices.clear();
-        Solution * actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
-        int h = actual->get_hash();
+        actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
+        
+        h = actual->get_hash();
         if( this->previous_generate_solutions.find( h ) != this->previous_generate_solutions.end() ){
             continue;
         }

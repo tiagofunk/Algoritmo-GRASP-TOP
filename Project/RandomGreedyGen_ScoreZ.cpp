@@ -11,6 +11,7 @@ RandomGreedyGen_ScoreZ::RandomGreedyGen_ScoreZ( double alpha, int number_of_path
 Solution * RandomGreedyGen_ScoreZ::random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices ){
     bool is_added = false;
     Solution * sol = new Solution( this->number_of_paths, this->time_per_path );
+    this->unused_vertices.clear();
     this->unused_vertices = vertices;
     
     for( int i = 0; i < this->number_of_paths; i++ ){
@@ -20,10 +21,10 @@ Solution * RandomGreedyGen_ScoreZ::random_greedy_generation( Vertice * initial, 
     do{
         is_added = false;
         for( int i = 0; i < this->number_of_paths; i++ ){
-            int selected = select_point( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
+            int selected = select_vertice( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
-            if( sol->add_vertice( i, selected_vertice, false ) == true ){
+            if( sol->add_vertice( i, selected_vertice, false ) ){
                 is_added = true;
                 this->unused_vertices.erase( this->unused_vertices.begin() + selected );
             }
@@ -86,7 +87,7 @@ vector< RandomGreedyGen_ScoreZ::score_point > RandomGreedyGen_ScoreZ::calcule_pr
     return sp;
 }
 
-int RandomGreedyGen_ScoreZ::select_point( vector< RandomGreedyGen_ScoreZ::score_point > sp ){
+int RandomGreedyGen_ScoreZ::select_vertice( vector< RandomGreedyGen_ScoreZ::score_point > sp ){
     if( sp.empty() ) return -1;
 
     int selected_position = 0;
