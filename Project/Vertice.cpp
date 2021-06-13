@@ -48,5 +48,6 @@ std::string Vertice::to_string(){
     s = "x: " + std::to_string( this->x );
     s += ", y: " + std::to_string( this->y );
     s += ", reward: " + std::to_string( this->reward );
+    s += ", hash: " + std::to_string( this->hash );
     return s;
 }

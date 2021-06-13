@@ -1,17 +1,24 @@
 #include "Mapper.h"
 
 #include <stdexcept>
+#include <iostream>
 
-Mapper::Mapper( const int size ){
-    this->size = size;
-    this->keys = new bool[ size ];
-    for( int i = 0; i < size; i++ ){
+Mapper::Mapper(){
+    this->size = 64;
+    this->keys.resize( this->size );
+    for( int i = 0; i < this->size; i++ ){
         this->keys[ i ] = false;
     }
 }
 
-Mapper::~Mapper(){
-    delete [] this->keys;
+Mapper::~Mapper(){}
+
+void Mapper::resize( int size ){
+    this->size = size;
+    this->keys.resize( this->size );
+    for( int i = 0; i < this->size; i++ ){
+        this->keys[ i ] = false;
+    }
 }
 
 void Mapper::insert( int key ){
@@ -27,4 +34,15 @@ bool Mapper::find( int key ){
 void Mapper::erase( int key ){
     if( key < 0 || key >= this->size ) throw std::runtime_error("erase: key is invalid\n");
     this->keys[ key ] = false;
+}
+
+string Mapper::to_string(){
+    string s = "";
+    for( int i = 0; i < this->size; i++ ){
+        if( this->keys[ i ] ){
+            s += std::to_string( i ) + " ";
+        }
+    }
+    if( s == "" ) return "empty";
+    return s;
 }

@@ -60,12 +60,13 @@ Solution * LocalSearchWithOperators::swap_between_path_and_unused_vertices( Solu
     for( int i = 0; i < s->get_number_paths(); i++){
         for (int j = 1; j < s->get_length_of_path( i )-1; j++){
             for(unsigned int k = 0; k < this->unused_vertices.size(); k++ ){
-                Vertice * v = actual->get_vertice_in_path( i, j );
-                if( actual->rewrite_vertice( i, j, this->unused_vertices[ k ] ) ){
+                Vertice * old_v = actual->get_vertice_in_path( i, j );
+                Vertice * new_v = this->unused_vertices[ k ];
+                if( actual->rewrite_vertice( i, j, new_v ) ){
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );
-                        this->unused_vertices[ k ] = v;
+                        this->unused_vertices[ k ] = old_v;
                         delete actual;
                         return best;
                     }

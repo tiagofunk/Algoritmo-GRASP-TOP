@@ -20,7 +20,7 @@ class Solution{
 
         double time_per_path;
 
-        Mapper * used_vertices;
+        Mapper used_vertices;
 
         void update_reward_in_add( int path, Vertice * v );
         void update_reward_in_rewrite( int path, int position, Vertice * v );

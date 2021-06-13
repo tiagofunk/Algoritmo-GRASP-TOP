@@ -11,7 +11,7 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->path_times.resize( number_paths );
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
-    this->used_vertices = new Mapper( VERTICE_HASH_SIZE );
+    this->used_vertices.resize( VERTICE_HASH_SIZE );
 }
 
 void Solution::update_reward_in_add( int path, Vertice * v ){
@@ -48,7 +48,7 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
 }
 
 bool Solution::check_if_vertice_is_used( Vertice * v ){
-    return this->used_vertices->find( v->get_hash() );
+    return this->used_vertices.find( v->get_hash() );
 }
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
@@ -56,10 +56,10 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
         return false;
     }
     this->paths[ path ].push_back( initial );
-    this->used_vertices->insert( initial->get_hash() );
+    this->used_vertices.insert( initial->get_hash() );
 
     this->paths[ path ].push_back( final );
-    this->used_vertices->insert( final->get_hash() );
+    this->used_vertices.insert( final->get_hash() );
 
     this->path_times[ path ] = calculate_distance( initial, final );
     return true;
@@ -79,7 +79,7 @@ bool Solution::add_vertice( int path, Vertice * v ){
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->used_vertices->insert( v->get_hash() );
+        this->used_vertices.insert( v->get_hash() );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -103,7 +103,7 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
     if( this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->used_vertices->insert( v->get_hash() );
+        this->used_vertices.insert( v->get_hash() );
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -123,11 +123,12 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
 
     if( this->time_per_path > n_time ){
         update_reward_in_rewrite( path, position, v );
+
         Vertice * old_v = this->paths[ path ][ position ];
-        this->used_vertices->erase( old_v->get_hash() );
+        this->used_vertices.erase( old_v->get_hash() );
 
         this->paths[ path ][ position ] = v;
-        this->used_vertices->insert( v->get_hash() );
+        this->used_vertices.insert( v->get_hash() );
         
         this->path_times[ path ] = n_time;
         return true;

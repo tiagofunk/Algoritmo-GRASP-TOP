@@ -9,6 +9,7 @@
         "stdexcept": "cpp",
         "istream": "cpp",
         "functional": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "ostream": "cpp"
     }
 }
