@@ -45,6 +45,7 @@ Solution * PathRelinkingOperator::execute( Solution * start, Solution * end ){
         }
     }
     delete actual;
+    delete destiny;
 
     return best;
 }

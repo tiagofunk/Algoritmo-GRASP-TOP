@@ -41,6 +41,6 @@ int main( int argc, char * argv[] ){
     finalTime = clock();
 	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
     cout << s->get_total_rewards() << endl << time << endl;
-    cout << s->to_string() << endl;
+    // cout << s->to_string() << endl;
     return 0;
 }

@@ -35,6 +35,7 @@ Solution * GRASP::execute(){
         actual = this->path_relinking->execute( actual, best );
 
         if( best == NULL || actual->get_total_rewards() > best->get_total_rewards() ){
+            delete best;
             best = new Solution( *actual );
         }
         delete actual;
