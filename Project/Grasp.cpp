@@ -22,22 +22,22 @@ Solution * GRASP::execute(){
         actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
         
         h = actual->get_hash();
-        if( this->previous_generate_solutions.find( h ) ){
-            continue;
+        if( !this->previous_generate_solutions.find( h ) ){
+            this->previous_generate_solutions.insert( h );
+
+            this->unused_vertices = this->solution_generation->get_unused_vertices();
+
+            actual = this->local_search->execute( actual, this->unused_vertices );
+            this->unused_vertices = this->local_search->get_unused_vertices();
+
+            actual = this->path_relinking->execute( actual, best );
+
+            if( best == NULL || actual->get_total_rewards() > best->get_total_rewards() ){
+                delete best;
+                best = new Solution( *actual );
+            }
         }
-        this->previous_generate_solutions.insert( h );
-
-        this->unused_vertices = this->solution_generation->get_unused_vertices();
-
-        actual = this->local_search->execute( actual, this->unused_vertices );
-        this->unused_vertices = this->local_search->get_unused_vertices();
-
-        actual = this->path_relinking->execute( actual, best );
-
-        if( best == NULL || actual->get_total_rewards() > best->get_total_rewards() ){
-            delete best;
-            best = new Solution( *actual );
-        }
+        
         delete actual;
     }
 
