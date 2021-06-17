@@ -7,10 +7,15 @@
 #include "LocalSearchWithOperators.h"
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
+#include "Operator.h"
+#include "OperatorAddVerticeInPath.h"
+#include "OperatorSwapBetweenPathAndUnusedvertices.h"
 
 #include <iostream>
 #include <time.h>
 #include <map>
+
+// --alpha 0.86 --iterations 3540 --path y
 
 using namespace std;
 
@@ -29,12 +34,19 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( file );
     Instance i = ir.read();
 
+    Operator * o1 = new OperatorAddVerticeInPath();
+    Operator * o2 = new OperatorSwapBetweenPathAndUnusedvertices();
+
+    vector< Operator * > operators;
+    operators.push_back( o1 );
+    operators.push_back( o2 );
+
     GRASP g(
         iterations,
         seed,
         alpha,
         new RandomGreedyGen_MinMax( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
-        new LocalSearchWithOperators(),
+        new LocalSearchWithOperators( operators ),
         new PathRelinkingOperator( path ), 
         &i );
     Solution * s = g.execute();

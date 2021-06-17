@@ -2,16 +2,15 @@
 #define LOCAL_SEARCH_WITH_OPERATORS_H
 
 #include "LocalSearch.h"
+#include "Operator.h"
 
 class LocalSearchWithOperators: public LocalSearch {
     private:
+        vector< Operator * > operators;
         vector< Vertice * > unused_vertices;
 
-        Solution * add_vertice_in_path( Solution * s );
-        Solution * swap_between_path_and_unused_vertices( Solution * s );
-
     public:
-        LocalSearchWithOperators();
+        LocalSearchWithOperators( vector< Operator * > operators );
         ~LocalSearchWithOperators();
 
         virtual Solution * execute( Solution * sol, vector< Vertice * > vertices );
