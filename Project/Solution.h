@@ -31,8 +31,8 @@ class Solution{
 
         bool check_if_vertice_is_used( Vertice * v );
 
-        // bool check_if_path_is_valid( int path );
-        // bool check_if_position_is_valid( int path, int position );
+        bool check_if_path_is_valid( int path );
+        bool check_if_position_is_valid( int path, int position );
 
     public:
         Solution( int number_paths, double time_per_path );

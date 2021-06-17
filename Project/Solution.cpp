@@ -59,10 +59,17 @@ bool Solution::check_if_vertice_is_used( Vertice * v ){
     return this->used_vertices.find( v->get_hash() );
 }
 
+bool Solution::check_if_path_is_valid( int path ){
+    return path < 0 || (unsigned int) path >= this->paths.size();
+}
+
+bool Solution::check_if_position_is_valid( int path, int position ){
+    return position < 1 || (unsigned int) position >= this->paths[ path ].size();
+}
+
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
-    if( path < 0 || (unsigned int) path >= this->paths.size() ){
-        return false;
-    }
+    if( check_if_path_is_valid( path ) ) return false;
+
     this->paths[ path ].push_back( initial );
     this->used_vertices.insert( initial->get_hash() );
 
@@ -74,12 +81,8 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
 }
 
 bool Solution::add_vertice( int path, Vertice * v ){
-    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
-        return false;
-    }
-    if( this->check_if_vertice_is_used( v ) ){
-        return false;
-    }
+    if( check_if_path_is_valid( path ) ) return false;
+    if( this->check_if_vertice_is_used( v ) ) return false;
 
     int position = this->paths[ path ].size() - 1;
     double n_time = calculate_time_in_add( path, position, v );
@@ -96,15 +99,9 @@ bool Solution::add_vertice( int path, Vertice * v ){
 }
 
 bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
-    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
-        return false;
-    }
-    if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
-        return false;
-    }
-    if( this->check_if_vertice_is_used( v ) ){
-        return false;
-    }
+    if( check_if_path_is_valid( path ) ) return false; 
+    if( check_if_position_is_valid( path, position ) ) return false;
+    if( this->check_if_vertice_is_used( v ) ) return false;
     
     double n_time = calculate_time_in_add( path, position, v );
 
@@ -120,12 +117,8 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
 }
 
 bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
-    if( path < 0 ||  (unsigned int) path >= this->paths.size() ){
-        return false;
-    }
-    if( this->check_if_vertice_is_used( v ) ){
-        return false;
-    }
+    if( check_if_path_is_valid( path ) ) return false;
+    if( this->check_if_vertice_is_used( v ) ) return false;
 
     double n_time = calculate_time_in_rewrite( path, position, v );
 
@@ -146,9 +139,9 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
 }
 
 bool Solution::swap( int path, int pos1, int pos2 ){
-    if( path < 0 || path > this->paths.size() ) return false;
-    if( pos1 < 1 || pos1 >= this->paths[ path ].size() ) return false;
-    if( pos2 < 1 || pos2 >= this->paths[ path ].size() ) return false;
+    if( check_if_path_is_valid( path ) ) return false;
+    if( check_if_position_is_valid( path, pos1 ) ) return false;
+    if( check_if_position_is_valid( path, pos2 ) ) return false;
 
     Vertice * v = this->paths[ path ][ pos1 ];
     this->paths[ path ][ pos1 ] = this->paths[ path ][ pos2 ];
@@ -168,20 +161,14 @@ bool Solution::swap( int path, int pos1, int pos2 ){
 }
 
 Vertice * Solution::get_last_path_vertice_in_path( int path ){
-    if( path < 0 || (unsigned int) path >= this->paths.size() ){
-        return 0;
-    }
+    if( check_if_path_is_valid( path ) ) return 0;
     int last_position = this->paths[ path ].size() - 1;
     return this->paths[ path ][ last_position ];
 }
 
 Vertice * Solution::get_vertice_in_path( int path, int position ){
-    if( path < 0 || (unsigned int) path >= this->paths.size() ){
-        return 0;
-    }
-    if( position < 1 || (unsigned int) position >= this->paths[ path ].size() ){
-        return 0;
-    }
+    if( check_if_path_is_valid( path ) ) return 0;
+    if( check_if_position_is_valid( path, position ) ) return 0;
     return this->paths[ path ][ position ];
 }
 
@@ -190,7 +177,7 @@ double Solution::get_total_rewards(){
 }
 
 double Solution::get_time_path( int path ){
-    if( path < 0 || path >= this->paths.size() ) throw runtime_error("get_time_path: path is invalid\n");
+    if( check_if_path_is_valid( path ) ) throw runtime_error("get_time_path: path is invalid\n");
     return this->path_times[ path ];
 }
 
@@ -199,9 +186,7 @@ int Solution::get_number_paths(){
 }
 
 int Solution::get_length_of_path( int path ){
-    if( path < 0 || (unsigned int) path >= this->paths.size() ){
-        return -1;
-    }
+    if( check_if_path_is_valid( path ) ) return -1;
     return this->paths[ path ].size();
 }
 
