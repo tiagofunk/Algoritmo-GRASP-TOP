@@ -15,6 +15,7 @@
 #include <iostream>
 #include <time.h>
 #include <map>
+#include <random>
 
 // --alpha 0.86 --iterations 3540 --path y
 
@@ -25,7 +26,8 @@ int main( int argc, char * argv[] ){
     clock_t initialTime = 0, finalTime = 0;
 	initialTime = clock();
 
-    int seed = time( 0 );//stoi( argv[ 3 ] );
+    random_device rd;
+    int seed = rd();//stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stod( arg.getValue("--alpha") );
