@@ -47,6 +47,14 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
         + new_distance_to_previous + new_distance_to_next;
 }
 
+double Solution::recalculate_time( int path ){
+    double sum = 0.0;
+    for( unsigned int i = 0; i < this->paths[ path ].size()-1; i++ ){
+        sum += calculate_distance( this->paths[ path ][ i ], this->paths[ path ][ i+1 ] );
+    }
+    return sum;
+}
+
 bool Solution::check_if_vertice_is_used( Vertice * v ){
     return this->used_vertices.find( v->get_hash() );
 }
@@ -137,6 +145,28 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
     return false;
 }
 
+bool Solution::swap( int path, int pos1, int pos2 ){
+    if( path < 0 || path > this->paths.size() ) return false;
+    if( pos1 < 1 || pos1 >= this->paths[ path ].size() ) return false;
+    if( pos2 < 1 || pos2 >= this->paths[ path ].size() ) return false;
+
+    Vertice * v = this->paths[ path ][ pos1 ];
+    this->paths[ path ][ pos1 ] = this->paths[ path ][ pos2 ];
+    this->paths[ path ][ pos2 ] = v;
+
+    double n_time = this->recalculate_time( path );
+
+    if( this->time_per_path > n_time ){
+        this->path_times[ path ] = n_time;
+        return true;
+    }else{
+        v = this->paths[ path ][ pos1 ];
+        this->paths[ path ][ pos1 ] = this->paths[ path ][ pos2 ];
+        this->paths[ path ][ pos2 ] = v;
+        return false;
+    }
+}
+
 Vertice * Solution::get_last_path_vertice_in_path( int path ){
     if( path < 0 || (unsigned int) path >= this->paths.size() ){
         return 0;
@@ -157,6 +187,11 @@ Vertice * Solution::get_vertice_in_path( int path, int position ){
 
 double Solution::get_total_rewards(){
     return this->total_rewards;
+}
+
+double Solution::get_time_path( int path ){
+    if( path < 0 || path >= this->paths.size() ) throw runtime_error("get_time_path: path is invalid\n");
+    return this->path_times[ path ];
 }
 
 int Solution::get_number_paths(){

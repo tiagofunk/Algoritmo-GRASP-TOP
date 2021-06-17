@@ -8,6 +8,7 @@
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
 #include "Operator.h"
+#include "OperatorSwapIntoRoute.h"
 #include "OperatorAddVerticeInPath.h"
 #include "OperatorSwapBetweenPathAndUnusedvertices.h"
 
@@ -34,10 +35,12 @@ int main( int argc, char * argv[] ){
     InstanceReader ir( file );
     Instance i = ir.read();
 
+    Operator * o0 = new OperatorSwapIntoRoute();
     Operator * o1 = new OperatorAddVerticeInPath();
     Operator * o2 = new OperatorSwapBetweenPathAndUnusedvertices();
 
     vector< Operator * > operators;
+    operators.push_back( o0 );
     operators.push_back( o1 );
     operators.push_back( o2 );
 

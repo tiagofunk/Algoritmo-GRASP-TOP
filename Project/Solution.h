@@ -27,8 +27,12 @@ class Solution{
 
         double calculate_time_in_add( int path, int position, Vertice * v );
         double calculate_time_in_rewrite( int path, int position, Vertice * v );
+        double recalculate_time( int path );
 
         bool check_if_vertice_is_used( Vertice * v );
+
+        // bool check_if_path_is_valid( int path );
+        // bool check_if_position_is_valid( int path, int position );
 
     public:
         Solution( int number_paths, double time_per_path );
@@ -37,10 +41,12 @@ class Solution{
         bool add_vertice( int path, Vertice * v );
         bool add_vertice_in_position( int path, int position, Vertice * v );
         bool rewrite_vertice( int path, int position, Vertice * v );
+        bool swap( int path, int p1, int p2 );
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
         double get_total_rewards();
+        double get_time_path( int path );
 
         int get_number_paths();
         int get_length_of_path( int path );
