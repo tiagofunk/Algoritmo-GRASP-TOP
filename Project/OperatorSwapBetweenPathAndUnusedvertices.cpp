@@ -25,7 +25,3 @@ Solution * OperatorSwapBetweenPathAndUnusedvertices::execute( Solution * s, vect
     }
     return best;
 }
-
-vector< Vertice * > OperatorSwapBetweenPathAndUnusedvertices::get_unused_vertice(){
-    return this->unused_vertices;
-}

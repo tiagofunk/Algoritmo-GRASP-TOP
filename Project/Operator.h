@@ -10,7 +10,10 @@ class Operator{
     
     public:
         virtual Solution * execute( Solution * sol, vector< Vertice * > unused_vertices ) = 0;
-        virtual vector< Vertice * > get_unused_vertice() = 0;
+        
+        vector< Vertice * > get_unused_vertice(){
+            return this->unused_vertices;
+        };
 };
 
 #endif

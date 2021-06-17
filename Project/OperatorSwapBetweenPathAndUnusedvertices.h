@@ -6,6 +6,5 @@
 class OperatorSwapBetweenPathAndUnusedvertices: public Operator{
     public:
         virtual Solution * execute( Solution * sol, vector< Vertice * > unused_vertices );
-        virtual vector< Vertice * > get_unused_vertice();
 };
 #endif

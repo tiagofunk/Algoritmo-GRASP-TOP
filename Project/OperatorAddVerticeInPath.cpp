@@ -23,7 +23,3 @@ Solution * OperatorAddVerticeInPath::execute( Solution * s, vector< Vertice * > 
     }
     return best;
 }
-
-vector< Vertice * > OperatorAddVerticeInPath::get_unused_vertice(){
-    return this->unused_vertices;
-}
