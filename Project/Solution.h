@@ -16,8 +16,9 @@ class Solution{
         vector< vector< Vertice * > > paths;
         vector< double > path_rewards;
         vector< double > path_times;
+        
         double total_rewards;
-
+        double total_time;
         double time_per_path;
 
         Mapper used_vertices;
@@ -50,6 +51,7 @@ class Solution{
         Vertice * get_vertice_in_path( int path, int position );
         double get_total_rewards();
         double get_time_path( int path );
+        double get_total_time();
 
         int get_number_paths();
         int get_length_of_path( int path );

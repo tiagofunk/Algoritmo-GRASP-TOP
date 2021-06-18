@@ -205,6 +205,14 @@ double Solution::get_total_rewards(){
     return this->total_rewards;
 }
 
+double Solution::get_total_time(){
+    this->total_time = 0.0;
+    for( unsigned int i = 0; i < this->paths.size(); i++ ){
+        this->total_time += this->path_times[ i ];
+    }
+    return this->total_time;
+}
+
 double Solution::get_time_path( int path ){
     if( check_if_path_is_valid( path ) ) throw runtime_error("get_time_path: path is invalid\n");
     return this->path_times[ path ];
@@ -222,7 +230,6 @@ int Solution::get_length_of_path( int path ){
 string Solution::to_string(){
     string s;
     s = "number paths: " + std::to_string(this->paths.size()) + "\n";
-    s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
     s += "paths:\n";
     for (unsigned int i = 0; i < this->paths.size(); i++){
         s += "size: " + std::to_string( this->paths[ i ].size() ) + "\n" ;
@@ -233,7 +240,9 @@ string Solution::to_string(){
         s += "time: " + std::to_string( this->path_times[ i ])+"\n";
         s += ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
     }
+    s += "time per path: " + std::to_string( this->time_per_path ) + "\n";
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
+    s += "total time: " + std::to_string( this->total_time) + "\n";
     s += "hash: " + std::to_string( this->get_hash() ) + "\n";
     
     return s;
