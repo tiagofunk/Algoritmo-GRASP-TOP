@@ -27,6 +27,12 @@ void Solution::update_reward_in_rewrite( int path, int position, Vertice * v ){
     this->total_rewards += v->get_reward();
 }
 
+void Solution::update_reward_in_remove( int path, int position ){
+    Vertice * to_remove = this->paths[ path ][ position ];
+    this->path_rewards[ path ] -= to_remove->get_reward();
+    this->total_rewards -= to_remove->get_reward();
+}
+
 double Solution::calculate_time_in_add( int path, int position, Vertice * v ){
     double d1 = calculate_distance( this->paths[ path ][ position-1 ], this->paths[ path ][ position ] );
     double d2 = calculate_distance( this->paths[ path ][ position-1 ], v );
@@ -45,6 +51,16 @@ double Solution::calculate_time_in_rewrite( int path, int position, Vertice * v 
     return this->path_times[ path ] 
         - old_distance_to_previous - old_distance_to_next
         + new_distance_to_previous + new_distance_to_next;
+}
+
+double Solution::calculate_time_in_remove( int path, int position ){
+    Vertice * previous = this->paths[ path ][ position-1 ];
+    Vertice * middle = this->paths[ path ][ position ];
+    Vertice * next = this->paths[ path ][ position+1 ];
+    double old_distance_to_previous = calculate_distance( previous, middle );
+    double old_distance_to_next = calculate_distance( middle, next );
+    double new_distance = calculate_distance( previous, next );
+    return this->path_times[ path ] - old_distance_to_previous - old_distance_to_next + new_distance;
 }
 
 double Solution::recalculate_time( int path ){
@@ -160,6 +176,19 @@ bool Solution::swap( int path, int pos1, int pos2 ){
     }
 }
 
+bool Solution::remove( int path, int position ){
+    if( check_if_path_is_valid( path ) ) return false;
+    if( check_if_position_is_valid( path, position ) ) return false;
+
+    update_reward_in_remove( path, position );
+    double n_time = calculate_time_in_remove( path, position );
+    this->path_times[ path ] = n_time;
+    Vertice * v = this->paths[ path ][ position ];
+    this->used_vertices.erase( v->get_hash() );
+    this->paths[ path ].erase( this->paths[ path ].begin() + position );
+    return true;
+}
+
 Vertice * Solution::get_last_path_vertice_in_path( int path ){
     if( check_if_path_is_valid( path ) ) return 0;
     int last_position = this->paths[ path ].size() - 1;
@@ -205,6 +234,7 @@ string Solution::to_string(){
         s += ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
     }
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
+    s += "hash: " + std::to_string( this->get_hash() ) + "\n";
     
     return s;
 }

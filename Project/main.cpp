@@ -11,6 +11,7 @@
 #include "OperatorSwapIntoRoute.h"
 #include "OperatorAddVerticeInPath.h"
 #include "OperatorSwapBetweenPathAndUnusedvertices.h"
+#include "Operator2opt.h"
 
 #include <iostream>
 #include <time.h>
@@ -27,7 +28,7 @@ int main( int argc, char * argv[] ){
 	initialTime = clock();
 
     random_device rd;
-    int seed = rd();//stoi( argv[ 3 ] );
+    int seed = 1234;// rd();//stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stod( arg.getValue("--alpha") );
@@ -38,11 +39,13 @@ int main( int argc, char * argv[] ){
     Instance i = ir.read();
 
     Operator * o0 = new OperatorSwapIntoRoute();
+    Operator * two_opt = new Operator2opt();
     Operator * o1 = new OperatorAddVerticeInPath();
     Operator * o2 = new OperatorSwapBetweenPathAndUnusedvertices();
 
     vector< Operator * > operators;
     operators.push_back( o0 );
+    operators.push_back( two_opt );
     operators.push_back( o1 );
     operators.push_back( o2 );
 
@@ -59,6 +62,6 @@ int main( int argc, char * argv[] ){
     finalTime = clock();
 	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
     cout << s->get_total_rewards() << endl << time << endl;
-    // cout << s->to_string() << endl;
+    cout << s->to_string() << endl;
     return 0;
 }

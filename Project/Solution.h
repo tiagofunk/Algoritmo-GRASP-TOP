@@ -24,9 +24,11 @@ class Solution{
 
         void update_reward_in_add( int path, Vertice * v );
         void update_reward_in_rewrite( int path, int position, Vertice * v );
+        void update_reward_in_remove( int path, int position );
 
         double calculate_time_in_add( int path, int position, Vertice * v );
         double calculate_time_in_rewrite( int path, int position, Vertice * v );
+        double calculate_time_in_remove( int path, int position );
         double recalculate_time( int path );
 
         bool check_if_vertice_is_used( Vertice * v );
@@ -42,6 +44,7 @@ class Solution{
         bool add_vertice_in_position( int path, int position, Vertice * v );
         bool rewrite_vertice( int path, int position, Vertice * v );
         bool swap( int path, int p1, int p2 );
+        bool remove( int path, int position );
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
