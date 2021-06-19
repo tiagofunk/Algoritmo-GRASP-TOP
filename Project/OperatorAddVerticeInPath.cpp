@@ -21,5 +21,6 @@ Solution * OperatorAddVerticeInPath::execute( Solution * s, vector< Vertice * > 
             }
         }
     }
+    delete s;
     return best;
 }

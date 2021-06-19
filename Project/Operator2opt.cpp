@@ -40,6 +40,6 @@ Solution * Operator2opt::execute( Solution * s, vector< Vertice * > unused_verti
             actual = new Solution( *s );
         }
     }
-
+    delete s;
     return best;
 }

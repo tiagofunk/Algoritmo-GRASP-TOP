@@ -23,5 +23,6 @@ Solution * OperatorSwapBetweenPathAndUnusedvertices::execute( Solution * s, vect
             }
         }
     }
+    delete s;
     return best;
 }

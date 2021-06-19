@@ -18,6 +18,6 @@ Solution * OperatorSwapIntoRoute::execute( Solution * s, vector< Vertice * > unu
             }
         }
     }
-
+    delete s;
     return best;
 }
