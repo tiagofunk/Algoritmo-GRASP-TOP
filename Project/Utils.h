@@ -13,4 +13,6 @@ double calculate_score_z( double value, double mean, double stand );
 
 double calculate_distance( Vertice * v1, Vertice * v2 );
 
+vector< Vertice * > shuffle_vertices( vector< Vertice * > vertices );
+
 #endif

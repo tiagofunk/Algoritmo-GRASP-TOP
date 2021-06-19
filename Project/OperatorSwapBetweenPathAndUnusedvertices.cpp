@@ -1,9 +1,11 @@
 #include "OperatorSwapBetweenPathAndUnusedvertices.h"
 
+#include "Utils.h"
+
 Solution * OperatorSwapBetweenPathAndUnusedvertices::execute( Solution * s, vector< Vertice * > uv ){
     Solution * best = new Solution( *s );
     Solution * actual = new Solution( *s );
-    this->unused_vertices = uv;
+    this->unused_vertices = shuffle_vertices( uv );
     for( int i = 0; i < s->get_number_paths(); i++){
         for (int j = 1; j < s->get_length_of_path( i )-1; j++){
             for(unsigned int k = 0; k < this->unused_vertices.size(); k++ ){

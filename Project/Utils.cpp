@@ -30,3 +30,15 @@ double calculate_distance( Vertice * v1, Vertice * v2 ){
     double y = v2->get_y() - v1->get_y();
     return sqrt( pow( x, 2 ) + pow( y, 2 ) );
 }
+
+vector< Vertice * > shuffle_vertices( vector< Vertice * > vertices ){
+    int n = 0;
+    Vertice * v = 0;
+    for( unsigned int i = 0; i < vertices.size(); i++ ){
+        n = rand() % vertices.size();
+        v = vertices[ i ];
+        vertices[ i ] = vertices[ n ];
+        vertices[ n ] = v;
+    }
+    return vertices;
+}
