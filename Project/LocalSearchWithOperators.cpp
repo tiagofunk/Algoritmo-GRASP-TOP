@@ -19,7 +19,8 @@ Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > 
             actual = this->operators[ i ]->execute( actual, this->unused_vertices );
             this->unused_vertices = this->operators[ i ]->get_unused_vertice();
         }
-        if( best->get_total_rewards() < actual->get_total_rewards() ){
+        if( best->get_total_rewards() < actual->get_total_rewards()
+                || actual->get_total_time() < best->get_total_time() ){
             delete best;
             best = new Solution( *actual );
             is_moved = true;
