@@ -100,22 +100,8 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
 }
 
 bool Solution::add_vertice( int path, Vertice * v ){
-    if( check_if_path_is_valid( path ) ) return false;
-    if( this->check_if_vertice_is_used( v ) ) return false;
-
     int position = this->paths[ path ].size() - 1;
-    double n_time = calculate_time_in_add( path, position, v );
-
-    if( this->time_per_path > n_time ){
-        update_reward_in_add( path, v );
-        this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
-        this->used_vertices.insert( v->get_hash() );
-        this->total_time += n_time - this->path_times[ path ]; 
-        this->path_times[ path ] = n_time;
-        return true;
-    }
-    
-    return false;
+    return this->add_vertice_in_position( path, position, v );
 }
 
 bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
