@@ -5,6 +5,7 @@ using std::cout;
 using std::endl;
 
 Solution * Operator2opt::execute( Solution * s, vector< Vertice * > unused_vertices ){
+    bool is_ok;
     int length_path = 0;
     Solution * actual = new Solution( *s );
     Solution * best = new Solution( *s );
@@ -12,23 +13,26 @@ Solution * Operator2opt::execute( Solution * s, vector< Vertice * > unused_verti
     this->unused_vertices = unused_vertices;
 
     for( int i = 0; i < actual->get_number_paths(); i++ ){
-        vertices_in_solution.clear();
         length_path = actual->get_length_of_path( i );
         if( length_path <= 3 ) continue;
 
         for( int j = 1; j < length_path-1; j++ ){
+            vertices_in_solution.clear();
+            is_ok = false;
             for( int k = j+1; k < length_path-1; k++ ){
 				vertices_in_solution.push_back( actual->get_vertice_in_path( i, j+1 ) );
-                actual->remove( i, k );
+                actual->remove( i, j+1 );
 			}
 			for( int k = 1; k <= j; k++ ){
 				vertices_in_solution.push_back( actual->get_vertice_in_path( i, 1 ) );
-                actual->remove( i, k );
+                actual->remove( i, 1 );
 			}
             for( unsigned int k = 0; k < vertices_in_solution.size(); k++ ){
-                actual->add_vertice( i, vertices_in_solution[ k ] );
+                if( !actual->add_vertice( i, vertices_in_solution[ k ] ) ){
+                    is_ok = false;
+                }
             }
-            if( actual->get_time_path( i ) < best->get_time_path( i ) ){
+            if( is_ok && actual->get_time_path( i ) < best->get_time_path( i ) ){
                 delete best;
                 best = new Solution( *actual );
             }
