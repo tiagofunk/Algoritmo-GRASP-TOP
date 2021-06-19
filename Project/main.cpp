@@ -28,7 +28,7 @@ int main( int argc, char * argv[] ){
 	initialTime = clock();
 
     random_device rd;
-    int seed = 1234;// rd();//stoi( argv[ 3 ] );
+    int seed = rd();// rd();//stoi( argv[ 3 ] );
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stod( arg.getValue("--alpha") );
@@ -62,6 +62,6 @@ int main( int argc, char * argv[] ){
     finalTime = clock();
 	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
     cout << s->get_total_rewards() << endl << time << endl;
-    cout << s->to_string() << endl;
+    //cout << s->to_string() << endl;
     return 0;
 }

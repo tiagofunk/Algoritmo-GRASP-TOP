@@ -1,8 +1,5 @@
 #include "Operator2opt.h"
 
-#include <iostream>
-using std::cout;
-using std::endl;
 
 Solution * Operator2opt::execute( Solution * s, vector< Vertice * > unused_vertices ){
     bool is_ok;
