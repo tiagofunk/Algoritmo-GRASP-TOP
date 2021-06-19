@@ -11,6 +11,7 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->path_times.resize( number_paths );
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
+    this->total_time = 0.0;
     this->used_vertices.resize( VERTICE_HASH_SIZE );
 }
 
@@ -92,7 +93,9 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
     this->paths[ path ].push_back( final );
     this->used_vertices.insert( final->get_hash() );
 
-    this->path_times[ path ] = calculate_distance( initial, final );
+    double n_time = calculate_distance( initial, final );
+    this->path_times[ path ] = n_time;
+    this->total_time += n_time;
     return true;
 }
 
@@ -107,6 +110,7 @@ bool Solution::add_vertice( int path, Vertice * v ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
         this->used_vertices.insert( v->get_hash() );
+        this->total_time += n_time - this->path_times[ path ]; 
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -125,6 +129,7 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
         this->used_vertices.insert( v->get_hash() );
+        this->total_time += n_time - this->path_times[ path ];
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -147,6 +152,7 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
         this->paths[ path ][ position ] = v;
         this->used_vertices.insert( v->get_hash() );
         
+        this->total_time += n_time - this->path_times[ path ];
         this->path_times[ path ] = n_time;
         return true;
     }
@@ -166,6 +172,7 @@ bool Solution::swap( int path, int pos1, int pos2 ){
     double n_time = this->recalculate_time( path );
 
     if( this->time_per_path > n_time ){
+        this->total_time += n_time - this->path_times[ path ];
         this->path_times[ path ] = n_time;
         return true;
     }else{
@@ -182,7 +189,9 @@ bool Solution::remove( int path, int position ){
 
     update_reward_in_remove( path, position );
     double n_time = calculate_time_in_remove( path, position );
+    this->total_time += n_time - this->path_times[ path ];
     this->path_times[ path ] = n_time;
+
     Vertice * v = this->paths[ path ][ position ];
     this->used_vertices.erase( v->get_hash() );
     this->paths[ path ].erase( this->paths[ path ].begin() + position );
@@ -206,10 +215,6 @@ double Solution::get_total_rewards(){
 }
 
 double Solution::get_total_time(){
-    this->total_time = 0.0;
-    for( unsigned int i = 0; i < this->paths.size(); i++ ){
-        this->total_time += this->path_times[ i ];
-    }
     return this->total_time;
 }
 
@@ -242,7 +247,7 @@ string Solution::to_string(){
     }
     s += "time per path: " + std::to_string( this->time_per_path ) + "\n";
     s += "total reward: " + std::to_string( this->total_rewards ) + "\n";
-    s += "total time: " + std::to_string( this->total_time) + "\n";
+    s += "total time: " + std::to_string( this->total_time ) + "\n";
     s += "hash: " + std::to_string( this->get_hash() ) + "\n";
     
     return s;
