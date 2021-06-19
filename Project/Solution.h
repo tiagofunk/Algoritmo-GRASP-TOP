@@ -44,7 +44,8 @@ class Solution{
         bool add_vertice( int path, Vertice * v );
         bool add_vertice_in_position( int path, int position, Vertice * v );
         bool rewrite_vertice( int path, int position, Vertice * v );
-        bool swap( int path, int p1, int p2 );
+        bool swap( int path, int pos1, int pos2 );
+        bool swap( int path1, int pos1, int path2, int pos2 );
         bool remove( int path, int position );
 
         Vertice * get_last_path_vertice_in_path( int path );

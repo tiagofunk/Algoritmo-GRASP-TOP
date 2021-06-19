@@ -169,6 +169,32 @@ bool Solution::swap( int path, int pos1, int pos2 ){
     }
 }
 
+bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
+    if( check_if_path_is_valid( path1 ) ) return false;
+    if( check_if_path_is_valid( path2 ) ) return false;
+    if( check_if_position_is_valid( path1, pos1 ) ) return false;
+    if( check_if_position_is_valid( path2, pos2 ) ) return false;
+
+    Vertice * v = this->paths[ path1 ][ pos1 ];
+    this->paths[ path1 ][ pos1 ] = this->paths[ path2 ][ pos2 ];
+    this->paths[ path2 ][ pos2 ] = v;
+
+    double n_time_1 = this->recalculate_time( path1 );
+    double n_time_2 = this->recalculate_time( path2 );
+
+    if( this->time_per_path > n_time_1 || this->time_per_path > n_time_2 ){
+        this->total_time += n_time_1 + n_time_2 - this->path_times[ path1 ] + this->path_times[ path2 ];
+        this->path_times[ path1 ] = n_time_1;
+        this->path_times[ path2 ] = n_time_2;
+        return true;
+    }else{
+        v = this->paths[ path1 ][ pos1 ];
+        this->paths[ path1 ][ pos1 ] = this->paths[ path2 ][ pos2 ];
+        this->paths[ path2 ][ pos2 ] = v;
+        return false;
+    }
+}
+
 bool Solution::remove( int path, int position ){
     if( check_if_path_is_valid( path ) ) return false;
     if( check_if_position_is_valid( path, position ) ) return false;
