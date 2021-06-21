@@ -1,6 +1,7 @@
 #!/bin/bash
 
 execute_all(){
+#dir="../instances/set_1_2"
     for dir in ../instances/*
     do
         for file in $dir/*
@@ -24,4 +25,4 @@ execute_instance(){
     ./../Project/TOP_GRASP_TS_PR 1 1 1 $file --alpha 0.86 --iterations 3540 --path y >> $2
 }
 
-execute_instance $1 $2
+execute_all $1 $2
