@@ -23,6 +23,8 @@ class RandomGreedyGen_MinMax: public SolutionGeneration{
         vector< double > get_scores( vector< Vertice * > vertices );
 
         vector< score_point > calcule_probability( Vertice * actual, vector< Vertice * > vertices );
+        int select_vertice_greedy( vector< score_point > sp );
+        int select_vertice_random( vector< score_point > sp );
         int select_vertice( vector< score_point > sp );
         double calcule_score( double value, double min, double max );
 

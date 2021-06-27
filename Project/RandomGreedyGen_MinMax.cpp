@@ -97,25 +97,40 @@ vector< RandomGreedyGen_MinMax::score_point > RandomGreedyGen_MinMax::calcule_pr
     return sp;
 }
 
-int RandomGreedyGen_MinMax::select_vertice( vector< RandomGreedyGen_MinMax::score_point > sp ){
-    if( sp.empty() ) return -1;
-
+int RandomGreedyGen_MinMax::select_vertice_greedy( vector< RandomGreedyGen_MinMax::score_point > sp ){
     int selected_position = 0;
-    double r1 = (double) rand() / RAND_MAX;
-    double r2 = (double) rand() / RAND_MAX;
-    double sum = 0.0, max = 0.0;
-    bool is_greedy = r2 >= this->alpha;
+    double max = 0.0;
     for( unsigned int i = 0; i < sp.size(); i++ ){
-        sum += sp[ i ].probability;
-        if( !is_greedy && r1 < sum ){
-            selected_position = i;
-            break;
-        }else if( is_greedy && max < sp[ i ].probability ){
+        if( max < sp[ i ].probability ){
             max = sp[ i ].probability;
             selected_position = i;
         }
     }
     return selected_position;
+}
+
+int RandomGreedyGen_MinMax::select_vertice_random( vector< RandomGreedyGen_MinMax::score_point > sp ){
+    int selected_position = -1;
+    double random_number = (double) rand() / RAND_MAX;
+    double sum = 0.0;
+    for( unsigned int i = 0; i < sp.size(); i++ ){
+        sum += sp[ i ].probability;
+        if( random_number < sum ){
+            selected_position = i;
+            break;
+        }
+    }
+    return selected_position;
+}
+
+int RandomGreedyGen_MinMax::select_vertice( vector< RandomGreedyGen_MinMax::score_point > sp ){
+    if( sp.empty() ) return -1;
+    double random_number = (double) rand() / RAND_MAX;
+    bool is_greedy = random_number >= this->alpha;
+    if( is_greedy ){
+        return select_vertice_greedy( sp );
+    }
+    return select_vertice_random( sp );
 }
 
 double RandomGreedyGen_MinMax::calcule_score( double value, double min, double max ){
