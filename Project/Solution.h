@@ -16,6 +16,8 @@ class Solution{
         vector< vector< Vertice * > > paths;
         vector< double > path_rewards;
         vector< double > path_times;
+
+        bool checker_is_unlocked;
         
         double total_rewards;
         double total_time;
@@ -60,6 +62,8 @@ class Solution{
         string to_string();
 
         int get_hash();
+
+        void lock_checker();
 };
 
 #endif

@@ -72,7 +72,7 @@ int main( int argc, char * argv[] ){
 
     finalTime = clock();
 	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
+    cout << s->to_string();
     cout << s->get_total_rewards() << endl << time << " ms" << endl;
-    // cout << s->to_string() << endl;
     return 0;
 }

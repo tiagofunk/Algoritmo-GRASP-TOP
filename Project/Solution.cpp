@@ -9,6 +9,7 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
     this->path_times.resize( number_paths );
+    this->checker_is_unlocked = false;
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
     this->total_time = 0.0;
@@ -111,7 +112,7 @@ bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
     
     double n_time = calculate_time_in_add( path, position, v );
 
-    if( this->time_per_path > n_time ){
+    if( this->checker_is_unlocked || this->time_per_path > n_time ){
         update_reward_in_add( path, v );
         this->paths[ path ].insert( this->paths[ path ].begin() + position, v );
         this->used_vertices.insert( v->get_hash() );
@@ -129,7 +130,7 @@ bool Solution::rewrite_vertice( int path, int position, Vertice * v ){
 
     double n_time = calculate_time_in_rewrite( path, position, v );
 
-    if( this->time_per_path > n_time ){
+    if( this->checker_is_unlocked || this->time_per_path > n_time ){
         update_reward_in_rewrite( path, position, v );
 
         Vertice * old_v = this->paths[ path ][ position ];
@@ -157,7 +158,7 @@ bool Solution::swap( int path, int pos1, int pos2 ){
 
     double n_time = this->recalculate_time( path );
 
-    if( this->time_per_path > n_time ){
+    if( this->checker_is_unlocked || this->time_per_path > n_time ){
         this->total_time += n_time - this->path_times[ path ];
         this->path_times[ path ] = n_time;
         return true;
@@ -182,7 +183,7 @@ bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
     double n_time_1 = this->recalculate_time( path1 );
     double n_time_2 = this->recalculate_time( path2 );
 
-    if( this->time_per_path > n_time_1 || this->time_per_path > n_time_2 ){
+    if( this->checker_is_unlocked || (this->time_per_path > n_time_1 || this->time_per_path > n_time_2) ){
         this->total_time += n_time_1 + n_time_2 - this->path_times[ path1 ] + this->path_times[ path2 ];
         this->path_times[ path1 ] = n_time_1;
         this->path_times[ path2 ] = n_time_2;
@@ -276,4 +277,8 @@ int Solution::get_hash(){
     }
     std::hash< std::string > gen_hash;
     return gen_hash( oss.str() ) % SOLUTION_HASH_SIZE;
+}
+
+void Solution::lock_checker(){
+    this->checker_is_unlocked = false;
 }

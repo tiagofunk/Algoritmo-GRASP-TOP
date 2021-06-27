@@ -20,6 +20,7 @@ Solution * GRASP::execute(){
     for (int i = 0; i < this->iterations; i++){
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
+        actual->lock_checker();
         
         h = actual->get_hash();
         if( !this->previous_generate_solutions.find( h ) ){
