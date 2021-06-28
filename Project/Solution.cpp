@@ -9,7 +9,7 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
     this->path_times.resize( number_paths );
-    this->checker_is_unlocked = false;
+    this->checker_is_unlocked = true;
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
     this->total_time = 0.0;

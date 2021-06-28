@@ -8,6 +8,18 @@ RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha, int number_of_path
     this->time_per_path = time_per_path;
 }
 
+Solution * RandomGreedyGen_MinMax::remove_excess( Solution * sol ){
+    for( int i = 0; i < sol->get_number_paths(); i++ ){
+        while( time_per_path < sol->get_time_path( i ) ){
+            int position = rand() % ( sol->get_length_of_path( i )-2 ) + 1;
+            Vertice * v = sol->get_vertice_in_path( i, position );
+            sol->remove( i, position );
+            this->unused_vertices.push_back( v );
+        }
+    }
+    return sol;
+}
+
 Solution * RandomGreedyGen_MinMax::random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices ){
     bool is_added = false;
     Solution * sol = new Solution( this->number_of_paths, this->time_per_path );
@@ -31,7 +43,7 @@ Solution * RandomGreedyGen_MinMax::random_greedy_generation( Vertice * initial, 
         }
     }while( is_added );
 
-    return sol;
+    return remove_excess( sol );
 }
 
 vector< Vertice * > RandomGreedyGen_MinMax::get_unused_vertices(){

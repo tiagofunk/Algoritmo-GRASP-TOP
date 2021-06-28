@@ -28,6 +28,8 @@ class RandomGreedyGen_MinMax: public SolutionGeneration{
         int select_vertice( vector< score_point > sp );
         double calcule_score( double value, double min, double max );
 
+        Solution * remove_excess( Solution * sol );
+
     public:
         RandomGreedyGen_MinMax( double alpha, int number_of_paths, double time_per_path );
         virtual Solution * random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices );
