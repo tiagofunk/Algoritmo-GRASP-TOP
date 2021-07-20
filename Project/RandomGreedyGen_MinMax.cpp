@@ -43,7 +43,7 @@ Solution * RandomGreedyGen_MinMax::random_greedy_generation( Vertice * initial, 
         }
     }while( is_added );
 
-    return remove_excess( sol );
+    return sol;
 }
 
 vector< Vertice * > RandomGreedyGen_MinMax::get_unused_vertices(){

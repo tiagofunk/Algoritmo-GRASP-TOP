@@ -54,6 +54,7 @@ class Solution{
         Vertice * get_vertice_in_path( int path, int position );
         double get_total_rewards();
         double get_time_path( int path );
+        double get_time_per_path();
         double get_total_time();
 
         int get_number_paths();

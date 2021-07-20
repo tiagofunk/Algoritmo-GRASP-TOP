@@ -9,7 +9,7 @@ Solution * OperatorRandomRemove::execute( Solution * sol, vector< Vertice * > un
     if( actual->get_length_of_path( path ) != 2 ){
         int position = rand() % ( actual->get_length_of_path( path )-2 ) + 1;
         Vertice * v = actual->get_vertice_in_path( path, position );
-        bool b = actual->remove( path, position );
+        actual->remove( path, position );
         this->unused_vertices.push_back( v );
     }
     delete sol;

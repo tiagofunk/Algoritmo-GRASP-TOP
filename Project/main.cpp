@@ -41,24 +41,12 @@ int main( int argc, char * argv[] ){
     Instance i = ir.read();
 
     vector< Operator * > operators;
-
-    // Operator * orr = new OperatorRandomRemove();
-    // operators.push_back( orr );
-
-    Operator * o0 = new OperatorSwapIntoRoute();
-    operators.push_back( o0 );
-
-    // Operator * oo = new OperatorSwapInterRoute();
-    // operators.push_back( oo );
-
-    // Operator * two_opt = new Operator2opt();
-    // operators.push_back( two_opt );
-
-    Operator * o1 = new OperatorAddVerticeInPath();
-    operators.push_back( o1 );
-
-    Operator * o2 = new OperatorSwapBetweenPathAndUnusedvertices();
-    operators.push_back( o2 );
+    operators.push_back( new OperatorRandomRemove() );
+    operators.push_back( new OperatorSwapIntoRoute() );
+    operators.push_back( new OperatorSwapInterRoute() );
+    operators.push_back( new Operator2opt() );
+    operators.push_back( new OperatorAddVerticeInPath() );
+    operators.push_back( new OperatorSwapBetweenPathAndUnusedvertices() );
 
     GRASP g(
         iterations,

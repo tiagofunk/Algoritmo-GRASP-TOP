@@ -236,6 +236,10 @@ double Solution::get_time_path( int path ){
     return this->path_times[ path ];
 }
 
+double Solution::get_time_per_path(){
+    return this->time_per_path;
+}
+
 int Solution::get_number_paths(){
     return this->paths.size();
 }
