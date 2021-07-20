@@ -1,37 +1,34 @@
 #include "Instance.h"
 
-Instance::Instance(int number_of_vertices, int number_of_paths, double time_per_path){
-    this->number_of_vertices = number_of_vertices;
+Instance * Instance::_instance = 0;
+
+Instance::Instance(){
+    this->number_of_vertices = 0;
     this->number_of_null_vertices = 0;
-    this->number_of_path_vertices = 0;;
-    this->number_of_paths = number_of_paths;
-    this->time_per_path = time_per_path;
+    this->number_of_path_vertices = 0;
+    this->number_of_paths = 0;
+    this->time_per_path = 0.0;
     this->initial = 0;
     this->final = 0;
 }
 
-Instance::~Instance(){
+Instance * Instance::instance(){
+    if( Instance::_instance == 0 ){
+        Instance::_instance = new Instance();
+    }
+    return Instance::_instance;
 }
 
-int Instance::get_number_of_vertices(){
-    return this->number_of_vertices;
+void Instance::set_number_of_vertices( int number_of_vertices ){
+    this->number_of_vertices = number_of_vertices;
 }
 
-
-int Instance::get_number_of_null_vertices(){
-    return this->number_of_null_vertices;
+void Instance::set_number_of_paths( int number_of_paths ){
+    this->number_of_paths = number_of_paths;
 }
 
-int Instance::get_number_of_path_vertices(){
-    return this->number_of_path_vertices; 
-}
-
-int Instance::get_number_of_paths(){
-    return this->number_of_paths;
-}
-
-double Instance::get_time_per_path(){
-    return this->time_per_path;
+void Instance::set_time_per_path( double time_per_path ){
+    this->time_per_path = time_per_path;
 }
 
 void Instance::add_point( Vertice * p ){
@@ -47,6 +44,26 @@ void Instance::add_point( Vertice * p ){
         this->number_of_path_vertices++;
         this->list_of_path_vertices.push_back( p );
     }
+}
+
+int Instance::get_number_of_vertices(){
+    return this->number_of_vertices;
+}
+
+int Instance::get_number_of_null_vertices(){
+    return this->number_of_null_vertices;
+}
+
+int Instance::get_number_of_path_vertices(){
+    return this->number_of_path_vertices; 
+}
+
+int Instance::get_number_of_paths(){
+    return this->number_of_paths;
+}
+
+double Instance::get_time_per_path(){
+    return this->time_per_path;
 }
 
 Vertice * Instance::get_path_vertice( int position ){

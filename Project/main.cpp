@@ -2,7 +2,6 @@
 #include "InstanceReader.h"
 #include "Instance.h"
 #include "Grasp.h"
-#include "RandomGreedyGen_ScoreZ.h"
 #include "RandomGreedyGen_MinMax.h"
 #include "LocalSearchWithOperators.h"
 #include "PathRelinkingOperator.h"
@@ -38,7 +37,7 @@ int main( int argc, char * argv[] ){
     bool path = arg.getValue("--path") == "y"? true : false; 
 
     InstanceReader ir( file );
-    Instance i = ir.read();
+    ir.read();
 
     vector< Operator * > operators;
     operators.push_back( new OperatorRandomRemove() );
@@ -52,10 +51,9 @@ int main( int argc, char * argv[] ){
         iterations,
         seed,
         alpha,
-        new RandomGreedyGen_MinMax( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
+        new RandomGreedyGen_MinMax( alpha ),
         new LocalSearchWithOperators( operators ),
-        new PathRelinkingOperator( path ), 
-        &i );
+        new PathRelinkingOperator( path ));
     Solution * s = g.execute();
 
     finalTime = clock();

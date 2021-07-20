@@ -2,10 +2,10 @@
 
 #include "Utils.h"
 
-RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha, int number_of_paths, double time_per_path ):SolutionGeneration(){
-    this->number_of_paths = number_of_paths;
+RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha ):SolutionGeneration(){
     this->alpha = alpha;
-    this->time_per_path = time_per_path;
+    this->number_of_paths = Instance::instance()->get_number_of_paths();
+    this->time_per_path = Instance::instance()->get_time_per_path();
 }
 
 Solution * RandomGreedyGen_MinMax::initialize_solution( int number_of_paths, double time_per_path, Vertice * initial, Vertice * final ){
@@ -121,9 +121,15 @@ double RandomGreedyGen_MinMax::calcule_score( double value, double min, double m
     return (value - min)/(max - min);
 }
 
-Solution * RandomGreedyGen_MinMax::random_greedy_generation( Vertice * initial, Vertice * final, vector< Vertice * > vertices ){
+Solution * RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * > vertices ){
     bool is_added = false;
-    Solution * sol = this->initialize_solution( this->number_of_paths, this->time_per_path, initial, final );
+    Solution * sol =
+        this->initialize_solution(
+            this->number_of_paths, 
+            this->time_per_path, 
+            Instance::instance()->get_initial_vertice(),
+            Instance::instance()->get_final_vertice()
+        );
     this->unused_vertices.clear();
     this->unused_vertices = vertices;
 

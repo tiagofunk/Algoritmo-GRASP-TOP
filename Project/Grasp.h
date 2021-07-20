@@ -13,7 +13,6 @@ class GRASP{
         int iterations;
         int seed;
         double alfa;
-        Instance * instance;
         SolutionGeneration * solution_generation;
         LocalSearch * local_search;
         PathRelinking * path_relinking;
@@ -23,7 +22,7 @@ class GRASP{
         Mapper previous_generate_solutions;
 
     public:
-        GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance );
+        GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking );
         Solution * execute();
         
 };

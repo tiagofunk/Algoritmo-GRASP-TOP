@@ -14,7 +14,7 @@ public:
     InstanceReader(std::string file_name);
     ~InstanceReader();
 
-    Instance read();
+    void read();
 };
 
 

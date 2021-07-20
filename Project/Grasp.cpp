@@ -1,10 +1,9 @@
 #include "Grasp.h"
 
-GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
+GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
     this->iterations = iterations;
     this->seed = seed;
     this->alfa = alfa;
-    this->instance = instance;
     this->solution_generation = solution_generation;
     this->local_search = local_search;
     this->path_relinking = path_relinking;
@@ -19,7 +18,7 @@ Solution * GRASP::execute(){
 
     for (int i = 0; i < this->iterations; i++){
         this->unused_vertices.clear();
-        actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
+        actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();
         
         h = actual->get_hash();

@@ -14,7 +14,7 @@ InstanceReader::InstanceReader( string file_name ){
 InstanceReader::~InstanceReader(){
 }
 
-Instance InstanceReader::read(){
+void InstanceReader::read(){
     int vertices, paths, reward;
     double time, x, y;
     string aux;
@@ -34,16 +34,18 @@ Instance InstanceReader::read(){
     file >> aux;
     file >> time;
 
-    Instance inst(vertices, paths, time);
+    Instance * inst = Instance::instance();
+    inst->set_number_of_vertices( vertices );
+    inst->set_number_of_paths( paths );
+    inst->set_time_per_path( time );
 
     for( int i = 0; i < vertices; i++ ){
         file >> x;
         file >> y;
         file >> reward;
         p = new Vertice( x, y, reward );
-        inst.add_point( p );
+        inst->add_point( p );
     }
 
     file.close();
-    return inst;
 }
