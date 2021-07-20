@@ -2,6 +2,20 @@
 
 #include <math.h>
 
+double * find_max_min( double * values, int size ){
+    double * min_max = new double[ 2 ];
+    min_max[ 0 ] = values[ 0 ];
+    min_max[ 1 ] = values[ 0 ];
+    for( int i = 1; i < size; i++ ){
+        if( min_max[ 0 ] > values[ i ] ){
+            min_max[ 0 ] = values[ i ];
+        } else if( min_max[ 1 ] < values[ i ] ){
+            min_max[ 1 ] = values[ i ];
+        }
+    }
+    return min_max;
+}
+
 double calculate_mean( vector< double > values, int size ){
     double sum = 0.0;
     for( int i = 0; i < size; i++ ){
@@ -41,4 +55,8 @@ vector< Vertice * > shuffle_vertices( vector< Vertice * > vertices ){
         vertices[ n ] = v;
     }
     return vertices;
+}
+
+double random_number(){
+    return (double) rand() / RAND_MAX;
 }
