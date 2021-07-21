@@ -42,8 +42,8 @@ int main( int argc, char * argv[] ){
     ir.read();
 
     vector< Operator * > operators;
-    operators.push_back( new OperatorRandomRemove() );
-    // operators.push_back( new OperatorWorstRemove() );
+    // operators.push_back( new OperatorRandomRemove() );
+    operators.push_back( new OperatorWorstRemove() );
     // operators.push_back( new OperatorSwapIntoRoute() );
     // operators.push_back( new OperatorSwapInterRoute() );
     // operators.push_back( new Operator2opt() );
