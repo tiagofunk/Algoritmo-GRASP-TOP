@@ -13,6 +13,7 @@
 #include "Operator2opt.h"
 #include "OperatorSwapInterRoute.h"
 #include "OperatorRandomRemove.h"
+#include "OperatorWorstRemove.h"
 
 #include <iostream>
 #include <time.h>
@@ -29,7 +30,8 @@ int main( int argc, char * argv[] ){
 	initialTime = clock();
 
     random_device rd;
-    int seed = rd();// stoi( argv[ 3 ] );
+    int seed = 306197134;//rd();// stoi( argv[ 3 ] );
+    cout << "seed: " << seed << endl;
 	ArgumentReader arg( argc, argv );
     string file = arg.getValue("--file");
     double alpha = stod( arg.getValue("--alpha") );
@@ -41,11 +43,12 @@ int main( int argc, char * argv[] ){
 
     vector< Operator * > operators;
     operators.push_back( new OperatorRandomRemove() );
-    operators.push_back( new OperatorSwapIntoRoute() );
-    operators.push_back( new OperatorSwapInterRoute() );
-    operators.push_back( new Operator2opt() );
-    operators.push_back( new OperatorAddVerticeInPath() );
-    operators.push_back( new OperatorSwapBetweenPathAndUnusedvertices() );
+    // operators.push_back( new OperatorWorstRemove() );
+    // operators.push_back( new OperatorSwapIntoRoute() );
+    // operators.push_back( new OperatorSwapInterRoute() );
+    // operators.push_back( new Operator2opt() );
+    // operators.push_back( new OperatorAddVerticeInPath() );
+    // operators.push_back( new OperatorSwapBetweenPathAndUnusedvertices() );
 
     GRASP g(
         iterations,

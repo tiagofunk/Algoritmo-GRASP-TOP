@@ -231,6 +231,16 @@ double Solution::get_total_time(){
     return this->total_time;
 }
 
+double Solution::get_distance( int path, int position ){
+    if( check_if_path_is_valid( path ) ) return -1.0;
+    if( check_if_position_is_valid( path, position ) ) return -1.0;
+    if( this->paths[ path ].size() == 2 ) return -1.0;
+
+    return calculate_distance( this->paths[ path ][ position-1 ], this->paths[ path ][ position ] ) +
+        calculate_distance( this->paths[ path ][ position ], this->paths[ path ][ position+1 ] );
+
+}
+
 double Solution::get_time_path( int path ){
     if( check_if_path_is_valid( path ) ) throw runtime_error("get_time_path: path is invalid\n");
     return this->path_times[ path ];

@@ -56,6 +56,7 @@ class Solution{
         double get_time_path( int path );
         double get_time_per_path();
         double get_total_time();
+        double get_distance( int path, int position );
 
         int get_number_paths();
         int get_length_of_path( int path );
