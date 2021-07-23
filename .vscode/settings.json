@@ -10,6 +10,8 @@
         "istream": "cpp",
         "functional": "cpp",
         "new": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "type_traits": "cpp",
+        "tuple": "cpp"
     }
 }

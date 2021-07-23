@@ -259,6 +259,11 @@ int Solution::get_length_of_path( int path ){
     return this->paths[ path ].size();
 }
 
+bool Solution::path_is_empty( int path ){
+    if( check_if_path_is_valid( path ) ) return true;
+    return this->paths[ path ].size() != 2;
+}
+
 string Solution::to_string(){
     string s;
     s = "number paths: " + std::to_string(this->paths.size()) + "\n";
