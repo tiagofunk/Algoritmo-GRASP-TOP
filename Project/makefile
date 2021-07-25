@@ -20,12 +20,11 @@ CC=g++
 # Flags for compiler
 CC_FLAGS=-c -W -Wall
 
-all:$(PROJ_NAME)
+all: $(PROJ_NAME) run
+
+test: clean_main $(PROJ_NAME) run_test
 
 $(PROJ_NAME): $(OBJ)
-#	@ echo "CPP $(CPP_SOURCE)"
-#	@ echo "H $(H_SOURCE)"
-#	@ echo "OBJ $(OBJ)"
 	$(CC) -o $@ $^
 	
 # o simbolo '%' pega o nome do arquivo
@@ -38,5 +37,14 @@ $(PROJ_NAME): $(OBJ)
 main.o: main.cpp $(H_SOURCE)
 	$(CC) -o $@ $< $(CC_FLAGS)
 
+clean_main:
+	rm main.o
+
 clean:
 	rm -rf *.o $(PROJ_NAME) *~
+
+run_test:
+	./$(PROJ_NAME)
+
+run:
+	./$(PROJ_NAME) 1 1 1 a.txt --alpha 0.86 --iterations 3540 --path y
