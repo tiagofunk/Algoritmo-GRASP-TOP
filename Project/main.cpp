@@ -14,6 +14,7 @@
 #include "OperatorExchange.h"
 #include "OperatorRandomRemove.h"
 #include "OperatorWorstRemove.h"
+#include "OperatorRelocate.h"
 
 #include <iostream>
 #include <time.h>
@@ -42,13 +43,7 @@ int main( int argc, char * argv[] ){
     ir.read();
 
     vector< Operator * > operators;
-    operators.push_back( new OperatorRandomRemove() );
-    // operators.push_back( new OperatorWorstRemove() );
-    // operators.push_back( new OperatorSwapIntoRoute() );
-    // operators.push_back( new OperatorSwapInterRoute() );
-    // operators.push_back( new Operator2opt() );
-    // operators.push_back( new OperatorAddVerticeInPath() );
-    // operators.push_back( new OperatorSwapBetweenPathAndUnusedvertices() );
+    operators.push_back( new OperatorRelocate() );
 
     GRASP g(
         iterations,

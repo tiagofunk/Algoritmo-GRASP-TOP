@@ -102,10 +102,10 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
 
 bool Solution::add_vertice( int path, Vertice * v ){
     int position = this->paths[ path ].size() - 1;
-    return this->add_vertice_in_position( path, position, v );
+    return this->add_vertice( path, position, v );
 }
 
-bool Solution::add_vertice_in_position( int path, int position, Vertice * v ){
+bool Solution::add_vertice( int path, int position, Vertice * v ){
     if( check_if_path_is_valid( path ) ) return false; 
     if( check_if_position_is_valid( path, position ) ) return false;
     if( this->check_if_vertice_is_used( v ) ) return false;
@@ -208,6 +208,27 @@ bool Solution::remove( int path, int position ){
     Vertice * v = this->paths[ path ][ position ];
     this->used_vertices.erase( v->get_hash() );
     this->paths[ path ].erase( this->paths[ path ].begin() + position );
+    return true;
+}
+
+bool Solution::move( int path1, int position1, int path2, int position2 ){
+    if( check_if_path_is_valid( path1 ) ) return false;
+    if( check_if_position_is_valid( path1, position1 ) ) return false;
+    if( check_if_path_is_valid( path2 ) ) return false;
+    if( check_if_position_is_valid( path2, position2 ) ) return false;
+
+    Vertice * v = this->paths[ path1 ][ position1 ];
+
+    double n_time = calculate_time_in_remove( path1, position1 );
+    this->total_time += n_time - this->path_times[ path1 ];
+    this->path_times[ path1 ] = n_time;
+
+    n_time = calculate_time_in_add( path2, position2, v );
+    this->total_time += n_time + this->path_times[ path2 ];
+    this->path_times[ path2 ] = n_time;
+    
+    this->paths[ path1 ].erase( this->paths[ path1 ].begin() + position1 );
+    this->paths[ path2 ].insert( this->paths[ path2 ].begin() + position2, v );
     return true;
 }
 

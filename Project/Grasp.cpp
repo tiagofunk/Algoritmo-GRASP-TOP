@@ -17,6 +17,7 @@ Solution * GRASP::execute(){
     srand( this->seed );
 
     for (int i = 0; i < this->iterations; i++){
+        cout << i << endl;
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();
