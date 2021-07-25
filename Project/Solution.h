@@ -29,15 +29,19 @@ class Solution{
         void update_reward_in_rewrite( int path, int position, Vertice * v );
         void update_reward_in_remove( int path, int position );
 
+        void update_time( int path, double new_time );
+
+        void add_in_path( int path, int position, Vertice * v );
+        void remove_in_path( int path, int position );
+
         double calculate_time_in_add( int path, int position, Vertice * v );
         double calculate_time_in_rewrite( int path, int position, Vertice * v );
         double calculate_time_in_remove( int path, int position );
         double recalculate_time( int path );
 
-        bool check_if_vertice_is_used( Vertice * v );
-
         bool check_if_path_is_valid( int path );
         bool check_if_path_position_is_valid( int path, int position );
+        bool check_if_vertice_is_used( Vertice * v );
 
     public:
         Solution( int number_paths, double time_per_path );
