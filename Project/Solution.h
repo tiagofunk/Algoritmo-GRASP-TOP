@@ -37,11 +37,12 @@ class Solution{
         bool check_if_vertice_is_used( Vertice * v );
 
         bool check_if_path_is_valid( int path );
-        bool check_if_position_is_valid( int path, int position );
+        bool check_if_path_position_is_valid( int path, int position );
 
     public:
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
+        void lock_checker();
         
         bool add_vertice( int path, Vertice * v );
         bool add_vertice( int path, int position, Vertice * v );
@@ -50,6 +51,7 @@ class Solution{
         bool swap( int path1, int pos1, int path2, int pos2 );
         bool remove( int path, int position );
         bool move( int path1, int position1, int path2, int position2 );
+        bool is_empty( int path );
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
@@ -61,13 +63,10 @@ class Solution{
         int get_number_paths();
         int get_length_of_path( int path );
 
-        bool path_is_empty( int path );
-
         string to_string();
 
         int get_hash();
 
-        void lock_checker();
 };
 
 #endif

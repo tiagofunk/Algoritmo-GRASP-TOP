@@ -7,7 +7,7 @@ int OperatorRandomRemove::random_path( Solution * sol ){
     int position = 0, aux = 0;
     vector< int > numbers;
     for( int i = 0; i < sol->get_number_paths(); i++ ){
-        if( sol->path_is_empty( i ) ){
+        if( sol->is_empty( i ) ){
             numbers.push_back( i );
         }
     }
