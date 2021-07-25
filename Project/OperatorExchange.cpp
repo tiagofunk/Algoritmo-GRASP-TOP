@@ -1,6 +1,6 @@
-#include "OperatorSwapInterRoute.h"
+#include "OperatorExchange.h"
 
-Solution * OperatorSwapInterRoute::execute( Solution * s, vector< Vertice * > unused_vertices ){
+Solution * OperatorExchange::execute( Solution * s, vector< Vertice * > unused_vertices ){
     Solution * actual = new Solution( *s );
     Solution * best   = new Solution( *s );
     this->unused_vertices = unused_vertices;

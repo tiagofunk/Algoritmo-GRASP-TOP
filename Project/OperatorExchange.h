@@ -1,9 +1,9 @@
-#ifndef OPERATOR_INTER_ROUTE_H
-#define OPERATOR_INTER_ROUTE_H
+#ifndef OPERATOR_EXCHANGE_H
+#define OPERATOR_EXCHANGE_H
 
 #include "Operator.h"
 
-class OperatorSwapInterRoute: public Operator{
+class OperatorExchange: public Operator{
     public:
         virtual Solution * execute( Solution * sol, vector< Vertice * > unused_vertices );
 };
