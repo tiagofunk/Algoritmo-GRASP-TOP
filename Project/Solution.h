@@ -44,9 +44,9 @@ class Solution{
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
         void lock_checker();
         
-        bool add_vertice( int path, Vertice * v );
-        bool add_vertice( int path, int position, Vertice * v );
-        bool rewrite_vertice( int path, int position, Vertice * v );
+        bool add( int path, Vertice * v );
+        bool add( int path, int position, Vertice * v );
+        bool rewrite( int path, int position, Vertice * v );
         bool swap( int path, int pos1, int pos2 );
         bool swap( int path1, int pos1, int path2, int pos2 );
         bool remove( int path, int position );

@@ -139,7 +139,7 @@ Solution * RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * >
             int selected = select_vertice( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
-            if( sol->add_vertice( i, selected_vertice ) ){
+            if( sol->add( i, selected_vertice ) ){
                 is_added = true;
                 this->unused_vertices.erase( this->unused_vertices.begin() + selected );
             }

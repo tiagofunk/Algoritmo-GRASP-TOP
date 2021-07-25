@@ -25,7 +25,7 @@ Solution * Operator2opt::execute( Solution * s, vector< Vertice * > unused_verti
                 actual->remove( i, 1 );
 			}
             for( unsigned int k = 0; k < vertices_in_solution.size(); k++ ){
-                if( !actual->add_vertice( i, vertices_in_solution[ k ] ) ){
+                if( !actual->add( i, vertices_in_solution[ k ] ) ){
                     is_ok = false;
                 }
             }

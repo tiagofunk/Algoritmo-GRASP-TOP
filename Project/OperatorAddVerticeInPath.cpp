@@ -9,7 +9,7 @@ Solution * OperatorAddVerticeInPath::execute( Solution * s, vector< Vertice * > 
     for( int i = 0; i < s->get_number_paths(); i++){
         for (int j = 1; j < s->get_length_of_path( i )-1; j++){
             for(unsigned int k = 0; k < this->unused_vertices.size(); k++ ){
-                if( actual->add_vertice( i, j, this->unused_vertices[ k ] ) ){
+                if( actual->add( i, j, this->unused_vertices[ k ] ) ){
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );

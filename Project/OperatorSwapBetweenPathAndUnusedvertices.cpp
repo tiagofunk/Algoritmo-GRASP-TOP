@@ -11,7 +11,7 @@ Solution * OperatorSwapBetweenPathAndUnusedvertices::execute( Solution * s, vect
             for(unsigned int k = 0; k < this->unused_vertices.size(); k++ ){
                 Vertice * old_v = actual->get_vertice_in_path( i, j );
                 Vertice * new_v = this->unused_vertices[ k ];
-                if( actual->rewrite_vertice( i, j, new_v ) ){
+                if( actual->rewrite( i, j, new_v ) ){
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );
