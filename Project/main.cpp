@@ -2,7 +2,7 @@
 #define DEBUG true 
 #endif
 
-#if DEBUG == true
+#if DEBUG == false
 
 #include "tests/test_solution.h"
 
@@ -65,7 +65,7 @@ int main( int argc, char * argv[] ){
         iterations,
         seed,
         alpha,
-        new RandomGreedyGen_MinMax( alpha ),
+        new RandomGreedyGen_MinMax( alpha, 2 ),
         new LocalSearchWithOperators( operators ),
         new PathRelinkingOperator( path ));
     Solution * s = g.execute();

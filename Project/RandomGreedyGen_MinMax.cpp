@@ -2,8 +2,9 @@
 
 #include "Utils.h"
 
-RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha ):SolutionGeneration(){
+RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha, double margin ):SolutionGeneration(){
     this->alpha = alpha;
+    this->margin = margin;
     this->number_of_paths = Instance::instance()->get_number_of_paths();
     this->time_per_path = Instance::instance()->get_time_per_path();
 }
@@ -140,8 +141,12 @@ Solution * RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * >
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
             if( sol->add( i, selected_vertice ) ){
-                is_added = true;
-                this->unused_vertices.erase( this->unused_vertices.begin() + selected );
+                if( sol->get_time_path( i ) > this->margin * sol->get_time_per_path() ){
+                    sol->remove( i, sol->get_length_of_path( i ) - 2 );
+                }else{
+                    is_added = true;
+                    this->unused_vertices.erase( this->unused_vertices.begin() + selected );
+                }
             }
         }
     }while( is_added );

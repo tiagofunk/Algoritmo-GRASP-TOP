@@ -16,6 +16,7 @@ class RandomGreedyGen_MinMax: public SolutionGeneration{
 
         int number_of_paths;
         double alpha;
+        double margin;
         double time_per_path;
 
         vector< Vertice * > unused_vertices;
@@ -32,7 +33,7 @@ class RandomGreedyGen_MinMax: public SolutionGeneration{
         double calcule_score( double value, double min, double max );
 
     public:
-        RandomGreedyGen_MinMax( double alpha );
+        RandomGreedyGen_MinMax( double alpha, double margin );
         virtual Solution * random_greedy_generation( vector< Vertice * > vertices );
         virtual vector< Vertice * > get_unused_vertices();
 };
