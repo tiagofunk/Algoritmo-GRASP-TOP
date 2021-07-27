@@ -66,12 +66,13 @@ MU_TEST(solution_set_initial_and_final_vertice_fail) {
 MU_TEST(solution_add_vertice_in_path) {
     Vertice * initial = new Vertice( 0.0, 0.0, 0 );
     Vertice * final = new Vertice( 3.0, 4.0, 0 );
-    Vertice * new_v = new Vertice( 3.0, 4.0, 5 );
+    Vertice * new_v = new Vertice( 6.0, 8.0, 5 );
     Solution * sol = new Solution( 2, 7.5 );
     for( int i = 0; i < 2; i++ ){
         sol->add_initial_and_final_vertice( i, initial, final );
     }
-    sol->add( 0, new_v );
+    bool result = sol->add( 0, new_v );
+    mu_check( result == true );
     mu_check( sol->get_length_of_path( 0 ) == 3 );
     mu_check( sol->get_time_path( 0 ) == 15.0 );
     mu_check( sol->get_last_path_vertice_in_path( 0 )->get_hash() == final->get_hash() );
@@ -85,8 +86,8 @@ MU_TEST(solution_add_vertice_in_path) {
     mu_check( sol->get_total_rewards() == 5.0 );
     mu_check( sol->get_total_time() == 20.0 );
     
-    delete sol;
     delete initial;
+    delete final;
     delete new_v;
     delete sol;
 }
