@@ -123,6 +123,7 @@ bool Solution::check_if_path_position_is_valid( int path, int position ){
 }
 
 bool Solution::add( int path, Vertice * v ){
+    if( check_if_path_is_valid( path ) ) return false;
     int position = this->paths[ path ].size() - 1;
     return this->add( path, position, v );
 }
@@ -130,6 +131,7 @@ bool Solution::add( int path, Vertice * v ){
 bool Solution::add( int path, int position, Vertice * v ){
     if( this->check_if_path_position_is_valid( path, position ) ) return false;
     if( this->check_if_vertice_is_used( v ) ) return false;
+    if( v == NULL ) return false;
     
     double new_time = calculate_time_in_add( path, position, v );
 
