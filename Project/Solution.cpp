@@ -18,6 +18,7 @@ Solution::Solution( int number_paths, double time_per_path ){
 
 bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
     if( check_if_path_is_valid( path ) ) return false;
+    if( initial == 0 || final == 0 ) return false;
 
     this->paths[ path ].push_back( initial );
     this->used_vertices.insert( initial->get_hash() );
