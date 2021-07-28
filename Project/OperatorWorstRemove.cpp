@@ -3,21 +3,16 @@
 
 #include <iostream>
 
-void OperatorWorstRemove::initialize(){
-    this->is_empty = true;
-    this->update_worst( 0.0, 0.0, 0, 1 );
-}
-
-void OperatorWorstRemove::check_if_not_empty( Solution * sol ){
+bool OperatorWorstRemove::check_if_not_empty( Solution * sol ){
     for( int i = 0; i < sol->get_number_paths(); i++ ){
         if( sol->get_length_of_path( i ) != 2 ){
             worst_reward = sol->get_vertice_in_path( i, 1 )->get_reward();
             worst_distance = sol->get_distance( 0, 1 );
             worst_path = i;
-            is_empty = false;
-            break;
+            return false;
         }
     }
+    return true;
 }
 
 void OperatorWorstRemove::find_worst( Solution * sol ){
@@ -54,18 +49,28 @@ Solution * OperatorWorstRemove::remove_worst( Solution * sol ){
     return sol;
 }
 
-Solution * OperatorWorstRemove::execute( Solution * sol, vector< Vertice * > unused_vertices ){
-    this->initialize();
-
-    this->check_if_not_empty( sol );
-    if( this->is_empty ) return sol;
-
-    this->unused_vertices = unused_vertices;
+Solution * OperatorWorstRemove::execute_remove( Solution * sol ){
+    this->update_worst( 0.0, 0.0, 0, 1 );
+    if( this->check_if_not_empty( sol ) ) return sol;
     Solution * actual = new Solution( *sol );
-
     this->find_worst( actual );
-
     actual = this->remove_worst( actual );
     delete sol;
     return actual;
+}
+
+OperatorWorstRemove::OperatorWorstRemove( double iterations ){
+    this->iterations = iterations;
+}
+
+Solution * OperatorWorstRemove::execute( Solution * sol, vector< Vertice * > unused_vertices ){
+    this->unused_vertices = unused_vertices;
+    int n = sol->get_total_length_of_path();
+    n = n - 2 * sol->get_number_paths();
+    if( n == 0 ) return sol;
+    n = n * this->iterations + 1;
+    for( int i = 0; i < n; i++ ){
+        sol = this->execute_remove( sol );
+    }
+    return sol;
 }
