@@ -35,7 +35,7 @@ Solution * PathRelinkingOperator::execute( Solution * start, Solution * end ){
                     }
                 }
             }else{
-                if( actual->add( i, j, v ) ){
+                if( actual->add( i, v ) ){
                     if( best->get_total_rewards() < actual->get_total_rewards() ){
                         delete best;
                         best = new Solution( *actual );
