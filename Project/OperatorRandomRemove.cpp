@@ -21,7 +21,7 @@ int OperatorRandomRemove::random_path( Solution * sol ){
     return numbers[ 0 ];
 }
 
-Solution * OperatorRandomRemove::execute( Solution * sol, vector< Vertice * > unused_vertices ){
+Solution * OperatorRandomRemove::remove( Solution * sol ){
     this->unused_vertices = unused_vertices;
     int path = this->random_path( sol );
     if( path == -1 ) return sol;
@@ -32,4 +32,20 @@ Solution * OperatorRandomRemove::execute( Solution * sol, vector< Vertice * > un
     this->unused_vertices.push_back( v );
     delete sol;
     return actual;
+}
+
+OperatorRandomRemove::OperatorRandomRemove( double iterations ){
+    this->iterations = iterations;
+}
+
+Solution * OperatorRandomRemove::execute( Solution * sol, vector< Vertice * > unused_vertices ){
+    this->unused_vertices = unused_vertices;
+    int n = sol->get_total_length_of_path();
+    n = n - 2 * sol->get_number_paths();
+    if( n == 0 ) return sol;
+    n = n * this->iterations + 1;
+    for( int i = 0; i < n; i++ ){
+        sol = this->remove( sol );
+    }
+    return sol;
 }

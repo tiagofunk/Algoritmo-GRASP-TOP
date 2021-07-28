@@ -284,6 +284,14 @@ int Solution::get_length_of_path( int path ){
     return this->paths[ path ].size();
 }
 
+int Solution::get_total_length_of_path(){
+    int sum = 0;
+    for( unsigned int i = 0; i < this->paths.size(); i++ ){
+        sum += this->paths[ i ].size();
+    }
+    return sum;
+}
+
 string Solution::to_string(){
     string s;
     s = "number paths: " + std::to_string(this->paths.size()) + "\n";

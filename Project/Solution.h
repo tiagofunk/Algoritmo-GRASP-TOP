@@ -66,6 +66,7 @@ class Solution{
         double get_distance( int path, int position );
         int get_number_paths();
         int get_length_of_path( int path );
+        int get_total_length_of_path();
 
         string to_string();
 
