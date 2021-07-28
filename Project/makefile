@@ -20,6 +20,9 @@ CC=g++
 # Flags for compiler
 CC_FLAGS=-c -W -Wall
 
+#INSTANCE=a.txt
+INSTANCE=../instances/set_4_4/p4.4.t.txt
+
 all: $(PROJ_NAME) run
 
 test: clean_main $(PROJ_NAME) run_test
@@ -47,4 +50,4 @@ run_test:
 	./$(PROJ_NAME)
 
 run:
-	./$(PROJ_NAME) 1 1 1 a.txt --alpha 0.86 --iterations 3540 --path y
+	./$(PROJ_NAME) 1 1 1 $(INSTANCE) --alpha 0.86 --iterations 3540 --path y
