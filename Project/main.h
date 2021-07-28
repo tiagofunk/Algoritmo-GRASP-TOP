@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define DEBUG true
+#define DEBUG false
 #define LOG_LEVEL false
 
 #include <string>

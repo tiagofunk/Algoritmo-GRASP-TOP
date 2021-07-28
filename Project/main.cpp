@@ -6,7 +6,7 @@ void show_log( string s ){
     #endif
 }
 
-#if DEBUG == false
+#if DEBUG == true
 
 #include "tests/test_solution.h"
 
