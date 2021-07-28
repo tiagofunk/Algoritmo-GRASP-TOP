@@ -1,8 +1,8 @@
-#include "OperatorAddVerticeInPath.h"
+#include "OperatorGreedyAdd.h"
 
 #include "Utils.h"
 
-Solution * OperatorAddVerticeInPath::execute( Solution * s, vector< Vertice * > uv ){
+Solution * OperatorGreedyAdd::execute( Solution * s, vector< Vertice * > uv ){
     Solution * best = new Solution( *s );
     Solution * actual = new Solution( *s );
     this->unused_vertices = shuffle_vertices( uv );
