@@ -1,4 +1,5 @@
 #include "Grasp.h"
+#include "main.h"
 
 GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
     this->iterations = iterations;
@@ -16,8 +17,9 @@ Solution * GRASP::execute(){
     Solution * best = 0;
     srand( this->seed );
 
+    show_log( "Iterations:\n");
     for (int i = 0; i < this->iterations; i++){
-        cout << i << endl;
+        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) );
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();
@@ -41,6 +43,6 @@ Solution * GRASP::execute(){
         
         delete actual;
     }
-
+    show_log( "\n" );
     return best;
 }
