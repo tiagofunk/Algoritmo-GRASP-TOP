@@ -19,11 +19,11 @@ class App{
         clock_t final_time;
         clock_t total_time;
 
-        ArgumentReader * ar;
-        SolutionGeneration * sg;
+        ArgumentReader * argument_reader;
+        SolutionGeneration * solution_generator;
         vector< Operator * > operators;
-        LocalSearch * ls;
-        PathRelinking * pr;
+        LocalSearch * local_search;
+        PathRelinking * path_relinking;
         GRASP * grasp;
         Solution * sol;
 

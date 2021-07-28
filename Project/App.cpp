@@ -35,15 +35,15 @@ void App::create_seed(){
 
 
 void App::read_instance(){
-    this->file = this->ar->getValue( "--file" );
+    this->file = this->argument_reader->getValue( "--file" );
     InstanceReader ir( this->file );
     ir.read();
     show_log( "file: " + this->file + "\n" );
 }
 
 void App::create_solution_generator(){
-    double alpha = stod( this->ar->getValue( "--alpha" ) );
-    this->sg = new RandomGreedyGen_MinMax( alpha, 2 );
+    double alpha = stod( this->argument_reader->getValue( "--alpha" ) );
+    this->solution_generator = new RandomGreedyGen_MinMax( alpha, 2 );
 }
 
 void App::create_operators(){
@@ -53,17 +53,17 @@ void App::create_operators(){
 }
 
 void App::create_local_search(){
-    this->ls = new LocalSearchWithOperators( this->operators );
+    this->local_search = new LocalSearchWithOperators( this->operators );
 }
 
 void App::create_path_relinking(){
-    bool path = this->ar->getValue("--path") == "y"? true : false; 
-    this->pr = new PathRelinkingOperator( path );
+    bool path = this->argument_reader->getValue("--path") == "y"? true : false; 
+    this->path_relinking = new PathRelinkingOperator( path );
 }
 
 void App::create_and_execute_grasp(){
-    int iterations = stoi( this->ar->getValue("--iterations") );
-    this->grasp = new GRASP( iterations, this->seed, 1.0, this->sg, this->ls, this->pr );
+    int iterations = stoi( this->argument_reader->getValue("--iterations") );
+    this->grasp = new GRASP( iterations, this->seed, 1.0, this->solution_generator, this->local_search, this->path_relinking );
     this->sol = this->grasp->execute();
 }
 
@@ -79,10 +79,10 @@ void App::show_results(){
 }
 
 App::App( ArgumentReader * ar ){
-    this->ar = ar;
-    this->sg = 0;
-    this->ls = 0;
-    this->pr = 0;
+    this->argument_reader = ar;
+    this->solution_generator = 0;
+    this->local_search = 0;
+    this->path_relinking = 0;
     this->grasp = 0;
     this->initial_time = 0;
     this->final_time = 0;
