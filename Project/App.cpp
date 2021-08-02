@@ -9,7 +9,7 @@
 #include "ArgumentReader.h"
 #include "Operator.h"
 #include "OperatorSwapIntoRoute.h"
-#include "OperatorGreedyAdd.h"
+#include "OperatorFirstAdd.h"
 #include "OperatorSwapBetweenPathAndUnusedvertices.h"
 #include "Operator2opt.h"
 #include "OperatorExchange.h"
@@ -49,7 +49,7 @@ void App::create_solution_generator(){
 void App::create_operators(){
     this->operators.push_back( new OperatorRandomRemove( 0.5 ) );
     this->operators.push_back( new OperatorRelocate() );
-    this->operators.push_back( new OperatorGreedyAdd() );
+    this->operators.push_back( new OperatorFirstAdd() );
 }
 
 void App::create_local_search(){
