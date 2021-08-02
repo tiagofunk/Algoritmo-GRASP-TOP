@@ -16,9 +16,9 @@ Solution * GRASP::execute(){
     Solution * best = 0;
     srand( this->seed );
 
-    show_log( "Iterations:\n");
+    show_log( "Iterations:\n", 1);
     for (int i = 0; i < this->iterations; i++){
-        show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + "\n" );
+        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ), 1 );
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();
@@ -42,6 +42,6 @@ Solution * GRASP::execute(){
         
         delete actual;
     }
-    show_log( "\n" );
+    show_log( "\n", 1 );
     return best;
 }

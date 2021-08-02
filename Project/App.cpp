@@ -31,7 +31,7 @@ void App::initialize_timer(){
 void App::create_seed(){
     random_device rd;
     this->seed = rd();
-    show_log( "seed: " + std::to_string( seed ) + "\n" );
+    show_log( "seed: " + std::to_string( seed ) + "\n", 1 );
 }
 
 
@@ -39,7 +39,7 @@ void App::read_instance(){
     this->file = this->argument_reader->getValue( "--file" );
     InstanceReader ir( this->file );
     ir.read();
-    show_log( "file: " + this->file + "\n" );
+    show_log( "file: " + this->file + "\n", 1 );
 }
 
 void App::create_solution_generator(){
@@ -74,9 +74,9 @@ void App::finalize_timer(){
 }
 
 void App::show_results(){
-    show_log( this->sol->to_string() );
-    show_log( std::to_string( this->total_time ) + " ms\n" );
-    cout << IRACE_CONSTANT * this->sol->get_total_rewards() << endl;
+    show_log( this->sol->to_string(), 1 );
+    show_log( std::to_string( this->total_time ) + " ms\n", 1 );
+    show_log( std::to_string( IRACE_CONSTANT * this->sol->get_total_rewards() ) + "\n", 0 );
 }
 
 App::App( ArgumentReader * ar ){

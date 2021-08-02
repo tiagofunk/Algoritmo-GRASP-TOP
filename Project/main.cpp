@@ -1,9 +1,9 @@
 #include "main.h"
 
-void show_log( string s ){
-    #if LOG_LEVEL == true
+void show_log( string s, int level ){
+    if( level <= LOG_LEVEL ){
         cout << s;
-    #endif
+    }
 }
 
 #if DEBUG == true

@@ -22,7 +22,8 @@ Solution * OperatorRandomAdd::execute( Solution * sol, vector< Vertice * > unuse
     int count = 0;
     do{
         sol = this->realize_add( sol );
+        count++;
     }while( is_added );
-    show_log( "number of insertions: " + std::to_string( count ) + "\n" );
+    show_log( "number of insertions: " + std::to_string( count ) + "\n", 3 );
     return sol;
 }

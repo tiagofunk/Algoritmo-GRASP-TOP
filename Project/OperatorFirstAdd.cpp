@@ -36,6 +36,6 @@ Solution * OperatorFirstAdd::execute( Solution * s, vector< Vertice * > uv ){
         s = this->realize_add( s );
         count++;
     }while( is_added );
-    show_log( "number of insertions: " + std::to_string( count ) + "\n" );
+    show_log( "number of insertions: " + std::to_string( count ) + "\n", 3 );
     return s;
 }

@@ -71,7 +71,7 @@ Solution * OperatorWorstRemove::execute( Solution * sol, vector< Vertice * > unu
         for( int i = 0; i < n; i++ ){
             sol = this->execute_remove( sol );
         }
-        show_log( "number of removes: " + std::to_string( n ) + "\n" );
+        show_log( "number of removes: " + std::to_string( n ) + "\n", 3 );
     }
     return sol;
 }
