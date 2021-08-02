@@ -37,8 +37,8 @@ $(PROJ_NAME): $(OBJ)
 	$(CC) -o $@ $< $(CC_FLAGS)
 
 # Esse é caso especial para main.c
-main.o: main.cpp $(H_SOURCE)
-	$(CC) -o $@ $< $(CC_FLAGS)
+#main.o: main.cpp $(H_SOURCE)
+#	$(CC) -o $@ $< $(CC_FLAGS)
 
 clean_main:
 	rm main.o
