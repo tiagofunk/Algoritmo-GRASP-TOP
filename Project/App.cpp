@@ -10,6 +10,7 @@
 #include "Operator.h"
 #include "OperatorSwapIntoRoute.h"
 #include "OperatorFirstAdd.h"
+#include "OperatorRamdomAdd.h"
 #include "OperatorSwapBetweenPathAndUnusedvertices.h"
 #include "Operator2opt.h"
 #include "OperatorExchange.h"
