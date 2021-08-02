@@ -75,7 +75,7 @@ void App::finalize_timer(){
 void App::show_results(){
     show_log( this->sol->to_string() );
     show_log( std::to_string( this->total_time ) + " ms\n" );
-    cout << this->sol->get_total_rewards() << endl;
+    cout << IRACE_CONSTANT * this->sol->get_total_rewards() << endl;
 }
 
 App::App( ArgumentReader * ar ){

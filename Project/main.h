@@ -3,6 +3,7 @@
 
 #define DEBUG false
 #define LOG_LEVEL false
+#define IRACE_CONSTANT 1
 
 #include <string>
 using std::string;
