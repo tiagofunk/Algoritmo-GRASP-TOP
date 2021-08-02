@@ -1,6 +1,7 @@
 #include "OperatorFirstAdd.h"
 
 #include "Utils.h"
+#include "main.h"
 
 Solution * OperatorFirstAdd::realize_add( Solution * sol ){
     this->is_added = false;
@@ -30,8 +31,11 @@ Solution * OperatorFirstAdd::realize_add( Solution * sol ){
 
 Solution * OperatorFirstAdd::execute( Solution * s, vector< Vertice * > uv ){
     this->unused_vertices = shuffle_vertices( uv );
+    int count = 0;
     do{
         s = this->realize_add( s );
+        count++;
     }while( is_added );
+    show_log( "number of insertions: " + std::to_string( count ) + "\n" );
     return s;
 }

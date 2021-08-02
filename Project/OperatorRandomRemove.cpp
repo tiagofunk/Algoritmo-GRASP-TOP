@@ -1,4 +1,5 @@
 #include "OperatorRandomRemove.h"
+#include "main.h"
 
 #include <vector>
 using std::vector;
@@ -42,10 +43,12 @@ Solution * OperatorRandomRemove::execute( Solution * sol, vector< Vertice * > un
     this->unused_vertices = unused_vertices;
     int n = sol->get_total_length_of_path();
     n = n - 2 * sol->get_number_paths();
-    if( n == 0 ) return sol;
-    n = n * this->iterations + 1;
-    for( int i = 0; i < n; i++ ){
-        sol = this->remove( sol );
+    if( n != 0 ){
+        n = n * this->iterations + 1;
+        for( int i = 0; i < n; i++ ){
+            sol = this->remove( sol );
+        }
+        show_log( "number of removes: " + std::to_string( n ) + "\n");   
     }
     return sol;
 }

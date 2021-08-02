@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #define DEBUG false
-#define LOG_LEVEL false
+#define LOG_LEVEL true
 #define IRACE_CONSTANT 1
 
 #include <string>

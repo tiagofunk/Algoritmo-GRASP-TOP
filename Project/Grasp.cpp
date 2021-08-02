@@ -18,7 +18,7 @@ Solution * GRASP::execute(){
 
     show_log( "Iterations:\n");
     for (int i = 0; i < this->iterations; i++){
-        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) );
+        show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + "\n" );
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();

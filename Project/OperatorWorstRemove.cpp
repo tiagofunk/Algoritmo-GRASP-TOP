@@ -1,7 +1,6 @@
 #include "OperatorWorstRemove.h"
 #include "Utils.h"
-
-#include <iostream>
+#include "main.h"
 
 bool OperatorWorstRemove::check_if_not_empty( Solution * sol ){
     for( int i = 0; i < sol->get_number_paths(); i++ ){
@@ -67,10 +66,12 @@ Solution * OperatorWorstRemove::execute( Solution * sol, vector< Vertice * > unu
     this->unused_vertices = unused_vertices;
     int n = sol->get_total_length_of_path();
     n = n - 2 * sol->get_number_paths();
-    if( n == 0 ) return sol;
-    n = n * this->iterations + 1;
-    for( int i = 0; i < n; i++ ){
-        sol = this->execute_remove( sol );
+    if( n != 0 ){
+        n = n * this->iterations + 1;
+        for( int i = 0; i < n; i++ ){
+            sol = this->execute_remove( sol );
+        }
+        show_log( "number of removes: " + std::to_string( n ) + "\n" );
     }
     return sol;
 }
