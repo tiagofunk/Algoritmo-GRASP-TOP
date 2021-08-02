@@ -27,6 +27,11 @@ class App{
         GRASP * grasp;
         Solution * sol;
 
+        Operator * create_remove_operator();
+        Operator * create_shuffle_operator();
+        Operator * create_add_operator();
+        Operator * create_swap_operator();
+
         void initialize_timer();
         void create_seed();
         void read_instance();

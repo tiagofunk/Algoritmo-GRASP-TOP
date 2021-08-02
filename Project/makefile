@@ -50,4 +50,4 @@ run_test:
 	./$(PROJ_NAME)
 
 run:
-	./$(PROJ_NAME) 1 1 1 $(INSTANCE) --alpha 0.86 --iterations 3540 --path y
+	./$(PROJ_NAME) 1 1 1 $(INSTANCE) --alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b

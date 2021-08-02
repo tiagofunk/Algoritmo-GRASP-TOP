@@ -25,6 +25,43 @@
 
 using namespace std;
 
+Operator * App::create_remove_operator(){
+    string argument = this->argument_reader->getValue( "--removeOperator" );
+    double percentage = stod( this->argument_reader->getValue( "--removePercentage" ) );
+    if( argument == "r" ){
+        return new OperatorRandomRemove( percentage );
+    }else if( argument == "w" ){
+        return new OperatorWorstRemove( percentage );
+    }
+    throw runtime_error( "Remove Operator is invalid: " + argument );
+}
+
+Operator * App::create_shuffle_operator(){
+    string argument = this->argument_reader->getValue( "--shuffleOperator" );
+    if( argument == "r" ){
+        return new OperatorRelocate();
+    }else if( argument == "e" ){
+        return new OperatorExchange();
+    }
+    throw runtime_error( "Shuffle Operator is invalid: " + argument );
+}
+
+Operator * App::create_add_operator(){
+    string argument = this->argument_reader->getValue( "--addOperator" );
+    if( argument == "r" ){
+        return new OperatorRandomAdd();
+    }else if( argument == "f" ){
+        return new OperatorFirstAdd();
+    }else if( argument == "b" ){
+        return new OperatorBestAdd();
+    }
+    throw runtime_error( "Shuffle Operator is invalid: " + argument );
+}
+
+Operator * App::create_swap_operator(){
+    return new OperatorBestSwap();
+}
+
 void App::initialize_timer(){
     this->initial_time = clock();
 }
@@ -49,10 +86,10 @@ void App::create_solution_generator(){
 }
 
 void App::create_operators(){
-    this->operators.push_back( new OperatorRandomRemove( 0.5 ) );
-    this->operators.push_back( new OperatorRelocate() );
-    this->operators.push_back( new OperatorBestAdd() );
-    this->operators.push_back( new OperatorBestSwap() );
+    this->operators.push_back( this->create_remove_operator() );
+    this->operators.push_back( this->create_shuffle_operator() );
+    this->operators.push_back( this->create_add_operator() );
+    this->operators.push_back( this->create_swap_operator() );
 }
 
 void App::create_local_search(){
