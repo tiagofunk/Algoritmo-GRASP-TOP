@@ -63,7 +63,7 @@ void App::create_path_relinking(){
 
 void App::create_and_execute_grasp(){
     int iterations = stoi( this->argument_reader->getValue("--iterations") );
-    this->grasp = new GRASP( iterations, this->seed, 1.0, this->solution_generator, this->local_search, this->path_relinking );
+    this->grasp = new GRASP( iterations, this->seed, this->solution_generator, this->local_search, this->path_relinking );
     this->sol = this->grasp->execute();
 }
 

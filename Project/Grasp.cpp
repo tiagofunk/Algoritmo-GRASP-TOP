@@ -1,10 +1,9 @@
 #include "Grasp.h"
 #include "main.h"
 
-GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
+GRASP::GRASP( int iterations, int seed, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
     this->iterations = iterations;
     this->seed = seed;
-    this->alfa = alfa;
     this->solution_generation = solution_generation;
     this->local_search = local_search;
     this->path_relinking = path_relinking;
