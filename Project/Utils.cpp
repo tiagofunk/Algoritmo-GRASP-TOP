@@ -60,3 +60,7 @@ vector< Vertice * > shuffle_vertices( vector< Vertice * > vertices ){
 double random_number(){
     return (double) rand() / RAND_MAX;
 }
+
+double calcule_percentage( int n, int total ){
+    return 100 * ( (double) n / (double) total );
+}

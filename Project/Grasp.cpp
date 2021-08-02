@@ -1,5 +1,6 @@
 #include "Grasp.h"
 #include "main.h"
+#include "Utils.h"
 
 GRASP::GRASP( int iterations, int seed, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
     this->iterations = iterations;
@@ -18,7 +19,8 @@ Solution * GRASP::execute(){
 
     show_log( "Iterations:\n", 1);
     for (int i = 0; i < this->iterations; i++){
-        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ), 1 );
+        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) +
+            " " + std::to_string( calcule_percentage( i, this->iterations ) ) + " %", 1 );
         this->unused_vertices.clear();
         actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
         actual->lock_checker();

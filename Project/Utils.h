@@ -18,4 +18,6 @@ vector< Vertice * > shuffle_vertices( vector< Vertice * > vertices );
 
 double random_number();
 
+double calcule_percentage( int n, int total );
+
 #endif
