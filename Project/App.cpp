@@ -11,6 +11,7 @@
 #include "OperatorSwapIntoRoute.h"
 #include "OperatorFirstAdd.h"
 #include "OperatorRamdomAdd.h"
+#include "OperatorBestAdd.h"
 #include "OperatorBestSwap.h"
 #include "Operator2opt.h"
 #include "OperatorExchange.h"
@@ -50,7 +51,7 @@ void App::create_solution_generator(){
 void App::create_operators(){
     this->operators.push_back( new OperatorRandomRemove( 0.5 ) );
     this->operators.push_back( new OperatorRelocate() );
-    this->operators.push_back( new OperatorFirstAdd() );
+    this->operators.push_back( new OperatorBestAdd() );
     this->operators.push_back( new OperatorBestSwap() );
 }
 
