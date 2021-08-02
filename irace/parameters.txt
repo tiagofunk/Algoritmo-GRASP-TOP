@@ -1,0 +1,8 @@
+# name					switch		     			type		values							[conditions (using R syntax)]
+alpha					"--alpha "					r			(0.0,1.0)
+iterations				"--iterations "				i			(100,5000)
+path					"--path "					c			(y,n)
+removeOperator			"--removeOperator "			c			(r,w)
+percentageOperator		"--percentageOperator "		r			(0.1,0.9)
+shuffleOperator			"--shuffleOperator "		c			(r,e)
+addOperator				"--addOperator "			c			(r,f,b)

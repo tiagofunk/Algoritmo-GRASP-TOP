@@ -25,6 +25,8 @@ INSTANCE=../instances/set_4_4/p4.4.t.txt
 
 all: $(PROJ_NAME) run
 
+build: clean $(PROJ_NAME)
+
 test: clean_main $(PROJ_NAME) run_test
 
 $(PROJ_NAME): $(OBJ)
