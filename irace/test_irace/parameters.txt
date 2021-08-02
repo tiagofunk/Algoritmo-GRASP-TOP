@@ -1,0 +1,5 @@
+# name					switch		     			type		values							[conditions (using R syntax)]
+a						"--a "						i			(0,100)
+b						"--b "						i			(0,100)
+
+
