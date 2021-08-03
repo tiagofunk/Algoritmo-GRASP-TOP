@@ -5,6 +5,17 @@
 #include <sstream>
 #include <iomanip>
 
+Solution::Solution(){
+    this->paths.resize( 0 );
+    this->path_rewards.resize( 0 );
+    this->path_times.resize( 0 );
+    this->checker_is_unlocked = false;
+    this->time_per_path = 0.0;
+    this->total_rewards = 0.0;
+    this->total_time = 0.0;
+    this->used_vertices.resize( VERTICE_HASH_SIZE );
+}
+
 Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );

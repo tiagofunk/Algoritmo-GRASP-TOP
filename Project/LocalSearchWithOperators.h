@@ -13,7 +13,7 @@ class LocalSearchWithOperators: public LocalSearch {
         LocalSearchWithOperators( vector< Operator * > operators );
         ~LocalSearchWithOperators();
 
-        virtual Solution * execute( Solution * sol, vector< Vertice * > vertices );
+        virtual Solution execute( Solution sol, vector< Vertice * > vertices );
         virtual vector< Vertice * > get_unused_vertices();
 };
 

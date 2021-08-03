@@ -2,11 +2,11 @@
 #include "Utils.h"
 #include "main.h"
 
-bool OperatorWorstRemove::check_if_not_empty( Solution * sol ){
-    for( int i = 0; i < sol->get_number_paths(); i++ ){
-        if( sol->get_length_of_path( i ) != 2 ){
-            worst_reward = sol->get_vertice_in_path( i, 1 )->get_reward();
-            worst_distance = sol->get_distance( 0, 1 );
+bool OperatorWorstRemove::check_if_not_empty( Solution sol ){
+    for( int i = 0; i < sol.get_number_paths(); i++ ){
+        if( sol.get_length_of_path( i ) != 2 ){
+            worst_reward = sol.get_vertice_in_path( i, 1 )->get_reward();
+            worst_distance = sol.get_distance( 0, 1 );
             worst_path = i;
             return false;
         }
@@ -14,13 +14,13 @@ bool OperatorWorstRemove::check_if_not_empty( Solution * sol ){
     return true;
 }
 
-void OperatorWorstRemove::find_worst( Solution * sol ){
+void OperatorWorstRemove::find_worst( Solution sol ){
     double d = 0.0;
     Vertice * v = 0;
-    for( int i = 0; i < sol->get_number_paths(); i++ ){
-        for( int j = 1; j < sol->get_length_of_path( i ) - 1; j++ ){
-            d = sol->get_distance( i, j );
-            v = sol->get_vertice_in_path( i, j );
+    for( int i = 0; i < sol.get_number_paths(); i++ ){
+        for( int j = 1; j < sol.get_length_of_path( i ) - 1; j++ ){
+            d = sol.get_distance( i, j );
+            v = sol.get_vertice_in_path( i, j );
             if( this->worst_reward > v->get_reward() ){
                 this->update_worst( v->get_reward(), d, i, j );
 
@@ -41,20 +41,19 @@ void OperatorWorstRemove::update_worst( double worst_reward, double worst_distan
     this->worst_position = worst_position;
 }
 
-Solution * OperatorWorstRemove::remove_worst( Solution * sol ){
-    Vertice * v = sol->get_vertice_in_path( this->worst_path, this->worst_position );
-    sol->remove( this->worst_path, this->worst_position );
+Solution OperatorWorstRemove::remove_worst( Solution sol ){
+    Vertice * v = sol.get_vertice_in_path( this->worst_path, this->worst_position );
+    sol.remove( this->worst_path, this->worst_position );
     this->unused_vertices.push_back( v );
     return sol;
 }
 
-Solution * OperatorWorstRemove::execute_remove( Solution * sol ){
+Solution OperatorWorstRemove::execute_remove( Solution sol ){
     this->update_worst( 0.0, 0.0, 0, 1 );
     if( this->check_if_not_empty( sol ) ) return sol;
-    Solution * actual = new Solution( *sol );
+    Solution actual = sol;
     this->find_worst( actual );
     actual = this->remove_worst( actual );
-    delete sol;
     return actual;
 }
 
@@ -62,10 +61,10 @@ OperatorWorstRemove::OperatorWorstRemove( double iterations ){
     this->iterations = iterations;
 }
 
-Solution * OperatorWorstRemove::execute( Solution * sol, vector< Vertice * > unused_vertices ){
+Solution OperatorWorstRemove::execute( Solution sol, vector< Vertice * > unused_vertices ){
     this->unused_vertices = unused_vertices;
-    int n = sol->get_total_length_of_path();
-    n = n - 2 * sol->get_number_paths();
+    int n = sol.get_total_length_of_path();
+    n = n - 2 * sol.get_number_paths();
     if( n != 0 ){
         n = n * this->iterations + 1;
         for( int i = 0; i < n; i++ ){

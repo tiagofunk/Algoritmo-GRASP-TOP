@@ -25,7 +25,7 @@ class App{
         LocalSearch * local_search;
         PathRelinking * path_relinking;
         GRASP * grasp;
-        Solution * sol;
+        Solution sol;
 
         Operator * create_remove_operator();
         Operator * create_shuffle_operator();

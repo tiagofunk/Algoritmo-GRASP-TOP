@@ -8,7 +8,6 @@
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
 #include "Operator.h"
-#include "OperatorSwapIntoRoute.h"
 #include "OperatorFirstAdd.h"
 #include "OperatorRamdomAdd.h"
 #include "OperatorBestAdd.h"
@@ -113,9 +112,9 @@ void App::finalize_timer(){
 }
 
 void App::show_results(){
-    show_log( this->sol->to_string(), 1 );
+    show_log( this->sol.to_string(), 1 );
     show_log( std::to_string( this->total_time ) + " ms\n", 1 );
-    show_log( std::to_string( IRACE_CONSTANT * this->sol->get_total_rewards() ) + "\n", 0 );
+    show_log( std::to_string( IRACE_CONSTANT * this->sol.get_total_rewards() ) + "\n", 0 );
 }
 
 App::App( ArgumentReader * ar ){

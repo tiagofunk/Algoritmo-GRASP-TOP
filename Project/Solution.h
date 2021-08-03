@@ -44,6 +44,7 @@ class Solution{
         bool check_if_vertice_is_used( Vertice * v );
 
     public:
+        Solution();
         Solution( int number_paths, double time_per_path );
         bool add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
         void lock_checker();

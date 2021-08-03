@@ -7,11 +7,11 @@ LocalSearchWithOperators::LocalSearchWithOperators( vector< Operator * > operato
 LocalSearchWithOperators::~LocalSearchWithOperators(){
 }
 
-Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > vertices ){
+Solution LocalSearchWithOperators::execute( Solution s, vector< Vertice * > vertices ){
     bool is_moved = false;
     bool is_bigger = false;
-    Solution * best = new Solution( *s );
-    Solution * actual = new Solution( *s );
+    Solution best = s;
+    Solution actual = s;
     this->unused_vertices = vertices;
 
     do{
@@ -20,21 +20,19 @@ Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > 
             actual = this->operators[ i ]->execute( actual, this->unused_vertices );
             this->unused_vertices = this->operators[ i ]->get_unused_vertice();
         }
-        if( best->get_total_rewards() < actual->get_total_rewards()
-                || actual->get_total_time() < best->get_total_time() ){
-            delete best;
-            best = new Solution( *actual );
+        if( best.get_total_rewards() < actual.get_total_rewards()
+                || actual.get_total_time() < best.get_total_time() ){
+            best = actual;
             is_moved = true;
         }
 
         is_bigger = false;
         if( !is_moved ){
-            for( int i = 0; i < best->get_number_paths(); i++ ){
-                is_bigger = is_bigger || best->get_time_path( i ) > best->get_time_per_path();
+            for( int i = 0; i < best.get_number_paths(); i++ ){
+                is_bigger = is_bigger || best.get_time_path( i ) > best.get_time_per_path();
             }
         }
     }while( is_moved || is_bigger );
-    delete actual;
     return best;
 }
 

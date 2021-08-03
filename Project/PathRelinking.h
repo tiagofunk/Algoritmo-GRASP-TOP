@@ -5,7 +5,7 @@
 
 class PathRelinking{
     public:
-        virtual Solution * execute( Solution * start, Solution * end )= 0;
+        virtual Solution execute( Solution start, Solution end )= 0;
 };
 
 #endif

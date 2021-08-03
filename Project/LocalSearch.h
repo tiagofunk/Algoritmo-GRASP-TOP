@@ -6,7 +6,7 @@
 
 class LocalSearch{
     public:
-        virtual Solution * execute( Solution * sol, vector< Vertice * > vertices ) = 0;
+        virtual Solution execute( Solution sol, vector< Vertice * > vertices ) = 0;
         virtual vector< Vertice * > get_unused_vertices() = 0;
 
 };
