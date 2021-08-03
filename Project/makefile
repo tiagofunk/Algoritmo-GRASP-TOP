@@ -24,7 +24,7 @@ CC_FLAGS=-c -W -Wall
 INSTANCE=../instances/set_1_4/p1.4.p.txt
 
 #PROGRAM_ARGS=--alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b
-PROGRAM_ARGS=--alpha 0.48 --iterations 2622 --path y --removeOperator w --removePercentage 0.62 --shuffleOperator e --addOperator b
+PROGRAM_ARGS=--alpha 0.48 --iterations 2622 --path y --margin 2.0 --removeOperator w --removePercentage 0.62 --shuffleOperator e --addOperator b
 
 all: $(PROJ_NAME) run
 

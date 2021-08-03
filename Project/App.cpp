@@ -81,7 +81,8 @@ void App::read_instance(){
 
 void App::create_solution_generator(){
     double alpha = stod( this->argument_reader->getValue( "--alpha" ) );
-    this->solution_generator = new RandomGreedyGen_MinMax( alpha, 2 );
+    double margin = stod( this->argument_reader->getValue( "--margin" ) );
+    this->solution_generator = new RandomGreedyGen_MinMax( alpha, margin );
 }
 
 void App::create_operators(){
