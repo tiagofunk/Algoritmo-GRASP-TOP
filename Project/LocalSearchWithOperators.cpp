@@ -1,4 +1,5 @@
 #include "LocalSearchWithOperators.h"
+#include "Utils.h"
 
 LocalSearchWithOperators::LocalSearchWithOperators( vector< Operator * > operators ):LocalSearch(){
     this->operators = operators;
@@ -21,15 +22,15 @@ Solution LocalSearchWithOperators::execute( Solution s, vector< Vertice * > vert
             this->unused_vertices = this->operators[ i ]->get_unused_vertice();
         }
         if( best.get_total_rewards() < actual.get_total_rewards()
-                || actual.get_total_time() < best.get_total_time() ){
+                || absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
             best = actual;
             is_moved = true;
         }
 
         is_bigger = false;
         if( !is_moved ){
-            for( int i = 0; i < best.get_number_paths(); i++ ){
-                is_bigger = is_bigger || best.get_time_path( i ) > best.get_time_per_path();
+            for( int i = 0; i < actual.get_number_paths(); i++ ){
+                is_bigger = is_bigger || absolute( actual.get_time_path( i ), 2 ) > absolute( actual.get_time_per_path(), 2 );
             }
         }
     }while( is_moved || is_bigger );

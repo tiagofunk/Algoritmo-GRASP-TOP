@@ -64,3 +64,11 @@ double random_number(){
 double calcule_percentage( int n, int total ){
     return 100 * ( (double) n / (double) total );
 }
+
+int absolute( double value, int decimals ){
+    for( int i = 0; i < decimals; i++ ){
+        value *= 10;
+    }
+    int result = value;
+    return result;
+}

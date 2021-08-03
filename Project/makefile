@@ -21,7 +21,10 @@ CC=g++
 CC_FLAGS=-c -W -Wall
 
 #INSTANCE=a.txt
-INSTANCE=../instances/set_4_4/p4.4.t.txt
+INSTANCE=../instances/set_1_4/p1.4.p.txt
+
+#PROGRAM_ARGS=--alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b
+PROGRAM_ARGS=--alpha 0.48 --iterations 2622 --path y --removeOperator w --removePercentage 0.62 --shuffleOperator e --addOperator b
 
 all: $(PROJ_NAME) run
 
@@ -52,4 +55,4 @@ run_test:
 	./$(PROJ_NAME)
 
 run:
-	./$(PROJ_NAME) 1 1 1 $(INSTANCE) --alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b
+	./$(PROJ_NAME) 1 1 1 $(INSTANCE) $(PROGRAM_ARGS)
