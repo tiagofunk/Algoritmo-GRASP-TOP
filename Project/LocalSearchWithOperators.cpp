@@ -17,23 +17,22 @@ Solution LocalSearchWithOperators::execute( Solution s, vector< Vertice * > vert
 
     do{
         is_moved = false;
+        is_bigger = false;
         for( unsigned int i = 0; i < this->operators.size(); i++ ){
             actual = this->operators[ i ]->execute( actual, this->unused_vertices );
             this->unused_vertices = this->operators[ i ]->get_unused_vertice();
         }
+        for( int i = 0; i < actual.get_number_paths(); i++ ){
+            is_bigger = is_bigger || absolute( actual.get_time_path( i ), 2 ) > absolute( actual.get_time_per_path(), 2 );
+        }
         if( best.get_total_rewards() < actual.get_total_rewards()
-                || absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
+                || (is_bigger && absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) )
+                || (best.get_total_rewards() == actual.get_total_rewards() && absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ) ){
             best = actual;
             is_moved = true;
         }
 
-        is_bigger = false;
-        if( !is_moved ){
-            for( int i = 0; i < actual.get_number_paths(); i++ ){
-                is_bigger = is_bigger || absolute( actual.get_time_path( i ), 2 ) > absolute( actual.get_time_per_path(), 2 );
-            }
-        }
-    }while( is_moved || is_bigger );
+    }while( is_moved );
     return best;
 }
 
