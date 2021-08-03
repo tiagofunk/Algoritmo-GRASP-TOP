@@ -17,7 +17,14 @@ bool OperatorWorstRemove::check_if_not_empty( Solution sol ){
 void OperatorWorstRemove::find_worst( Solution sol ){
     double d = 0.0;
     Vertice * v = 0;
+    bool is_better = false;
     for( int i = 0; i < sol.get_number_paths(); i++ ){
+        if( sol.get_time_path( i ) > sol.get_time_per_path() ){
+            is_better = true;
+            d = sol.get_distance( i, 1 );
+            v = sol.get_vertice_in_path( i, 1 );
+            this->update_worst( v->get_reward(), d, i, 1 );
+        }
         for( int j = 1; j < sol.get_length_of_path( i ) - 1; j++ ){
             d = sol.get_distance( i, j );
             v = sol.get_vertice_in_path( i, j );
@@ -31,6 +38,7 @@ void OperatorWorstRemove::find_worst( Solution sol ){
                 }
             }
         }
+        if( is_better ) break;
     }
 }
 
