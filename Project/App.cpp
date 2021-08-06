@@ -66,8 +66,9 @@ void App::initialize_timer(){
 }
 
 void App::create_seed(){
-    random_device rd;
-    this->seed = rd();
+    // random_device rd;
+    // this->seed = rd();
+    this->seed = stoi( this->argument_reader->getValue( "--seed" ) );
     show_log( "seed: " + std::to_string( seed ) + "\n", 1 );
 }
 
