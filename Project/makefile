@@ -20,11 +20,12 @@ CC=g++
 # Flags for compiler
 CC_FLAGS=-c -W -Wall
 
-#INSTANCE=a.txt
-INSTANCE=../instances/set_7_3/p7.3.t.txt
+#INSTANCE=../instances/set_7_3/p7.3.t.txt
+#PROGRAM_ARGS=--alpha 0.98 --iterations 4506 --path y --margin 1.42 --removeOperator w --removePercentage 0.56 --shuffleOperator e --addOperator b
 
-#PROGRAM_ARGS=--alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b
-PROGRAM_ARGS=--alpha 0.98 --iterations 4506 --path y --margin 1.42 --removeOperator w --removePercentage 0.56 --shuffleOperator e --addOperator b
+SEED=2143751518
+INSTANCE=../instances/set_5_3/p5.3.v.txt
+PROGRAM_ARGS=--alpha 0.58 --iterations 2398 --path y --margin 0.78 --removeOperator w --removePercentage 0.17 --shuffleOperator e --addOperator b
 
 all: $(PROJ_NAME) run
 
@@ -55,4 +56,4 @@ run_test:
 	./$(PROJ_NAME)
 
 run:
-	./$(PROJ_NAME) 1 1 1 $(INSTANCE) $(PROGRAM_ARGS)
+	./$(PROJ_NAME) 1 1 $(SEED) $(INSTANCE) $(PROGRAM_ARGS)

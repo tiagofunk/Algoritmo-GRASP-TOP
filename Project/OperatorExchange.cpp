@@ -9,12 +9,14 @@ Solution OperatorExchange::realize_operation( Solution sol ){
         for( int j = i+1; j < actual.get_number_paths(); j++ ){
             for( int k = 1; k < actual.get_length_of_path( i )-1; k++ ){
                 for( int l = 1; l < actual.get_length_of_path( j )-1; l++ ){
-                    actual.swap( i, k, j, l );
-                    if( actual.get_total_time() < best.get_total_time() ){
-                        best = actual;
-                        this->is_swaped = true;
+                    if( actual.swap( i,k, j, l ) ){
+                        if( actual.get_total_time() < best.get_total_time() ){
+                            best = actual;
+                            this->is_swaped = true;
+                        }else{
+                            actual = sol;
+                        }
                     }
-                    actual = sol;
                 }
             }
         }
