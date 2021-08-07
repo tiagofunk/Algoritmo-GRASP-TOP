@@ -221,7 +221,7 @@ bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
     double new_time_path_1 = this->recalculate_time( path1 );
     double new_time_path_2 = this->recalculate_time( path2 );
 
-    if( this->checker_is_unlocked || (this->time_per_path > new_time_path_1 || this->time_per_path > new_time_path_2) ){
+    if( this->checker_is_unlocked || (this->time_per_path > new_time_path_1 && this->time_per_path > new_time_path_2) ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
         this->path_rewards[ path1 ] += reward_2 - reward_1;
