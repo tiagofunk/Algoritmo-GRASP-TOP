@@ -72,6 +72,23 @@ MU_TEST(solution_set_initial_and_final_vertice_fail) {
     mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.0, 2 ) );
 }
 
+MU_TEST(solution_set_initial_and_final_vertice_fail_2) {
+    Vertice initial( 0.0, -7.0, 0 );
+    Vertice final( 0.0, 7.0, 0 );
+    Solution sol( 2, 13.3 );
+    bool result = sol.add_initial_and_final_vertice( 0, &initial, &final );
+    mu_check( result == false );
+    for( int i = 0; i < 2; i++ ){
+        mu_check( sol.get_length_of_path( i ) == 0 );
+        mu_check( sol.get_time_path( i ) == 0.0 );
+        mu_check( sol.get_rewards( i ) == 0 );
+    }
+	mu_check( sol.get_number_paths() == 2 );
+    mu_check( sol.get_time_per_path() == 13.3 );
+    mu_check( sol.get_total_rewards() == 0.0 );
+    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 0.0, 2 ) );
+}
+
 MU_TEST(solution_add_vertice_in_path) {
     Vertice initial( 0.0, 0.0, 0 );
     Vertice final( 3.0, 4.0, 0 );
@@ -235,6 +252,7 @@ MU_TEST_SUITE(test_suite_solution) {
 	MU_RUN_TEST(solution_init);
     MU_RUN_TEST(solution_set_initial_and_final_vertice);
     MU_RUN_TEST(solution_set_initial_and_final_vertice_fail);
+    MU_RUN_TEST( solution_set_initial_and_final_vertice_fail_2 );
     MU_RUN_TEST(solution_add_vertice_in_path);
     MU_RUN_TEST(solution_add_vertice_in_path_fail);
     MU_RUN_TEST(solution_move_sucess);

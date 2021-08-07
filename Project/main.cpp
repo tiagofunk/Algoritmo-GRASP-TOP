@@ -24,8 +24,14 @@ int main(int argc, char *argv[]) {
 using namespace std;
 
 int main( int argc, char * argv[] ){
-    App * app = new App( new ArgumentReader( argc, argv ) );
-    app->execute();
+    try {
+        App * app = new App( new ArgumentReader( argc, argv ) );
+        app->execute();
+    }catch (exception &e){
+        cerr << "**************************************************************************" << endl;
+        cerr << e.what() << endl;
+        cerr << "**************************************************************************" << endl;
+    }
     return 0;
 }
 
