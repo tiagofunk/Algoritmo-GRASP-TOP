@@ -29,8 +29,7 @@ MU_TEST(solution_set_initial_and_final_vertice) {
     Vertice final( 3.0, 4.0, 0 );
     Solution sol( 2, 7.5 );
     for( int i = 0; i < 2; i++ ){
-        bool result = sol.add_initial_and_final_vertice( i, &initial, &final );
-        mu_check( result == true );
+        sol.add_initial_and_final_vertice( i, &initial, &final );
     }
     for( int i = 0; i < 2; i++ ){
         mu_check( sol.get_length_of_path( i ) == 2 );
@@ -48,18 +47,28 @@ MU_TEST(solution_set_initial_and_final_vertice_fail) {
     Vertice initial( 0.0, 0.0, 0 );
     Vertice final( 3.0, 4.0, 0 );
     Solution sol( 2, 7.5 );
-    bool result = sol.add_initial_and_final_vertice( -1, &initial, &final );
-    mu_check( result == false );
-    result = sol.add_initial_and_final_vertice( 0, &initial, 0 );
-    mu_check( result == false );
-    result = sol.add_initial_and_final_vertice( 0, 0, &final );
-    mu_check( result == false );
-    result = sol.add_initial_and_final_vertice( 0, &initial, &final );
-    mu_check( result == true );
-    result = sol.add_initial_and_final_vertice( 1, &initial, &final );
-    mu_check( result == true );
-    result = sol.add_initial_and_final_vertice( 2, &initial, &final );
-    mu_check( result == false );
+    try{
+        sol.add_initial_and_final_vertice( -1, &initial, &final );
+        mu_fail("path invalid: -1");
+    }catch(exception &e ){
+    }
+    try{
+        sol.add_initial_and_final_vertice( 0, &initial, 0 );
+        mu_fail("initial vertice is null");
+    }catch(exception &e ){
+    }
+    try{
+        sol.add_initial_and_final_vertice( 0, 0, &final );
+        mu_fail("final vertice is null");
+    }catch(exception &e ){
+    }
+    sol.add_initial_and_final_vertice( 0, &initial, &final );
+    sol.add_initial_and_final_vertice( 1, &initial, &final );
+    try{
+        sol.add_initial_and_final_vertice( 2, &initial, &final );
+        mu_fail("path is invalid: 2");
+    }catch(exception &e ){
+    }
     for( int i = 0; i < 2; i++ ){
         mu_check( sol.get_length_of_path( i ) == 2 );
         mu_check( sol.get_time_path( i ) == 5.0 );
@@ -76,8 +85,11 @@ MU_TEST(solution_set_initial_and_final_vertice_fail_2) {
     Vertice initial( 0.0, -7.0, 0 );
     Vertice final( 0.0, 7.0, 0 );
     Solution sol( 2, 13.3 );
-    bool result = sol.add_initial_and_final_vertice( 0, &initial, &final );
-    mu_check( result == false );
+    try{
+        sol.add_initial_and_final_vertice( 0, &initial, &final );
+        mu_fail("path length is bigger");
+    }catch(exception &e ){
+    }
     for( int i = 0; i < 2; i++ ){
         mu_check( sol.get_length_of_path( i ) == 0 );
         mu_check( sol.get_time_path( i ) == 0.0 );

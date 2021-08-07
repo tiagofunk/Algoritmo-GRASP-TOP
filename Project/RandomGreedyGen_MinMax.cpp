@@ -12,9 +12,7 @@ RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha, double margin ):So
 Solution RandomGreedyGen_MinMax::initialize_solution( int number_of_paths, double time_per_path, Vertice * initial, Vertice * final ){
     Solution sol( number_of_paths, time_per_path );
     for( int i = 0; i < this->number_of_paths; i++ ){
-        if( !sol.add_initial_and_final_vertice( i, initial, final ) ){
-            throw runtime_error( "Error on set initial and final vertice in solution " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n" );
-        }
+        sol.add_initial_and_final_vertice( i, initial, final );
     }
     return sol;
 }

@@ -27,10 +27,17 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->used_vertices.resize( VERTICE_HASH_SIZE );
 }
 
-bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
-    if( check_if_path_is_valid( path ) ) return false;
-    if( initial == 0 || final == 0 ) return false;
-    if( this->time_per_path < calculate_distance( initial, final ) ) return false;
+void Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
+    if( check_if_path_is_valid( path ) )
+        throw runtime_error("path is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    if( initial == 0 )
+        throw runtime_error("initial vertice is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    if( final == 0 )
+        throw runtime_error("final vertice is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    
+    double new_time = calculate_distance( initial, final );
+    if( this->time_per_path < new_time )
+        throw runtime_error("distance between initial and final vertice is bigger than time_per_paths " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
 
     this->paths[ path ].push_back( initial );
     this->used_vertices.insert( initial->get_hash() );
@@ -38,10 +45,8 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
     this->paths[ path ].push_back( final );
     this->used_vertices.insert( final->get_hash() );
 
-    double n_time = calculate_distance( initial, final );
-    this->path_times[ path ] = n_time;
-    this->total_time += n_time;
-    return true;
+    this->path_times[ path ] = new_time;
+    this->total_time += new_time;
 }
 
 void Solution::lock_checker(){
