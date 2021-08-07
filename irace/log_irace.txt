@@ -1,0 +1,145 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.4.1.9fcaeaf
+# Copyright (C) 2010-2020
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /home/tiago/R/x86_64-pc-linux-gnu-library/3.4/irace
+# called with: --parallel 8 --recovery-file irace_bkp_3.Rdata
+Warning: A default scenario file './scenario.txt' has been found and will be read
+# 2021-08-07 18:30:06 -03: Resuming from file: '/home/tiago/Documentos/Repositorios/TOP_GRASP_TS_PR/irace/irace_bkp_3.Rdata'
+# 2021-08-07 18:30:06 -03: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 8
+# seed: 1348503101
+# confidence level: 0.95
+# budget: 1408
+# mu: 5
+# deterministic: FALSE
+
+# 2021-08-07 18:30:06 -03: Iteration 5 of 5
+# experimentsUsedSoFar: 2592
+# remainingBudget: 1408
+# currentBudget: 1408
+# nbConfigurations: 105
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         14|        105|        457|   -240.0000000|        105|00:03:01|   NA|  NA|    NA|
+|x|          6|        105|        503|   -340.0000000|        205|00:07:09|+0.29|0.64|0.2328|
+|x|         13|        105|        427|   -287.0000000|        305|00:00:25|+0.12|0.41|0.5853|
+|x|          8|        105|        503|   -337.5000000|        405|00:02:24|+0.12|0.34|0.5399|
+|-|          5|         66|        394|   -436.8000000|        505|00:08:35|-0.11|0.12|1.0836|
+|=|          4|         66|        427|   -506.8333333|        566|00:21:31|-0.07|0.11|1.0532|
+|=|          7|         66|        372|   -451.1428571|        627|00:00:05|-0.05|0.10|1.0387|
+|=|          3|         66|        427|   -484.3750000|        688|00:15:03|-0.03|0.10|1.0177|
+|=|          1|         66|        427|   -513.1111111|        749|00:14:13|-0.03|0.09|1.0133|
+|=|         11|         66|        503|   -558.3000000|        810|00:09:24|-0.02|0.08|1.0067|
+|=|          2|         66|        503|   -507.5454545|        871|00:00:03|-0.02|0.07|0.9132|
+|=|          9|         66|        503|   -471.0833333|        932|00:00:25|-0.02|0.07|0.9183|
+|=|         10|         66|        503|   -440.6153846|        993|00:00:05|-0.01|0.07|0.9196|
+|=|         12|         66|        478|   -414.9285714|       1054|00:00:08|+0.00|0.07|0.9128|
+|=|         15|         66|        478|   -387.2666667|       1120|00:00:00|+0.00|0.07|0.8521|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         478    mean value:    -387.2666667
+Description of the best-so-far configuration:
+    .ID. alpha iterations path margin removeOperator removePercentage shuffleOperator addOperator .PARENT.
+478  478  0.94       4780    y   1.99              r             0.14               e           b      372
+
+# 2021-08-07 19:52:45 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    alpha iterations path margin removeOperator removePercentage shuffleOperator addOperator
+478  0.94       4780    y   1.99              r             0.14               e           b
+503  0.93       4710    y   1.96              r             0.17               e           b
+491  0.97       4770    y   1.83              r             0.13               e           b
+497  0.98       4372    y   1.85              r             0.14               e           b
+505  0.87       4614    y   1.95              r             0.12               e           b
+# 2021-08-07 19:52:45 -03: Iteration 6 of 6
+# experimentsUsedSoFar: 3712
+# remainingBudget: 288
+# currentBudget: 288
+# nbConfigurations: 22
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         16|         22|        521|   -950.0000000|         22|00:02:47|   NA|  NA|    NA|
+|x|         15|         22|        521|   -475.0000000|         39|00:00:00|+0.00|0.50|0.4773|
+|x|          7|         22|        521|   -360.0000000|         56|00:00:02|+0.11|0.41|0.5473|
+|x|         13|         22|        521|   -313.7500000|         73|00:00:07|+0.14|0.36|0.5944|
+|=|         10|         22|        516|   -267.4000000|         90|00:00:02|-0.08|0.13|0.8069|
+|=|         14|         22|        516|   -261.1666667|        107|00:00:43|-0.10|0.09|0.8567|
+|=|          8|         22|        521|   -298.0000000|        124|00:00:36|-0.08|0.08|0.8729|
+|=|          9|         22|        526|   -267.1250000|        141|00:00:09|-0.06|0.07|0.8808|
+|=|         12|         22|        526|   -243.0000000|        158|00:00:03|-0.03|0.09|0.8684|
+|=|          2|         22|        526|   -218.7000000|        175|00:00:01|-0.02|0.08|0.7795|
+|=|          3|         22|        526|   -265.2727273|        192|00:06:02|-0.01|0.08|0.7912|
+|=|         11|         22|        526|   -324.1666667|        209|00:03:30|-0.00|0.08|0.7997|
+|=|          5|         22|        526|   -359.6153846|        226|00:02:02|+0.01|0.08|0.8017|
+|=|          6|         22|        516|   -366.0714286|        243|00:01:42|-0.01|0.06|0.8283|
+|=|          4|         22|        497|   -402.8000000|        260|00:07:57|-0.01|0.05|0.8429|
+|=|          1|         22|        516|   -420.3750000|        277|00:04:59|-0.02|0.05|0.8507|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         516    mean value:    -420.3750000
+Description of the best-so-far configuration:
+    .ID. alpha iterations path margin removeOperator removePercentage shuffleOperator addOperator .PARENT.
+516  516  0.95       4701    y   1.97              r             0.15               e           b      478
+
+# 2021-08-07 20:23:34 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    alpha iterations path margin removeOperator removePercentage shuffleOperator addOperator
+516  0.95       4701    y   1.97              r             0.15               e           b
+497  0.98       4372    y   1.85              r             0.14               e           b
+505  0.87       4614    y   1.95              r             0.12               e           b
+524  0.94       4285    y   1.87              r             0.14               e           b
+478  0.94       4780    y   1.99              r             0.14               e           b
+# 2021-08-07 20:23:34 -03: Stopped because there is not enough budget left to race more than the minimum (5)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 7
+# nbIterations: 7
+# experimentsUsedSoFar: 3989
+# timeUsed: 0
+# remainingBudget: 11
+# currentBudget: 11
+# number of elites: 5
+# nbConfigurations: 5
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    alpha iterations path margin removeOperator removePercentage shuffleOperator addOperator
+516  0.95       4701    y   1.97              r             0.15               e           b
+497  0.98       4372    y   1.85              r             0.14               e           b
+505  0.87       4614    y   1.95              r             0.12               e           b
+524  0.94       4285    y   1.87              r             0.14               e           b
+478  0.94       4780    y   1.99              r             0.14               e           b
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+516  --alpha 0.95 --iterations 4701 --path y --margin 1.97 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
+497  --alpha 0.98 --iterations 4372 --path y --margin 1.85 --removeOperator r --removePercentage 0.14 --shuffleOperator e --addOperator b
+505  --alpha 0.87 --iterations 4614 --path y --margin 1.95 --removeOperator r --removePercentage 0.12 --shuffleOperator e --addOperator b
+524  --alpha 0.94 --iterations 4285 --path y --margin 1.87 --removeOperator r --removePercentage 0.14 --shuffleOperator e --addOperator b
+478  --alpha 0.94 --iterations 4780 --path y --margin 1.99 --removeOperator r --removePercentage 0.14 --shuffleOperator e --addOperator b
