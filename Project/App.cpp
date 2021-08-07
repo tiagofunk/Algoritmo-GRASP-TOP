@@ -66,9 +66,9 @@ void App::initialize_timer(){
 }
 
 void App::create_seed(){
-    // random_device rd;
-    // this->seed = rd();
-    this->seed = stoi( this->argument_reader->getValue( "--seed" ) );
+    random_device rd;
+    this->seed = rd();
+    // this->seed = stoi( this->argument_reader->getValue( "--seed" ) );
     show_log( "seed: " + std::to_string( seed ) + "\n", 1 );
 }
 
@@ -115,8 +115,8 @@ void App::finalize_timer(){
 
 void App::show_results(){
     show_log( this->sol.to_string(), 1 );
-    show_log( std::to_string( this->total_time ) + " ms\n", 1 );
-    show_log( std::to_string( IRACE_CONSTANT * this->sol.get_total_rewards() ) + "\n", 0 );
+    show_log( std::to_string( this->sol.get_total_rewards() ) + "\n", 0 );
+    show_log( std::to_string( this->total_time ) + " ms\n", 0 );
 }
 
 App::App( ArgumentReader * ar ){

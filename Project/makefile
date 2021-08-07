@@ -37,7 +37,7 @@ CC_FLAGS=-c -W -Wall
 
 SEED=1011742676
 INSTANCE=../instances/set_6_3/p6.3.m.txt
-PROGRAM_ARGS=--alpha 0.81 --iterations 2856 --path y --margin 1.63 --removeOperator r --removePercentage 0.12 --shuffleOperator r --addOperator b
+PROGRAM_ARGS=--alpha 0.9 --iterations 4500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
 
 
 all: $(PROJ_NAME) run
