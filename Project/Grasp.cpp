@@ -33,7 +33,9 @@ Solution GRASP::execute(){
             actual = this->local_search->execute( actual, this->unused_vertices );
             this->unused_vertices = this->local_search->get_unused_vertices();
 
-            actual = this->path_relinking->execute( actual, best );
+            if( best.get_total_time() != 0.0 ){
+                actual = this->path_relinking->execute( actual, best );
+            }
 
             if( actual.get_total_rewards() > best.get_total_rewards() ){
                 best = actual;
