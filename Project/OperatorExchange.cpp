@@ -1,5 +1,6 @@
 #include "OperatorExchange.h"
 #include "main.h"
+#include "Utils.h"
 
 Solution OperatorExchange::realize_operation( Solution sol ){
     this->is_swaped = false;
@@ -10,7 +11,7 @@ Solution OperatorExchange::realize_operation( Solution sol ){
             for( int k = 1; k < actual.get_length_of_path( i )-1; k++ ){
                 for( int l = 1; l < actual.get_length_of_path( j )-1; l++ ){
                     if( actual.swap( i,k, j, l ) ){
-                        if( actual.get_total_time() < best.get_total_time() ){
+                        if( absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
                             best = actual;
                             this->is_swaped = true;
                         }else{

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/Project/TOP_GRASP_TS_PR",
-            "args": ["1234", "1", "119504273", "${workspaceRoot}/instances/set_6_3/p6.3.f.txt", "--alpha", "0.41", "--iterations", "3706", "--path", "y", "--margin", "1.61", "--removeOperator", "w", "--removePercentage", "0.51", "--shuffleOperator", "r", "--addOperator", "f" ],
+            "args": ["1234", "1", "241161500", "${workspaceRoot}/instances/set_4_4/p4.4.l.txt", "--alpha", "0.55", "--iterations", "3471", "--path", "n", "--margin", "0.97", "--removeOperator", "w", "--removePercentage", "0.21", "--shuffleOperator", "e", "--addOperator", "r" ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
