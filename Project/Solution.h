@@ -41,6 +41,7 @@ class Solution{
 
         bool check_if_path_is_valid( int path );
         bool check_if_path_position_is_valid( int path, int position );
+        bool check_if_position_is_initial_or_final( int path, int position );
         bool check_if_vertice_is_used( Vertice * v );
 
     public:
@@ -60,6 +61,7 @@ class Solution{
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
+        double get_rewards( int path );
         double get_total_rewards();
         double get_time_path( int path );
         double get_time_per_path();

@@ -130,7 +130,11 @@ bool Solution::check_if_path_is_valid( int path ){
 }
 
 bool Solution::check_if_path_position_is_valid( int path, int position ){
-    return this->check_if_path_is_valid( path ) && ( position < 1 || (unsigned int) position >= this->paths[ path ].size() );
+    return this->check_if_path_is_valid( path ) || ( position < 1 || (unsigned int) position >= this->paths[ path ].size() );
+}
+
+bool Solution::check_if_position_is_initial_or_final( int path, int position ){
+    return position == 0 || position == this->paths[ path ].size();
 }
 
 bool Solution::add( int path, Vertice * v ){
@@ -227,8 +231,10 @@ bool Solution::remove( int path, int position ){
 }
 
 bool Solution::move( int path1, int position1, int path2, int position2 ){
-    if( check_if_path_position_is_valid( path1, position1 ) ) return false;
-    if( check_if_path_position_is_valid( path2, position2 ) ) return false;
+    if( this->check_if_path_position_is_valid( path1, position1 ) ) return false;
+    if( this->check_if_path_position_is_valid( path2, position2 ) ) return false;
+    if( this->check_if_position_is_initial_or_final( path1, position1 ) ) return false;
+    if( this->check_if_position_is_initial_or_final( path2, position2 ) ) return false;
 
     Vertice * v = this->paths[ path1 ][ position1 ];
 
@@ -238,7 +244,9 @@ bool Solution::move( int path1, int position1, int path2, int position2 ){
     if( this->checker_is_unlocked || this->time_per_path > new_time_path_2 ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
+        this->update_reward_in_remove( path1, position1 );
         this->remove_in_path( path1, position1 );
+        this->update_reward_in_add( path2, v );
         this->add_in_path( path2, position2, v );
         return true;
     }
@@ -259,6 +267,11 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
 Vertice * Solution::get_vertice_in_path( int path, int position ){
     if( check_if_path_position_is_valid( path, position ) ) return 0;
     return this->paths[ path ][ position ];
+}
+
+double Solution::get_rewards( int path ){
+    if( check_if_path_is_valid( path ) ) throw runtime_error( "path is invalid on get_rewards\n" );
+    return this->path_rewards[ path ];
 }
 
 double Solution::get_total_rewards(){
