@@ -27,13 +27,17 @@ CC_FLAGS=-c -W -Wall
 # INSTANCE=../instances/set_5_3/p5.3.v.txt
 # PROGRAM_ARGS=--alpha 0.58 --iterations 2398 --path y --margin 0.78 --removeOperator w --removePercentage 0.17 --shuffleOperator e --addOperator b
 
-SEED=347357786
-INSTANCE=../instances/set_4_4/p4.4.l.txt
-PROGRAM_ARGS=--alpha 0.79 --iterations 2031 --path n --margin 1.11 --removeOperator w --removePercentage 0.39 --shuffleOperator e --addOperator b
+# SEED=347357786
+# INSTANCE=../instances/set_4_4/p4.4.l.txt
+# PROGRAM_ARGS=--alpha 0.79 --iterations 2031 --path n --margin 1.11 --removeOperator w --removePercentage 0.39 --shuffleOperator e --addOperator b
 
 # SEED=241161500
 # INSTANCE=../instances/set_4_4/p4.4.l.txt
 # PROGRAM_ARGS=--alpha 0.55 --iterations 3471 --path n --margin 0.97 --removeOperator w --removePercentage 0.21 --shuffleOperator e --addOperator r
+
+SEED=1011742676
+INSTANCE=../instances/set_6_3/p6.3.m.txt
+PROGRAM_ARGS=--alpha 0.81 --iterations 2856 --path y --margin 1.63 --removeOperator r --removePercentage 0.12 --shuffleOperator r --addOperator b
 
 
 all: $(PROJ_NAME) run

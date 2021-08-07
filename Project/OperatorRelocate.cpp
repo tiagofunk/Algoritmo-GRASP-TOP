@@ -1,5 +1,6 @@
 #include "OperatorRelocate.h"
 #include "main.h"
+#include "Utils.h"
 
 Solution OperatorRelocate::realize_operation( Solution sol ){
     this->is_swaped = false;
@@ -10,12 +11,14 @@ Solution OperatorRelocate::realize_operation( Solution sol ){
             for( int k = 0; k < actual.get_number_paths(); k++ ){
                 if( i != k ){
                     for( int l = 1; l < actual.get_length_of_path( k )-1; l++ ){
-                        actual.move( i, j, k, l );
-                        if( actual.get_total_time() < best.get_total_time() ){
-                            best = actual;
-                            this->is_swaped = true;
+                        if( actual.move( i, j, k, l ) ){
+                            if( absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
+                                best = actual;
+                                this->is_swaped = true;
+                            }else{
+                                actual = sol;
+                            }
                         }
-                        actual = sol;
                     }
                 }
             }    
