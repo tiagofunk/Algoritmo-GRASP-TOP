@@ -46,8 +46,9 @@ vector< instance_value > add_value_on_instance( vector< instance_value > instanc
 }
 
 vector< instance_value > read_file( string file ){
-    string instance_name;
-    int result, time;
+    string instance_name, ms;
+    double result;
+    int time;
     int i, f;
     vector< instance_value > instances;
 
@@ -57,7 +58,7 @@ vector< instance_value > read_file( string file ){
     }
 
     while( !reader.eof() ){
-        reader >> instance_name >> result >> time;
+        reader >> instance_name >> result >> time >> ms;
         i = instance_name.find_last_of("/") + 1;
         f = instance_name.find_last_of(".") - i;
         instance_name = instance_name.substr( i, f );

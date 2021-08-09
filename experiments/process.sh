@@ -1,16 +1,22 @@
 #!/bin/bash
 
+write_on_log_txt(){
+    cat $1 >> log.txt
+    echo "" >> log.txt
+}
+
 echo -n "" > log.txt
-cat log1.txt >> log.txt
-cat log2.txt >> log.txt
-cat log3.txt >> log.txt
-cat log4.txt >> log.txt
-cat log5.txt >> log.txt
-cat log6.txt >> log.txt
-cat log7.txt >> log.txt
-cat log8.txt >> log.txt
+
+write_on_log_txt log1.txt
+write_on_log_txt log2.txt
+write_on_log_txt log3.txt
+write_on_log_txt log4.txt
+write_on_log_txt log5.txt
+write_on_log_txt log6.txt
+write_on_log_txt log7.txt
+write_on_log_txt log8.txt
 
 g++ process.cpp -o process
 
-./process
+./process >> new_results.ods
 
