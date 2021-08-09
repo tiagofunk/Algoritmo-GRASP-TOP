@@ -1,0 +1,3388 @@
+../instances/set_1_2/p1.2.a.txt
+10.000000
+195 ms
+../instances/set_1_2/p1.2.a.txt
+10.000000
+193 ms
+../instances/set_1_2/p1.2.a.txt
+10.000000
+195 ms
+../instances/set_1_2/p1.2.a.txt
+10.000000
+195 ms
+../instances/set_1_2/p1.2.b.txt
+20.000000
+228 ms
+../instances/set_1_2/p1.2.b.txt
+20.000000
+228 ms
+../instances/set_1_2/p1.2.b.txt
+20.000000
+230 ms
+../instances/set_1_2/p1.2.b.txt
+20.000000
+228 ms
+../instances/set_1_2/p1.2.c.txt
+35.000000
+527 ms
+../instances/set_1_2/p1.2.c.txt
+30.000000
+527 ms
+../instances/set_1_2/p1.2.c.txt
+40.000000
+532 ms
+../instances/set_1_2/p1.2.c.txt
+40.000000
+522 ms
+../instances/set_1_2/p1.2.d.txt
+50.000000
+1232 ms
+../instances/set_1_2/p1.2.d.txt
+50.000000
+1225 ms
+../instances/set_1_2/p1.2.d.txt
+40.000000
+1282 ms
+../instances/set_1_2/p1.2.d.txt
+45.000000
+1264 ms
+../instances/set_1_2/p1.2.e.txt
+65.000000
+2246 ms
+../instances/set_1_2/p1.2.e.txt
+65.000000
+2273 ms
+../instances/set_1_2/p1.2.e.txt
+65.000000
+2332 ms
+../instances/set_1_2/p1.2.e.txt
+70.000000
+2316 ms
+../instances/set_1_2/p1.2.f.txt
+90.000000
+3462 ms
+../instances/set_1_2/p1.2.f.txt
+95.000000
+3701 ms
+../instances/set_1_2/p1.2.f.txt
+85.000000
+4037 ms
+../instances/set_1_2/p1.2.f.txt
+85.000000
+4009 ms
+../instances/set_1_2/p1.2.g.txt
+100.000000
+5371 ms
+../instances/set_1_2/p1.2.g.txt
+100.000000
+5302 ms
+../instances/set_1_2/p1.2.g.txt
+100.000000
+5274 ms
+../instances/set_1_2/p1.2.g.txt
+95.000000
+5238 ms
+../instances/set_1_2/p1.2.h.txt
+110.000000
+6573 ms
+../instances/set_1_2/p1.2.h.txt
+110.000000
+6475 ms
+../instances/set_1_2/p1.2.h.txt
+110.000000
+6515 ms
+../instances/set_1_2/p1.2.h.txt
+115.000000
+6558 ms
+../instances/set_1_2/p1.2.i.txt
+135.000000
+7543 ms
+../instances/set_1_2/p1.2.i.txt
+130.000000
+7640 ms
+../instances/set_1_2/p1.2.i.txt
+130.000000
+7589 ms
+../instances/set_1_2/p1.2.i.txt
+130.000000
+7678 ms
+../instances/set_1_2/p1.2.j.txt
+155.000000
+8684 ms
+../instances/set_1_2/p1.2.j.txt
+155.000000
+9053 ms
+../instances/set_1_2/p1.2.j.txt
+155.000000
+8806 ms
+../instances/set_1_2/p1.2.j.txt
+155.000000
+8836 ms
+../instances/set_1_2/p1.2.k.txt
+170.000000
+9907 ms
+../instances/set_1_2/p1.2.k.txt
+165.000000
+9785 ms
+../instances/set_1_2/p1.2.k.txt
+165.000000
+9829 ms
+../instances/set_1_2/p1.2.k.txt
+165.000000
+9924 ms
+../instances/set_1_2/p1.2.l.txt
+185.000000
+11197 ms
+../instances/set_1_2/p1.2.l.txt
+185.000000
+11162 ms
+../instances/set_1_2/p1.2.l.txt
+180.000000
+11236 ms
+../instances/set_1_2/p1.2.l.txt
+185.000000
+11261 ms
+../instances/set_1_2/p1.2.m.txt
+200.000000
+12647 ms
+../instances/set_1_2/p1.2.m.txt
+200.000000
+12505 ms
+../instances/set_1_2/p1.2.m.txt
+195.000000
+12427 ms
+../instances/set_1_2/p1.2.m.txt
+200.000000
+12646 ms
+../instances/set_1_2/p1.2.n.txt
+225.000000
+14013 ms
+../instances/set_1_2/p1.2.n.txt
+220.000000
+13756 ms
+../instances/set_1_2/p1.2.n.txt
+215.000000
+14134 ms
+../instances/set_1_2/p1.2.n.txt
+215.000000
+13929 ms
+../instances/set_1_2/p1.2.o.txt
+220.000000
+14545 ms
+../instances/set_1_2/p1.2.o.txt
+225.000000
+14726 ms
+../instances/set_1_2/p1.2.o.txt
+225.000000
+14440 ms
+../instances/set_1_2/p1.2.o.txt
+225.000000
+14535 ms
+../instances/set_1_2/p1.2.p.txt
+220.000000
+14842 ms
+../instances/set_1_2/p1.2.p.txt
+225.000000
+14912 ms
+../instances/set_1_2/p1.2.p.txt
+230.000000
+15011 ms
+../instances/set_1_2/p1.2.p.txt
+230.000000
+14986 ms
+../instances/set_1_2/p1.2.q.txt
+240.000000
+16431 ms
+../instances/set_1_2/p1.2.q.txt
+240.000000
+16347 ms
+../instances/set_1_2/p1.2.q.txt
+235.000000
+16402 ms
+../instances/set_1_2/p1.2.q.txt
+240.000000
+16576 ms
+../instances/set_1_2/p1.2.r.txt
+245.000000
+17629 ms
+../instances/set_1_2/p1.2.r.txt
+245.000000
+17762 ms
+../instances/set_1_2/p1.2.r.txt
+250.000000
+17818 ms
+../instances/set_1_2/p1.2.r.txt
+250.000000
+17536 ms
+../instances/set_1_3/p1.3.a.txt
+0.000000
+351 ms
+../instances/set_1_3/p1.3.a.txt
+0.000000
+359 ms
+../instances/set_1_3/p1.3.a.txt
+0.000000
+355 ms
+../instances/set_1_3/p1.3.a.txt
+0.000000
+354 ms
+../instances/set_1_3/p1.3.b.txt
+10.000000
+379 ms
+../instances/set_1_3/p1.3.b.txt
+10.000000
+380 ms
+../instances/set_1_3/p1.3.b.txt
+10.000000
+379 ms
+../instances/set_1_3/p1.3.b.txt
+10.000000
+377 ms
+../instances/set_1_3/p1.3.c.txt
+25.000000
+512 ms
+../instances/set_1_3/p1.3.c.txt
+25.000000
+518 ms
+../instances/set_1_3/p1.3.c.txt
+25.000000
+515 ms
+../instances/set_1_3/p1.3.c.txt
+25.000000
+513 ms
+../instances/set_1_3/p1.3.d.txt
+50.000000
+1443 ms
+../instances/set_1_3/p1.3.d.txt
+45.000000
+1427 ms
+../instances/set_1_3/p1.3.d.txt
+40.000000
+1407 ms
+../instances/set_1_3/p1.3.d.txt
+40.000000
+1444 ms
+../instances/set_1_3/p1.3.e.txt
+55.000000
+2419 ms
+../instances/set_1_3/p1.3.e.txt
+50.000000
+2432 ms
+../instances/set_1_3/p1.3.e.txt
+55.000000
+2387 ms
+../instances/set_1_3/p1.3.e.txt
+55.000000
+2425 ms
+../instances/set_1_3/p1.3.f.txt
+65.000000
+3243 ms
+../instances/set_1_3/p1.3.f.txt
+65.000000
+3277 ms
+../instances/set_1_3/p1.3.f.txt
+65.000000
+3274 ms
+../instances/set_1_3/p1.3.f.txt
+65.000000
+3313 ms
+../instances/set_1_3/p1.3.g.txt
+75.000000
+4268 ms
+../instances/set_1_3/p1.3.g.txt
+75.000000
+4134 ms
+../instances/set_1_3/p1.3.g.txt
+75.000000
+4212 ms
+../instances/set_1_3/p1.3.g.txt
+75.000000
+4263 ms
+../instances/set_1_3/p1.3.h.txt
+90.000000
+5473 ms
+../instances/set_1_3/p1.3.h.txt
+95.000000
+5377 ms
+../instances/set_1_3/p1.3.h.txt
+95.000000
+5461 ms
+../instances/set_1_3/p1.3.h.txt
+85.000000
+5540 ms
+../instances/set_1_3/p1.3.i.txt
+125.000000
+6603 ms
+../instances/set_1_3/p1.3.i.txt
+110.000000
+6901 ms
+../instances/set_1_3/p1.3.i.txt
+115.000000
+6790 ms
+../instances/set_1_3/p1.3.i.txt
+120.000000
+6879 ms
+../instances/set_1_3/p1.3.j.txt
+140.000000
+7984 ms
+../instances/set_1_3/p1.3.j.txt
+140.000000
+7700 ms
+../instances/set_1_3/p1.3.j.txt
+125.000000
+7785 ms
+../instances/set_1_3/p1.3.j.txt
+125.000000
+7948 ms
+../instances/set_1_3/p1.3.k.txt
+130.000000
+9057 ms
+../instances/set_1_3/p1.3.k.txt
+135.000000
+8927 ms
+../instances/set_1_3/p1.3.k.txt
+140.000000
+9093 ms
+../instances/set_1_3/p1.3.k.txt
+140.000000
+9005 ms
+../instances/set_1_3/p1.3.l.txt
+150.000000
+10802 ms
+../instances/set_1_3/p1.3.l.txt
+155.000000
+10516 ms
+../instances/set_1_3/p1.3.l.txt
+150.000000
+10327 ms
+../instances/set_1_3/p1.3.l.txt
+155.000000
+10584 ms
+../instances/set_1_3/p1.3.m.txt
+165.000000
+11373 ms
+../instances/set_1_3/p1.3.m.txt
+170.000000
+11711 ms
+../instances/set_1_3/p1.3.m.txt
+165.000000
+11443 ms
+../instances/set_1_3/p1.3.m.txt
+170.000000
+11467 ms
+../instances/set_1_3/p1.3.n.txt
+180.000000
+12802 ms
+../instances/set_1_3/p1.3.n.txt
+190.000000
+12701 ms
+../instances/set_1_3/p1.3.n.txt
+190.000000
+12952 ms
+../instances/set_1_3/p1.3.n.txt
+185.000000
+12577 ms
+../instances/set_1_3/p1.3.o.txt
+195.000000
+13893 ms
+../instances/set_1_3/p1.3.o.txt
+195.000000
+13782 ms
+../instances/set_1_3/p1.3.o.txt
+200.000000
+13698 ms
+../instances/set_1_3/p1.3.o.txt
+195.000000
+13698 ms
+../instances/set_1_3/p1.3.p.txt
+205.000000
+14830 ms
+../instances/set_1_3/p1.3.p.txt
+210.000000
+14636 ms
+../instances/set_1_3/p1.3.p.txt
+205.000000
+14492 ms
+../instances/set_1_3/p1.3.p.txt
+205.000000
+14913 ms
+../instances/set_1_3/p1.3.q.txt
+220.000000
+15868 ms
+../instances/set_1_3/p1.3.q.txt
+220.000000
+15850 ms
+../instances/set_1_3/p1.3.q.txt
+220.000000
+15885 ms
+../instances/set_1_3/p1.3.q.txt
+220.000000
+15893 ms
+../instances/set_1_3/p1.3.r.txt
+235.000000
+17354 ms
+../instances/set_1_3/p1.3.r.txt
+230.000000
+17150 ms
+../instances/set_1_3/p1.3.r.txt
+235.000000
+17246 ms
+../instances/set_1_3/p1.3.r.txt
+230.000000
+16901 ms
+../instances/set_1_4/p1.4.a.txt
+0.000000
+428 ms
+../instances/set_1_4/p1.4.a.txt
+0.000000
+425 ms
+../instances/set_1_4/p1.4.a.txt
+0.000000
+423 ms
+../instances/set_1_4/p1.4.a.txt
+0.000000
+421 ms
+../instances/set_1_4/p1.4.b.txt
+10.000000
+460 ms
+../instances/set_1_4/p1.4.b.txt
+10.000000
+469 ms
+../instances/set_1_4/p1.4.b.txt
+10.000000
+471 ms
+../instances/set_1_4/p1.4.b.txt
+10.000000
+472 ms
+../instances/set_1_4/p1.4.c.txt
+10.000000
+506 ms
+../instances/set_1_4/p1.4.c.txt
+10.000000
+500 ms
+../instances/set_1_4/p1.4.c.txt
+10.000000
+502 ms
+../instances/set_1_4/p1.4.c.txt
+10.000000
+502 ms
+../instances/set_1_4/p1.4.d.txt
+30.000000
+798 ms
+../instances/set_1_4/p1.4.d.txt
+30.000000
+824 ms
+../instances/set_1_4/p1.4.d.txt
+30.000000
+808 ms
+../instances/set_1_4/p1.4.d.txt
+30.000000
+789 ms
+../instances/set_1_4/p1.4.e.txt
+30.000000
+1730 ms
+../instances/set_1_4/p1.4.e.txt
+30.000000
+1762 ms
+../instances/set_1_4/p1.4.e.txt
+30.000000
+1736 ms
+../instances/set_1_4/p1.4.e.txt
+30.000000
+1747 ms
+../instances/set_1_4/p1.4.f.txt
+50.000000
+2936 ms
+../instances/set_1_4/p1.4.f.txt
+55.000000
+2926 ms
+../instances/set_1_4/p1.4.f.txt
+60.000000
+2955 ms
+../instances/set_1_4/p1.4.f.txt
+55.000000
+2945 ms
+../instances/set_1_4/p1.4.g.txt
+60.000000
+3963 ms
+../instances/set_1_4/p1.4.g.txt
+65.000000
+4027 ms
+../instances/set_1_4/p1.4.g.txt
+65.000000
+4057 ms
+../instances/set_1_4/p1.4.g.txt
+75.000000
+3990 ms
+../instances/set_1_4/p1.4.h.txt
+80.000000
+4885 ms
+../instances/set_1_4/p1.4.h.txt
+75.000000
+4842 ms
+../instances/set_1_4/p1.4.h.txt
+75.000000
+4831 ms
+../instances/set_1_4/p1.4.h.txt
+70.000000
+4827 ms
+../instances/set_1_4/p1.4.i.txt
+105.000000
+5778 ms
+../instances/set_1_4/p1.4.i.txt
+90.000000
+5910 ms
+../instances/set_1_4/p1.4.i.txt
+100.000000
+5893 ms
+../instances/set_1_4/p1.4.i.txt
+105.000000
+5834 ms
+../instances/set_1_4/p1.4.j.txt
+105.000000
+6894 ms
+../instances/set_1_4/p1.4.j.txt
+110.000000
+6952 ms
+../instances/set_1_4/p1.4.j.txt
+115.000000
+6867 ms
+../instances/set_1_4/p1.4.j.txt
+95.000000
+6900 ms
+../instances/set_1_4/p1.4.k.txt
+135.000000
+8258 ms
+../instances/set_1_4/p1.4.k.txt
+130.000000
+8211 ms
+../instances/set_1_4/p1.4.k.txt
+120.000000
+8252 ms
+../instances/set_1_4/p1.4.k.txt
+120.000000
+8383 ms
+../instances/set_1_4/p1.4.l.txt
+140.000000
+9344 ms
+../instances/set_1_4/p1.4.l.txt
+130.000000
+9357 ms
+../instances/set_1_4/p1.4.l.txt
+140.000000
+9438 ms
+../instances/set_1_4/p1.4.l.txt
+155.000000
+9213 ms
+../instances/set_1_4/p1.4.m.txt
+150.000000
+10455 ms
+../instances/set_1_4/p1.4.m.txt
+140.000000
+10536 ms
+../instances/set_1_4/p1.4.m.txt
+150.000000
+10554 ms
+../instances/set_1_4/p1.4.m.txt
+160.000000
+10567 ms
+../instances/set_1_4/p1.4.n.txt
+155.000000
+11910 ms
+../instances/set_1_4/p1.4.n.txt
+170.000000
+11895 ms
+../instances/set_1_4/p1.4.n.txt
+150.000000
+11972 ms
+../instances/set_1_4/p1.4.n.txt
+165.000000
+11899 ms
+../instances/set_1_4/p1.4.o.txt
+165.000000
+12579 ms
+../instances/set_1_4/p1.4.o.txt
+165.000000
+12714 ms
+../instances/set_1_4/p1.4.o.txt
+165.000000
+12760 ms
+../instances/set_1_4/p1.4.o.txt
+175.000000
+12626 ms
+../instances/set_1_4/p1.4.p.txt
+170.000000
+13432 ms
+../instances/set_1_4/p1.4.p.txt
+180.000000
+13452 ms
+../instances/set_1_4/p1.4.p.txt
+175.000000
+13280 ms
+../instances/set_1_4/p1.4.p.txt
+170.000000
+13267 ms
+../instances/set_1_4/p1.4.q.txt
+185.000000
+14875 ms
+../instances/set_1_4/p1.4.q.txt
+185.000000
+14651 ms
+../instances/set_1_4/p1.4.q.txt
+185.000000
+14635 ms
+../instances/set_1_4/p1.4.q.txt
+185.000000
+14544 ms
+../instances/set_1_4/p1.4.r.txt
+195.000000
+15858 ms
+../instances/set_1_4/p1.4.r.txt
+200.000000
+15651 ms
+../instances/set_1_4/p1.4.r.txt
+200.000000
+15377 ms
+../instances/set_1_4/p1.4.r.txt
+200.000000
+15434 ms
+../instances/set_2_2/p2.2.a.txt
+115.000000
+1442 ms
+../instances/set_2_2/p2.2.a.txt
+120.000000
+1434 ms
+../instances/set_2_2/p2.2.a.txt
+120.000000
+1472 ms
+../instances/set_2_2/p2.2.a.txt
+120.000000
+1459 ms
+../instances/set_2_2/p2.2.b.txt
+160.000000
+2065 ms
+../instances/set_2_2/p2.2.b.txt
+145.000000
+2063 ms
+../instances/set_2_2/p2.2.b.txt
+150.000000
+2037 ms
+../instances/set_2_2/p2.2.b.txt
+150.000000
+2028 ms
+../instances/set_2_2/p2.2.c.txt
+180.000000
+2729 ms
+../instances/set_2_2/p2.2.c.txt
+170.000000
+2754 ms
+../instances/set_2_2/p2.2.c.txt
+170.000000
+2808 ms
+../instances/set_2_2/p2.2.c.txt
+175.000000
+2664 ms
+../instances/set_2_2/p2.2.d.txt
+180.000000
+3378 ms
+../instances/set_2_2/p2.2.d.txt
+190.000000
+3395 ms
+../instances/set_2_2/p2.2.d.txt
+180.000000
+3399 ms
+../instances/set_2_2/p2.2.d.txt
+175.000000
+3361 ms
+../instances/set_2_2/p2.2.e.txt
+210.000000
+3677 ms
+../instances/set_2_2/p2.2.e.txt
+210.000000
+3686 ms
+../instances/set_2_2/p2.2.e.txt
+200.000000
+3695 ms
+../instances/set_2_2/p2.2.e.txt
+210.000000
+3649 ms
+../instances/set_2_2/p2.2.f.txt
+225.000000
+4289 ms
+../instances/set_2_2/p2.2.f.txt
+230.000000
+4302 ms
+../instances/set_2_2/p2.2.f.txt
+240.000000
+4323 ms
+../instances/set_2_2/p2.2.f.txt
+220.000000
+4373 ms
+../instances/set_2_2/p2.2.g.txt
+265.000000
+4676 ms
+../instances/set_2_2/p2.2.g.txt
+270.000000
+4728 ms
+../instances/set_2_2/p2.2.g.txt
+245.000000
+4729 ms
+../instances/set_2_2/p2.2.g.txt
+240.000000
+4735 ms
+../instances/set_2_2/p2.2.h.txt
+270.000000
+4992 ms
+../instances/set_2_2/p2.2.h.txt
+315.000000
+5080 ms
+../instances/set_2_2/p2.2.h.txt
+270.000000
+5040 ms
+../instances/set_2_2/p2.2.h.txt
+290.000000
+5116 ms
+../instances/set_2_2/p2.2.i.txt
+290.000000
+5551 ms
+../instances/set_2_2/p2.2.i.txt
+345.000000
+5556 ms
+../instances/set_2_2/p2.2.i.txt
+315.000000
+5533 ms
+../instances/set_2_2/p2.2.i.txt
+300.000000
+5550 ms
+../instances/set_2_2/p2.2.j.txt
+300.000000
+5706 ms
+../instances/set_2_2/p2.2.j.txt
+305.000000
+5749 ms
+../instances/set_2_2/p2.2.j.txt
+330.000000
+5756 ms
+../instances/set_2_2/p2.2.j.txt
+305.000000
+5743 ms
+../instances/set_2_2/p2.2.k.txt
+345.000000
+6399 ms
+../instances/set_2_2/p2.2.k.txt
+335.000000
+6398 ms
+../instances/set_2_2/p2.2.k.txt
+345.000000
+6455 ms
+../instances/set_2_2/p2.2.k.txt
+345.000000
+6329 ms
+../instances/set_2_3/p2.3.a.txt
+100.000000
+1139 ms
+../instances/set_2_3/p2.3.a.txt
+105.000000
+1134 ms
+../instances/set_2_3/p2.3.a.txt
+95.000000
+1129 ms
+../instances/set_2_3/p2.3.a.txt
+95.000000
+1110 ms
+../instances/set_2_3/p2.3.b.txt
+125.000000
+2460 ms
+../instances/set_2_3/p2.3.b.txt
+140.000000
+2535 ms
+../instances/set_2_3/p2.3.b.txt
+130.000000
+2452 ms
+../instances/set_2_3/p2.3.b.txt
+130.000000
+2484 ms
+../instances/set_2_3/p2.3.c.txt
+150.000000
+2776 ms
+../instances/set_2_3/p2.3.c.txt
+155.000000
+2729 ms
+../instances/set_2_3/p2.3.c.txt
+160.000000
+2784 ms
+../instances/set_2_3/p2.3.c.txt
+160.000000
+2725 ms
+../instances/set_2_3/p2.3.d.txt
+175.000000
+3064 ms
+../instances/set_2_3/p2.3.d.txt
+160.000000
+2994 ms
+../instances/set_2_3/p2.3.d.txt
+155.000000
+3020 ms
+../instances/set_2_3/p2.3.d.txt
+170.000000
+3000 ms
+../instances/set_2_3/p2.3.e.txt
+185.000000
+3284 ms
+../instances/set_2_3/p2.3.e.txt
+190.000000
+3309 ms
+../instances/set_2_3/p2.3.e.txt
+180.000000
+3289 ms
+../instances/set_2_3/p2.3.e.txt
+180.000000
+3288 ms
+../instances/set_2_3/p2.3.f.txt
+185.000000
+3614 ms
+../instances/set_2_3/p2.3.f.txt
+190.000000
+3628 ms
+../instances/set_2_3/p2.3.f.txt
+195.000000
+3615 ms
+../instances/set_2_3/p2.3.f.txt
+190.000000
+3567 ms
+../instances/set_2_3/p2.3.g.txt
+210.000000
+3971 ms
+../instances/set_2_3/p2.3.g.txt
+195.000000
+3942 ms
+../instances/set_2_3/p2.3.g.txt
+210.000000
+3888 ms
+../instances/set_2_3/p2.3.g.txt
+210.000000
+3913 ms
+../instances/set_2_3/p2.3.h.txt
+230.000000
+4538 ms
+../instances/set_2_3/p2.3.h.txt
+230.000000
+4586 ms
+../instances/set_2_3/p2.3.h.txt
+220.000000
+4482 ms
+../instances/set_2_3/p2.3.h.txt
+225.000000
+4561 ms
+../instances/set_2_3/p2.3.i.txt
+230.000000
+5110 ms
+../instances/set_2_3/p2.3.i.txt
+250.000000
+5077 ms
+../instances/set_2_3/p2.3.i.txt
+240.000000
+5083 ms
+../instances/set_2_3/p2.3.i.txt
+240.000000
+5100 ms
+../instances/set_2_3/p2.3.j.txt
+290.000000
+5473 ms
+../instances/set_2_3/p2.3.j.txt
+300.000000
+5536 ms
+../instances/set_2_3/p2.3.j.txt
+260.000000
+5465 ms
+../instances/set_2_3/p2.3.j.txt
+280.000000
+5513 ms
+../instances/set_2_3/p2.3.k.txt
+340.000000
+6223 ms
+../instances/set_2_3/p2.3.k.txt
+310.000000
+6226 ms
+../instances/set_2_3/p2.3.k.txt
+310.000000
+6242 ms
+../instances/set_2_3/p2.3.k.txt
+300.000000
+6212 ms
+../instances/set_2_4/p2.4.a.txt
+80.000000
+1050 ms
+../instances/set_2_4/p2.4.a.txt
+80.000000
+1030 ms
+../instances/set_2_4/p2.4.a.txt
+35.000000
+1041 ms
+../instances/set_2_4/p2.4.a.txt
+35.000000
+1039 ms
+../instances/set_2_4/p2.4.b.txt
+110.000000
+1796 ms
+../instances/set_2_4/p2.4.b.txt
+110.000000
+1838 ms
+../instances/set_2_4/p2.4.b.txt
+120.000000
+1847 ms
+../instances/set_2_4/p2.4.b.txt
+120.000000
+1850 ms
+../instances/set_2_4/p2.4.c.txt
+125.000000
+2525 ms
+../instances/set_2_4/p2.4.c.txt
+130.000000
+2490 ms
+../instances/set_2_4/p2.4.c.txt
+145.000000
+2452 ms
+../instances/set_2_4/p2.4.c.txt
+135.000000
+2511 ms
+../instances/set_2_4/p2.4.d.txt
+140.000000
+2984 ms
+../instances/set_2_4/p2.4.d.txt
+145.000000
+2972 ms
+../instances/set_2_4/p2.4.d.txt
+150.000000
+2999 ms
+../instances/set_2_4/p2.4.d.txt
+145.000000
+2994 ms
+../instances/set_2_4/p2.4.e.txt
+160.000000
+3640 ms
+../instances/set_2_4/p2.4.e.txt
+160.000000
+3611 ms
+../instances/set_2_4/p2.4.e.txt
+165.000000
+3612 ms
+../instances/set_2_4/p2.4.e.txt
+170.000000
+3632 ms
+../instances/set_2_4/p2.4.f.txt
+185.000000
+3889 ms
+../instances/set_2_4/p2.4.f.txt
+175.000000
+3924 ms
+../instances/set_2_4/p2.4.f.txt
+180.000000
+3932 ms
+../instances/set_2_4/p2.4.f.txt
+185.000000
+3878 ms
+../instances/set_2_4/p2.4.g.txt
+185.000000
+4033 ms
+../instances/set_2_4/p2.4.g.txt
+185.000000
+4012 ms
+../instances/set_2_4/p2.4.g.txt
+200.000000
+4024 ms
+../instances/set_2_4/p2.4.g.txt
+185.000000
+4071 ms
+../instances/set_2_4/p2.4.h.txt
+200.000000
+4580 ms
+../instances/set_2_4/p2.4.h.txt
+195.000000
+4485 ms
+../instances/set_2_4/p2.4.h.txt
+230.000000
+4532 ms
+../instances/set_2_4/p2.4.h.txt
+220.000000
+4544 ms
+../instances/set_2_4/p2.4.i.txt
+230.000000
+4755 ms
+../instances/set_2_4/p2.4.i.txt
+230.000000
+4705 ms
+../instances/set_2_4/p2.4.i.txt
+230.000000
+4765 ms
+../instances/set_2_4/p2.4.i.txt
+230.000000
+4719 ms
+../instances/set_2_4/p2.4.j.txt
+230.000000
+4813 ms
+../instances/set_2_4/p2.4.j.txt
+230.000000
+4797 ms
+../instances/set_2_4/p2.4.j.txt
+230.000000
+4833 ms
+../instances/set_2_4/p2.4.j.txt
+230.000000
+4818 ms
+../instances/set_2_4/p2.4.k.txt
+260.000000
+5552 ms
+../instances/set_2_4/p2.4.k.txt
+245.000000
+5535 ms
+../instances/set_2_4/p2.4.k.txt
+260.000000
+5573 ms
+../instances/set_2_4/p2.4.k.txt
+270.000000
+5542 ms
+../instances/set_3_2/p3.2.a.txt
+150.000000
+1033 ms
+../instances/set_3_2/p3.2.a.txt
+130.000000
+1044 ms
+../instances/set_3_2/p3.2.a.txt
+130.000000
+1020 ms
+../instances/set_3_2/p3.2.a.txt
+130.000000
+1058 ms
+../instances/set_3_2/p3.2.b.txt
+170.000000
+2282 ms
+../instances/set_3_2/p3.2.b.txt
+190.000000
+2320 ms
+../instances/set_3_2/p3.2.b.txt
+190.000000
+2216 ms
+../instances/set_3_2/p3.2.b.txt
+190.000000
+2320 ms
+../instances/set_3_2/p3.2.c.txt
+220.000000
+3745 ms
+../instances/set_3_2/p3.2.c.txt
+230.000000
+3810 ms
+../instances/set_3_2/p3.2.c.txt
+220.000000
+3819 ms
+../instances/set_3_2/p3.2.c.txt
+220.000000
+3791 ms
+../instances/set_3_2/p3.2.d.txt
+320.000000
+5217 ms
+../instances/set_3_2/p3.2.d.txt
+280.000000
+5062 ms
+../instances/set_3_2/p3.2.d.txt
+260.000000
+5039 ms
+../instances/set_3_2/p3.2.d.txt
+290.000000
+5055 ms
+../instances/set_3_2/p3.2.e.txt
+330.000000
+6581 ms
+../instances/set_3_2/p3.2.e.txt
+300.000000
+6435 ms
+../instances/set_3_2/p3.2.e.txt
+310.000000
+6515 ms
+../instances/set_3_2/p3.2.e.txt
+300.000000
+6546 ms
+../instances/set_3_2/p3.2.f.txt
+330.000000
+7014 ms
+../instances/set_3_2/p3.2.f.txt
+330.000000
+6980 ms
+../instances/set_3_2/p3.2.f.txt
+310.000000
+7027 ms
+../instances/set_3_2/p3.2.f.txt
+340.000000
+7025 ms
+../instances/set_3_2/p3.2.g.txt
+350.000000
+8320 ms
+../instances/set_3_2/p3.2.g.txt
+340.000000
+8348 ms
+../instances/set_3_2/p3.2.g.txt
+340.000000
+8231 ms
+../instances/set_3_2/p3.2.g.txt
+350.000000
+8393 ms
+../instances/set_3_2/p3.2.h.txt
+380.000000
+9375 ms
+../instances/set_3_2/p3.2.h.txt
+390.000000
+9339 ms
+../instances/set_3_2/p3.2.h.txt
+380.000000
+9311 ms
+../instances/set_3_2/p3.2.h.txt
+380.000000
+9154 ms
+../instances/set_3_2/p3.2.i.txt
+420.000000
+10373 ms
+../instances/set_3_2/p3.2.i.txt
+420.000000
+10387 ms
+../instances/set_3_2/p3.2.i.txt
+420.000000
+10322 ms
+../instances/set_3_2/p3.2.i.txt
+420.000000
+10419 ms
+../instances/set_3_2/p3.2.j.txt
+480.000000
+11660 ms
+../instances/set_3_2/p3.2.j.txt
+490.000000
+11708 ms
+../instances/set_3_2/p3.2.j.txt
+480.000000
+11738 ms
+../instances/set_3_2/p3.2.j.txt
+480.000000
+12088 ms
+../instances/set_3_2/p3.2.k.txt
+510.000000
+13129 ms
+../instances/set_3_2/p3.2.k.txt
+510.000000
+13263 ms
+../instances/set_3_2/p3.2.k.txt
+510.000000
+13027 ms
+../instances/set_3_2/p3.2.k.txt
+520.000000
+13065 ms
+../instances/set_3_2/p3.2.l.txt
+540.000000
+14099 ms
+../instances/set_3_2/p3.2.l.txt
+550.000000
+14166 ms
+../instances/set_3_2/p3.2.l.txt
+540.000000
+14346 ms
+../instances/set_3_2/p3.2.l.txt
+550.000000
+14235 ms
+../instances/set_3_2/p3.2.m.txt
+590.000000
+15576 ms
+../instances/set_3_2/p3.2.m.txt
+580.000000
+15106 ms
+../instances/set_3_2/p3.2.m.txt
+580.000000
+15348 ms
+../instances/set_3_2/p3.2.m.txt
+580.000000
+15272 ms
+../instances/set_3_2/p3.2.n.txt
+610.000000
+16472 ms
+../instances/set_3_2/p3.2.n.txt
+610.000000
+16795 ms
+../instances/set_3_2/p3.2.n.txt
+620.000000
+16658 ms
+../instances/set_3_2/p3.2.n.txt
+600.000000
+16672 ms
+../instances/set_3_2/p3.2.o.txt
+640.000000
+18226 ms
+../instances/set_3_2/p3.2.o.txt
+640.000000
+17884 ms
+../instances/set_3_2/p3.2.o.txt
+640.000000
+17996 ms
+../instances/set_3_2/p3.2.o.txt
+640.000000
+18317 ms
+../instances/set_3_2/p3.2.p.txt
+670.000000
+19544 ms
+../instances/set_3_2/p3.2.p.txt
+670.000000
+19260 ms
+../instances/set_3_2/p3.2.p.txt
+680.000000
+19271 ms
+../instances/set_3_2/p3.2.p.txt
+670.000000
+19520 ms
+../instances/set_3_2/p3.2.q.txt
+700.000000
+20507 ms
+../instances/set_3_2/p3.2.q.txt
+730.000000
+20326 ms
+../instances/set_3_2/p3.2.q.txt
+690.000000
+20744 ms
+../instances/set_3_2/p3.2.q.txt
+700.000000
+20280 ms
+../instances/set_3_2/p3.2.r.txt
+730.000000
+21894 ms
+../instances/set_3_2/p3.2.r.txt
+740.000000
+21801 ms
+../instances/set_3_2/p3.2.r.txt
+720.000000
+21726 ms
+../instances/set_3_2/p3.2.r.txt
+720.000000
+21505 ms
+../instances/set_3_2/p3.2.s.txt
+760.000000
+22940 ms
+../instances/set_3_2/p3.2.s.txt
+750.000000
+22922 ms
+../instances/set_3_2/p3.2.s.txt
+770.000000
+22662 ms
+../instances/set_3_2/p3.2.s.txt
+760.000000
+22873 ms
+../instances/set_3_2/p3.2.t.txt
+770.000000
+23596 ms
+../instances/set_3_2/p3.2.t.txt
+770.000000
+24194 ms
+../instances/set_3_2/p3.2.t.txt
+770.000000
+24047 ms
+../instances/set_3_2/p3.2.t.txt
+760.000000
+23952 ms
+../instances/set_3_3/p3.3.a.txt
+120.000000
+1015 ms
+../instances/set_3_3/p3.3.a.txt
+120.000000
+1026 ms
+../instances/set_3_3/p3.3.a.txt
+130.000000
+1022 ms
+../instances/set_3_3/p3.3.a.txt
+140.000000
+1035 ms
+../instances/set_3_3/p3.3.b.txt
+140.000000
+1938 ms
+../instances/set_3_3/p3.3.b.txt
+130.000000
+1912 ms
+../instances/set_3_3/p3.3.b.txt
+130.000000
+1933 ms
+../instances/set_3_3/p3.3.b.txt
+140.000000
+1942 ms
+../instances/set_3_3/p3.3.c.txt
+160.000000
+2890 ms
+../instances/set_3_3/p3.3.c.txt
+180.000000
+2845 ms
+../instances/set_3_3/p3.3.c.txt
+180.000000
+2905 ms
+../instances/set_3_3/p3.3.c.txt
+160.000000
+2876 ms
+../instances/set_3_3/p3.3.d.txt
+210.000000
+4452 ms
+../instances/set_3_3/p3.3.d.txt
+240.000000
+4479 ms
+../instances/set_3_3/p3.3.d.txt
+210.000000
+4443 ms
+../instances/set_3_3/p3.3.d.txt
+230.000000
+4381 ms
+../instances/set_3_3/p3.3.e.txt
+270.000000
+5660 ms
+../instances/set_3_3/p3.3.e.txt
+260.000000
+5715 ms
+../instances/set_3_3/p3.3.e.txt
+260.000000
+5795 ms
+../instances/set_3_3/p3.3.e.txt
+260.000000
+5761 ms
+../instances/set_3_3/p3.3.f.txt
+270.000000
+6928 ms
+../instances/set_3_3/p3.3.f.txt
+280.000000
+6828 ms
+../instances/set_3_3/p3.3.f.txt
+290.000000
+6901 ms
+../instances/set_3_3/p3.3.f.txt
+290.000000
+6841 ms
+../instances/set_3_3/p3.3.g.txt
+320.000000
+8039 ms
+../instances/set_3_3/p3.3.g.txt
+330.000000
+7926 ms
+../instances/set_3_3/p3.3.g.txt
+320.000000
+8100 ms
+../instances/set_3_3/p3.3.g.txt
+340.000000
+8016 ms
+../instances/set_3_3/p3.3.h.txt
+350.000000
+9054 ms
+../instances/set_3_3/p3.3.h.txt
+350.000000
+9123 ms
+../instances/set_3_3/p3.3.h.txt
+340.000000
+9154 ms
+../instances/set_3_3/p3.3.h.txt
+350.000000
+9049 ms
+../instances/set_3_3/p3.3.i.txt
+360.000000
+9809 ms
+../instances/set_3_3/p3.3.i.txt
+390.000000
+9644 ms
+../instances/set_3_3/p3.3.i.txt
+390.000000
+9884 ms
+../instances/set_3_3/p3.3.i.txt
+380.000000
+9737 ms
+../instances/set_3_3/p3.3.j.txt
+390.000000
+10424 ms
+../instances/set_3_3/p3.3.j.txt
+410.000000
+10710 ms
+../instances/set_3_3/p3.3.j.txt
+400.000000
+10536 ms
+../instances/set_3_3/p3.3.j.txt
+390.000000
+10584 ms
+../instances/set_3_3/p3.3.k.txt
+440.000000
+12083 ms
+../instances/set_3_3/p3.3.k.txt
+410.000000
+11935 ms
+../instances/set_3_3/p3.3.k.txt
+450.000000
+11829 ms
+../instances/set_3_3/p3.3.k.txt
+430.000000
+11944 ms
+../instances/set_3_3/p3.3.l.txt
+470.000000
+13477 ms
+../instances/set_3_3/p3.3.l.txt
+470.000000
+13075 ms
+../instances/set_3_3/p3.3.l.txt
+450.000000
+13344 ms
+../instances/set_3_3/p3.3.l.txt
+480.000000
+13337 ms
+../instances/set_3_3/p3.3.m.txt
+500.000000
+14656 ms
+../instances/set_3_3/p3.3.m.txt
+500.000000
+14546 ms
+../instances/set_3_3/p3.3.m.txt
+500.000000
+14572 ms
+../instances/set_3_3/p3.3.m.txt
+490.000000
+14527 ms
+../instances/set_3_3/p3.3.n.txt
+530.000000
+15838 ms
+../instances/set_3_3/p3.3.n.txt
+530.000000
+15699 ms
+../instances/set_3_3/p3.3.n.txt
+530.000000
+15766 ms
+../instances/set_3_3/p3.3.n.txt
+530.000000
+15765 ms
+../instances/set_3_3/p3.3.o.txt
+560.000000
+17089 ms
+../instances/set_3_3/p3.3.o.txt
+550.000000
+17199 ms
+../instances/set_3_3/p3.3.o.txt
+550.000000
+17212 ms
+../instances/set_3_3/p3.3.o.txt
+550.000000
+17170 ms
+../instances/set_3_3/p3.3.p.txt
+590.000000
+18554 ms
+../instances/set_3_3/p3.3.p.txt
+610.000000
+18699 ms
+../instances/set_3_3/p3.3.p.txt
+610.000000
+18679 ms
+../instances/set_3_3/p3.3.p.txt
+610.000000
+18734 ms
+../instances/set_3_3/p3.3.q.txt
+640.000000
+20281 ms
+../instances/set_3_3/p3.3.q.txt
+630.000000
+19995 ms
+../instances/set_3_3/p3.3.q.txt
+640.000000
+20011 ms
+../instances/set_3_3/p3.3.q.txt
+640.000000
+20473 ms
+../instances/set_3_3/p3.3.r.txt
+670.000000
+21107 ms
+../instances/set_3_3/p3.3.r.txt
+680.000000
+21223 ms
+../instances/set_3_3/p3.3.r.txt
+680.000000
+21286 ms
+../instances/set_3_3/p3.3.r.txt
+680.000000
+21826 ms
+../instances/set_3_3/p3.3.s.txt
+680.000000
+22119 ms
+../instances/set_3_3/p3.3.s.txt
+680.000000
+22575 ms
+../instances/set_3_3/p3.3.s.txt
+680.000000
+22600 ms
+../instances/set_3_3/p3.3.s.txt
+680.000000
+22353 ms
+../instances/set_3_3/p3.3.t.txt
+710.000000
+23552 ms
+../instances/set_3_3/p3.3.t.txt
+710.000000
+23732 ms
+../instances/set_3_3/p3.3.t.txt
+700.000000
+24152 ms
+../instances/set_3_3/p3.3.t.txt
+720.000000
+24163 ms
+../instances/set_3_4/p3.4.a.txt
+80.000000
+685 ms
+../instances/set_3_4/p3.4.a.txt
+70.000000
+687 ms
+../instances/set_3_4/p3.4.a.txt
+80.000000
+696 ms
+../instances/set_3_4/p3.4.a.txt
+80.000000
+696 ms
+../instances/set_3_4/p3.4.b.txt
+150.000000
+1752 ms
+../instances/set_3_4/p3.4.b.txt
+150.000000
+1751 ms
+../instances/set_3_4/p3.4.b.txt
+140.000000
+1772 ms
+../instances/set_3_4/p3.4.b.txt
+130.000000
+1751 ms
+../instances/set_3_4/p3.4.c.txt
+150.000000
+2605 ms
+../instances/set_3_4/p3.4.c.txt
+140.000000
+2569 ms
+../instances/set_3_4/p3.4.c.txt
+150.000000
+2559 ms
+../instances/set_3_4/p3.4.c.txt
+150.000000
+2567 ms
+../instances/set_3_4/p3.4.d.txt
+170.000000
+3616 ms
+../instances/set_3_4/p3.4.d.txt
+170.000000
+3613 ms
+../instances/set_3_4/p3.4.d.txt
+170.000000
+3665 ms
+../instances/set_3_4/p3.4.d.txt
+150.000000
+3675 ms
+../instances/set_3_4/p3.4.e.txt
+220.000000
+4951 ms
+../instances/set_3_4/p3.4.e.txt
+200.000000
+4931 ms
+../instances/set_3_4/p3.4.e.txt
+210.000000
+4950 ms
+../instances/set_3_4/p3.4.e.txt
+210.000000
+4962 ms
+../instances/set_3_4/p3.4.f.txt
+240.000000
+6265 ms
+../instances/set_3_4/p3.4.f.txt
+250.000000
+6403 ms
+../instances/set_3_4/p3.4.f.txt
+250.000000
+6334 ms
+../instances/set_3_4/p3.4.f.txt
+240.000000
+6401 ms
+../instances/set_3_4/p3.4.g.txt
+290.000000
+7715 ms
+../instances/set_3_4/p3.4.g.txt
+290.000000
+7680 ms
+../instances/set_3_4/p3.4.g.txt
+290.000000
+7687 ms
+../instances/set_3_4/p3.4.g.txt
+290.000000
+7605 ms
+../instances/set_3_4/p3.4.h.txt
+330.000000
+8584 ms
+../instances/set_3_4/p3.4.h.txt
+330.000000
+8503 ms
+../instances/set_3_4/p3.4.h.txt
+320.000000
+8464 ms
+../instances/set_3_4/p3.4.h.txt
+330.000000
+8608 ms
+../instances/set_3_4/p3.4.i.txt
+330.000000
+9832 ms
+../instances/set_3_4/p3.4.i.txt
+330.000000
+9826 ms
+../instances/set_3_4/p3.4.i.txt
+340.000000
+10009 ms
+../instances/set_3_4/p3.4.i.txt
+340.000000
+9928 ms
+../instances/set_3_4/p3.4.j.txt
+370.000000
+10807 ms
+../instances/set_3_4/p3.4.j.txt
+350.000000
+11091 ms
+../instances/set_3_4/p3.4.j.txt
+380.000000
+10955 ms
+../instances/set_3_4/p3.4.j.txt
+370.000000
+10819 ms
+../instances/set_3_4/p3.4.k.txt
+390.000000
+12239 ms
+../instances/set_3_4/p3.4.k.txt
+400.000000
+12320 ms
+../instances/set_3_4/p3.4.k.txt
+390.000000
+12283 ms
+../instances/set_3_4/p3.4.k.txt
+410.000000
+12224 ms
+../instances/set_3_4/p3.4.l.txt
+440.000000
+12816 ms
+../instances/set_3_4/p3.4.l.txt
+410.000000
+12934 ms
+../instances/set_3_4/p3.4.l.txt
+400.000000
+12810 ms
+../instances/set_3_4/p3.4.l.txt
+450.000000
+12563 ms
+../instances/set_3_4/p3.4.m.txt
+480.000000
+13484 ms
+../instances/set_3_4/p3.4.m.txt
+440.000000
+13561 ms
+../instances/set_3_4/p3.4.m.txt
+440.000000
+13380 ms
+../instances/set_3_4/p3.4.m.txt
+450.000000
+13407 ms
+../instances/set_3_4/p3.4.n.txt
+510.000000
+14374 ms
+../instances/set_3_4/p3.4.n.txt
+480.000000
+14475 ms
+../instances/set_3_4/p3.4.n.txt
+480.000000
+14764 ms
+../instances/set_3_4/p3.4.n.txt
+500.000000
+14434 ms
+../instances/set_3_4/p3.4.o.txt
+490.000000
+15746 ms
+../instances/set_3_4/p3.4.o.txt
+490.000000
+15885 ms
+../instances/set_3_4/p3.4.o.txt
+490.000000
+15911 ms
+../instances/set_3_4/p3.4.o.txt
+510.000000
+15618 ms
+../instances/set_3_4/p3.4.p.txt
+530.000000
+17127 ms
+../instances/set_3_4/p3.4.p.txt
+530.000000
+17387 ms
+../instances/set_3_4/p3.4.p.txt
+540.000000
+17220 ms
+../instances/set_3_4/p3.4.p.txt
+530.000000
+17315 ms
+../instances/set_3_4/p3.4.q.txt
+550.000000
+18452 ms
+../instances/set_3_4/p3.4.q.txt
+570.000000
+18386 ms
+../instances/set_3_4/p3.4.q.txt
+530.000000
+18979 ms
+../instances/set_3_4/p3.4.q.txt
+580.000000
+18433 ms
+../instances/set_3_4/p3.4.r.txt
+580.000000
+19420 ms
+../instances/set_3_4/p3.4.r.txt
+570.000000
+19451 ms
+../instances/set_3_4/p3.4.r.txt
+580.000000
+19580 ms
+../instances/set_3_4/p3.4.r.txt
+610.000000
+19434 ms
+../instances/set_3_4/p3.4.s.txt
+600.000000
+20642 ms
+../instances/set_3_4/p3.4.s.txt
+620.000000
+20968 ms
+../instances/set_3_4/p3.4.s.txt
+600.000000
+21068 ms
+../instances/set_3_4/p3.4.s.txt
+600.000000
+20876 ms
+../instances/set_3_4/p3.4.t.txt
+640.000000
+22698 ms
+../instances/set_3_4/p3.4.t.txt
+640.000000
+22079 ms
+../instances/set_3_4/p3.4.t.txt
+640.000000
+22356 ms
+../instances/set_3_4/p3.4.t.txt
+640.000000
+22325 ms
+../instances/set_4_2/p4.2.a.txt
+206.000000
+9005 ms
+../instances/set_4_2/p4.2.a.txt
+206.000000
+9177 ms
+../instances/set_4_2/p4.2.a.txt
+206.000000
+9174 ms
+../instances/set_4_2/p4.2.a.txt
+206.000000
+9146 ms
+../instances/set_4_2/p4.2.b.txt
+320.000000
+20501 ms
+../instances/set_4_2/p4.2.b.txt
+315.000000
+20728 ms
+../instances/set_4_2/p4.2.b.txt
+320.000000
+20136 ms
+../instances/set_4_2/p4.2.b.txt
+311.000000
+20597 ms
+../instances/set_4_2/p4.2.c.txt
+418.000000
+33716 ms
+../instances/set_4_2/p4.2.c.txt
+418.000000
+33890 ms
+../instances/set_4_2/p4.2.c.txt
+409.000000
+33674 ms
+../instances/set_4_2/p4.2.c.txt
+413.000000
+33781 ms
+../instances/set_4_2/p4.2.d.txt
+496.000000
+46724 ms
+../instances/set_4_2/p4.2.d.txt
+476.000000
+47058 ms
+../instances/set_4_2/p4.2.d.txt
+480.000000
+47101 ms
+../instances/set_4_2/p4.2.d.txt
+467.000000
+46633 ms
+../instances/set_4_2/p4.2.e.txt
+553.000000
+54077 ms
+../instances/set_4_2/p4.2.e.txt
+514.000000
+53220 ms
+../instances/set_4_2/p4.2.e.txt
+527.000000
+54059 ms
+../instances/set_4_2/p4.2.e.txt
+533.000000
+53388 ms
+../instances/set_4_2/p4.2.f.txt
+562.000000
+68105 ms
+../instances/set_4_2/p4.2.f.txt
+567.000000
+68342 ms
+../instances/set_4_2/p4.2.f.txt
+569.000000
+69239 ms
+../instances/set_4_2/p4.2.f.txt
+581.000000
+69771 ms
+../instances/set_4_2/p4.2.g.txt
+604.000000
+87361 ms
+../instances/set_4_2/p4.2.g.txt
+618.000000
+86348 ms
+../instances/set_4_2/p4.2.g.txt
+621.000000
+86757 ms
+../instances/set_4_2/p4.2.g.txt
+617.000000
+85915 ms
+../instances/set_4_2/p4.2.h.txt
+687.000000
+106131 ms
+../instances/set_4_2/p4.2.h.txt
+682.000000
+106009 ms
+../instances/set_4_2/p4.2.h.txt
+685.000000
+107319 ms
+../instances/set_4_2/p4.2.h.txt
+708.000000
+107221 ms
+../instances/set_4_2/p4.2.i.txt
+729.000000
+121453 ms
+../instances/set_4_2/p4.2.i.txt
+738.000000
+123514 ms
+../instances/set_4_2/p4.2.i.txt
+735.000000
+125505 ms
+../instances/set_4_2/p4.2.i.txt
+704.000000
+124543 ms
+../instances/set_4_2/p4.2.j.txt
+787.000000
+141316 ms
+../instances/set_4_2/p4.2.j.txt
+796.000000
+141075 ms
+../instances/set_4_2/p4.2.j.txt
+771.000000
+141138 ms
+../instances/set_4_2/p4.2.j.txt
+794.000000
+140966 ms
+../instances/set_4_2/p4.2.k.txt
+833.000000
+161935 ms
+../instances/set_4_2/p4.2.k.txt
+809.000000
+158757 ms
+../instances/set_4_2/p4.2.k.txt
+786.000000
+162036 ms
+../instances/set_4_2/p4.2.k.txt
+814.000000
+163620 ms
+../instances/set_4_2/p4.2.l.txt
+825.000000
+181035 ms
+../instances/set_4_2/p4.2.l.txt
+825.000000
+180017 ms
+../instances/set_4_2/p4.2.l.txt
+837.000000
+180747 ms
+../instances/set_4_2/p4.2.l.txt
+821.000000
+180991 ms
+../instances/set_4_2/p4.2.m.txt
+858.000000
+200762 ms
+../instances/set_4_2/p4.2.m.txt
+882.000000
+197360 ms
+../instances/set_4_2/p4.2.m.txt
+857.000000
+200818 ms
+../instances/set_4_2/p4.2.m.txt
+854.000000
+199826 ms
+../instances/set_4_2/p4.2.n.txt
+889.000000
+217800 ms
+../instances/set_4_2/p4.2.n.txt
+911.000000
+216736 ms
+../instances/set_4_2/p4.2.n.txt
+876.000000
+218229 ms
+../instances/set_4_2/p4.2.n.txt
+905.000000
+217492 ms
+../instances/set_4_2/p4.2.o.txt
+904.000000
+236266 ms
+../instances/set_4_2/p4.2.o.txt
+915.000000
+236212 ms
+../instances/set_4_2/p4.2.o.txt
+924.000000
+236614 ms
+../instances/set_4_2/p4.2.o.txt
+898.000000
+239009 ms
+../instances/set_4_2/p4.2.p.txt
+960.000000
+254151 ms
+../instances/set_4_2/p4.2.p.txt
+933.000000
+256040 ms
+../instances/set_4_2/p4.2.p.txt
+969.000000
+250562 ms
+../instances/set_4_2/p4.2.p.txt
+951.000000
+251946 ms
+../instances/set_4_2/p4.2.q.txt
+948.000000
+267546 ms
+../instances/set_4_2/p4.2.q.txt
+979.000000
+271003 ms
+../instances/set_4_2/p4.2.q.txt
+982.000000
+270188 ms
+../instances/set_4_2/p4.2.q.txt
+994.000000
+276031 ms
+../instances/set_4_2/p4.2.r.txt
+959.000000
+295720 ms
+../instances/set_4_2/p4.2.r.txt
+994.000000
+289553 ms
+../instances/set_4_2/p4.2.r.txt
+991.000000
+294859 ms
+../instances/set_4_2/p4.2.r.txt
+980.000000
+291672 ms
+../instances/set_4_2/p4.2.s.txt
+1023.000000
+308856 ms
+../instances/set_4_2/p4.2.s.txt
+1013.000000
+312687 ms
+../instances/set_4_2/p4.2.s.txt
+996.000000
+313996 ms
+../instances/set_4_2/p4.2.s.txt
+1014.000000
+309595 ms
+../instances/set_4_2/p4.2.t.txt
+1025.000000
+337560 ms
+../instances/set_4_2/p4.2.t.txt
+1022.000000
+332704 ms
+../instances/set_4_2/p4.2.t.txt
+1023.000000
+338789 ms
+../instances/set_4_2/p4.2.t.txt
+1028.000000
+333831 ms
+../instances/set_4_3/p4.3.a.txt
+../instances/set_4_3/p4.3.a.txt
+../instances/set_4_3/p4.3.a.txt
+../instances/set_4_3/p4.3.a.txt
+../instances/set_4_3/p4.3.b.txt
+116.000000
+6638 ms
+../instances/set_4_3/p4.3.b.txt
+114.000000
+6573 ms
+../instances/set_4_3/p4.3.b.txt
+97.000000
+6586 ms
+../instances/set_4_3/p4.3.b.txt
+118.000000
+6734 ms
+../instances/set_4_3/p4.3.c.txt
+210.000000
+12599 ms
+../instances/set_4_3/p4.3.c.txt
+217.000000
+12650 ms
+../instances/set_4_3/p4.3.c.txt
+219.000000
+12694 ms
+../instances/set_4_3/p4.3.c.txt
+226.000000
+12700 ms
+../instances/set_4_3/p4.3.d.txt
+320.000000
+22769 ms
+../instances/set_4_3/p4.3.d.txt
+328.000000
+23037 ms
+../instances/set_4_3/p4.3.d.txt
+327.000000
+22754 ms
+../instances/set_4_3/p4.3.d.txt
+330.000000
+23288 ms
+../instances/set_4_3/p4.3.e.txt
+411.000000
+38699 ms
+../instances/set_4_3/p4.3.e.txt
+421.000000
+37849 ms
+../instances/set_4_3/p4.3.e.txt
+424.000000
+38246 ms
+../instances/set_4_3/p4.3.e.txt
+428.000000
+37795 ms
+../instances/set_4_3/p4.3.f.txt
+493.000000
+54314 ms
+../instances/set_4_3/p4.3.f.txt
+522.000000
+55914 ms
+../instances/set_4_3/p4.3.f.txt
+500.000000
+54467 ms
+../instances/set_4_3/p4.3.f.txt
+536.000000
+55675 ms
+../instances/set_4_3/p4.3.g.txt
+573.000000
+72843 ms
+../instances/set_4_3/p4.3.g.txt
+570.000000
+75201 ms
+../instances/set_4_3/p4.3.g.txt
+579.000000
+73335 ms
+../instances/set_4_3/p4.3.g.txt
+572.000000
+74169 ms
+../instances/set_4_3/p4.3.h.txt
+625.000000
+89662 ms
+../instances/set_4_3/p4.3.h.txt
+621.000000
+92783 ms
+../instances/set_4_3/p4.3.h.txt
+615.000000
+91243 ms
+../instances/set_4_3/p4.3.h.txt
+614.000000
+91645 ms
+../instances/set_4_3/p4.3.i.txt
+660.000000
+100165 ms
+../instances/set_4_3/p4.3.i.txt
+668.000000
+101499 ms
+../instances/set_4_3/p4.3.i.txt
+662.000000
+100632 ms
+../instances/set_4_3/p4.3.i.txt
+682.000000
+102297 ms
+../instances/set_4_3/p4.3.j.txt
+715.000000
+117753 ms
+../instances/set_4_3/p4.3.j.txt
+703.000000
+121082 ms
+../instances/set_4_3/p4.3.j.txt
+708.000000
+120553 ms
+../instances/set_4_3/p4.3.j.txt
+688.000000
+122119 ms
+../instances/set_4_3/p4.3.k.txt
+781.000000
+141615 ms
+../instances/set_4_3/p4.3.k.txt
+774.000000
+142448 ms
+../instances/set_4_3/p4.3.k.txt
+770.000000
+142638 ms
+../instances/set_4_3/p4.3.k.txt
+762.000000
+142254 ms
+../instances/set_4_3/p4.3.l.txt
+796.000000
+165797 ms
+../instances/set_4_3/p4.3.l.txt
+807.000000
+165560 ms
+../instances/set_4_3/p4.3.l.txt
+820.000000
+167442 ms
+../instances/set_4_3/p4.3.l.txt
+817.000000
+167866 ms
+../instances/set_4_3/p4.3.m.txt
+861.000000
+190386 ms
+../instances/set_4_3/p4.3.m.txt
+844.000000
+194279 ms
+../instances/set_4_3/p4.3.m.txt
+856.000000
+192974 ms
+../instances/set_4_3/p4.3.m.txt
+860.000000
+190808 ms
+../instances/set_4_3/p4.3.n.txt
+883.000000
+218781 ms
+../instances/set_4_3/p4.3.n.txt
+908.000000
+215537 ms
+../instances/set_4_3/p4.3.n.txt
+929.000000
+212476 ms
+../instances/set_4_3/p4.3.n.txt
+894.000000
+214368 ms
+../instances/set_4_3/p4.3.o.txt
+915.000000
+243333 ms
+../instances/set_4_3/p4.3.o.txt
+963.000000
+237387 ms
+../instances/set_4_3/p4.3.o.txt
+949.000000
+241775 ms
+../instances/set_4_3/p4.3.o.txt
+958.000000
+243384 ms
+../instances/set_4_3/p4.3.p.txt
+983.000000
+264390 ms
+../instances/set_4_3/p4.3.p.txt
+954.000000
+265816 ms
+../instances/set_4_3/p4.3.p.txt
+959.000000
+261002 ms
+../instances/set_4_3/p4.3.p.txt
+955.000000
+265092 ms
+../instances/set_4_3/p4.3.q.txt
+991.000000
+284325 ms
+../instances/set_4_3/p4.3.q.txt
+990.000000
+287149 ms
+../instances/set_4_3/p4.3.q.txt
+982.000000
+289237 ms
+../instances/set_4_3/p4.3.q.txt
+972.000000
+289244 ms
+../instances/set_4_3/p4.3.r.txt
+1000.000000
+308435 ms
+../instances/set_4_3/p4.3.r.txt
+1005.000000
+309430 ms
+../instances/set_4_3/p4.3.r.txt
+1004.000000
+309232 ms
+../instances/set_4_3/p4.3.r.txt
+1030.000000
+310910 ms
+../instances/set_4_3/p4.3.s.txt
+1014.000000
+339982 ms
+../instances/set_4_3/p4.3.s.txt
+1010.000000
+345676 ms
+../instances/set_4_3/p4.3.s.txt
+1035.000000
+335029 ms
+../instances/set_4_3/p4.3.s.txt
+1024.000000
+337320 ms
+../instances/set_4_3/p4.3.t.txt
+1045.000000
+361583 ms
+../instances/set_4_3/p4.3.t.txt
+1033.000000
+367916 ms
+../instances/set_4_3/p4.3.t.txt
+1050.000000
+361606 ms
+../instances/set_4_3/p4.3.t.txt
+1020.000000
+357958 ms
+../instances/set_4_4/p4.4.a.txt
+../instances/set_4_4/p4.4.a.txt
+../instances/set_4_4/p4.4.a.txt
+../instances/set_4_4/p4.4.a.txt
+../instances/set_4_4/p4.4.b.txt
+../instances/set_4_4/p4.4.b.txt
+../instances/set_4_4/p4.4.b.txt
+../instances/set_4_4/p4.4.b.txt
+../instances/set_4_4/p4.4.c.txt
+../instances/set_4_4/p4.4.c.txt
+../instances/set_4_4/p4.4.c.txt
+../instances/set_4_4/p4.4.c.txt
+../instances/set_4_4/p4.4.d.txt
+129.000000
+10449 ms
+../instances/set_4_4/p4.4.d.txt
+127.000000
+10501 ms
+../instances/set_4_4/p4.4.d.txt
+99.000000
+10519 ms
+../instances/set_4_4/p4.4.d.txt
+107.000000
+10544 ms
+../instances/set_4_4/p4.4.e.txt
+215.000000
+16521 ms
+../instances/set_4_4/p4.4.e.txt
+239.000000
+16433 ms
+../instances/set_4_4/p4.4.e.txt
+243.000000
+16571 ms
+../instances/set_4_4/p4.4.e.txt
+223.000000
+16498 ms
+../instances/set_4_4/p4.4.f.txt
+323.000000
+27838 ms
+../instances/set_4_4/p4.4.f.txt
+326.000000
+28328 ms
+../instances/set_4_4/p4.4.f.txt
+345.000000
+27763 ms
+../instances/set_4_4/p4.4.f.txt
+314.000000
+28180 ms
+../instances/set_4_4/p4.4.g.txt
+428.000000
+42642 ms
+../instances/set_4_4/p4.4.g.txt
+415.000000
+43192 ms
+../instances/set_4_4/p4.4.g.txt
+412.000000
+42103 ms
+../instances/set_4_4/p4.4.g.txt
+406.000000
+41659 ms
+../instances/set_4_4/p4.4.h.txt
+505.000000
+60889 ms
+../instances/set_4_4/p4.4.h.txt
+484.000000
+61349 ms
+../instances/set_4_4/p4.4.h.txt
+488.000000
+60764 ms
+../instances/set_4_4/p4.4.h.txt
+482.000000
+61555 ms
+../instances/set_4_4/p4.4.i.txt
+578.000000
+80251 ms
+../instances/set_4_4/p4.4.i.txt
+576.000000
+80329 ms
+../instances/set_4_4/p4.4.i.txt
+562.000000
+81110 ms
+../instances/set_4_4/p4.4.i.txt
+565.000000
+81351 ms
+../instances/set_4_4/p4.4.j.txt
+638.000000
+104540 ms
+../instances/set_4_4/p4.4.j.txt
+637.000000
+101360 ms
+../instances/set_4_4/p4.4.j.txt
+631.000000
+103042 ms
+../instances/set_4_4/p4.4.j.txt
+628.000000
+102697 ms
+../instances/set_4_4/p4.4.k.txt
+691.000000
+121511 ms
+../instances/set_4_4/p4.4.k.txt
+698.000000
+123675 ms
+../instances/set_4_4/p4.4.k.txt
+680.000000
+123380 ms
+../instances/set_4_4/p4.4.k.txt
+687.000000
+122744 ms
+../instances/set_4_4/p4.4.l.txt
+727.000000
+140871 ms
+../instances/set_4_4/p4.4.l.txt
+719.000000
+142265 ms
+../instances/set_4_4/p4.4.l.txt
+739.000000
+142276 ms
+../instances/set_4_4/p4.4.l.txt
+757.000000
+141542 ms
+../instances/set_4_4/p4.4.m.txt
+784.000000
+154515 ms
+../instances/set_4_4/p4.4.m.txt
+762.000000
+156193 ms
+../instances/set_4_4/p4.4.m.txt
+755.000000
+156434 ms
+../instances/set_4_4/p4.4.m.txt
+752.000000
+155722 ms
+../instances/set_4_4/p4.4.n.txt
+811.000000
+171571 ms
+../instances/set_4_4/p4.4.n.txt
+822.000000
+171009 ms
+../instances/set_4_4/p4.4.n.txt
+811.000000
+171484 ms
+../instances/set_4_4/p4.4.n.txt
+813.000000
+171574 ms
+../instances/set_4_4/p4.4.o.txt
+848.000000
+202971 ms
+../instances/set_4_4/p4.4.o.txt
+856.000000
+201100 ms
+../instances/set_4_4/p4.4.o.txt
+886.000000
+202408 ms
+../instances/set_4_4/p4.4.o.txt
+886.000000
+202628 ms
+../instances/set_4_4/p4.4.p.txt
+934.000000
+229050 ms
+../instances/set_4_4/p4.4.p.txt
+916.000000
+232006 ms
+../instances/set_4_4/p4.4.p.txt
+898.000000
+228525 ms
+../instances/set_4_4/p4.4.p.txt
+902.000000
+230814 ms
+../instances/set_4_4/p4.4.q.txt
+944.000000
+258311 ms
+../instances/set_4_4/p4.4.q.txt
+964.000000
+255292 ms
+../instances/set_4_4/p4.4.q.txt
+951.000000
+254481 ms
+../instances/set_4_4/p4.4.q.txt
+969.000000
+256479 ms
+../instances/set_4_4/p4.4.r.txt
+994.000000
+284404 ms
+../instances/set_4_4/p4.4.r.txt
+996.000000
+285429 ms
+../instances/set_4_4/p4.4.r.txt
+1003.000000
+288197 ms
+../instances/set_4_4/p4.4.r.txt
+987.000000
+285137 ms
+../instances/set_4_4/p4.4.s.txt
+1009.000000
+315247 ms
+../instances/set_4_4/p4.4.s.txt
+1009.000000
+308019 ms
+../instances/set_4_4/p4.4.s.txt
+999.000000
+314779 ms
+../instances/set_4_4/p4.4.s.txt
+1013.000000
+311002 ms
+../instances/set_4_4/p4.4.t.txt
+1023.000000
+346678 ms
+../instances/set_4_4/p4.4.t.txt
+1032.000000
+342723 ms
+../instances/set_4_4/p4.4.t.txt
+1037.000000
+345430 ms
+../instances/set_4_4/p4.4.t.txt
+1044.000000
+343936 ms
+../instances/set_5_2/p5.2.a.txt
+5.000000
+347 ms
+../instances/set_5_2/p5.2.a.txt
+5.000000
+355 ms
+../instances/set_5_2/p5.2.a.txt
+5.000000
+350 ms
+../instances/set_5_2/p5.2.a.txt
+5.000000
+353 ms
+../instances/set_5_2/p5.2.b.txt
+40.000000
+497 ms
+../instances/set_5_2/p5.2.b.txt
+25.000000
+494 ms
+../instances/set_5_2/p5.2.b.txt
+40.000000
+499 ms
+../instances/set_5_2/p5.2.b.txt
+35.000000
+498 ms
+../instances/set_5_2/p5.2.c.txt
+100.000000
+1363 ms
+../instances/set_5_2/p5.2.c.txt
+90.000000
+1432 ms
+../instances/set_5_2/p5.2.c.txt
+85.000000
+1392 ms
+../instances/set_5_2/p5.2.c.txt
+140.000000
+1369 ms
+../instances/set_5_2/p5.2.d.txt
+140.000000
+2788 ms
+../instances/set_5_2/p5.2.d.txt
+140.000000
+2847 ms
+../instances/set_5_2/p5.2.d.txt
+190.000000
+2884 ms
+../instances/set_5_2/p5.2.d.txt
+145.000000
+2854 ms
+../instances/set_5_2/p5.2.e.txt
+195.000000
+5021 ms
+../instances/set_5_2/p5.2.e.txt
+225.000000
+5034 ms
+../instances/set_5_2/p5.2.e.txt
+220.000000
+5151 ms
+../instances/set_5_2/p5.2.e.txt
+185.000000
+5105 ms
+../instances/set_5_2/p5.2.f.txt
+250.000000
+7968 ms
+../instances/set_5_2/p5.2.f.txt
+250.000000
+8026 ms
+../instances/set_5_2/p5.2.f.txt
+250.000000
+8084 ms
+../instances/set_5_2/p5.2.f.txt
+255.000000
+7912 ms
+../instances/set_5_2/p5.2.g.txt
+315.000000
+12092 ms
+../instances/set_5_2/p5.2.g.txt
+310.000000
+12166 ms
+../instances/set_5_2/p5.2.g.txt
+310.000000
+12105 ms
+../instances/set_5_2/p5.2.g.txt
+315.000000
+12009 ms
+../instances/set_5_2/p5.2.h.txt
+410.000000
+15211 ms
+../instances/set_5_2/p5.2.h.txt
+395.000000
+15012 ms
+../instances/set_5_2/p5.2.h.txt
+395.000000
+15407 ms
+../instances/set_5_2/p5.2.h.txt
+370.000000
+15370 ms
+../instances/set_5_2/p5.2.i.txt
+450.000000
+19630 ms
+../instances/set_5_2/p5.2.i.txt
+450.000000
+19884 ms
+../instances/set_5_2/p5.2.i.txt
+455.000000
+20191 ms
+../instances/set_5_2/p5.2.i.txt
+470.000000
+20144 ms
+../instances/set_5_2/p5.2.j.txt
+565.000000
+25168 ms
+../instances/set_5_2/p5.2.j.txt
+540.000000
+25131 ms
+../instances/set_5_2/p5.2.j.txt
+545.000000
+25277 ms
+../instances/set_5_2/p5.2.j.txt
+565.000000
+25373 ms
+../instances/set_5_2/p5.2.k.txt
+630.000000
+30844 ms
+../instances/set_5_2/p5.2.k.txt
+620.000000
+30938 ms
+../instances/set_5_2/p5.2.k.txt
+645.000000
+31018 ms
+../instances/set_5_2/p5.2.k.txt
+625.000000
+31220 ms
+../instances/set_5_2/p5.2.l.txt
+745.000000
+38119 ms
+../instances/set_5_2/p5.2.l.txt
+710.000000
+37271 ms
+../instances/set_5_2/p5.2.l.txt
+705.000000
+37090 ms
+../instances/set_5_2/p5.2.l.txt
+725.000000
+37352 ms
+../instances/set_5_2/p5.2.m.txt
+810.000000
+42823 ms
+../instances/set_5_2/p5.2.m.txt
+775.000000
+43275 ms
+../instances/set_5_2/p5.2.m.txt
+825.000000
+43073 ms
+../instances/set_5_2/p5.2.m.txt
+815.000000
+43540 ms
+../instances/set_5_2/p5.2.n.txt
+860.000000
+48918 ms
+../instances/set_5_2/p5.2.n.txt
+865.000000
+49633 ms
+../instances/set_5_2/p5.2.n.txt
+865.000000
+49824 ms
+../instances/set_5_2/p5.2.n.txt
+870.000000
+49640 ms
+../instances/set_5_2/p5.2.o.txt
+940.000000
+57444 ms
+../instances/set_5_2/p5.2.o.txt
+925.000000
+56348 ms
+../instances/set_5_2/p5.2.o.txt
+925.000000
+55699 ms
+../instances/set_5_2/p5.2.o.txt
+925.000000
+56830 ms
+../instances/set_5_2/p5.2.p.txt
+1030.000000
+63090 ms
+../instances/set_5_2/p5.2.p.txt
+1000.000000
+62910 ms
+../instances/set_5_2/p5.2.p.txt
+980.000000
+64078 ms
+../instances/set_5_2/p5.2.p.txt
+1000.000000
+62967 ms
+../instances/set_5_2/p5.2.q.txt
+1080.000000
+70838 ms
+../instances/set_5_2/p5.2.q.txt
+1095.000000
+71192 ms
+../instances/set_5_2/p5.2.q.txt
+1105.000000
+70965 ms
+../instances/set_5_2/p5.2.q.txt
+1090.000000
+70958 ms
+../instances/set_5_2/p5.2.r.txt
+1125.000000
+77281 ms
+../instances/set_5_2/p5.2.r.txt
+1130.000000
+77945 ms
+../instances/set_5_2/p5.2.r.txt
+1180.000000
+77300 ms
+../instances/set_5_2/p5.2.r.txt
+1115.000000
+76935 ms
+../instances/set_5_2/p5.2.s.txt
+1185.000000
+83908 ms
+../instances/set_5_2/p5.2.s.txt
+1175.000000
+85814 ms
+../instances/set_5_2/p5.2.s.txt
+1200.000000
+84345 ms
+../instances/set_5_2/p5.2.s.txt
+1150.000000
+86337 ms
+../instances/set_5_2/p5.2.t.txt
+1215.000000
+92710 ms
+../instances/set_5_2/p5.2.t.txt
+1220.000000
+94487 ms
+../instances/set_5_2/p5.2.t.txt
+1200.000000
+91906 ms
+../instances/set_5_2/p5.2.t.txt
+1215.000000
+92356 ms
+../instances/set_5_2/p5.2.u.txt
+1260.000000
+101362 ms
+../instances/set_5_2/p5.2.u.txt
+1220.000000
+99724 ms
+../instances/set_5_2/p5.2.u.txt
+1270.000000
+99324 ms
+../instances/set_5_2/p5.2.u.txt
+1265.000000
+100855 ms
+../instances/set_5_2/p5.2.v.txt
+1310.000000
+107898 ms
+../instances/set_5_2/p5.2.v.txt
+1280.000000
+107338 ms
+../instances/set_5_2/p5.2.v.txt
+1315.000000
+107973 ms
+../instances/set_5_2/p5.2.v.txt
+1275.000000
+108442 ms
+../instances/set_5_2/p5.2.w.txt
+1350.000000
+115671 ms
+../instances/set_5_2/p5.2.w.txt
+1355.000000
+116839 ms
+../instances/set_5_2/p5.2.w.txt
+1320.000000
+116689 ms
+../instances/set_5_2/p5.2.w.txt
+1330.000000
+114518 ms
+../instances/set_5_2/p5.2.x.txt
+1385.000000
+125027 ms
+../instances/set_5_2/p5.2.x.txt
+1355.000000
+121673 ms
+../instances/set_5_2/p5.2.x.txt
+1330.000000
+124023 ms
+../instances/set_5_2/p5.2.x.txt
+1360.000000
+123400 ms
+../instances/set_5_2/p5.2.y.txt
+1405.000000
+130359 ms
+../instances/set_5_2/p5.2.y.txt
+1395.000000
+131497 ms
+../instances/set_5_2/p5.2.y.txt
+1400.000000
+132513 ms
+../instances/set_5_2/p5.2.y.txt
+1370.000000
+131754 ms
+../instances/set_5_2/p5.2.z.txt
+1390.000000
+139361 ms
+../instances/set_5_2/p5.2.z.txt
+1410.000000
+137025 ms
+../instances/set_5_2/p5.2.z.txt
+1435.000000
+139317 ms
+../instances/set_5_2/p5.2.z.txt
+1395.000000
+138433 ms
+../instances/set_5_3/p5.3.a.txt
+5.000000
+485 ms
+../instances/set_5_3/p5.3.a.txt
+5.000000
+485 ms
+../instances/set_5_3/p5.3.a.txt
+5.000000
+479 ms
+../instances/set_5_3/p5.3.a.txt
+5.000000
+479 ms
+../instances/set_5_3/p5.3.b.txt
+20.000000
+486 ms
+../instances/set_5_3/p5.3.b.txt
+20.000000
+483 ms
+../instances/set_5_3/p5.3.b.txt
+20.000000
+480 ms
+../instances/set_5_3/p5.3.b.txt
+20.000000
+482 ms
+../instances/set_5_3/p5.3.c.txt
+55.000000
+836 ms
+../instances/set_5_3/p5.3.c.txt
+55.000000
+837 ms
+../instances/set_5_3/p5.3.c.txt
+50.000000
+846 ms
+../instances/set_5_3/p5.3.c.txt
+45.000000
+868 ms
+../instances/set_5_3/p5.3.d.txt
+110.000000
+2186 ms
+../instances/set_5_3/p5.3.d.txt
+85.000000
+2116 ms
+../instances/set_5_3/p5.3.d.txt
+100.000000
+2164 ms
+../instances/set_5_3/p5.3.d.txt
+90.000000
+2167 ms
+../instances/set_5_3/p5.3.e.txt
+150.000000
+4116 ms
+../instances/set_5_3/p5.3.e.txt
+160.000000
+4117 ms
+../instances/set_5_3/p5.3.e.txt
+130.000000
+4103 ms
+../instances/set_5_3/p5.3.e.txt
+140.000000
+4070 ms
+../instances/set_5_3/p5.3.f.txt
+170.000000
+5671 ms
+../instances/set_5_3/p5.3.f.txt
+185.000000
+5699 ms
+../instances/set_5_3/p5.3.f.txt
+155.000000
+5632 ms
+../instances/set_5_3/p5.3.f.txt
+180.000000
+5612 ms
+../instances/set_5_3/p5.3.g.txt
+230.000000
+8138 ms
+../instances/set_5_3/p5.3.g.txt
+240.000000
+8097 ms
+../instances/set_5_3/p5.3.g.txt
+235.000000
+8096 ms
+../instances/set_5_3/p5.3.g.txt
+225.000000
+7955 ms
+../instances/set_5_3/p5.3.h.txt
+295.000000
+10767 ms
+../instances/set_5_3/p5.3.h.txt
+295.000000
+10564 ms
+../instances/set_5_3/p5.3.h.txt
+290.000000
+10630 ms
+../instances/set_5_3/p5.3.h.txt
+300.000000
+10487 ms
+../instances/set_5_3/p5.3.i.txt
+345.000000
+13893 ms
+../instances/set_5_3/p5.3.i.txt
+350.000000
+14022 ms
+../instances/set_5_3/p5.3.i.txt
+345.000000
+13993 ms
+../instances/set_5_3/p5.3.i.txt
+345.000000
+14094 ms
+../instances/set_5_3/p5.3.j.txt
+445.000000
+18427 ms
+../instances/set_5_3/p5.3.j.txt
+465.000000
+18390 ms
+../instances/set_5_3/p5.3.j.txt
+470.000000
+18340 ms
+../instances/set_5_3/p5.3.j.txt
+470.000000
+18384 ms
+../instances/set_5_3/p5.3.k.txt
+470.000000
+22814 ms
+../instances/set_5_3/p5.3.k.txt
+470.000000
+23005 ms
+../instances/set_5_3/p5.3.k.txt
+460.000000
+23072 ms
+../instances/set_5_3/p5.3.k.txt
+465.000000
+22963 ms
+../instances/set_5_3/p5.3.l.txt
+550.000000
+29058 ms
+../instances/set_5_3/p5.3.l.txt
+565.000000
+28895 ms
+../instances/set_5_3/p5.3.l.txt
+540.000000
+28583 ms
+../instances/set_5_3/p5.3.l.txt
+540.000000
+28554 ms
+../instances/set_5_3/p5.3.m.txt
+605.000000
+35665 ms
+../instances/set_5_3/p5.3.m.txt
+600.000000
+35119 ms
+../instances/set_5_3/p5.3.m.txt
+615.000000
+35516 ms
+../instances/set_5_3/p5.3.m.txt
+635.000000
+35424 ms
+../instances/set_5_3/p5.3.n.txt
+695.000000
+42237 ms
+../instances/set_5_3/p5.3.n.txt
+680.000000
+41628 ms
+../instances/set_5_3/p5.3.n.txt
+690.000000
+42277 ms
+../instances/set_5_3/p5.3.n.txt
+680.000000
+42170 ms
+../instances/set_5_3/p5.3.o.txt
+810.000000
+50494 ms
+../instances/set_5_3/p5.3.o.txt
+790.000000
+50100 ms
+../instances/set_5_3/p5.3.o.txt
+790.000000
+50240 ms
+../instances/set_5_3/p5.3.o.txt
+785.000000
+49879 ms
+../instances/set_5_3/p5.3.p.txt
+890.000000
+57792 ms
+../instances/set_5_3/p5.3.p.txt
+860.000000
+57556 ms
+../instances/set_5_3/p5.3.p.txt
+905.000000
+58026 ms
+../instances/set_5_3/p5.3.p.txt
+900.000000
+58758 ms
+../instances/set_5_3/p5.3.q.txt
+955.000000
+65196 ms
+../instances/set_5_3/p5.3.q.txt
+945.000000
+66400 ms
+../instances/set_5_3/p5.3.q.txt
+970.000000
+65448 ms
+../instances/set_5_3/p5.3.q.txt
+975.000000
+64903 ms
+../instances/set_5_3/p5.3.r.txt
+1045.000000
+73781 ms
+../instances/set_5_3/p5.3.r.txt
+1025.000000
+73964 ms
+../instances/set_5_3/p5.3.r.txt
+1000.000000
+72814 ms
+../instances/set_5_3/p5.3.r.txt
+1020.000000
+73611 ms
+../instances/set_5_3/p5.3.s.txt
+1120.000000
+81566 ms
+../instances/set_5_3/p5.3.s.txt
+1090.000000
+82258 ms
+../instances/set_5_3/p5.3.s.txt
+1080.000000
+79612 ms
+../instances/set_5_3/p5.3.s.txt
+1085.000000
+80547 ms
+../instances/set_5_3/p5.3.t.txt
+1145.000000
+89118 ms
+../instances/set_5_3/p5.3.t.txt
+1175.000000
+88963 ms
+../instances/set_5_3/p5.3.t.txt
+1150.000000
+90412 ms
+../instances/set_5_3/p5.3.t.txt
+1135.000000
+89821 ms
+../instances/set_5_3/p5.3.u.txt
+1205.000000
+97867 ms
+../instances/set_5_3/p5.3.u.txt
+1200.000000
+96752 ms
+../instances/set_5_3/p5.3.u.txt
+1190.000000
+96252 ms
+../instances/set_5_3/p5.3.u.txt
+1210.000000
+97683 ms
+../instances/set_5_3/p5.3.v.txt
+1240.000000
+105178 ms
+../instances/set_5_3/p5.3.v.txt
+1255.000000
+106883 ms
+../instances/set_5_3/p5.3.v.txt
+1255.000000
+107029 ms
+../instances/set_5_3/p5.3.v.txt
+1275.000000
+105402 ms
+../instances/set_5_3/p5.3.w.txt
+1295.000000
+114244 ms
+../instances/set_5_3/p5.3.w.txt
+1300.000000
+113220 ms
+../instances/set_5_3/p5.3.w.txt
+1305.000000
+115060 ms
+../instances/set_5_3/p5.3.w.txt
+1275.000000
+114117 ms
+../instances/set_5_3/p5.3.x.txt
+1355.000000
+123383 ms
+../instances/set_5_3/p5.3.x.txt
+1325.000000
+124016 ms
+../instances/set_5_3/p5.3.x.txt
+1305.000000
+123179 ms
+../instances/set_5_3/p5.3.x.txt
+1330.000000
+122539 ms
+../instances/set_5_3/p5.3.y.txt
+1365.000000
+131389 ms
+../instances/set_5_3/p5.3.y.txt
+1375.000000
+131226 ms
+../instances/set_5_3/p5.3.y.txt
+1360.000000
+130394 ms
+../instances/set_5_3/p5.3.y.txt
+1355.000000
+130138 ms
+../instances/set_5_3/p5.3.z.txt
+1400.000000
+139458 ms
+../instances/set_5_3/p5.3.z.txt
+1375.000000
+139785 ms
+../instances/set_5_3/p5.3.z.txt
+1405.000000
+140810 ms
+../instances/set_5_3/p5.3.z.txt
+1380.000000
+139740 ms
+../instances/set_5_4/p5.4.a.txt
+0.000000
+549 ms
+../instances/set_5_4/p5.4.a.txt
+0.000000
+542 ms
+../instances/set_5_4/p5.4.a.txt
+0.000000
+544 ms
+../instances/set_5_4/p5.4.a.txt
+0.000000
+549 ms
+../instances/set_5_4/p5.4.b.txt
+5.000000
+613 ms
+../instances/set_5_4/p5.4.b.txt
+5.000000
+613 ms
+../instances/set_5_4/p5.4.b.txt
+5.000000
+609 ms
+../instances/set_5_4/p5.4.b.txt
+5.000000
+618 ms
+../instances/set_5_4/p5.4.c.txt
+35.000000
+1025 ms
+../instances/set_5_4/p5.4.c.txt
+30.000000
+1014 ms
+../instances/set_5_4/p5.4.c.txt
+35.000000
+1016 ms
+../instances/set_5_4/p5.4.c.txt
+30.000000
+1017 ms
+../instances/set_5_4/p5.4.d.txt
+65.000000
+1329 ms
+../instances/set_5_4/p5.4.d.txt
+65.000000
+1364 ms
+../instances/set_5_4/p5.4.d.txt
+70.000000
+1380 ms
+../instances/set_5_4/p5.4.d.txt
+65.000000
+1351 ms
+../instances/set_5_4/p5.4.e.txt
+100.000000
+3301 ms
+../instances/set_5_4/p5.4.e.txt
+90.000000
+3205 ms
+../instances/set_5_4/p5.4.e.txt
+110.000000
+3288 ms
+../instances/set_5_4/p5.4.e.txt
+95.000000
+3297 ms
+../instances/set_5_4/p5.4.f.txt
+140.000000
+5218 ms
+../instances/set_5_4/p5.4.f.txt
+150.000000
+5321 ms
+../instances/set_5_4/p5.4.f.txt
+145.000000
+5302 ms
+../instances/set_5_4/p5.4.f.txt
+150.000000
+5354 ms
+../instances/set_5_4/p5.4.g.txt
+170.000000
+7259 ms
+../instances/set_5_4/p5.4.g.txt
+205.000000
+7130 ms
+../instances/set_5_4/p5.4.g.txt
+200.000000
+7253 ms
+../instances/set_5_4/p5.4.g.txt
+190.000000
+7249 ms
+../instances/set_5_4/p5.4.h.txt
+220.000000
+8849 ms
+../instances/set_5_4/p5.4.h.txt
+230.000000
+8766 ms
+../instances/set_5_4/p5.4.h.txt
+230.000000
+8858 ms
+../instances/set_5_4/p5.4.h.txt
+210.000000
+8913 ms
+../instances/set_5_4/p5.4.i.txt
+260.000000
+10877 ms
+../instances/set_5_4/p5.4.i.txt
+290.000000
+10769 ms
+../instances/set_5_4/p5.4.i.txt
+260.000000
+11003 ms
+../instances/set_5_4/p5.4.i.txt
+265.000000
+11119 ms
+../instances/set_5_4/p5.4.j.txt
+335.000000
+14869 ms
+../instances/set_5_4/p5.4.j.txt
+330.000000
+14936 ms
+../instances/set_5_4/p5.4.j.txt
+325.000000
+14685 ms
+../instances/set_5_4/p5.4.j.txt
+340.000000
+14904 ms
+../instances/set_5_4/p5.4.k.txt
+415.000000
+17786 ms
+../instances/set_5_4/p5.4.k.txt
+355.000000
+17894 ms
+../instances/set_5_4/p5.4.k.txt
+380.000000
+17808 ms
+../instances/set_5_4/p5.4.k.txt
+380.000000
+17536 ms
+../instances/set_5_4/p5.4.l.txt
+435.000000
+22199 ms
+../instances/set_5_4/p5.4.l.txt
+460.000000
+21826 ms
+../instances/set_5_4/p5.4.l.txt
+410.000000
+22056 ms
+../instances/set_5_4/p5.4.l.txt
+475.000000
+22115 ms
+../instances/set_5_4/p5.4.m.txt
+525.000000
+27289 ms
+../instances/set_5_4/p5.4.m.txt
+530.000000
+27418 ms
+../instances/set_5_4/p5.4.m.txt
+515.000000
+26924 ms
+../instances/set_5_4/p5.4.m.txt
+540.000000
+27730 ms
+../instances/set_5_4/p5.4.n.txt
+575.000000
+34701 ms
+../instances/set_5_4/p5.4.n.txt
+590.000000
+34502 ms
+../instances/set_5_4/p5.4.n.txt
+570.000000
+34598 ms
+../instances/set_5_4/p5.4.n.txt
+585.000000
+34299 ms
+../instances/set_5_4/p5.4.o.txt
+640.000000
+39402 ms
+../instances/set_5_4/p5.4.o.txt
+640.000000
+39252 ms
+../instances/set_5_4/p5.4.o.txt
+655.000000
+39522 ms
+../instances/set_5_4/p5.4.o.txt
+630.000000
+38916 ms
+../instances/set_5_4/p5.4.p.txt
+690.000000
+46265 ms
+../instances/set_5_4/p5.4.p.txt
+710.000000
+47174 ms
+../instances/set_5_4/p5.4.p.txt
+705.000000
+46543 ms
+../instances/set_5_4/p5.4.p.txt
+710.000000
+46929 ms
+../instances/set_5_4/p5.4.q.txt
+760.000000
+55160 ms
+../instances/set_5_4/p5.4.q.txt
+785.000000
+55129 ms
+../instances/set_5_4/p5.4.q.txt
+770.000000
+54601 ms
+../instances/set_5_4/p5.4.q.txt
+760.000000
+55087 ms
+../instances/set_5_4/p5.4.r.txt
+845.000000
+62120 ms
+../instances/set_5_4/p5.4.r.txt
+840.000000
+62001 ms
+../instances/set_5_4/p5.4.r.txt
+830.000000
+61217 ms
+../instances/set_5_4/p5.4.r.txt
+820.000000
+63141 ms
+../instances/set_5_4/p5.4.s.txt
+915.000000
+70555 ms
+../instances/set_5_4/p5.4.s.txt
+910.000000
+70214 ms
+../instances/set_5_4/p5.4.s.txt
+925.000000
+72502 ms
+../instances/set_5_4/p5.4.s.txt
+910.000000
+70742 ms
+../instances/set_5_4/p5.4.t.txt
+1000.000000
+78984 ms
+../instances/set_5_4/p5.4.t.txt
+1000.000000
+78724 ms
+../instances/set_5_4/p5.4.t.txt
+1010.000000
+78803 ms
+../instances/set_5_4/p5.4.t.txt
+1000.000000
+79437 ms
+../instances/set_5_4/p5.4.u.txt
+1120.000000
+86214 ms
+../instances/set_5_4/p5.4.u.txt
+1095.000000
+88523 ms
+../instances/set_5_4/p5.4.u.txt
+1090.000000
+87347 ms
+../instances/set_5_4/p5.4.u.txt
+1115.000000
+87707 ms
+../instances/set_5_4/p5.4.v.txt
+1180.000000
+97687 ms
+../instances/set_5_4/p5.4.v.txt
+1145.000000
+95592 ms
+../instances/set_5_4/p5.4.v.txt
+1150.000000
+96914 ms
+../instances/set_5_4/p5.4.v.txt
+1165.000000
+97900 ms
+../instances/set_5_4/p5.4.w.txt
+1260.000000
+105657 ms
+../instances/set_5_4/p5.4.w.txt
+1235.000000
+107361 ms
+../instances/set_5_4/p5.4.w.txt
+1215.000000
+106249 ms
+../instances/set_5_4/p5.4.w.txt
+1250.000000
+105811 ms
+../instances/set_5_4/p5.4.x.txt
+1285.000000
+114498 ms
+../instances/set_5_4/p5.4.x.txt
+1270.000000
+115117 ms
+../instances/set_5_4/p5.4.x.txt
+1275.000000
+114039 ms
+../instances/set_5_4/p5.4.x.txt
+1295.000000
+116108 ms
+../instances/set_5_4/p5.4.y.txt
+1305.000000
+121779 ms
+../instances/set_5_4/p5.4.y.txt
+1310.000000
+123216 ms
+../instances/set_5_4/p5.4.y.txt
+1330.000000
+124330 ms
+../instances/set_5_4/p5.4.y.txt
+1340.000000
+125548 ms
+../instances/set_5_4/p5.4.z.txt
+1375.000000
+133469 ms
+../instances/set_5_4/p5.4.z.txt
+1355.000000
+133405 ms
+../instances/set_5_4/p5.4.z.txt
+1355.000000
+133070 ms
+../instances/set_5_4/p5.4.z.txt
+1370.000000
+133626 ms

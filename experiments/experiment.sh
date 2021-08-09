@@ -12,7 +12,7 @@ execute_all(){
                 do
                     echo "$n-$file"
                     echo "$file" >> $2
-                    ./../Project/TOP_GRASP_TS_PR 1 1 1 $file --alpha 0.9 --iterations 4500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
+                    ./../Project/TOP_GRASP_TS_PR 1 1 1 $file --alpha 0.9 --iterations 4500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b >> $2
                 done
             fi
         done
