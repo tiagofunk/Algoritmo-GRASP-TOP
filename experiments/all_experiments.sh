@@ -1,19 +1,22 @@
 #!/bin/bash
 
-echo -n "" > log1.txt
-echo -n "" > log2.txt
-echo -n "" > log3.txt
-echo -n "" > log4.txt
-echo -n "" > log5.txt
-echo -n "" > log6.txt
-echo -n "" > log7.txt
-echo -n "" > log8.txt
+dir=$1
+pfx_log=$2
 
-sh experiment.sh 4 log1.txt &
-sh experiment.sh 4 log2.txt &
-sh experiment.sh 4 log3.txt &
-sh experiment.sh 4 log4.txt &
-sh experiment.sh 4 log5.txt &
-sh experiment.sh 4 log6.txt &
-sh experiment.sh 4 log7.txt &
-sh experiment.sh 4 log8.txt &
+echo -n "" > "$pfx_log-log1".txt
+echo -n "" > "$pfx_log-log2".txt
+echo -n "" > "$pfx_log-log3".txt
+echo -n "" > "$pfx_log-log4".txt
+echo -n "" > "$pfx_log-log5".txt
+echo -n "" > "$pfx_log-log6".txt
+echo -n "" > "$pfx_log-log7".txt
+echo -n "" > "$pfx_log-log8".txt
+
+sh experiment.sh 4 "$pfx_log-log1".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log2".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log3".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log4".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log5".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log6".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log7".txt $dir &
+#sh experiment.sh 4 "$pfx_log-log8".txt $dir &
