@@ -10,7 +10,7 @@ class LocalSearchWithOperators: public LocalSearch {
         vector< Vertice * > unused_vertices;
 
         bool is_better( Solution actual, Solution best );
-        bool is_bigger( Solution actual, Solution best );
+        bool is_bigger( Solution sol );
         bool is_shorter( Solution actual, Solution best );
 
     public:

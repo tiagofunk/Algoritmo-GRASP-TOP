@@ -17,6 +17,7 @@
 #include "OperatorRandomRemove.h"
 #include "OperatorWorstRemove.h"
 #include "OperatorRelocate.h"
+#include "OperatorEmpty.h"
 
 #include <iostream>
 #include <map>

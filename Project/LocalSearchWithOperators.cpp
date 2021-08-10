@@ -9,12 +9,12 @@ bool LocalSearchWithOperators::is_better( Solution actual, Solution best ){
     return best.get_total_rewards() < actual.get_total_rewards();
 }
 
-bool LocalSearchWithOperators::is_bigger( Solution actual, Solution best ){
-    bool is = false;
-    for( int i = 0; i < actual.get_number_paths(); i++ ){
-        is = is || absolute( actual.get_time_path( i ), 2 ) > absolute( actual.get_time_per_path(), 2 );
+bool LocalSearchWithOperators::is_bigger( Solution sol ){
+    bool result = false;
+    for( int i = 0; i < sol.get_number_paths(); i++ ){
+        result = result || absolute( sol.get_time_path( i ), 2 ) > absolute( sol.get_time_per_path(), 2 );
     }
-    return is && absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 );
+    return result; 
 }
 
 bool LocalSearchWithOperators::is_shorter( Solution actual, Solution best ){
@@ -38,7 +38,7 @@ Solution LocalSearchWithOperators::execute( Solution s, vector< Vertice * > vert
         if( this->is_better( actual, best ) ){
             best = actual;
             is_moved = true;
-        }else if( this->is_bigger( actual, best ) ){
+        }else if( this->is_bigger( actual ) || this->is_bigger( best ) ){
             best = actual;
             is_moved = true;
         }else if( this->is_shorter( actual, best ) ){
