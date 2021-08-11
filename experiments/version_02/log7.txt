@@ -2002,10 +2002,6 @@
 ../instances/set_4_2/p4.2.t.txt
 1022.000000
 351356 ms
-../instances/set_4_3/p4.3.a.txt
-../instances/set_4_3/p4.3.a.txt
-../instances/set_4_3/p4.3.a.txt
-../instances/set_4_3/p4.3.a.txt
 ../instances/set_4_3/p4.3.b.txt
 38.000000
 6929 ms
@@ -2234,18 +2230,6 @@
 ../instances/set_4_3/p4.3.t.txt
 1035.000000
 379726 ms
-../instances/set_4_4/p4.4.a.txt
-../instances/set_4_4/p4.4.a.txt
-../instances/set_4_4/p4.4.a.txt
-../instances/set_4_4/p4.4.a.txt
-../instances/set_4_4/p4.4.b.txt
-../instances/set_4_4/p4.4.b.txt
-../instances/set_4_4/p4.4.b.txt
-../instances/set_4_4/p4.4.b.txt
-../instances/set_4_4/p4.4.c.txt
-../instances/set_4_4/p4.4.c.txt
-../instances/set_4_4/p4.4.c.txt
-../instances/set_4_4/p4.4.c.txt
 ../instances/set_4_4/p4.4.d.txt
 38.000000
 11096 ms

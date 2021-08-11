@@ -1,9 +1,13 @@
 #!/bin/bash
 
+dir=./version_02/
+
 write_on_log_txt(){
     cat $1 >> log.txt
     echo "" >> log.txt
 }
+
+cd $dir
 
 echo -n "" > log.txt
 
@@ -16,7 +20,10 @@ write_on_log_txt log6.txt
 write_on_log_txt log7.txt
 write_on_log_txt log8.txt
 
+cd ..
+
 g++ process.cpp -o process
 
-./process >> new_results.ods
+rm "$dir/results.ods"
+./process "$dir/log.txt" soa.txt >> "$dir/results.ods"
 

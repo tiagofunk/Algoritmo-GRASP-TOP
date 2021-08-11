@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <math.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -119,24 +120,56 @@ vector< instance_value > calcule_stand_desv( vector< instance_value > instances 
     return instances;
 }
 
-void print_to_csv( vector< instance_value > instances ){
-    cout << "Instância;estado da arte;melhor;média;desvio padrão;tempo (ms)" << endl;
+bool mean_on_soa( instance_value inst ){
+    return inst.state_of_art == inst.mean_results;
+}
+
+bool has_on_soa( instance_value inst ){
+    return inst.state_of_art == inst.best_result;
+}
+
+string print_to_csv( vector< instance_value > instances ){
+    int _mean_on_soa = 0, _has_on_soa = 0;
+    string aux;
+    string s = "instancia;estado da arte;melhor;media;desvio padrao;tempo (ms);media no soa;chegou no soa;\n";
     for( unsigned int i = 0; i < instances.size(); i++ ){
-        cout << instances[ i ].file << ";";
-        cout << instances[ i ].state_of_art << ";";
-        cout << instances[ i ].best_result << ";";
-        cout << instances[ i ].mean_results << ";";
-        cout << instances[ i ].stand_desv_results << ";";
-        cout << instances[ i ].mean_time << ";";
-        cout << endl;
+        aux = "";
+        s += instances[ i ].file + ";";
+        s += to_string( instances[ i ].state_of_art ) + ";";
+        s += to_string( instances[ i ].best_result ) + ";";
+        aux += to_string( instances[ i ].mean_results ) + ";";
+        aux += to_string( instances[ i ].stand_desv_results ) + ";";
+        aux += to_string( instances[ i ].mean_time ) + ";";
+        replace( aux.begin(), aux.end(), '.', ',');
+        s += aux;
+        if( mean_on_soa( instances[ i ] ) ){
+            s += "1;";
+            _mean_on_soa++;
+        } else {
+            s += "0;";
+        }
+        if( has_on_soa( instances[ i ] ) ){
+            s += "1;";
+            _has_on_soa++;
+        } else {
+            s += "0;";
+        }
+        s += "\n";
     }
+    s += ";;;;;;" + to_string( _mean_on_soa ) + ";" + to_string( _has_on_soa - _mean_on_soa ) + ";\n";
+    return s;
 }
 
 int main( int argc, char* argv[] ){
-    vector< instance_value > instances = read_file( "log.txt" );
-    instances = read_file_state_of_art( "soa.txt", instances );
-    instances = calcule_mean( instances );
-    instances = calcule_stand_desv( instances );
-    print_to_csv( instances );
+    if( argc == 3 ){
+        vector< instance_value > instances = read_file( argv[ 1 ] );
+        instances = read_file_state_of_art( argv[ 2 ], instances );
+        instances = calcule_mean( instances );
+        instances = calcule_stand_desv( instances );
+        cout << print_to_csv( instances ) << endl;
+    }else{
+        cerr << "parameters: ./process <log_file> <state_of_art_file>" << endl;
+    }
+    
     return 0;
 }
