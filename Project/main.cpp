@@ -1,78 +1,33 @@
+#include "main.h"
 
-#include "InstanceReader.h"
-#include "Instance.h"
-#include "Grasp.h"
-#include "RandomGreedyGen_ScoreZ.h"
-#include "RandomGreedyGen_MinMax.h"
-#include "LocalSearchWithOperators.h"
-#include "PathRelinkingOperator.h"
+void show_log( string s, int level ){
+    if( level <= LOG_LEVEL ){
+        cout << s;
+    }
+}
+
+#if DEBUG == true
+
+#include "tests/test_solution.h"
+
+int main(int argc, char *argv[]) {
+	MU_RUN_SUITE(test_suite_solution);
+	MU_REPORT();
+	return MU_EXIT_CODE;
+
+}
+
+#else
+
+#include "App.h"
 #include "ArgumentReader.h"
-#include "Operator.h"
-#include "OperatorSwapIntoRoute.h"
-#include "OperatorAddVerticeInPath.h"
-#include "OperatorSwapBetweenPathAndUnusedvertices.h"
-#include "Operator2opt.h"
-#include "OperatorSwapInterRoute.h"
-#include "OperatorRandomRemove.h"
-
-#include <iostream>
-#include <time.h>
-#include <map>
-#include <random>
-
-// --alpha 0.86 --iterations 3540 --path y
 
 using namespace std;
 
 int main( int argc, char * argv[] ){
-
-    clock_t initialTime = 0, finalTime = 0;
-	initialTime = clock();
-
-    random_device rd;
-    int seed = rd();// stoi( argv[ 3 ] );
-	ArgumentReader arg( argc, argv );
-    string file = arg.getValue("--file");
-    double alpha = stod( arg.getValue("--alpha") );
-    int iterations = stoi( arg.getValue("--iterations") );
-    bool path = arg.getValue("--path") == "y"? true : false; 
-
-    InstanceReader ir( file );
-    Instance i = ir.read();
-
-    vector< Operator * > operators;
-
-    // Operator * orr = new OperatorRandomRemove();
-    // operators.push_back( orr );
-
-    Operator * o0 = new OperatorSwapIntoRoute();
-    operators.push_back( o0 );
-
-    // Operator * oo = new OperatorSwapInterRoute();
-    // operators.push_back( oo );
-
-    // Operator * two_opt = new Operator2opt();
-    // operators.push_back( two_opt );
-
-    Operator * o1 = new OperatorAddVerticeInPath();
-    operators.push_back( o1 );
-
-    Operator * o2 = new OperatorSwapBetweenPathAndUnusedvertices();
-    operators.push_back( o2 );
-
-    GRASP g(
-        iterations,
-        seed,
-        alpha,
-        new RandomGreedyGen_MinMax( alpha, i.get_number_of_paths(), i.get_time_per_path() ),
-        new LocalSearchWithOperators( operators ),
-        new PathRelinkingOperator( path ), 
-        &i );
-    Solution * s = g.execute();
-
-    finalTime = clock();
-	clock_t time = ( (finalTime - initialTime) / (double) CLOCKS_PER_SEC ) * 1000;
-    cout << s->get_total_rewards() << endl << time << endl;
-    // cout << s->to_string() << endl;
+    App * app = new App( new ArgumentReader( argc, argv ) );
+    app->execute();
     return 0;
 }
+
+#endif

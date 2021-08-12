@@ -20,12 +20,16 @@ CC=g++
 # Flags for compiler
 CC_FLAGS=-c -W -Wall
 
-all:$(PROJ_NAME)
+#INSTANCE=a.txt
+INSTANCE=../instances/set_4_4/p4.4.t.txt
+
+all: $(PROJ_NAME) run
+
+build: clean $(PROJ_NAME)
+
+test: clean_main $(PROJ_NAME) run_test
 
 $(PROJ_NAME): $(OBJ)
-#	@ echo "CPP $(CPP_SOURCE)"
-#	@ echo "H $(H_SOURCE)"
-#	@ echo "OBJ $(OBJ)"
 	$(CC) -o $@ $^
 	
 # o simbolo '%' pega o nome do arquivo
@@ -35,8 +39,17 @@ $(PROJ_NAME): $(OBJ)
 	$(CC) -o $@ $< $(CC_FLAGS)
 
 # Esse é caso especial para main.c
-main.o: main.cpp $(H_SOURCE)
-	$(CC) -o $@ $< $(CC_FLAGS)
+#main.o: main.cpp $(H_SOURCE)
+#	$(CC) -o $@ $< $(CC_FLAGS)
+
+clean_main:
+	rm main.o
 
 clean:
 	rm -rf *.o $(PROJ_NAME) *~
+
+run_test:
+	./$(PROJ_NAME)
+
+run:
+	./$(PROJ_NAME) 1 1 1 $(INSTANCE) --alpha 0.86 --iterations 3540 --path y --removeOperator r --removePercentage 0.5 --shuffleOperator e --addOperator b

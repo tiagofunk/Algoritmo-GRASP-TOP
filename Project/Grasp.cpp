@@ -1,10 +1,10 @@
 #include "Grasp.h"
+#include "main.h"
+#include "Utils.h"
 
-GRASP::GRASP( int iterations, int seed, double alfa, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking, Instance * instance ){
+GRASP::GRASP( int iterations, int seed, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking ){
     this->iterations = iterations;
     this->seed = seed;
-    this->alfa = alfa;
-    this->instance = instance;
     this->solution_generation = solution_generation;
     this->local_search = local_search;
     this->path_relinking = path_relinking;
@@ -17,9 +17,13 @@ Solution * GRASP::execute(){
     Solution * best = 0;
     srand( this->seed );
 
+    show_log( "Iterations:\n", 1);
     for (int i = 0; i < this->iterations; i++){
+        show_log( "\r" + std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) +
+            " " + std::to_string( calcule_percentage( i, this->iterations ) ) + " %", 1 );
         this->unused_vertices.clear();
-        actual = this->solution_generation->random_greedy_generation( instance->get_initial_vertice(), instance->get_final_vertice(), instance->get_path_vertices() );
+        actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
+        actual->lock_checker();
         
         h = actual->get_hash();
         if( !this->previous_generate_solutions.find( h ) ){
@@ -40,6 +44,6 @@ Solution * GRASP::execute(){
         
         delete actual;
     }
-
+    show_log( "\n", 1 );
     return best;
 }

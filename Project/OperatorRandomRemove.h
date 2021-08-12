@@ -4,7 +4,12 @@
 #include "Operator.h"
 
 class OperatorRandomRemove:public Operator{
+    private:
+        double iterations;
+        int random_path( Solution * sol );
+        Solution * remove( Solution * sol );
     public:
+        OperatorRandomRemove( double iterations );
         virtual Solution * execute( Solution * sol, vector< Vertice * > unused_vertices );
 };
 

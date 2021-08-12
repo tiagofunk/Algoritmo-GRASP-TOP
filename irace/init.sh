@@ -6,7 +6,7 @@ export PATH=${IRACE_HOME}/bin/:$PATH
 cd ..
 cd Project
 
-make
+make build
 
 cd ..
 cd irace
@@ -15,5 +15,5 @@ rm target-runner
 
 cp "../Project/TOP_GRASP_TS_PR" "./target-runner"
 
-irace --parallel 8
+irace --parallel 8 >> log_irace.txt
 

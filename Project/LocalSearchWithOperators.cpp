@@ -9,6 +9,7 @@ LocalSearchWithOperators::~LocalSearchWithOperators(){
 
 Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > vertices ){
     bool is_moved = false;
+    bool is_bigger = false;
     Solution * best = new Solution( *s );
     Solution * actual = new Solution( *s );
     this->unused_vertices = vertices;
@@ -26,7 +27,13 @@ Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > 
             is_moved = true;
         }
 
-    }while( is_moved );
+        is_bigger = false;
+        if( !is_moved ){
+            for( int i = 0; i < best->get_number_paths(); i++ ){
+                is_bigger = is_bigger || best->get_time_path( i ) > best->get_time_per_path();
+            }
+        }
+    }while( is_moved || is_bigger );
     delete actual;
     return best;
 }
