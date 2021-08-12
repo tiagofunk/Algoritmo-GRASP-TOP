@@ -1,21 +1,25 @@
 #include "ArgumentReader.h"
+#include <stdexcept>
+
+#define FIRST_ARGUMENT_ON_PARAMETERS 3
+#define FIRST_ARGUMENT 2
+#define JUMP 2
 
 ArgumentReader::ArgumentReader( int argc, char* argv[] ){
-	string *args = new string[ argc-4 ];
-	for( int i = 4; i < argc; i++ ){
-		args[ i-4 ] = argv[ i ];
+	vector< string > args;
+	for( int i = FIRST_ARGUMENT_ON_PARAMETERS; i < argc; i++ ){
+		args.push_back( argv[ i ] );
 	}
-	process( argc-4, args );
-	delete [] args;
+	process( args );
 }
 
-void ArgumentReader::process( int size, string *args ){
-	arguments.push_back( {"--file", args[0]} );
-	for( int i = 1; i < size; i += 2 ){
+void ArgumentReader::process( vector< string > args ){
+	arguments.push_back( {"--seed", args[0]} );
+	arguments.push_back( {"--file", args[1]} );
+	for( unsigned int i = FIRST_ARGUMENT; i < args.size(); i += JUMP ){
 		arguments.push_back( { args[ i ], args[ i+1 ] } );
 	}
 }
-
 
 string ArgumentReader::getValue( string name ){
 	for( unsigned int i = 0; i < arguments.size(); i++ ){
@@ -23,5 +27,5 @@ string ArgumentReader::getValue( string name ){
 			return arguments[i].value;
 		}
 	}
-	return "-1";
+	throw runtime_error( "ArgumentReader->getValue: not found argument: " + name + "\n");
 }

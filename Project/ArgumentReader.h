@@ -15,7 +15,7 @@ class ArgumentReader{
 private:
 	vector< Argument > arguments;
 
-	void process( int size, string* args );
+	void process( vector< string > args );
 
 public:
 	ArgumentReader( int argc, char* argv[] );

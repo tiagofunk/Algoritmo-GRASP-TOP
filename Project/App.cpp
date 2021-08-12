@@ -8,7 +8,6 @@
 #include "PathRelinkingOperator.h"
 #include "ArgumentReader.h"
 #include "Operator.h"
-#include "OperatorSwapIntoRoute.h"
 #include "OperatorFirstAdd.h"
 #include "OperatorRamdomAdd.h"
 #include "OperatorBestAdd.h"
@@ -18,6 +17,7 @@
 #include "OperatorRandomRemove.h"
 #include "OperatorWorstRemove.h"
 #include "OperatorRelocate.h"
+#include "OperatorEmpty.h"
 
 #include <iostream>
 #include <map>
@@ -69,6 +69,7 @@ void App::initialize_timer(){
 void App::create_seed(){
     random_device rd;
     this->seed = rd();
+    // this->seed = stoi( this->argument_reader->getValue( "--seed" ) );
     show_log( "seed: " + std::to_string( seed ) + "\n", 1 );
 }
 
@@ -82,7 +83,8 @@ void App::read_instance(){
 
 void App::create_solution_generator(){
     double alpha = stod( this->argument_reader->getValue( "--alpha" ) );
-    this->solution_generator = new RandomGreedyGen_MinMax( alpha, 2 );
+    double margin = stod( this->argument_reader->getValue( "--margin" ) );
+    this->solution_generator = new RandomGreedyGen_MinMax( alpha, margin );
 }
 
 void App::create_operators(){
@@ -113,9 +115,9 @@ void App::finalize_timer(){
 }
 
 void App::show_results(){
-    show_log( this->sol->to_string(), 1 );
-    show_log( std::to_string( this->total_time ) + " ms\n", 1 );
-    show_log( std::to_string( IRACE_CONSTANT * this->sol->get_total_rewards() ) + "\n", 0 );
+    show_log( this->sol.to_string(), 1 );
+    show_log( std::to_string( this->sol.get_total_rewards() ) + "\n", 0 );
+    show_log( std::to_string( this->total_time ) + " ms\n", 0 );
 }
 
 App::App( ArgumentReader * ar ){

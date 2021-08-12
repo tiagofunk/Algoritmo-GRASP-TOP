@@ -22,7 +22,7 @@ class GRASP{
 
     public:
         GRASP( int iterations, int seed, SolutionGeneration * solution_generation, LocalSearch * local_search, PathRelinking * path_relinking );
-        Solution * execute();
+        Solution execute();
         
 };
 

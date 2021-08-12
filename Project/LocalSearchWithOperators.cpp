@@ -1,17 +1,32 @@
 #include "LocalSearchWithOperators.h"
+#include "Utils.h"
 
 LocalSearchWithOperators::LocalSearchWithOperators( vector< Operator * > operators ):LocalSearch(){
     this->operators = operators;
 }
 
-LocalSearchWithOperators::~LocalSearchWithOperators(){
+bool LocalSearchWithOperators::is_better( Solution actual, Solution best ){
+    return best.get_total_rewards() < actual.get_total_rewards();
 }
 
-Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > vertices ){
+bool LocalSearchWithOperators::is_bigger( Solution sol ){
+    bool result = false;
+    for( int i = 0; i < sol.get_number_paths(); i++ ){
+        result = result || absolute( sol.get_time_path( i ), 2 ) > absolute( sol.get_time_per_path(), 2 );
+    }
+    return result; 
+}
+
+bool LocalSearchWithOperators::is_shorter( Solution actual, Solution best ){
+    bool result = best.get_total_rewards() == actual.get_total_rewards();
+    result = result && absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 );
+    return  result;
+}
+
+Solution LocalSearchWithOperators::execute( Solution s, vector< Vertice * > vertices ){
     bool is_moved = false;
-    bool is_bigger = false;
-    Solution * best = new Solution( *s );
-    Solution * actual = new Solution( *s );
+    Solution best = s;
+    Solution actual = s;
     this->unused_vertices = vertices;
 
     do{
@@ -20,21 +35,18 @@ Solution * LocalSearchWithOperators::execute( Solution * s, vector< Vertice * > 
             actual = this->operators[ i ]->execute( actual, this->unused_vertices );
             this->unused_vertices = this->operators[ i ]->get_unused_vertice();
         }
-        if( best->get_total_rewards() < actual->get_total_rewards()
-                || actual->get_total_time() < best->get_total_time() ){
-            delete best;
-            best = new Solution( *actual );
+        if( this->is_better( actual, best ) ){
+            best = actual;
+            is_moved = true;
+        }else if( this->is_bigger( actual ) || this->is_bigger( best ) ){
+            best = actual;
+            is_moved = true;
+        }else if( this->is_shorter( actual, best ) ){
+            best = actual;
             is_moved = true;
         }
 
-        is_bigger = false;
-        if( !is_moved ){
-            for( int i = 0; i < best->get_number_paths(); i++ ){
-                is_bigger = is_bigger || best->get_time_path( i ) > best->get_time_per_path();
-            }
-        }
-    }while( is_moved || is_bigger );
-    delete actual;
+    }while( is_moved );
     return best;
 }
 

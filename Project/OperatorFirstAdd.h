@@ -6,9 +6,9 @@
 class OperatorFirstAdd: public Operator {
     private:
         bool is_added;
-        Solution * realize_add( Solution * sol );
+        Solution realize_add( Solution sol );
     public:
-        virtual Solution * execute( Solution * sol, vector< Vertice * > unused_vertices );
+        virtual Solution execute( Solution sol, vector< Vertice * > unused_vertices );
 };
 
 #endif

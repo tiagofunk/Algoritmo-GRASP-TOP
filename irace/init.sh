@@ -15,5 +15,5 @@ rm target-runner
 
 cp "../Project/TOP_GRASP_TS_PR" "./target-runner"
 
-irace --parallel 8 >> log_irace.txt
+irace --parallel 8 --recovery-file irace_bkp_3.Rdata >> log_irace.txt
 

@@ -1,33 +1,33 @@
 #include "OperatorRelocate.h"
 #include "main.h"
+#include "Utils.h"
 
-Solution * OperatorRelocate::realize_operation( Solution * sol ){
+Solution OperatorRelocate::realize_operation( Solution sol ){
     this->is_swaped = false;
-    Solution * actual = new Solution( *sol );
-    Solution * best   = new Solution( *sol );
-    for( int i = 0; i < actual->get_number_paths(); i++ ){
-        for( int j = 1; j < actual->get_length_of_path( i ) - 1; j++ ){
-            for( int k = 0; k < actual->get_number_paths(); k++ ){
+    Solution actual = sol;
+    Solution best   = sol;
+    for( int i = 0; i < actual.get_number_paths(); i++ ){
+        for( int j = 1; j < actual.get_length_of_path( i ) - 1; j++ ){
+            for( int k = 0; k < actual.get_number_paths(); k++ ){
                 if( i != k ){
-                    for( int l = 1; l < actual->get_length_of_path( k )-1; l++ ){
-                        actual->move( i, j, k, l );
-                        if( actual->get_total_time() < best->get_total_time() ){
-                            delete best;
-                            best = new Solution( *actual );
-                            this->is_swaped = true;
+                    for( int l = 1; l < actual.get_length_of_path( k )-1; l++ ){
+                        if( actual.move( i, j, k, l ) ){
+                            if( absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
+                                best = actual;
+                                this->is_swaped = true;
+                            }else{
+                                actual = sol;
+                            }
                         }
-                        delete actual;
-                        actual = new Solution( *sol );
                     }
                 }
             }    
         }
     }
-    delete sol;
     return best;
 }
 
-Solution * OperatorRelocate::execute( Solution * s, vector< Vertice * > unused_vertices ){
+Solution OperatorRelocate::execute( Solution s, vector< Vertice * > unused_vertices ){
     this->unused_vertices = unused_vertices;
     int count = 0;
     do{

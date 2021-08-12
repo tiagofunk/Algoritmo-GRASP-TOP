@@ -9,10 +9,10 @@ RandomGreedyGen_MinMax::RandomGreedyGen_MinMax( double alpha, double margin ):So
     this->time_per_path = Instance::instance()->get_time_per_path();
 }
 
-Solution * RandomGreedyGen_MinMax::initialize_solution( int number_of_paths, double time_per_path, Vertice * initial, Vertice * final ){
-    Solution * sol = new Solution( number_of_paths, time_per_path );
+Solution RandomGreedyGen_MinMax::initialize_solution( int number_of_paths, double time_per_path, Vertice * initial, Vertice * final ){
+    Solution sol( number_of_paths, time_per_path );
     for( int i = 0; i < this->number_of_paths; i++ ){
-        sol->add_initial_and_final_vertice( i, initial, final );
+        sol.add_initial_and_final_vertice( i, initial, final );
     }
     return sol;
 }
@@ -122,9 +122,9 @@ double RandomGreedyGen_MinMax::calcule_score( double value, double min, double m
     return (value - min)/(max - min);
 }
 
-Solution * RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * > vertices ){
+Solution RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * > vertices ){
     bool is_added = false;
-    Solution * sol =
+    Solution sol =
         this->initialize_solution(
             this->number_of_paths, 
             this->time_per_path, 
@@ -137,12 +137,12 @@ Solution * RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * >
     do{
         is_added = false;
         for( int i = 0; i < this->number_of_paths; i++ ){
-            int selected = select_vertice( calcule_probability( sol->get_last_path_vertice_in_path( i ), this->unused_vertices ) );
+            int selected = select_vertice( calcule_probability( sol.get_last_path_vertice_in_path( i ), this->unused_vertices ) );
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
-            if( sol->add( i, selected_vertice ) ){
-                if( sol->get_time_path( i ) > this->margin * sol->get_time_per_path() ){
-                    sol->remove( i, sol->get_length_of_path( i ) - 2 );
+            if( sol.add( i, selected_vertice ) ){
+                if( sol.get_time_path( i ) > this->margin * sol.get_time_per_path() ){
+                    sol.remove( i, sol.get_length_of_path( i ) - 2 );
                 }else{
                     is_added = true;
                     this->unused_vertices.erase( this->unused_vertices.begin() + selected );

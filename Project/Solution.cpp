@@ -5,6 +5,17 @@
 #include <sstream>
 #include <iomanip>
 
+Solution::Solution(){
+    this->paths.resize( 0 );
+    this->path_rewards.resize( 0 );
+    this->path_times.resize( 0 );
+    this->checker_is_unlocked = false;
+    this->time_per_path = 0.0;
+    this->total_rewards = 0.0;
+    this->total_time = 0.0;
+    this->used_vertices.resize( VERTICE_HASH_SIZE );
+}
+
 Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
@@ -16,9 +27,17 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->used_vertices.resize( VERTICE_HASH_SIZE );
 }
 
-bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
-    if( check_if_path_is_valid( path ) ) return false;
-    if( initial == 0 || final == 0 ) return false;
+void Solution::add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final ){
+    if( check_if_path_is_valid( path ) )
+        throw runtime_error("path is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    if( initial == 0 )
+        throw runtime_error("initial vertice is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    if( final == 0 )
+        throw runtime_error("final vertice is invalid on add initial and final vertice " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
+    
+    double new_time = calculate_distance( initial, final );
+    if( this->time_per_path < new_time )
+        throw runtime_error("distance between initial and final vertice is bigger than time_per_paths " + (string) __FILE__ + ":" + std::to_string( __LINE__ ) + "\n");
 
     this->paths[ path ].push_back( initial );
     this->used_vertices.insert( initial->get_hash() );
@@ -26,10 +45,8 @@ bool Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
     this->paths[ path ].push_back( final );
     this->used_vertices.insert( final->get_hash() );
 
-    double n_time = calculate_distance( initial, final );
-    this->path_times[ path ] = n_time;
-    this->total_time += n_time;
-    return true;
+    this->path_times[ path ] = new_time;
+    this->total_time += new_time;
 }
 
 void Solution::lock_checker(){
@@ -119,7 +136,12 @@ bool Solution::check_if_path_is_valid( int path ){
 }
 
 bool Solution::check_if_path_position_is_valid( int path, int position ){
-    return this->check_if_path_is_valid( path ) && ( position < 1 || (unsigned int) position >= this->paths[ path ].size() );
+    return this->check_if_path_is_valid( path ) || ( position < 1 || (unsigned int) position >= this->paths[ path ].size() );
+}
+
+bool Solution::check_if_position_is_initial_or_final( int path, int position ){
+    int size = this->paths[ path ].size()-1;
+    return position == 0 || position == size;
 }
 
 bool Solution::add( int path, Vertice * v ){
@@ -186,6 +208,11 @@ bool Solution::swap( int path, int pos1, int pos2 ){
 bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
     if( check_if_path_position_is_valid( path1, pos1 ) ) return false;
     if( check_if_path_position_is_valid( path2, pos2 ) ) return false;
+    if( this->check_if_position_is_initial_or_final( path1, pos1 ) ) return false;
+    if( this->check_if_position_is_initial_or_final( path2, pos2 ) ) return false;
+
+    double reward_1 = this->paths[ path1 ][ pos1 ]->get_reward();
+    double reward_2 = this->paths[ path2 ][ pos2 ]->get_reward();
 
     Vertice * v = this->paths[ path1 ][ pos1 ];
     this->paths[ path1 ][ pos1 ] = this->paths[ path2 ][ pos2 ];
@@ -194,9 +221,11 @@ bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
     double new_time_path_1 = this->recalculate_time( path1 );
     double new_time_path_2 = this->recalculate_time( path2 );
 
-    if( this->checker_is_unlocked || (this->time_per_path > new_time_path_1 || this->time_per_path > new_time_path_2) ){
+    if( this->checker_is_unlocked || (this->time_per_path > new_time_path_1 && this->time_per_path > new_time_path_2) ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
+        this->path_rewards[ path1 ] += reward_2 - reward_1;
+        this->path_rewards[ path2 ] += reward_1 - reward_2;
         return true;
     }else{
         v = this->paths[ path1 ][ pos1 ];
@@ -216,8 +245,8 @@ bool Solution::remove( int path, int position ){
 }
 
 bool Solution::move( int path1, int position1, int path2, int position2 ){
-    if( check_if_path_position_is_valid( path1, position1 ) ) return false;
-    if( check_if_path_position_is_valid( path2, position2 ) ) return false;
+    if( this->check_if_path_position_is_valid( path1, position1 ) ) return false;
+    if( this->check_if_path_position_is_valid( path2, position2 ) ) return false;
 
     Vertice * v = this->paths[ path1 ][ position1 ];
 
@@ -227,7 +256,9 @@ bool Solution::move( int path1, int position1, int path2, int position2 ){
     if( this->checker_is_unlocked || this->time_per_path > new_time_path_2 ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
+        this->update_reward_in_remove( path1, position1 );
         this->remove_in_path( path1, position1 );
+        this->update_reward_in_add( path2, v );
         this->add_in_path( path2, position2, v );
         return true;
     }
@@ -248,6 +279,11 @@ Vertice * Solution::get_last_path_vertice_in_path( int path ){
 Vertice * Solution::get_vertice_in_path( int path, int position ){
     if( check_if_path_position_is_valid( path, position ) ) return 0;
     return this->paths[ path ][ position ];
+}
+
+double Solution::get_rewards( int path ){
+    if( check_if_path_is_valid( path ) ) throw runtime_error( "path is invalid on get_rewards\n" );
+    return this->path_rewards[ path ];
 }
 
 double Solution::get_total_rewards(){
