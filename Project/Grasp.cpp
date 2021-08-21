@@ -11,8 +11,41 @@ GRASP::GRASP( int iterations, int seed, SolutionGeneration * solution_generation
     this->previous_generate_solutions.resize( SOLUTION_HASH_SIZE );
 }
 
+Solution GRASP::generate(){
+    this->unused_vertices.clear();
+    Solution sol = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
+    sol.lock_checker();
+    this->unused_vertices = this->solution_generation->get_unused_vertices();
+    return sol;
+}
+
+bool GRASP::is_acepted( Solution sol ){
+    int h = sol.get_hash();
+    if( !this->previous_generate_solutions.find( h ) ){
+        this->previous_generate_solutions.insert( h );
+        return true;
+    }
+    return false;
+}
+
+Solution GRASP::apply_local_search( Solution sol ){
+    Solution actual = this->local_search->execute( sol, this->unused_vertices );
+    this->unused_vertices = this->local_search->get_unused_vertices();
+    return actual;
+}
+
+Solution GRASP::apply_path_relinking( Solution sol, Solution best ){
+    if( best.get_total_time() != 0.0 ){
+        return this->path_relinking->execute( sol, best );
+    }
+    return sol;
+}
+
+bool GRASP::is_better( Solution sol, Solution best ){
+    return sol.get_total_rewards() > best.get_total_rewards();
+}
+
 Solution GRASP::execute(){
-    int h = -1;
     Solution actual;
     Solution best;
     srand( this->seed );
@@ -20,26 +53,15 @@ Solution GRASP::execute(){
     show_log( "Iterations:\n", 1);
     for (int i = 0; i < this->iterations; i++){
         show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + " " + std::to_string( (int) calcule_percentage( i, this->iterations ) ) + " %\n", 1 );
-        this->unused_vertices.clear();
-        actual = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
-        actual.lock_checker();
         
-        h = actual.get_hash();
-        if( !this->previous_generate_solutions.find( h ) ){
-            this->previous_generate_solutions.insert( h );
+        actual = this->generate();
 
-            this->unused_vertices = this->solution_generation->get_unused_vertices();
+        if( !is_acepted( actual ) ) continue;
 
-            actual = this->local_search->execute( actual, this->unused_vertices );
-            this->unused_vertices = this->local_search->get_unused_vertices();
+        actual = this->apply_local_search( actual );
 
-            if( best.get_total_time() != 0.0 ){
-                actual = this->path_relinking->execute( actual, best );
-            }
-
-            if( actual.get_total_rewards() > best.get_total_rewards() ){
-                best = actual;
-            }
+        if( this->is_better( actual, best ) ){
+            best = actual;
         }
     }
     show_log( "\n", 1 );
