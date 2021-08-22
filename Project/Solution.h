@@ -14,12 +14,12 @@ using namespace std;
 class Solution{
     private:
         vector< vector< Vertice * > > paths;
-        vector< double > path_rewards;
+        vector< int > path_rewards;
         vector< double > path_times;
 
         bool checker_is_unlocked;
         
-        double total_rewards;
+        int total_rewards;
         double total_time;
         double time_per_path;
 
@@ -61,8 +61,8 @@ class Solution{
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
-        double get_rewards( int path );
-        double get_total_rewards();
+        int get_rewards( int path );
+        int get_total_rewards();
         double get_time_path( int path );
         double get_time_per_path();
         double get_total_time();

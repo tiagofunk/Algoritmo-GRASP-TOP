@@ -23,7 +23,7 @@ double Vertice::get_y(){
     return this->y;
 }
 
-double Vertice::get_reward(){
+int Vertice::get_reward(){
     return this->reward;
 }
 

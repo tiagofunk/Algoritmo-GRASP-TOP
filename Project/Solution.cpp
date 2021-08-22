@@ -281,12 +281,12 @@ Vertice * Solution::get_vertice_in_path( int path, int position ){
     return this->paths[ path ][ position ];
 }
 
-double Solution::get_rewards( int path ){
+int Solution::get_rewards( int path ){
     if( check_if_path_is_valid( path ) ) throw runtime_error( "path is invalid on get_rewards\n" );
     return this->path_rewards[ path ];
 }
 
-double Solution::get_total_rewards(){
+int Solution::get_total_rewards(){
     return this->total_rewards;
 }
 

@@ -21,7 +21,7 @@ public:
 
     double get_x();
     double get_y();
-    double get_reward();
+    int get_reward();
 
     int get_hash();
 
