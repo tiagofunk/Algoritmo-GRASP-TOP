@@ -17,11 +17,11 @@ MU_TEST(solution_init) {
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.5 );
     mu_check( sol.get_total_rewards() == 0.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 0.0, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 0.0, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 0 );
     mu_check( sol.get_rewards( 1 ) == 0 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 0.0, 2 ) );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 0.0, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 0.0, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 0.0, 2 ) );
 }
 
 MU_TEST(solution_set_initial_and_final_vertice) {
@@ -40,7 +40,7 @@ MU_TEST(solution_set_initial_and_final_vertice) {
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.5 );
     mu_check( sol.get_total_rewards() == 0.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.0, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.0, 2 ) );
 }
 
 MU_TEST(solution_set_initial_and_final_vertice_fail) {
@@ -78,7 +78,7 @@ MU_TEST(solution_set_initial_and_final_vertice_fail) {
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.5 );
     mu_check( sol.get_total_rewards() == 0.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.0, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.0, 2 ) );
 }
 
 MU_TEST(solution_set_initial_and_final_vertice_fail_2) {
@@ -98,7 +98,7 @@ MU_TEST(solution_set_initial_and_final_vertice_fail_2) {
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 13.3 );
     mu_check( sol.get_total_rewards() == 0.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 0.0, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 0.0, 2 ) );
 }
 
 MU_TEST(solution_add_vertice_in_path) {
@@ -177,17 +177,17 @@ MU_TEST(solution_move_sucess){
     bool result = sol.move( 1, 2, 0, 3 );
     mu_check( result == true );
     mu_check( sol.get_length_of_path( 0 ) == 5 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 8.8343, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 8.8343, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 11 );
 
     mu_check( sol.get_length_of_path( 1 ) == 3 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 3.9095, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 3.9095, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 4 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 9.0 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 12.7438, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 12.7438, 2 ) );
 }
 
 MU_TEST(solution_move_sucess_fail){
@@ -209,17 +209,17 @@ MU_TEST(solution_move_sucess_fail){
     bool result = sol.move( 1, 2, 0, 3 );
     mu_check( result == false );
     mu_check( sol.get_length_of_path( 0 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 6.4087, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 6.4087, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 3 );
 
     mu_check( sol.get_length_of_path( 1 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 4.4365, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 4.4365, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 12 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.0 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.8453, 2 ) ); 
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.8453, 2 ) ); 
 }
 
 MU_TEST(solution_move_sucess_fail_2){
@@ -245,17 +245,17 @@ MU_TEST(solution_move_sucess_fail_2){
     result = sol.move( 1, -2, 0, 3 );
     mu_check( result == false );
     mu_check( sol.get_length_of_path( 0 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 6.4087, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 6.4087, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 3 );
 
     mu_check( sol.get_length_of_path( 1 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 4.4365, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 4.4365, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 12 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.0 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.8453, 2 ) ); 
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.8453, 2 ) ); 
 }
 
 MU_TEST(solution_swap_sucess){
@@ -277,17 +277,17 @@ MU_TEST(solution_swap_sucess){
     bool result = sol.swap( 1, 2, 0, 1 );
     mu_check( result == true );
     mu_check( sol.get_length_of_path( 0 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 4.2708, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 4.2708, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 10 );
 
     mu_check( sol.get_length_of_path( 1 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 6.3163, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 6.3163, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 5 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.0 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.5871, 2 ) );
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.5871, 2 ) );
 }
 
 MU_TEST(solution_swap_fail){
@@ -309,17 +309,17 @@ MU_TEST(solution_swap_fail){
     bool result = sol.swap( 1, 2, 0, 3 );
     mu_check( result == false );
     mu_check( sol.get_length_of_path( 0 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 6.2530, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 6.2530, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 3 );
 
     mu_check( sol.get_length_of_path( 1 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 4.0093, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 4.0093, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 12 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 6.3 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.2624, 2 ) ); 
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.2624, 2 ) ); 
 }
 
 MU_TEST(solution_swap_fail_2){
@@ -345,17 +345,17 @@ MU_TEST(solution_swap_fail_2){
     result = sol.swap( 1, -2, 0, 3 );
     mu_check( result == false );
     mu_check( sol.get_length_of_path( 0 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 0 ), 2 ) == absolute( 6.4087, 2 ) );
+    mu_check( truncate( sol.get_time_path( 0 ), 2 ) == truncate( 6.4087, 2 ) );
     mu_check( sol.get_rewards( 0 ) == 3 );
 
     mu_check( sol.get_length_of_path( 1 ) == 4 );
-    mu_check( absolute( sol.get_time_path( 1 ), 2 ) == absolute( 4.4365, 2 ) );
+    mu_check( truncate( sol.get_time_path( 1 ), 2 ) == truncate( 4.4365, 2 ) );
     mu_check( sol.get_rewards( 1 ) == 12 );
 
 	mu_check( sol.get_number_paths() == 2 );
     mu_check( sol.get_time_per_path() == 7.0 );
     mu_check( sol.get_total_rewards() == 15.0 );
-    mu_check( absolute( sol.get_total_time(), 2 ) == absolute( 10.8453, 2 ) ); 
+    mu_check( truncate( sol.get_total_time(), 2 ) == truncate( 10.8453, 2 ) ); 
 }
 
 MU_TEST_SUITE(test_suite_solution) {

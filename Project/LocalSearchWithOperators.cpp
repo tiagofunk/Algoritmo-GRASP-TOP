@@ -12,14 +12,14 @@ bool LocalSearchWithOperators::is_better( Solution actual, Solution best ){
 bool LocalSearchWithOperators::is_bigger( Solution sol ){
     bool result = false;
     for( int i = 0; i < sol.get_number_paths(); i++ ){
-        result = result || absolute( sol.get_time_path( i ), 2 ) > absolute( sol.get_time_per_path(), 2 );
+        result = result || truncate( sol.get_time_path( i ), 2 ) > truncate( sol.get_time_per_path(), 2 );
     }
     return result; 
 }
 
 bool LocalSearchWithOperators::is_shorter( Solution actual, Solution best ){
     bool result = best.get_total_rewards() == actual.get_total_rewards();
-    result = result && absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 );
+    result = result && truncate( actual.get_total_time(), 2 ) < truncate( best.get_total_time(), 2 );
     return  result;
 }
 

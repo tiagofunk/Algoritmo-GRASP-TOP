@@ -20,6 +20,6 @@ double random_number();
 
 double calcule_percentage( int n, int total );
 
-int absolute( double value, int decimals );
+int truncate( double value, int decimals );
 
 #endif

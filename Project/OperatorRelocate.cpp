@@ -12,7 +12,7 @@ Solution OperatorRelocate::realize_operation( Solution sol ){
                 if( i != k ){
                     for( int l = 1; l < actual.get_length_of_path( k )-1; l++ ){
                         if( actual.move( i, j, k, l ) ){
-                            if( absolute( actual.get_total_time(), 2 ) < absolute( best.get_total_time(), 2 ) ){
+                            if( truncate( actual.get_total_time(), 2 ) < truncate( best.get_total_time(), 2 ) ){
                                 best = actual;
                                 this->is_swaped = true;
                             }else{
