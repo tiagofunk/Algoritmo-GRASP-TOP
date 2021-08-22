@@ -50,7 +50,7 @@ Solution GRASP::execute(){
     Solution best;
     srand( this->seed );
 
-    show_log( "Iterations:\n", 1);
+    show_log( "Iterations:\n", 2);
     for (int i = 0; i < this->iterations; i++){
         show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + " " + std::to_string( (int) calcule_percentage( i, this->iterations ) ) + " %\n", 2 );
         
