@@ -7,7 +7,7 @@
 #include <vector>
 #include <string>
 
-#define SOLUTION_HASH_SIZE 8192
+#define SOLUTION_HASH_SIZE 65536
 
 using namespace std;
 

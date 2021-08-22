@@ -37,7 +37,7 @@ INSTANCE=../instances/set_5_3/p5.3.v.txt
 
 SEED=1011742676
 #INSTANCE=../instances/set_1_2/p1.2.h.txt
-PROGRAM_ARGS=--alpha 0.9 --iterations 500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
+PROGRAM_ARGS=--alpha 0.9 --iterations 4500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
 
 
 all: $(PROJ_NAME) run
