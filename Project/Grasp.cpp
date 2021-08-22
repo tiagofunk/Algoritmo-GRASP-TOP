@@ -14,7 +14,7 @@ GRASP::GRASP( int iterations, int seed, SolutionGeneration * solution_generation
 Solution GRASP::generate(){
     this->unused_vertices.clear();
     Solution sol = this->solution_generation->random_greedy_generation( Instance::instance()->get_path_vertices() );
-    sol.lock_checker();
+    sol.update_time_per_path( Instance::instance()->get_time_per_path() );
     this->unused_vertices = this->solution_generation->get_unused_vertices();
     return sol;
 }

@@ -16,8 +16,6 @@ class Solution{
         vector< vector< Vertice * > > paths;
         vector< int > path_rewards;
         vector< double > path_times;
-
-        bool checker_is_unlocked;
         
         int total_rewards;
         double total_time;
@@ -48,7 +46,7 @@ class Solution{
         Solution();
         Solution( int number_paths, double time_per_path );
         void add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
-        void lock_checker();
+        void update_time_per_path( double time_per_path );
         
         bool add( int path, Vertice * v );
         bool add( int path, int position, Vertice * v );

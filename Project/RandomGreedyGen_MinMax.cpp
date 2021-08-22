@@ -131,6 +131,7 @@ Solution RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * > v
             Instance::instance()->get_initial_vertice(),
             Instance::instance()->get_final_vertice()
         );
+    sol.update_time_per_path( this->margin * sol.get_time_per_path() );
     this->unused_vertices.clear();
     this->unused_vertices = vertices;
 
@@ -141,12 +142,8 @@ Solution RandomGreedyGen_MinMax::random_greedy_generation( vector< Vertice * > v
             if( selected == -1 ) break;
             Vertice * selected_vertice = this->unused_vertices[ selected ]; 
             if( sol.add( i, selected_vertice ) ){
-                if( sol.get_time_path( i ) > this->margin * sol.get_time_per_path() ){
-                    sol.remove( i, sol.get_length_of_path( i ) - 2 );
-                }else{
-                    is_added = true;
-                    this->unused_vertices.erase( this->unused_vertices.begin() + selected );
-                }
+                is_added = true;
+                this->unused_vertices.erase( this->unused_vertices.begin() + selected );
             }
         }
     }while( is_added );

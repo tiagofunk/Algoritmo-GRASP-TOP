@@ -105,7 +105,7 @@ MU_TEST(solution_add_vertice_in_path) {
     Vertice initial( 0.0, 0.0, 0 );
     Vertice final( 3.0, 4.0, 0 );
     Vertice new_v( 6.0, 8.0, 5 );
-    Solution sol( 2, 7.5 );
+    Solution sol( 2, 15.0 );
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -122,7 +122,7 @@ MU_TEST(solution_add_vertice_in_path) {
     mu_check( sol.get_rewards( 1 ) == 0 );
 
 	mu_check( sol.get_number_paths() == 2 );
-    mu_check( sol.get_time_per_path() == 7.5 );
+    mu_check( sol.get_time_per_path() == 15.0 );
     mu_check( sol.get_total_rewards() == 5.0 );
     mu_check( sol.get_total_time() == 20.0 );
 }
@@ -132,7 +132,6 @@ MU_TEST(solution_add_vertice_in_path_fail) {
     Vertice final( 3.0, 4.0, 0 );
     Vertice new_v( 6.0, 8.0, 5 );
     Solution sol( 2, 7.5 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -166,7 +165,6 @@ MU_TEST(solution_move_sucess){
     Vertice v3( 2.2, 3.3, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 9.0 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -198,7 +196,6 @@ MU_TEST(solution_move_sucess_fail){
     Vertice v3( 2.2, 3.3, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 7.0 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -230,7 +227,6 @@ MU_TEST(solution_move_sucess_fail_2){
     Vertice v3( 2.2, 3.3, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 7.0 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -266,7 +262,6 @@ MU_TEST(solution_swap_sucess){
     Vertice v3( 2.2, 3.3, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 7.0 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -298,7 +293,6 @@ MU_TEST(solution_swap_fail){
     Vertice v3( 1.8, 2.1, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 6.3 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
@@ -330,7 +324,6 @@ MU_TEST(solution_swap_fail_2){
     Vertice v3( 2.2, 3.3, 4 );
     Vertice v4( 2.7, 3.1, 8 );
     Solution sol( 2, 7.0 );
-    sol.lock_checker();
     for( int i = 0; i < 2; i++ ){
         sol.add_initial_and_final_vertice( i, &initial, &final );
     }
