@@ -52,7 +52,7 @@ Solution GRASP::execute(){
 
     show_log( "Iterations:\n", 1);
     for (int i = 0; i < this->iterations; i++){
-        show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + " " + std::to_string( (int) calcule_percentage( i, this->iterations ) ) + " %\n", 1 );
+        show_log( std::to_string( i+1 ) + " of " + std::to_string( this->iterations ) + " " + std::to_string( (int) calcule_percentage( i, this->iterations ) ) + " %\n", 2 );
         
         actual = this->generate();
 
@@ -62,8 +62,9 @@ Solution GRASP::execute(){
 
         if( this->is_better( actual, best ) ){
             best = actual;
+            show_log( std::to_string( i+1 ) + " " + std::to_string( best.get_total_rewards() ) + "\n", 1 );
         }
     }
-    show_log( "\n", 1 );
+    show_log( "\n", 2 );
     return best;
 }
