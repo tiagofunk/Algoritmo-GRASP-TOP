@@ -55,7 +55,7 @@ Operator * App::create_add_operator(){
     }else if( argument == "b" ){
         return new OperatorBestAdd();
     }
-    throw runtime_error( "Shuffle Operator is invalid: " + argument );
+    throw runtime_error( "Create Operator is invalid: " + argument );
 }
 
 Operator * App::create_swap_operator(){
