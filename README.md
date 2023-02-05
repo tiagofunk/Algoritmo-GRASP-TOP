@@ -2,6 +2,8 @@
 
 Aqui está a implementação de um algoritmo GRASP com adição de um componente Path Relinking para o problema Team Orientering Problem (TOP). Eu utilizei a linguagem C++.
 
+Link para o artigo deste algoritmo esta [aqui](https://sbic.org.br/eventos/cbic_2021/cbic2021-166/).
+
 # Conteúdo das pastas
 
 - experiments: Pasta logs, script de execução e de analise dos resultados.
