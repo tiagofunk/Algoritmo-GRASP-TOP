@@ -1,0 +1,1 @@
+./.grasp 1 1 1 ../instances/set_5_4/p5.4.z.txt --alpha 0.9 --iterations 5 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
