@@ -22,7 +22,7 @@ void InstanceReader::read(){
 
     ifstream file( this->file_name.c_str(), ios::in );
     if( !file ){
-        throw runtime_error( "Erro on open file: " + this->file_name );
+        throw runtime_error( "Error on open file: " + this->file_name );
     }
 
     file >> aux;

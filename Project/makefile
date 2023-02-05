@@ -24,7 +24,7 @@ CC_FLAGS=-c -W -Wall
 #PROGRAM_ARGS=--alpha 0.98 --iterations 4506 --path y --margin 1.42 --removeOperator w --removePercentage 0.56 --shuffleOperator e --addOperator b
 
 # SEED=2143751518
-# INSTANCE=../instances/set_5_3/p5.3.v.txt
+INSTANCE=../instances/set_5_3/p5.3.v.txt
 # PROGRAM_ARGS=--alpha 0.58 --iterations 2398 --path y --margin 0.78 --removeOperator w --removePercentage 0.17 --shuffleOperator e --addOperator b
 
 # SEED=347357786
@@ -36,7 +36,7 @@ CC_FLAGS=-c -W -Wall
 # PROGRAM_ARGS=--alpha 0.55 --iterations 3471 --path n --margin 0.97 --removeOperator w --removePercentage 0.21 --shuffleOperator e --addOperator r
 
 SEED=1011742676
-INSTANCE=../instances/set_6_3/p6.3.m.txt
+#INSTANCE=../instances/set_1_2/p1.2.h.txt
 PROGRAM_ARGS=--alpha 0.9 --iterations 4500 --path y --margin 1.9 --removeOperator r --removePercentage 0.15 --shuffleOperator e --addOperator b
 
 

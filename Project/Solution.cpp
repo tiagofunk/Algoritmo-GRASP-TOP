@@ -9,7 +9,6 @@ Solution::Solution(){
     this->paths.resize( 0 );
     this->path_rewards.resize( 0 );
     this->path_times.resize( 0 );
-    this->checker_is_unlocked = false;
     this->time_per_path = 0.0;
     this->total_rewards = 0.0;
     this->total_time = 0.0;
@@ -20,7 +19,6 @@ Solution::Solution( int number_paths, double time_per_path ){
     this->paths.resize( number_paths );
     this->path_rewards.resize( number_paths );
     this->path_times.resize( number_paths );
-    this->checker_is_unlocked = true;
     this->time_per_path = time_per_path;
     this->total_rewards = 0.0;
     this->total_time = 0.0;
@@ -49,8 +47,8 @@ void Solution::add_initial_and_final_vertice( int path, Vertice * initial, Verti
     this->total_time += new_time;
 }
 
-void Solution::lock_checker(){
-    this->checker_is_unlocked = false;
+void Solution::update_time_per_path( double time_per_path ){
+    this->time_per_path = time_per_path;
 }
 
 void Solution::update_reward_in_add( int path, Vertice * v ){
@@ -157,7 +155,7 @@ bool Solution::add( int path, int position, Vertice * v ){
     
     double new_time = calculate_time_in_add( path, position, v );
 
-    if( this->checker_is_unlocked || this->time_per_path > new_time ){
+    if( this->time_per_path >= new_time ){
         this->update_reward_in_add( path, v );
         this->add_in_path( path, position, v );
         this->update_time( path, new_time );
@@ -173,7 +171,7 @@ bool Solution::rewrite( int path, int position, Vertice * v ){
 
     double new_time = calculate_time_in_rewrite( path, position, v );
 
-    if( this->checker_is_unlocked || this->time_per_path > new_time ){
+    if( this->time_per_path >= new_time ){
         this->update_reward_in_rewrite( path, position, v );
         this->remove_in_path( path, position );
         this->add_in_path( path, position, v );
@@ -194,7 +192,7 @@ bool Solution::swap( int path, int pos1, int pos2 ){
 
     double new_time = this->recalculate_time( path );
 
-    if( this->checker_is_unlocked || this->time_per_path > new_time ){
+    if( this->time_per_path >= new_time ){
         this->update_time( path, new_time );
         return true;
     }else{
@@ -221,7 +219,7 @@ bool Solution::swap( int path1, int pos1, int path2, int pos2 ){
     double new_time_path_1 = this->recalculate_time( path1 );
     double new_time_path_2 = this->recalculate_time( path2 );
 
-    if( this->checker_is_unlocked || (this->time_per_path > new_time_path_1 && this->time_per_path > new_time_path_2) ){
+    if( this->time_per_path >= new_time_path_1 && this->time_per_path >= new_time_path_2 ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
         this->path_rewards[ path1 ] += reward_2 - reward_1;
@@ -253,7 +251,7 @@ bool Solution::move( int path1, int position1, int path2, int position2 ){
     double new_time_path_1 = calculate_time_in_remove( path1, position1 );
     double new_time_path_2 = calculate_time_in_add( path2, position2, v );
 
-    if( this->checker_is_unlocked || this->time_per_path > new_time_path_2 ){
+    if( this->time_per_path >= new_time_path_2 ){
         this->update_time( path1, new_time_path_1 );
         this->update_time( path2, new_time_path_2 );
         this->update_reward_in_remove( path1, position1 );
@@ -281,12 +279,12 @@ Vertice * Solution::get_vertice_in_path( int path, int position ){
     return this->paths[ path ][ position ];
 }
 
-double Solution::get_rewards( int path ){
+int Solution::get_rewards( int path ){
     if( check_if_path_is_valid( path ) ) throw runtime_error( "path is invalid on get_rewards\n" );
     return this->path_rewards[ path ];
 }
 
-double Solution::get_total_rewards(){
+int Solution::get_total_rewards(){
     return this->total_rewards;
 }
 

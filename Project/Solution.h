@@ -7,19 +7,17 @@
 #include <vector>
 #include <string>
 
-#define SOLUTION_HASH_SIZE 8192
+#define SOLUTION_HASH_SIZE 65536
 
 using namespace std;
 
 class Solution{
     private:
         vector< vector< Vertice * > > paths;
-        vector< double > path_rewards;
+        vector< int > path_rewards;
         vector< double > path_times;
-
-        bool checker_is_unlocked;
         
-        double total_rewards;
+        int total_rewards;
         double total_time;
         double time_per_path;
 
@@ -48,7 +46,7 @@ class Solution{
         Solution();
         Solution( int number_paths, double time_per_path );
         void add_initial_and_final_vertice( int path, Vertice * initial, Vertice * final );
-        void lock_checker();
+        void update_time_per_path( double time_per_path );
         
         bool add( int path, Vertice * v );
         bool add( int path, int position, Vertice * v );
@@ -61,8 +59,8 @@ class Solution{
 
         Vertice * get_last_path_vertice_in_path( int path );
         Vertice * get_vertice_in_path( int path, int position );
-        double get_rewards( int path );
-        double get_total_rewards();
+        int get_rewards( int path );
+        int get_total_rewards();
         double get_time_path( int path );
         double get_time_per_path();
         double get_total_time();

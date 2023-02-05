@@ -34,3 +34,4 @@
 TOP_GRASP_TS_PR
 /irace/target-runner
 process
+logger

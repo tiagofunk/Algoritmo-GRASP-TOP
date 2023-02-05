@@ -1,0 +1,1082 @@
+Realizando o teste ANOVA para todos os dados
+fvalue: 2.8461697282960987
+pvalue: 0.09160913413535723
+
+
+
+
+
+Realizando o teste ANOVA instância por instância
+../instances/set_1_2/p1.2.a.txt-> nan
+../instances/set_1_2/p1.2.b.txt-> nan
+../instances/set_1_2/p1.2.c.txt-> nan
+../instances/set_1_2/p1.2.d.txt-> nan
+../instances/set_1_2/p1.2.e.txt-> nan
+../instances/set_1_2/p1.2.f.txt-> nan
+../instances/set_1_2/p1.2.g.txt-> 0.0394
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+  v_01   v_02   -0.625 0.0394 -1.2187 -0.0313   True
+----------------------------------------------------
+../instances/set_1_2/p1.2.h.txt-> nan
+../instances/set_1_2/p1.2.i.txt-> 0.0196
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  -0.7812 0.0196 -1.433 -0.1295   True
+---------------------------------------------------
+../instances/set_1_2/p1.2.j.txt-> 0.0603
+../instances/set_1_2/p1.2.k.txt-> 0.0006
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   2.3438 0.001 1.0462 3.6413   True
+-------------------------------------------------
+../instances/set_1_2/p1.2.l.txt-> 0.3503
+../instances/set_1_2/p1.2.m.txt-> 0.8248
+../instances/set_1_2/p1.2.n.txt-> 0.0009
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   3.4375 0.001 1.4701 5.4049   True
+-------------------------------------------------
+../instances/set_1_2/p1.2.o.txt-> 0.0646
+../instances/set_1_2/p1.2.p.txt-> 0.0006
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  -2.9688 0.001 -4.6014 -1.3361   True
+---------------------------------------------------
+../instances/set_1_2/p1.2.q.txt-> 0.0069
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+  v_01   v_02     -2.5 0.0069 -4.2881 -0.7119   True
+----------------------------------------------------
+../instances/set_1_2/p1.2.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   -4.375 0.001 -6.3183 -2.4317   True
+---------------------------------------------------
+../instances/set_1_3/p1.3.a.txt-> nan
+../instances/set_1_3/p1.3.b.txt-> nan
+../instances/set_1_3/p1.3.c.txt-> nan
+../instances/set_1_3/p1.3.d.txt-> nan
+../instances/set_1_3/p1.3.e.txt-> nan
+../instances/set_1_3/p1.3.f.txt-> nan
+../instances/set_1_3/p1.3.g.txt-> nan
+../instances/set_1_3/p1.3.h.txt-> nan
+../instances/set_1_3/p1.3.i.txt-> 0.0811
+../instances/set_1_3/p1.3.j.txt-> 0.001
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02      2.5 0.001 1.0479 3.9521   True
+-------------------------------------------------
+../instances/set_1_3/p1.3.k.txt-> 0.0857
+../instances/set_1_3/p1.3.l.txt-> 0.4841
+../instances/set_1_3/p1.3.m.txt-> 0.3528
+../instances/set_1_3/p1.3.n.txt-> 0.001
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   2.3438 0.001 0.9892 3.6983   True
+-------------------------------------------------
+../instances/set_1_3/p1.3.o.txt-> 0.0056
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   1.7188 0.0056 0.5221 2.9154   True
+--------------------------------------------------
+../instances/set_1_3/p1.3.p.txt-> 0.0013
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   2.1875 0.0013 0.8912 3.4838   True
+--------------------------------------------------
+../instances/set_1_3/p1.3.q.txt-> 0.3908
+../instances/set_1_3/p1.3.r.txt-> 0.0001
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   3.2812 0.001 1.7687 4.7938   True
+-------------------------------------------------
+../instances/set_1_4/p1.4.a.txt-> nan
+../instances/set_1_4/p1.4.b.txt-> nan
+../instances/set_1_4/p1.4.c.txt-> nan
+../instances/set_1_4/p1.4.d.txt-> nan
+../instances/set_1_4/p1.4.e.txt-> nan
+../instances/set_1_4/p1.4.f.txt-> nan
+../instances/set_1_4/p1.4.g.txt-> nan
+../instances/set_1_4/p1.4.h.txt-> nan
+../instances/set_1_4/p1.4.i.txt-> nan
+../instances/set_1_4/p1.4.j.txt-> nan
+../instances/set_1_4/p1.4.k.txt-> nan
+../instances/set_1_4/p1.4.l.txt-> nan
+../instances/set_1_4/p1.4.m.txt-> 0.0002
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   1.7188 0.001 0.8661 2.5714   True
+-------------------------------------------------
+../instances/set_1_4/p1.4.n.txt-> 0.452
+../instances/set_1_4/p1.4.o.txt-> 0.5709
+../instances/set_1_4/p1.4.p.txt-> 0.1379
+../instances/set_1_4/p1.4.q.txt-> 0.0031
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02    1.875 0.0031 0.6588 3.0912   True
+--------------------------------------------------
+../instances/set_1_4/p1.4.r.txt-> 0.0342
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02    1.875 0.0342 0.1441 3.6059   True
+--------------------------------------------------
+../instances/set_2_2/p2.2.a.txt-> nan
+../instances/set_2_2/p2.2.b.txt-> nan
+../instances/set_2_2/p2.2.c.txt-> nan
+../instances/set_2_2/p2.2.d.txt-> nan
+../instances/set_2_2/p2.2.e.txt-> nan
+../instances/set_2_2/p2.2.f.txt-> nan
+../instances/set_2_2/p2.2.g.txt-> nan
+../instances/set_2_2/p2.2.h.txt-> nan
+../instances/set_2_2/p2.2.i.txt-> nan
+../instances/set_2_2/p2.2.j.txt-> nan
+../instances/set_2_2/p2.2.k.txt-> 0.0196
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  -0.7812 0.0196 -1.433 -0.1295   True
+---------------------------------------------------
+../instances/set_2_3/p2.3.a.txt-> nan
+../instances/set_2_3/p2.3.b.txt-> nan
+../instances/set_2_3/p2.3.c.txt-> nan
+../instances/set_2_3/p2.3.d.txt-> nan
+../instances/set_2_3/p2.3.e.txt-> nan
+../instances/set_2_3/p2.3.f.txt-> nan
+../instances/set_2_3/p2.3.g.txt-> nan
+../instances/set_2_3/p2.3.h.txt-> nan
+../instances/set_2_3/p2.3.i.txt-> nan
+../instances/set_2_3/p2.3.j.txt-> nan
+../instances/set_2_3/p2.3.k.txt-> nan
+../instances/set_2_4/p2.4.a.txt-> nan
+../instances/set_2_4/p2.4.b.txt-> nan
+../instances/set_2_4/p2.4.c.txt-> nan
+../instances/set_2_4/p2.4.d.txt-> nan
+../instances/set_2_4/p2.4.e.txt-> nan
+../instances/set_2_4/p2.4.f.txt-> nan
+../instances/set_2_4/p2.4.g.txt-> nan
+../instances/set_2_4/p2.4.h.txt-> nan
+../instances/set_2_4/p2.4.i.txt-> nan
+../instances/set_2_4/p2.4.j.txt-> nan
+../instances/set_2_4/p2.4.k.txt-> nan
+../instances/set_3_2/p3.2.a.txt-> nan
+../instances/set_3_2/p3.2.b.txt-> nan
+../instances/set_3_2/p3.2.c.txt-> nan
+../instances/set_3_2/p3.2.d.txt-> nan
+../instances/set_3_2/p3.2.e.txt-> nan
+../instances/set_3_2/p3.2.f.txt-> 0.5616
+../instances/set_3_2/p3.2.g.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02     -5.0 0.001 -6.8974 -3.1026   True
+---------------------------------------------------
+../instances/set_3_2/p3.2.h.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   8.4375 0.001 5.7378 11.1372   True
+--------------------------------------------------
+../instances/set_3_2/p3.2.i.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02    6.875 0.001 4.3462 9.4038   True
+-------------------------------------------------
+../instances/set_3_2/p3.2.j.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  16.5625 0.001 13.3595 19.7655   True
+---------------------------------------------------
+../instances/set_3_2/p3.2.k.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   9.0625 0.001 5.7895 12.3355   True
+--------------------------------------------------
+../instances/set_3_2/p3.2.l.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  10.9375 0.001 7.4558 14.4192   True
+--------------------------------------------------
+../instances/set_3_2/p3.2.m.txt-> 0.8503
+../instances/set_3_2/p3.2.n.txt-> 0.0002
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02  -9.0625 0.001 -13.6433 -4.4817   True
+----------------------------------------------------
+../instances/set_3_2/p3.2.o.txt-> 0.0009
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02  -8.4375 0.001 -13.2957 -3.5793   True
+----------------------------------------------------
+../instances/set_3_2/p3.2.p.txt-> 0.3055
+../instances/set_3_2/p3.2.q.txt-> 0.2695
+../instances/set_3_2/p3.2.r.txt-> 0.0188
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    5.625 0.0188 0.9665 10.2835   True
+---------------------------------------------------
+../instances/set_3_2/p3.2.s.txt-> 0.0534
+../instances/set_3_2/p3.2.t.txt-> 0.0782
+../instances/set_3_3/p3.3.a.txt-> nan
+../instances/set_3_3/p3.3.b.txt-> nan
+../instances/set_3_3/p3.3.c.txt-> nan
+../instances/set_3_3/p3.3.d.txt-> nan
+../instances/set_3_3/p3.3.e.txt-> 0.0021
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02      2.5 0.0021 0.9454 4.0546   True
+--------------------------------------------------
+../instances/set_3_3/p3.3.f.txt-> nan
+../instances/set_3_3/p3.3.g.txt-> 0.0045
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   2.1875 0.0045 0.7033 3.6717   True
+--------------------------------------------------
+../instances/set_3_3/p3.3.h.txt-> nan
+../instances/set_3_3/p3.3.i.txt-> nan
+../instances/set_3_3/p3.3.j.txt-> 1.0
+../instances/set_3_3/p3.3.k.txt-> 0.3503
+../instances/set_3_3/p3.3.l.txt-> 0.4325
+../instances/set_3_3/p3.3.m.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02    11.25 0.001 7.7629 14.7371   True
+--------------------------------------------------
+../instances/set_3_3/p3.3.n.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  15.9375 0.001 12.4922 19.3828   True
+---------------------------------------------------
+../instances/set_3_3/p3.3.o.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+================================================
+group1 group2 meandiff p-adj lower upper  reject
+------------------------------------------------
+  v_01   v_02      7.5 0.001 4.888 10.112   True
+------------------------------------------------
+../instances/set_3_3/p3.3.p.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02     20.0 0.001 15.6057 24.3943   True
+---------------------------------------------------
+../instances/set_3_3/p3.3.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  12.1875 0.001 8.5364 15.8386   True
+--------------------------------------------------
+../instances/set_3_3/p3.3.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  20.3125 0.001 15.5644 25.0606   True
+---------------------------------------------------
+../instances/set_3_3/p3.3.s.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+================================================
+group1 group2 meandiff p-adj lower upper  reject
+------------------------------------------------
+  v_01   v_02   8.4375 0.001 5.211 11.664   True
+------------------------------------------------
+../instances/set_3_3/p3.3.t.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  19.6875 0.001 15.8351 23.5399   True
+---------------------------------------------------
+../instances/set_3_4/p3.4.a.txt-> nan
+../instances/set_3_4/p3.4.b.txt-> nan
+../instances/set_3_4/p3.4.c.txt-> nan
+../instances/set_3_4/p3.4.d.txt-> nan
+../instances/set_3_4/p3.4.e.txt-> nan
+../instances/set_3_4/p3.4.f.txt-> nan
+../instances/set_3_4/p3.4.g.txt-> nan
+../instances/set_3_4/p3.4.h.txt-> nan
+../instances/set_3_4/p3.4.i.txt-> nan
+../instances/set_3_4/p3.4.j.txt-> 0.0113
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   2.1875 0.0113 0.5121 3.8629   True
+--------------------------------------------------
+../instances/set_3_4/p3.4.k.txt-> nan
+../instances/set_3_4/p3.4.l.txt-> nan
+../instances/set_3_4/p3.4.m.txt-> 0.4325
+../instances/set_3_4/p3.4.n.txt-> 0.384
+../instances/set_3_4/p3.4.o.txt-> 0.1199
+../instances/set_3_4/p3.4.p.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  11.5625 0.001 7.4693 15.6557   True
+--------------------------------------------------
+../instances/set_3_4/p3.4.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+================================================
+group1 group2 meandiff p-adj lower upper  reject
+------------------------------------------------
+  v_01   v_02  11.5625 0.001 8.496 14.629   True
+------------------------------------------------
+../instances/set_3_4/p3.4.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   14.375 0.001 10.6236 18.1264   True
+---------------------------------------------------
+../instances/set_3_4/p3.4.s.txt-> 0.0001
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02    11.25 0.001 5.8366 16.6634   True
+--------------------------------------------------
+../instances/set_3_4/p3.4.t.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   8.4375 0.001 5.5837 11.2913   True
+--------------------------------------------------
+../instances/set_4_2/p4.2.a.txt-> nan
+../instances/set_4_2/p4.2.b.txt-> 0.3068
+../instances/set_4_2/p4.2.c.txt-> 0.7427
+../instances/set_4_2/p4.2.d.txt-> 0.0001
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02  -8.0625 0.001 -11.8514 -4.2736   True
+----------------------------------------------------
+../instances/set_4_2/p4.2.e.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02  -10.875 0.001 -14.6577 -7.0923   True
+----------------------------------------------------
+../instances/set_4_2/p4.2.f.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -20.4062 0.001 -26.0092 -14.8033   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.g.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02   -25.25 0.001 -31.2146 -19.2854   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.h.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -30.9062 0.001 -37.9978 -23.8147   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.i.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -26.7188 0.001 -34.2066 -19.2309   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.j.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  -37.375 0.001 -44.538 -30.212   True
+---------------------------------------------------
+../instances/set_4_2/p4.2.k.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower   upper   reject
+----------------------------------------------------
+  v_01   v_02 -45.0312 0.001 -51.501 -38.5615   True
+----------------------------------------------------
+../instances/set_4_2/p4.2.l.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02 -44.7188 0.001 -51.2605 -38.177   True
+----------------------------------------------------
+../instances/set_4_2/p4.2.m.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -58.5625 0.001 -64.4921 -52.6329   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.n.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -57.9688 0.001 -64.5888 -51.3487   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.o.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -67.0312 0.001 -74.3432 -59.7193   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.p.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -69.6875 0.001 -76.6333 -62.7417   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02 -77.3438 0.001 -83.6255 -71.062   True
+----------------------------------------------------
+../instances/set_4_2/p4.2.r.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -75.4688 0.001 -81.3967 -69.5408   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.s.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -77.2188 0.001 -82.1914 -72.2461   True
+-----------------------------------------------------
+../instances/set_4_2/p4.2.t.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -79.5938 0.001 -85.0969 -74.0906   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.b.txt-> nan
+../instances/set_4_3/p4.3.c.txt-> 0.0007
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02     2.25 0.001 0.9954 3.5046   True
+-------------------------------------------------
+../instances/set_4_3/p4.3.d.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02     -6.5 0.001 -8.7846 -4.2154   True
+---------------------------------------------------
+../instances/set_4_3/p4.3.e.txt-> 0.4302
+../instances/set_4_3/p4.3.f.txt-> 0.0052
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj   lower    upper  reject
+-----------------------------------------------------
+  v_01   v_02  -6.6875 0.0052 -11.3011 -2.0739   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.g.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02 -11.5625 0.001 -16.7565 -6.3685   True
+----------------------------------------------------
+../instances/set_4_3/p4.3.h.txt-> 0.0035
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj   lower    upper  reject
+-----------------------------------------------------
+  v_01   v_02  -7.0312 0.0035 -11.6572 -2.4053   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.i.txt-> 0.013
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02  -6.8125 0.013 -12.1367 -1.4883   True
+----------------------------------------------------
+../instances/set_4_3/p4.3.j.txt-> 0.1032
+../instances/set_4_3/p4.3.k.txt-> 0.7346
+../instances/set_4_3/p4.3.l.txt-> 0.5605
+../instances/set_4_3/p4.3.m.txt-> 0.0108
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj   lower    upper  reject
+-----------------------------------------------------
+  v_01   v_02  -10.625 0.0108 -18.7044 -2.5456   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.n.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -18.8125 0.001 -25.7836 -11.8414   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.o.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -20.8438 0.001 -27.5843 -14.1032   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.p.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -16.1875 0.001 -21.2375 -11.1375   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.q.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -17.5312 0.001 -24.1256 -10.9369   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.r.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -24.3125 0.001 -30.8587 -17.7663   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.s.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02 -23.4375 0.001 -29.0107 -17.8643   True
+-----------------------------------------------------
+../instances/set_4_3/p4.3.t.txt-> 0.0
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj  lower    upper   reject
+-----------------------------------------------------
+  v_01   v_02  -33.375 0.001 -39.2003 -27.5497   True
+-----------------------------------------------------
+../instances/set_4_4/p4.4.d.txt-> nan
+../instances/set_4_4/p4.4.e.txt-> 0.0182
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   2.9062 0.0182 0.5103 5.3022   True
+--------------------------------------------------
+../instances/set_4_4/p4.4.f.txt-> 0.2446
+../instances/set_4_4/p4.4.g.txt-> 0.0205
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+  v_01   v_02    -5.75 0.0205 -10.582 -0.918   True
+---------------------------------------------------
+../instances/set_4_4/p4.4.h.txt-> 0.7249
+../instances/set_4_4/p4.4.i.txt-> 0.0814
+../instances/set_4_4/p4.4.j.txt-> 0.5158
+../instances/set_4_4/p4.4.k.txt-> 0.7159
+../instances/set_4_4/p4.4.l.txt-> 0.0875
+../instances/set_4_4/p4.4.m.txt-> 0.6636
+../instances/set_4_4/p4.4.n.txt-> 0.1761
+../instances/set_4_4/p4.4.o.txt-> 0.0019
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  10.2188 0.0019 3.9099 16.5276   True
+---------------------------------------------------
+../instances/set_4_4/p4.4.p.txt-> 0.2103
+../instances/set_4_4/p4.4.q.txt-> 0.0211
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj   lower    upper  reject
+-----------------------------------------------------
+  v_01   v_02  -9.0938 0.0211 -16.7761 -1.4114   True
+-----------------------------------------------------
+../instances/set_4_4/p4.4.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02   -13.25 0.001 -18.9627 -7.5373   True
+----------------------------------------------------
+../instances/set_4_4/p4.4.s.txt-> 0.6709
+../instances/set_4_4/p4.4.t.txt-> 0.6543
+../instances/set_5_2/p5.2.a.txt-> nan
+../instances/set_5_2/p5.2.b.txt-> 0.3212
+../instances/set_5_2/p5.2.c.txt-> nan
+../instances/set_5_2/p5.2.d.txt-> nan
+../instances/set_5_2/p5.2.e.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+================================================
+group1 group2 meandiff p-adj lower  upper reject
+------------------------------------------------
+  v_01   v_02   3.2812 0.001 2.1275 4.435   True
+------------------------------------------------
+../instances/set_5_2/p5.2.f.txt-> nan
+../instances/set_5_2/p5.2.g.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   3.2812 0.001 1.8946 4.6679   True
+-------------------------------------------------
+../instances/set_5_2/p5.2.h.txt-> 0.0032
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   7.9688 0.0032 2.7704 13.1671   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.i.txt-> 0.0058
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02   5.7812 0.0058 1.7379 9.8246   True
+--------------------------------------------------
+../instances/set_5_2/p5.2.j.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj  lower  upper reject
+-------------------------------------------------
+  v_01   v_02  18.9062 0.001 12.6025 25.21   True
+-------------------------------------------------
+../instances/set_5_2/p5.2.k.txt-> 0.0481
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    6.875 0.0481 0.0578 13.6922   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.l.txt-> 0.097
+../instances/set_5_2/p5.2.m.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  19.0625 0.001 11.9777 26.1473   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.n.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  27.3438 0.001 21.0052 33.6823   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.o.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  27.6562 0.001 21.1967 34.1158   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.p.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  41.0938 0.001 32.286 49.9015   True
+--------------------------------------------------
+../instances/set_5_2/p5.2.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   38.125 0.001 27.5452 48.7048   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  42.0312 0.001 31.8648 52.1977   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.s.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  29.5312 0.001 20.4866 38.5759   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.t.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  20.7812 0.001 11.5862 29.9763   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.u.txt-> 0.0006
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  14.6875 0.001 6.6102 22.7648   True
+--------------------------------------------------
+../instances/set_5_2/p5.2.v.txt-> 0.0059
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  13.9062 0.0059 4.1486 23.6639   True
+---------------------------------------------------
+../instances/set_5_2/p5.2.w.txt-> 0.1537
+../instances/set_5_2/p5.2.x.txt-> 0.9727
+../instances/set_5_2/p5.2.y.txt-> 0.2142
+../instances/set_5_2/p5.2.z.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower    upper  reject
+----------------------------------------------------
+  v_01   v_02 -16.5625 0.001 -23.5399 -9.5851   True
+----------------------------------------------------
+../instances/set_5_3/p5.3.a.txt-> nan
+../instances/set_5_3/p5.3.b.txt-> nan
+../instances/set_5_3/p5.3.c.txt-> nan
+../instances/set_5_3/p5.3.d.txt-> nan
+../instances/set_5_3/p5.3.e.txt-> nan
+../instances/set_5_3/p5.3.f.txt-> nan
+../instances/set_5_3/p5.3.g.txt-> 0.3212
+../instances/set_5_3/p5.3.h.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   4.0625 0.001 3.0011 5.1239   True
+-------------------------------------------------
+../instances/set_5_3/p5.3.i.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02   3.5938 0.001 2.4732 4.7143   True
+-------------------------------------------------
+../instances/set_5_3/p5.3.j.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  32.3438 0.001 26.9809 37.7066   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.k.txt-> 0.0004
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===============================================
+group1 group2 meandiff p-adj lower upper reject
+-----------------------------------------------
+  v_01   v_02   4.6875 0.001  2.19 7.185   True
+-----------------------------------------------
+../instances/set_5_3/p5.3.l.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   15.625 0.001 9.3405 21.9095   True
+--------------------------------------------------
+../instances/set_5_3/p5.3.m.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   11.875 0.001 7.6568 16.0932   True
+--------------------------------------------------
+../instances/set_5_3/p5.3.n.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02    26.25 0.001 19.091 33.409   True
+-------------------------------------------------
+../instances/set_5_3/p5.3.o.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    31.25 0.001 24.5108 37.9892   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.p.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  35.3125 0.001 25.6353 44.9897   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    41.25 0.001 32.7147 49.7853   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  59.8438 0.001 51.0876 68.5999   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.s.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  68.5938 0.001 60.0097 77.1778   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.t.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  62.6562 0.001 52.4337 72.8788   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.u.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    68.75 0.001 58.1825 79.3175   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.v.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  52.1875 0.001 43.1744 61.2006   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.w.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  64.2188 0.001 53.1997 75.2378   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.x.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    53.75 0.001 43.2503 64.2497   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.y.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  58.4375 0.001 50.1662 66.7088   True
+---------------------------------------------------
+../instances/set_5_3/p5.3.z.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  57.1875 0.001 46.7112 67.6638   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.a.txt-> nan
+../instances/set_5_4/p5.4.b.txt-> nan
+../instances/set_5_4/p5.4.c.txt-> nan
+../instances/set_5_4/p5.4.d.txt-> nan
+../instances/set_5_4/p5.4.e.txt-> nan
+../instances/set_5_4/p5.4.f.txt-> nan
+../instances/set_5_4/p5.4.g.txt-> 0.0394
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02    0.625 0.0394 0.0313 1.2187   True
+--------------------------------------------------
+../instances/set_5_4/p5.4.h.txt-> nan
+../instances/set_5_4/p5.4.i.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02      7.5 0.001 5.1253 9.8747   True
+-------------------------------------------------
+../instances/set_5_4/p5.4.j.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02   9.0625 0.001 6.3815 11.7435   True
+--------------------------------------------------
+../instances/set_5_4/p5.4.k.txt-> 0.2996
+../instances/set_5_4/p5.4.l.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  12.3438 0.001 10.1922 14.4953   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.m.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj lower  upper  reject
+-------------------------------------------------
+  v_01   v_02  14.8438 0.001 9.5245 20.163   True
+-------------------------------------------------
+../instances/set_5_4/p5.4.n.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj lower   upper  reject
+--------------------------------------------------
+  v_01   v_02  11.5625 0.001 7.0951 16.0299   True
+--------------------------------------------------
+../instances/set_5_4/p5.4.o.txt-> 0.0359
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   7.9688 0.0359 0.5403 15.3972   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.p.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  17.8125 0.001 10.5008 25.1242   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.q.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  19.5312 0.001 11.2131 27.8494   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.r.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02    26.25 0.001 20.4597 32.0403   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.s.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  42.0312 0.001 35.0898 48.9727   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.t.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  47.0312 0.001 39.7526 54.3099   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.u.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  58.9062 0.001 48.6634 69.1491   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.v.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+  v_01   v_02  58.9062 0.001 48.4535 69.359   True
+--------------------------------------------------
+../instances/set_5_4/p5.4.w.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj lower   upper   reject
+---------------------------------------------------
+  v_01   v_02  95.7812 0.001 86.418 105.1445   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.x.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02   80.625 0.001 68.6101 92.6399   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.y.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+  v_01   v_02  87.8125 0.001 79.2934 96.3316   True
+---------------------------------------------------
+../instances/set_5_4/p5.4.z.txt-> 0.0
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj  lower   upper   reject
+----------------------------------------------------
+  v_01   v_02  96.9744 0.001 88.2485 105.7003   True
+----------------------------------------------------
+
+
+
+
+
+Gerando gráfico
